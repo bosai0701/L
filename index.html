@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>リアルタイム画像表示</title>
+    <title>Real-Time Earthquake Monitoring</title>
 </head>
 <body>
+    <h1>Real-Time Earthquake Monitoring</h1>
     <iframe id="realTimeImageFrame" width="600" height="400" frameborder="0"></iframe>
 
     <script>
@@ -26,7 +27,7 @@
             const datePart = `${year}${month}${day}`;
             const timePart = `${hours}${minutes}${seconds}`;
 
-            const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/RealTimeImg/jma_s/${datePart}/${year}${month}${day}${hours}${minutes}${seconds}.jma_s.gif`;
+            const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/RealTimeImg/jma_s/${datePart}/${datePart}${timePart}.jma_s.gif`;
 
             // iframeのsrc属性にURLをセットする
             const iframe = document.getElementById('realTimeImageFrame');
@@ -43,7 +44,7 @@
             };
         }
 
-        // 初回の画像更新を行う
+        // 初回実行
         updateImage();
 
         // 1秒ごとにupdateImageを実行する
