@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リアルタイム画像更新</title>
+</head>
+<body>
+    <img id="realTimeImage" src="" alt="リアルタイム画像" width="600">
+
+    <script>
+        function pad(number) {
+            return number < 10 ? '0' + number : number;
+        }
+
+        function updateImage() {
+            const now = new Date();
+
+            const year = now.getFullYear();
+            const month = pad(now.getMonth() + 1);
+            const day = pad(now.getDate());
+            const hours = pad(now.getHours());
+            const minutes = pad(now.getMinutes());
+            const seconds = pad(now.getSeconds());
+
+            const datePart = `${year}${month}${day}`;
+            const timePart = `${year}${month}${day}${hours}${minutes}${seconds}`;
+            
+            const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/RealTimeImg/jma_s/${datePart}/${timePart}.jma_s.gif`;
+            
+            document.getElementById('realTimeImage').src = url;
+        }
+
+        setInterval(updateImage, 1000);
+        updateImage();
+    </script>
+</body>
+</html>
