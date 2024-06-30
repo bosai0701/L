@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
     <title>Real-Time Earthquake Monitoring</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.ico">
 </head>
 <body>
-    <h1>Real-Time Earthquake Monitoring</h1>
     <iframe id="realTimeImageFrame" width="600" height="400" frameborder="0"></iframe>
 
     <script>
@@ -15,7 +15,8 @@
         }
 
         function updateImage() {
-            const now = new Date();
+            // Get the current time and subtract 1.1 seconds
+            const now = new Date(Date.now() - 1100);
 
             const year = now.getFullYear();
             const month = pad(now.getMonth() + 1);
@@ -29,25 +30,25 @@
 
             const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/RealTimeImg/jma_s/${datePart}/${datePart}${timePart}.jma_s.gif`;
 
-            // iframeのsrc属性にURLをセットする
+            // Set the URL to the iframe's src attribute
             const iframe = document.getElementById('realTimeImageFrame');
             iframe.src = url;
 
-            // iframeの読み込みエラーを確認
+            // Check for iframe loading errors
             iframe.onerror = function() {
                 console.error(`Failed to load image from URL: ${url}`);
             };
 
-            // iframeの読み込みが完了したときにログを表示
+            // Log a message when the iframe loads successfully
             iframe.onload = function() {
                 console.log(`Successfully loaded image from URL: ${url}`);
             };
         }
 
-        // 初回実行
+        // Initial execution
         updateImage();
 
-        // 1秒ごとにupdateImageを実行する
+        // Execute updateImage every second
         setInterval(updateImage, 1000);
     </script>
 </body>
