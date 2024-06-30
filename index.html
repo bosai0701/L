@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>リアルタイム画像更新</title>
+    <title>リアルタイム画像表示</title>
 </head>
 <body>
-    <img id="realTimeImage" src="" alt="リアルタイム画像" width="600">
+    <iframe id="realTimeImageFrame" width="600" height="400" frameborder="0"></iframe>
 
     <script>
         function pad(number) {
@@ -24,15 +24,30 @@
             const seconds = pad(now.getSeconds());
 
             const datePart = `${year}${month}${day}`;
-            const timePart = `${year}${month}${day}${hours}${minutes}${seconds}`;
-            
-            const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/RealTimeImg/jma_s/${datePart}/${timePart}.jma_s.gif`;
-            
-            document.getElementById('realTimeImage').src = url;
+            const timePart = `${hours}${minutes}${seconds}`;
+
+            const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/RealTimeImg/jma_s/${datePart}/${year}${month}${day}${hours}${minutes}${seconds}.jma_s.gif`;
+
+            // iframeのsrc属性にURLをセットする
+            const iframe = document.getElementById('realTimeImageFrame');
+            iframe.src = url;
+
+            // iframeの読み込みエラーを確認
+            iframe.onerror = function() {
+                console.error(`Failed to load image from URL: ${url}`);
+            };
+
+            // iframeの読み込みが完了したときにログを表示
+            iframe.onload = function() {
+                console.log(`Successfully loaded image from URL: ${url}`);
+            };
         }
 
-        setInterval(updateImage, 1000);
+        // 初回の画像更新を行う
         updateImage();
+
+        // 1秒ごとにupdateImageを実行する
+        setInterval(updateImage, 1000);
     </script>
 </body>
 </html>
