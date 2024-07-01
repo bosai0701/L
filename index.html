@@ -11,7 +11,7 @@
             width: 352px;
             height: 400px;
         }
-        .real-time-frame {
+        .real-time-frame, .fixed-image {
             position: absolute;
             top: 0;
             left: 0;
@@ -23,6 +23,9 @@
 </head>
 <body>
     <div class="container">
+        <!-- 指定された固定画像 -->
+        <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="Fixed Image">
+        <!-- リアルタイムの画像 -->
         <iframe id="realTimeImageFrame" class="real-time-frame"></iframe>
     </div>
 
