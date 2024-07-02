@@ -15,15 +15,6 @@
         }
         .container {
             position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black; /* 余白を黒で埋める */
-        }
-        .image-wrapper {
-            position: relative;
             width: 352px;
             height: 400px;
         }
@@ -44,12 +35,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="image-wrapper">
-            <!-- 指定された固定画像 -->
-            <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="Fixed Image">
-            <!-- リアルタイムの画像 -->
-            <img id="realTimeImage" class="real-time-image" alt="Real-Time Image">
-        </div>
+        <!-- 指定された固定画像 -->
+        <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="Fixed Image">
+        <!-- リアルタイムの画像 -->
+        <img id="realTimeImage" class="real-time-image" alt="Real-Time Image">
     </div>
 
     <script>
