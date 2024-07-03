@@ -2,7 +2,7 @@
 <html lang="ja" dir="ltr">
 <head>
     <meta charset="utf-8" />
-    <title>リアルタイム地震モニタリング</title>
+    <title>Realtime Sindo</title>
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="favicon.ico">
     <style>
@@ -39,7 +39,7 @@
         <!-- Fixed base map image -->
         <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="Fixed Image">
         <!-- Real-time earthquake monitoring image -->
-        <img id="realTimeImage" class="real-time-image" alt="Real-Time Image">
+        <img id="realTimeImage" class="real-time-image" src="placeholder.jpg" alt="Real-Time Image">
     </div>
 
     <script>
@@ -76,6 +76,7 @@
             // Handle errors if the image fails to load
             realTimeImage.onerror = function() {
                 console.error(`Failed to load image: ${url}`);
+                realTimeImage.src = 'placeholder.jpg'; // Fallback image
             };
         }
 
