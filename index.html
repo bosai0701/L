@@ -78,6 +78,16 @@
                 console.error(`画像の読み込みに失敗しました: ${url}`);
                 realTimeImage.src = 'placeholder.jpg'; // フォールバック画像
             };
+
+            // 画像の読み込みが完了した後の処理
+            realTimeImage.onload = function() {
+                // 固定画像とリアルタイム画像の位置とサイズを調整
+                const fixedImage = document.getElementById('fixedImage');
+                realTimeImage.style.top = fixedImage.offsetTop + 'px';
+                realTimeImage.style.left = fixedImage.offsetLeft + 'px';
+                realTimeImage.style.width = fixedImage.offsetWidth + 'px';
+                realTimeImage.style.height = fixedImage.offsetHeight + 'px';
+            };
         }
 
         // 初回実行
