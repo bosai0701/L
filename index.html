@@ -39,7 +39,7 @@
         <!-- 固定のベースマップ画像 -->
         <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="固定画像">
         <!-- リアルタイム地震監視画像 -->
-        <img id="realTimeImage" class="real-time-image" src="placeholder.jpg" alt="リアルタイム画像">
+        <img id="realTimeImage" class="real-time-image" alt="リアルタイム画像">
     </div>
 
     <script>
@@ -76,7 +76,7 @@
             // 画像の読み込みに失敗した場合のエラーハンドリング
             realTimeImage.onerror = function() {
                 console.error(`画像の読み込みに失敗しました: ${url}`);
-                realTimeImage.src = 'placeholder.jpg'; // フォールバック画像
+                realTimeImage.src = ''; // エラーハンドリングとしてsrcを空にする
             };
 
             // 画像の読み込みが完了した後の処理
