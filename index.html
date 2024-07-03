@@ -9,7 +9,7 @@
         html, body {
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden; /* スクロールを防止 */
             width: 100%;
             height: 100%;
         }
@@ -17,7 +17,7 @@
             position: relative;
             width: 352px;
             height: 400px;
-            margin: 10px; /* Add a small gap on the left and top */
+            margin: 10px; /* 左と上に小さなギャップを追加 */
         }
         .fixed-image, .real-time-image {
             position: absolute;
@@ -36,25 +36,25 @@
 </head>
 <body>
     <div class="container">
-        <!-- Fixed base map image -->
-        <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="Fixed Image">
-        <!-- Real-time earthquake monitoring image -->
-        <img id="realTimeImage" class="real-time-image" src="placeholder.jpg" alt="Real-Time Image">
+        <!-- 固定のベースマップ画像 -->
+        <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="固定画像">
+        <!-- リアルタイム地震監視画像 -->
+        <img id="realTimeImage" class="real-time-image" src="placeholder.jpg" alt="リアルタイム画像">
     </div>
 
     <script>
-        // Function to pad single digits with a leading zero
+        // 一桁の数字に先行ゼロを付ける関数
         function pad(number) {
             return number < 10 ? '0' + number : number;
         }
 
-        // Function to update the real-time image
+        // リアルタイム画像を更新する関数
         function updateImage() {
-            // Get the current time and subtract 1 second
+            // 現在の時間を取得し、1.5秒を引く
             const now = new Date();
-            now.setSeconds(now.getSeconds() - 1);
+            now.setMilliseconds(now.getMilliseconds() - 1500);
 
-            // Extract year, month, day, hours, minutes, and seconds
+            // 年、月、日、時、分、秒を抽出
             const year = now.getFullYear();
             const month = pad(now.getMonth() + 1);
             const day = pad(now.getDate());
@@ -62,28 +62,28 @@
             const minutes = pad(now.getMinutes());
             const seconds = pad(now.getSeconds());
 
-            // Create date and time strings in the format expected by the server
+            // サーバーが期待する形式の日付と時間文字列を作成
             const datePart = `${year}${month}${day}`;
             const timePart = `${hours}${minutes}${seconds}`;
 
-            // Construct the URL for the real-time image
+            // リアルタイム画像のURLを構築
             const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/RealTimeImg/jma_s/${datePart}/${datePart}${timePart}.jma_s.gif`;
 
-            // Set the src attribute of the real-time image
+            // リアルタイム画像のsrc属性を設定
             const realTimeImage = document.getElementById('realTimeImage');
             realTimeImage.src = url;
 
-            // Handle errors if the image fails to load
+            // 画像の読み込みに失敗した場合のエラーハンドリング
             realTimeImage.onerror = function() {
-                console.error(`Failed to load image: ${url}`);
-                realTimeImage.src = 'placeholder.jpg'; // Fallback image
+                console.error(`画像の読み込みに失敗しました: ${url}`);
+                realTimeImage.src = 'placeholder.jpg'; // フォールバック画像
             };
         }
 
-        // Initial execution
+        // 初回実行
         updateImage();
 
-        // Execute updateImage every second
+        // 1秒ごとにupdateImageを実行
         setInterval(updateImage, 1000);
     </script>
 </body>
