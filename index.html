@@ -19,7 +19,7 @@
             height: 400px;
             margin: 10px; /* 左と上に小さなギャップを追加 */
         }
-        .fixed-image, .real-time-image {
+        .fixed-image, .real-time-image, .pswave-image {
             position: absolute;
             top: 0;
             left: 0;
@@ -32,14 +32,19 @@
         .fixed-image {
             z-index: 0;
         }
+        .pswave-image {
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- 固定のベースマップ画像 -->
-        <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="固定画像">
+        <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="データを取得できません">
         <!-- リアルタイム地震監視画像 -->
-        <img id="realTimeImage" class="real-time-image" alt="リアルタイム画像">
+        <img id="realTimeImage" class="real-time-image" src="placeholder.jpg" alt="データを取得できません">
+        <!-- PSWave 画像 -->
+        <img id="map-pswave" class="pswave-image" src="placeholder.jpg" alt="データを取得できません">
     </div>
 
     <script>
@@ -49,7 +54,7 @@
         }
 
         // リアルタイム画像を更新する関数
-        function updateImage() {
+        function updateRealTimeImage() {
             // 現在の時間を取得し、1.5秒を引く
             const now = new Date();
             now.setMilliseconds(now.getMilliseconds() - 1500);
@@ -76,7 +81,7 @@
             // 画像の読み込みに失敗した場合のエラーハンドリング
             realTimeImage.onerror = function() {
                 console.error(`画像の読み込みに失敗しました: ${url}`);
-                realTimeImage.src = ''; // エラーハンドリングとしてsrcを空にする
+                realTimeImage.src = 'placeholder.jpg'; // フォールバック画像
             };
 
             // 画像の読み込みが完了した後の処理
@@ -90,11 +95,55 @@
             };
         }
 
-        // 初回実行
-        updateImage();
+        // PSWave画像を更新する関数
+        function updatePSWaveImage() {
+            // 現在の時間を取得し、1.5秒を引く
+            const now = new Date();
+            now.setMilliseconds(now.getMilliseconds() - 1500);
 
-        // 1秒ごとにupdateImageを実行
-        setInterval(updateImage, 1000);
+            // 年、月、日、時、分、秒を抽出
+            const year = now.getFullYear();
+            const month = pad(now.getMonth() + 1);
+            const day = pad(now.getDate());
+            const hours = pad(now.getHours());
+            const minutes = pad(now.getMinutes());
+            const seconds = pad(now.getSeconds());
+
+            // サーバーが期待する形式の日付と時間文字列を作成
+            const datePart = `${year}${month}${day}`;
+            const timePart = `${hours}${minutes}${seconds}`;
+
+            // PSWave画像のURLを構築
+            const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/PSWaveImg/eew/${datePart}/${datePart}${timePart}.eew.gif`;
+
+            // PSWave画像のsrc属性を設定
+            const pswaveImage = document.getElementById('map-pswave');
+            pswaveImage.src = url;
+
+            // 画像の読み込みに失敗した場合のエラーハンドリング
+            pswaveImage.onerror = function() {
+                console.error(`画像の読み込みに失敗しました: ${url}`);
+                pswaveImage.src = 'placeholder.jpg'; // フォールバック画像
+            };
+
+            // 画像の読み込みが完了した後の処理
+            pswaveImage.onload = function() {
+                // 固定画像とPSWave画像の位置とサイズを調整
+                const fixedImage = document.getElementById('fixedImage');
+                pswaveImage.style.top = fixedImage.offsetTop + 'px';
+                pswaveImage.style.left = fixedImage.offsetLeft + 'px';
+                pswaveImage.style.width = fixedImage.offsetWidth + 'px';
+                pswaveImage.style.height = fixedImage.offsetHeight + 'px';
+            };
+        }
+
+        // 初回実行
+        updateRealTimeImage();
+        updatePSWaveImage();
+
+        // 1秒ごとにupdateRealTimeImageとupdatePSWaveImageを実行
+        setInterval(updateRealTimeImage, 1000);
+        setInterval(updatePSWaveImage, 1000);
     </script>
 </body>
 </html>
