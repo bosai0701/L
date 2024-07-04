@@ -2,7 +2,7 @@
 <html lang="ja" dir="ltr">
 <head>
     <meta charset="utf-8" />
-    <title>Realtime Sindo</title>
+    <title>リアルタイム震度</title>
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="favicon.ico">
     <style>
@@ -19,24 +19,19 @@
             height: 400px;
             margin: 10px; /* 左と上に小さなギャップを追加 */
         }
-        .fixed-image, .real-time-image, .placeholder-image {
+        .fixed-image, .real-time-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
         }
-        .real-time-image, .placeholder-image {
+        .real-time-image {
             z-index: 1;
+            visibility: hidden; /* 初期状態で非表示にする */
         }
         .fixed-image {
             z-index: 0;
-        }
-        .placeholder-image {
-            display: block; /* 初期状態で表示 */
-        }
-        .real-time-image {
-            display: none; /* 初期状態で非表示 */
         }
     </style>
 </head>
@@ -44,10 +39,8 @@
     <div class="container">
         <!-- 固定のベースマップ画像 -->
         <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="データを取得できません">
-        <!-- プレースホルダー画像 -->
-        <img id="placeholderImage" class="placeholder-image" src="placeholder.jpg" alt="データを取得できません">
         <!-- リアルタイム地震監視画像 -->
-        <img id="realTimeImage" class="real-time-image" src="" alt="データを取得できません">
+        <img id="realTimeImage" class="real-time-image" src="placeholder.jpg" alt="データを取得できません">
     </div>
 
     <script>
@@ -55,10 +48,6 @@
         function pad(number) {
             return number < 10 ? '0' + number : number;
         }
-
-        let retryCount = 0;
-        const maxRetries = 5;
-        const updateInterval = 100; // 更新間隔を0.1秒に設定
 
         // リアルタイム画像を更新する関数
         function updateImage() {
@@ -81,24 +70,20 @@
             // リアルタイム画像のURLを構築
             const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/RealTimeImg/jma_s/${datePart}/${datePart}${timePart}.jma_s.gif`;
 
-            // プレースホルダー画像を表示
-            const placeholderImage = document.getElementById('placeholderImage');
-            const realTimeImage = document.getElementById('realTimeImage');
-
             // 一時的なImageオブジェクトを使用して画像をプリロード
             const tempImage = new Image();
             tempImage.onload = function() {
+                const realTimeImage = document.getElementById('realTimeImage');
                 realTimeImage.src = url;
-                realTimeImage.style.display = 'block'; // 画像が正常にロードされたら表示する
-                placeholderImage.style.display = 'none'; // プレースホルダーを非表示
-                retryCount = 0;
+                realTimeImage.style.visibility = 'visible'; // 画像が正常にロードされたら表示する
             };
             tempImage.onerror = function() {
                 console.error(`画像の読み込みに失敗しました: ${url}`);
-                retryCount++;
-                if (retryCount < maxRetries) {
-                    setTimeout(updateImage, updateInterval); // リトライ
-                }
+                // プレースホルダー画像を表示し続ける
+                const realTimeImage = document.getElementById('realTimeImage');
+                realTimeImage.style.visibility = 'hidden';
+                realTimeImage.src = 'placeholder.jpg';
+                realTimeImage.style.visibility = 'visible';
             };
             tempImage.src = url;
         }
@@ -106,15 +91,8 @@
         // 初回実行
         updateImage();
 
-        // 0.1秒ごとにupdateImageを実行
-        setInterval(updateImage, updateInterval);
-
-        // 障害が発生した場合にプレースホルダー画像を表示し続ける
-        document.getElementById('realTimeImage').onerror = function() {
-            this.style.display = 'none';
-            const placeholderImage = document.getElementById('placeholderImage');
-            placeholderImage.style.display = 'block';
-        };
+        // 1秒ごとにupdateImageを実行
+        setInterval(updateImage, 1000);
     </script>
 </body>
 </html>
