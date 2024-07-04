@@ -49,11 +49,18 @@
             return number < 10 ? '0' + number : number;
         }
 
+        let isLoading = false;
+        let retryCount = 0;
+        const maxRetries = 5;
+
         // リアルタイム画像を更新する関数
         function updateImage() {
-            // 現在の時間を取得し、2秒を引く
+            if (isLoading) return;
+            isLoading = true;
+
+            // 現在の時間を取得し、1秒を引く
             const now = new Date();
-            now.setMilliseconds(now.getMilliseconds() - 2000);
+            now.setMilliseconds(now.getMilliseconds() - 1000);
 
             // 年、月、日、時、分、秒を抽出
             const year = now.getFullYear();
@@ -76,10 +83,17 @@
                 const realTimeImage = document.getElementById('realTimeImage');
                 realTimeImage.src = url;
                 realTimeImage.style.visibility = 'visible'; // 画像が正常にロードされたら表示する
+                retryCount = 0;
+                isLoading = false;
             };
             tempImage.onerror = function() {
                 console.error(`画像の読み込みに失敗しました: ${url}`);
-                setTimeout(updateImage, 100); // 0.1秒後に再試行
+                retryCount++;
+                if (retryCount < maxRetries) {
+                    setTimeout(updateImage, 500); // 0.5秒後に再試行
+                } else {
+                    isLoading = false;
+                }
             };
             tempImage.src = url;
         }
@@ -87,8 +101,8 @@
         // 初回実行
         updateImage();
 
-        // 0.1秒ごとにupdateImageを実行
-        setInterval(updateImage, 100);
+        // 0.5秒ごとにupdateImageを実行
+        setInterval(updateImage, 500);
 
         // 障害が発生した場合にプレースホルダー画像を表示し続ける
         document.getElementById('realTimeImage').onerror = function() {
