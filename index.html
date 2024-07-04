@@ -79,11 +79,10 @@
             };
             tempImage.onerror = function() {
                 console.error(`画像の読み込みに失敗しました: ${url}`);
-                // プレースホルダー画像を表示し続ける
+                // プレースホルダー画像ではなく、固定のベースマップ画像を表示する
                 const realTimeImage = document.getElementById('realTimeImage');
-                realTimeImage.style.visibility = 'hidden';
-                realTimeImage.src = 'placeholder.jpg';
-                realTimeImage.style.visibility = 'visible';
+                realTimeImage.src = document.getElementById('fixedImage').src;
+                realTimeImage.style.visibility = 'visible'; // 表示する
             };
             tempImage.src = url;
         }
