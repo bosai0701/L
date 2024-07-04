@@ -56,16 +56,12 @@
             return number < 10 ? '0' + number : number;
         }
 
-        let isLoading = false;
         let retryCount = 0;
         const maxRetries = 5;
         const updateInterval = 100; // 更新間隔を0.1秒に設定
 
         // リアルタイム画像を更新する関数
         function updateImage() {
-            if (isLoading) return;
-            isLoading = true;
-
             // 現在の時間を取得し、2秒を引く
             const now = new Date();
             now.setMilliseconds(now.getMilliseconds() - 2000);
@@ -88,8 +84,6 @@
             // プレースホルダー画像を表示
             const placeholderImage = document.getElementById('placeholderImage');
             const realTimeImage = document.getElementById('realTimeImage');
-            placeholderImage.style.display = 'block';
-            realTimeImage.style.display = 'none';
 
             // 一時的なImageオブジェクトを使用して画像をプリロード
             const tempImage = new Image();
@@ -98,15 +92,12 @@
                 realTimeImage.style.display = 'block'; // 画像が正常にロードされたら表示する
                 placeholderImage.style.display = 'none'; // プレースホルダーを非表示
                 retryCount = 0;
-                isLoading = false;
             };
             tempImage.onerror = function() {
                 console.error(`画像の読み込みに失敗しました: ${url}`);
                 retryCount++;
                 if (retryCount < maxRetries) {
                     setTimeout(updateImage, updateInterval); // リトライ
-                } else {
-                    isLoading = false;
                 }
             };
             tempImage.src = url;
