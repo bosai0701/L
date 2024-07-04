@@ -87,8 +87,15 @@
         // 初回実行
         updateImage();
 
-        // 0.5秒ごとにupdateImageを実行
-        setInterval(updateImage, 500);
+        // 1秒ごとにupdateImageを実行
+        setInterval(updateImage, 1000);
+
+        // 障害が発生した場合にプレースホルダー画像を表示し続ける
+        document.getElementById('realTimeImage').onerror = function() {
+            this.style.visibility = 'hidden';
+            this.src = 'placeholder.jpg';
+            this.style.visibility = 'visible';
+        };
     </script>
 </body>
 </html>
