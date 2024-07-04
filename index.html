@@ -72,11 +72,18 @@
             // 一時的なImageオブジェクトを使用して画像をプリロード
             const tempImage = new Image();
             tempImage.onload = function() {
-                document.getElementById('realTimeImage').src = url;
+                const realTimeImage = document.getElementById('realTimeImage');
+                realTimeImage.src = url;
+
+                // 固定画像とリアルタイム画像の位置とサイズを調整
+                const fixedImage = document.getElementById('fixedImage');
+                realTimeImage.style.top = fixedImage.offsetTop + 'px';
+                realTimeImage.style.left = fixedImage.offsetLeft + 'px';
+                realTimeImage.style.width = fixedImage.offsetWidth + 'px';
+                realTimeImage.style.height = fixedImage.offsetHeight + 'px';
             };
             tempImage.onerror = function() {
                 console.error(`画像の読み込みに失敗しました: ${url}`);
-                document.getElementById('realTimeImage').src = 'placeholder.jpg'; // フォールバック画像
             };
             tempImage.src = url;
         }
@@ -84,8 +91,8 @@
         // 初回実行
         updateImage();
 
-        // 1秒ごとにupdateImageを実行
-        setInterval(updateImage, 1000);
+        // 0.5秒ごとにupdateImageを実行
+        setInterval(updateImage, 500);
     </script>
 </body>
 </html>
