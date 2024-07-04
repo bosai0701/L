@@ -69,15 +69,14 @@
             // リアルタイム画像のURLを構築
             const url = `https://smi.lmoniexp.bosai.go.jp/data/map_img/RealTimeImg/jma_s/${datePart}/${datePart}${timePart}.jma_s.gif`;
 
-            // リアルタイム画像のsrc属性を設定
-            const realTimeImage = document.getElementById('realTimeImage');
+            // 一時的なImageオブジェクトを使用して画像をプリロード
             const tempImage = new Image();
             tempImage.onload = function() {
-                realTimeImage.src = url;
+                document.getElementById('realTimeImage').src = url;
             };
             tempImage.onerror = function() {
                 console.error(`画像の読み込みに失敗しました: ${url}`);
-                realTimeImage.src = 'placeholder.jpg'; // フォールバック画像
+                document.getElementById('realTimeImage').src = 'placeholder.jpg'; // フォールバック画像
             };
             tempImage.src = url;
         }
