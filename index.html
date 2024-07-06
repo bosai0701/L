@@ -51,9 +51,9 @@
 
         // リアルタイム画像を更新する関数
         function updateImage() {
-            // 現在の時間を取得し、1秒を引く
+            // 現在の時間を取得し、1.5秒を引く
             const now = new Date();
-            now.setSeconds(now.getSeconds() - 1);
+            now.setMilliseconds(now.getMilliseconds() - 1500);
 
             // 年、月、日、時、分、秒を抽出
             const year = now.getFullYear();
