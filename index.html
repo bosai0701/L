@@ -2,7 +2,7 @@
 <html lang="ja" dir="ltr">
 <head>
     <meta charset="utf-8" />
-    <title>リアルタイム震度</title>
+    <title>Realtime Sindo</title>
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="favicon.ico">
     <style>
@@ -38,9 +38,9 @@
 <body>
     <div class="container">
         <!-- 固定のベースマップ画像 -->
-        <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif" alt="データを取得できません">
+        <img id="fixedImage" class="fixed-image" src="https://smi.lmoniexp.bosai.go.jp/data/map_img/CommonImg/base_map_b.gif">
         <!-- リアルタイム地震監視画像 -->
-        <img id="realTimeImage" class="real-time-image" src="placeholder.jpg" alt="データを取得できません">
+        <img id="realTimeImage" class="real-time-image" src="placeholder.jpg">
     </div>
 
     <script>
@@ -51,9 +51,9 @@
 
         // リアルタイム画像を更新する関数
         function updateImage() {
-            // 現在の時間を取得し、2秒を引く
+            // 現在の時間を取得し、1秒を引く
             const now = new Date();
-            now.setMilliseconds(now.getMilliseconds() - 2000);
+            now.setSeconds(now.getSeconds() - 1);
 
             // 年、月、日、時、分、秒を抽出
             const year = now.getFullYear();
@@ -90,8 +90,8 @@
         // 初回実行
         updateImage();
 
-        // 1秒ごとにupdateImageを実行
-        setInterval(updateImage, 1000);
+        // 0.5秒ごとにupdateImageを実行
+        setInterval(updateImage, 500);
     </script>
 </body>
 </html>
