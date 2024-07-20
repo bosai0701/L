@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>地理院地図表示</title>
-  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.css" />
   <script src="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.js"></script>
   <style>
@@ -16,11 +16,40 @@
       height: 100vh;
       overflow: hidden;
     }
+
+    #clock {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 3px;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+    }
+
+    #attribution {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 5px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      max-width: 200px;
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
   <div id="map"></div>
+  <div id="clock"></div>
+  <div id="attribution">
+    <div><a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener noreferrer">地理院地図</a></div>
+    <div><a href="https://www.jma.go.jp/bosai/nowc/" target="_blank" rel="noopener noreferrer">気象庁ナウキャスト</a></div>
+  </div>
   <script>
     class MyControl {
       constructor() {
@@ -88,8 +117,7 @@
             "tiles": [this.url],
             "tileSize": 256,
             "maxzoom": 10,
-            "minzoom": 4,
-            "attribution": "<a href='https://www.jma.go.jp/jma/kishou/know/kurashi/highres_nowcast.html'>気象庁(高解像度降水ナウキャスト)</a>"
+            "minzoom": 4
           });
           map.addLayer({
             "id": "jma_hrpns",
@@ -121,6 +149,21 @@
       }
     }
 
+    function updateClock() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const dateStr = `${year}-${month}-${day}`;
+      const timeStr = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('clock').textContent = `${dateStr} ${timeStr}`;
+    }
+
+    setInterval(updateClock, 1000);
+
     const style = {
       "version": 8,
       "sources": {
@@ -129,8 +172,7 @@
           "tiles": [
             "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"
           ],
-          "tileSize": 256,
-          "attribution": "<a href='https://maps.gsi.go.jp/'>地理院地図</a>"
+          "tileSize": 256
         }
       },
       "layers": [
@@ -151,7 +193,13 @@
             "raster-saturation": -1
           }
         }
-      ]
+      ],
+      "metadata": {
+        "attribution": {
+          "text": "地理院地図 © <a href='https://maps.gsi.go.jp/' target='_blank' rel='noopener noreferrer'>GSI</a> | 気象庁ナウキャスト © <a href='https://www.jma.go.jp/bosai/nowc/' target='_blank' rel='noopener noreferrer'>JMA</a>",
+          "url": "https://www.jma.go.jp/bosai/nowc/"
+        }
+      }
     };
 
     const bounds = [
@@ -163,7 +211,9 @@
       container: "map",
       center: [137.7749, 35.6586],
       zoom: 4,
-      style: style
+      style: style,
+      pitch: 0,
+      bearing: 0
     });
 
     map.on('load', () => {
@@ -174,6 +224,19 @@
 
     map.addControl(new maplibregl.FullscreenControl());
     map.addControl(new MyControl());
+
+    function onResize() {
+      // Ensure the map container resizes with the viewport
+      const mapContainer = document.getElementById('map');
+      mapContainer.style.width = `${window.innerWidth}px`;
+      mapContainer.style.height = `${window.innerHeight}px`;
+
+      // Trigger a resize event on the map
+      map.resize();
+    }
+
+    window.addEventListener('resize', onResize);
+    onResize(); // Initial call to set the size
   </script>
 </body>
 
