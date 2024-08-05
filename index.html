@@ -93,7 +93,7 @@
     <div><a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener noreferrer">地理院地図</a></div>
     <div><a href="https://www.jma.go.jp/bosai/nowc/" target="_blank" rel="noopener noreferrer">気象庁ナウキャスト</a></div>
   </div>
-  <div id="error-message">位置情報の使用が許可されていません。</div>
+  <div id="error-message">位置情報の使用が許可されていません。位置情報を許可してください。</div>
   <script>
     class MyControl {
       constructor() {
@@ -259,16 +259,18 @@
           const userLocation = [position.coords.longitude, position.coords.latitude];
           const dot = document.createElement('div');
           dot.className = 'dot';
-          new maplibregl.Marker(dot)
-            .setLngLat(userLocation)
-            .addTo(map);
+          const marker = new maplibregl.Marker({
+            element: dot
+          }).setLngLat(userLocation).addTo(map);
           map.flyTo({ center: userLocation, zoom: 12 });
         }, (error) => {
           console.error('Geolocation error:', error);
+          alert('位置情報が許可されていません。位置情報を許可してください。');
           document.getElementById('error-message').style.display = 'block';
         });
       } else {
         console.error('Geolocation not supported');
+        alert('このブラウザは位置情報に対応していません。');
         document.getElementById('error-message').style.display = 'block';
       }
     }
