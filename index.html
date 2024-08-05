@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.css" />
   <script src="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.js"></script>
   <style>
-    body, html {
+    body,
+    html {
       margin: 0;
       overflow: hidden;
       height: 100%;
@@ -203,19 +204,6 @@
       map.setMinZoom(4);
       const control = new MyControl();
       map.addControl(control);
-
-      // 位置情報の取得
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-          const userLocation = [position.coords.longitude, position.coords.latitude];
-          map.setCenter(userLocation);
-          map.setZoom(12);
-        }, error => {
-          console.error("位置情報の取得に失敗しました", error);
-        });
-      } else {
-        console.error("このブラウザは位置情報取得に対応していません");
-      }
     });
 
     function onResize() {
@@ -227,6 +215,26 @@
 
     window.addEventListener('resize', onResize);
     onResize();
+
+    // 位置情報を取得して表示する関数
+    function addGeolocation() {
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const userLocation = [position.coords.longitude, position.coords.latitude];
+          new maplibregl.Marker()
+            .setLngLat(userLocation)
+            .addTo(map);
+          map.flyTo({ center: userLocation, zoom: 10 });
+        }, (error) => {
+          console.error('Geolocation error:', error);
+        });
+      } else {
+        console.error('Geolocation not supported');
+      }
+    }
+
+    // ページ読み込み時に位置情報を取得
+    window.addEventListener('load', addGeolocation);
   </script>
 </body>
 
