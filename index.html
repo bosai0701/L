@@ -204,21 +204,17 @@
       const control = new MyControl();
       map.addControl(control);
 
-      // ジオロケーションAPIを使用して現在地を取得し、地図の中心をその位置に設定
+      // 位置情報の取得
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            const { latitude, longitude } = position.coords;
-            map.setCenter([longitude, latitude]);
-            new maplibregl.Marker().setLngLat([longitude, latitude]).addTo(map);
-          },
-          (error) => {
-            console.error('Error occurred while fetching location:', error);
-          },
-          { enableHighAccuracy: true }
-        );
+        navigator.geolocation.getCurrentPosition(position => {
+          const userLocation = [position.coords.longitude, position.coords.latitude];
+          map.setCenter(userLocation);
+          map.setZoom(12);
+        }, error => {
+          console.error("位置情報の取得に失敗しました", error);
+        });
       } else {
-        console.error('Geolocation is not supported by this browser.');
+        console.error("このブラウザは位置情報取得に対応していません");
       }
     });
 
