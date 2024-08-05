@@ -3,15 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>地理院地図表示</title>
+  <title>ナウキャスト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.css" />
   <script src="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.js"></script>
   <style>
-    body {
+    body, html {
       margin: 0;
       overflow: hidden;
+      height: 100%;
     }
 
     #map {
@@ -20,7 +22,6 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
     }
 
     #clock {
@@ -59,14 +60,12 @@
   <script>
     class MyControl {
       constructor() {
-        this.updateTimer = null;
         this.url = null;
       }
 
       onAdd(map) {
         this._map = map;
         this.update();
-        this.updateTimer = setInterval(() => this.update(), 1000); // Update every second
         return null;
       }
 
@@ -112,7 +111,7 @@
             }
           });
         } else {
-          source.setTiles([this.url]);
+          source.tiles = [this.url];
           map.style.sourceCaches[key].clearTiles();
           map.style.sourceCaches[key].update(map.transform);
           map.triggerRepaint();
@@ -120,7 +119,6 @@
       }
 
       onRemove() {
-        if (this.updateTimer) clearInterval(this.updateTimer);
         this._map = undefined;
       }
 
@@ -183,35 +181,51 @@
     };
 
     const bounds = [
-      [120.0, 20.0],  // Expanded western bound
-      [156.0, 50.0]   // Expanded eastern bound
+      [120.0, 20.0],
+      [156.0, 50.0]
     ];
 
     const map = new maplibregl.Map({
       container: "map",
-      center: [137.7749, 35.6586],
+      center: [137.0, 38.0], // 修正後の初期中心地
       zoom: 4,
       style: style,
-      pitch: 0, // 固定ピッチ設定
-      bearing: 0 // 固定ベアリング設定
+      pitch: 0,
+      bearing: 0
     });
 
-    // ピッチとベアリングを固定
     map.on('pitchstart', () => map.setPitch(0));
     map.on('rotate', () => map.setBearing(0));
 
     map.on('load', () => {
       map.setMaxBounds(bounds);
-      map.setMaxZoom(12);  // Increased max zoom level
+      map.setMaxZoom(12);
       map.setMinZoom(4);
-    });
+      const control = new MyControl();
+      map.addControl(control);
 
-    map.addControl(new MyControl());
+      // ジオロケーションAPIを使用して現在地を取得し、地図の中心をその位置に設定
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            map.setCenter([longitude, latitude]);
+            new maplibregl.Marker().setLngLat([longitude, latitude]).addTo(map);
+          },
+          (error) => {
+            console.error('Error occurred while fetching location:', error);
+          },
+          { enableHighAccuracy: true }
+        );
+      } else {
+        console.error('Geolocation is not supported by this browser.');
+      }
+    });
 
     function onResize() {
       const mapContainer = document.getElementById('map');
-      mapContainer.style.width = `${window.innerWidth}px`;
-      mapContainer.style.height = `${window.innerHeight}px`;
+      mapContainer.style.width = '100vw';
+      mapContainer.style.height = '100vh';
       map.resize();
     }
 
