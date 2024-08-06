@@ -73,8 +73,10 @@
 
       async update() {
         const newUrl = await this.fetchNowcastUrl();
-        this.url = newUrl;
-        this.updateLayer();
+        if (this.url !== newUrl) {
+          this.url = newUrl;
+          this.updateLayer();
+        }
       }
 
       async fetchNowcastUrl() {
