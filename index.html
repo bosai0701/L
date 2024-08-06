@@ -114,7 +114,7 @@
           });
         } else {
           source.tiles = [this.url];
-          map.style.sourceCaches[key].clearTiles();
+          map.style.sourceCaches[key]._tiles = {};
           map.style.sourceCaches[key].update(map.transform);
           map.triggerRepaint();
         }
