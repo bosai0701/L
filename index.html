@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.css" />
   <script src="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.js"></script>
   <style>
-    body,
-    html {
+    body, html {
       margin: 0;
       overflow: hidden;
       height: 100%;
@@ -48,41 +47,6 @@
       max-width: 200px;
       text-align: center;
     }
-
-    #error-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      border-radius: 3px;
-      font-size: 14px;
-      font-family: Arial, sans-serif;
-      display: none;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: red;
-      position: absolute;
-      transform: translate(-50%, -50%);
-      animation: pulse 1s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      100% {
-        transform: scale(1.5);
-        opacity: 0;
-      }
-    }
   </style>
 </head>
 
@@ -93,7 +57,6 @@
     <div><a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener noreferrer">地理院地図</a></div>
     <div><a href="https://www.jma.go.jp/bosai/nowc/" target="_blank" rel="noopener noreferrer">気象庁ナウキャスト</a></div>
   </div>
-  <div id="error-message">位置情報の使用が許可されていません。位置情報を許可してください。</div>
   <script>
     class MyControl {
       constructor() {
@@ -103,6 +66,8 @@
       onAdd(map) {
         this._map = map;
         this.update();
+        // 5分毎にupdateメソッドを呼び出す
+        setInterval(() => this.update(), 300000);
         return null;
       }
 
@@ -251,32 +216,6 @@
 
     window.addEventListener('resize', onResize);
     onResize();
-
-    // 位置情報を取得して表示する関数
-    function addGeolocation() {
-      if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          const userLocation = [position.coords.longitude, position.coords.latitude];
-          const dot = document.createElement('div');
-          dot.className = 'dot';
-          const marker = new maplibregl.Marker({
-            element: dot
-          }).setLngLat(userLocation).addTo(map);
-          map.flyTo({ center: userLocation, zoom: 12 });
-        }, (error) => {
-          console.error('Geolocation error:', error);
-          alert('位置情報が許可されていません。位置情報を許可してください。');
-          document.getElementById('error-message').style.display = 'block';
-        });
-      } else {
-        console.error('Geolocation not supported');
-        alert('このブラウザは位置情報に対応していません。');
-        document.getElementById('error-message').style.display = 'block';
-      }
-    }
-
-    // ページ読み込み時に位置情報を取得
-    window.addEventListener('load', addGeolocation);
   </script>
 </body>
 
