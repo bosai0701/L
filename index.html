@@ -66,8 +66,7 @@
       onAdd(map) {
         this._map = map;
         this.update();
-        // 毎秒更新
-        setInterval(() => this.update(), 1000);
+        this.setUpdateInterval();
         return null;
       }
 
@@ -118,6 +117,18 @@
           map.style.sourceCaches[key].update(map.transform);
           map.triggerRepaint();
         }
+      }
+
+      setUpdateInterval() {
+        const updateNow = () => {
+          this.update();
+          // 1秒ごとに更新する
+          setInterval(() => this.update(), 1000);
+        };
+        const now = new Date();
+        const seconds = now.getSeconds();
+        const millisecondsUntilNextSecond = (1000 - now.getMilliseconds());
+        setTimeout(updateNow, millisecondsUntilNextSecond);
       }
 
       onRemove() {
