@@ -66,8 +66,8 @@
       onAdd(map) {
         this._map = map;
         this.update();
-        // 5分毎にupdateメソッドを呼び出す
-        setInterval(() => this.update(), 300000);
+        // 毎分チェックし、分が5の倍数になったら更新
+        setInterval(() => this.checkAndUpdate(), 60000);
         return null;
       }
 
@@ -76,6 +76,14 @@
         if (this.url !== newUrl) {
           this.url = newUrl;
           this.updateLayer();
+        }
+      }
+
+      checkAndUpdate() {
+        const now = new Date();
+        const minutes = now.getMinutes();
+        if (minutes % 5 === 0) {
+          this.update();
         }
       }
 
