@@ -61,11 +61,11 @@
     class MyControl {
       constructor() {
         this.url = null;
+        this.updateInterval = 1000; // 1秒ごと
       }
 
       onAdd(map) {
         this._map = map;
-        this.update();
         this.setUpdateInterval();
         return null;
       }
@@ -122,9 +122,9 @@
       setUpdateInterval() {
         const updateNow = () => {
           this.update();
-          // 1秒ごとに更新する
-          setInterval(() => this.update(), 1000);
+          setInterval(() => this.update(), this.updateInterval);
         };
+
         const now = new Date();
         const seconds = now.getSeconds();
         const millisecondsUntilNextSecond = (1000 - now.getMilliseconds());
