@@ -1,233 +1,202 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>ナウキャスト</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.css" />
-  <script src="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.js"></script>
-  <style>
-    body, html {
-      margin: 0;
-      overflow: hidden;
-      height: 100%;
-    }
-
-    #map {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-    }
-
-    #clock {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 10px;
-      border-radius: 3px;
-      font-size: 14px;
-      font-family: Arial, sans-serif;
-    }
-
-    #attribution {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 5px;
-      border-radius: 3px;
-      font-size: 12px;
-      font-family: Arial, sans-serif;
-      max-width: 200px;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>津波予報</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .major-warning {
+            color: #B626F6; /* 大津波警報 */
+        }
+        .warning {
+            color: #EA4225; /* 津波警報 */
+        }
+        .advisory {
+            color: #F9F551; /* 津波注意報 */
+        }
+        .forecast {
+            color: #4CA7F8; /* 津波予報 */
+        }
+        .major-warning th {
+            background-color: #B626F6;
+            color: white;
+        }
+        .warning th {
+            background-color: #EA4225;
+            color: black;
+        }
+        .advisory th {
+            background-color: #F9F551;
+            color: black;
+        }
+        .forecast th {
+            background-color: #4CA7F8;
+            color: white;
+        }
+        #info {
+            font-size: 1.2em;
+            color: red;
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
-
 <body>
-  <div id="map"></div>
-  <div id="clock"></div>
-  <div id="attribution">
-    <div><a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener noreferrer">地理院地図</a></div>
-    <div><a href="https://www.jma.go.jp/bosai/nowc/" target="_blank" rel="noopener noreferrer">気象庁ナウキャスト</a></div>
-  </div>
-  <script>
-    class MyControl {
-      constructor() {
-        this.url = null;
-        this.updateInterval = 1000; // 1秒ごと
-      }
+    <h1>津波予報</h1>
 
-      onAdd(map) {
-        this._map = map;
-        this.setUpdateInterval();
-        return null;
-      }
+    <div id="info" class="hidden"></div>
 
-      async update() {
-        const newUrl = await this.fetchNowcastUrl();
-        if (this.url !== newUrl) {
-          this.url = newUrl;
-          this.updateLayer();
-        }
-      }
+    <div id="major-warning-section" class="hidden">
+        <h2 class="major-warning">大津波警報</h2>
+        <table id="major-warning-table">
+            <thead>
+                <tr>
+                    <th>発表時刻</th>
+                    <th>発表地域</th>
+                    <th>津波の高さ</th>
+                </tr>
+            </thead>
+            <tbody id="major-warning-body">
+                <!-- データがここに挿入されます -->
+            </tbody>
+        </table>
+    </div>
 
-      async fetchNowcastUrl() {
-        const res = await fetch("https://www.jma.go.jp/bosai/jmatile/data/nowc/targetTimes_N1.json");
-        const json = await res.json();
-        const basetime = json[0].basetime;
-        const time = json[0].targetTime || basetime;
-        return `https://www.jma.go.jp/bosai/jmatile/data/nowc/${basetime}/none/${time}/surf/hrpns/{z}/{x}/{y}.png`;
-      }
+    <div id="warning-section" class="hidden">
+        <h2 class="warning">津波警報</h2>
+        <table id="warning-table">
+            <thead>
+                <tr>
+                    <th>発表時刻</th>
+                    <th>発表地域</th>
+                    <th>津波の高さ</th>
+                </tr>
+            </thead>
+            <tbody id="warning-body">
+                <!-- データがここに挿入されます -->
+            </tbody>
+        </table>
+    </div>
 
-      updateLayer() {
-        const key = "jma_hrpns";
-        const map = this._map;
-        let source = map.getSource(key);
+    <div id="advisory-section" class="hidden">
+        <h2 class="advisory">津波注意報</h2>
+        <table id="advisory-table">
+            <thead>
+                <tr>
+                    <th>発表時刻</th>
+                    <th>発表地域</th>
+                    <th>津波の高さ</th>
+                </tr>
+            </thead>
+            <tbody id="advisory-body">
+                <!-- データがここに挿入されます -->
+            </tbody>
+        </table>
+    </div>
 
-        if (!source) {
-          map.addSource(key, {
-            "type": "raster",
-            "tiles": [this.url],
-            "tileSize": 256,
-            "maxzoom": 10,
-            "minzoom": 4
-          });
-          map.addLayer({
-            "id": "jma_hrpns",
-            "type": "raster",
-            "source": key,
-            "minzoom": 4,
-            "maxzoom": 18,
-            "paint": {
-              "raster-opacity": 1.0,
-              "raster-resampling": "nearest",
-              "raster-fade-duration": 0
+    <div id="forecast-section" class="hidden">
+        <h2 class="forecast">津波予報(若干の海面変動)</h2>
+        <table id="forecast-table">
+            <thead>
+                <tr>
+                    <th>発表時刻</th>
+                    <th>発表地域</th>
+                    <th>津波の高さ</th>
+                </tr>
+            </thead>
+            <tbody id="forecast-body">
+                <!-- データがここに挿入されます -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        async function fetchTsunamiData() {
+            try {
+                const response = await fetch('https://api.p2pquake.net/v2/history?codes=552&limit=1');
+                const data = await response.json();
+
+                const majorWarningBody = document.getElementById('major-warning-body');
+                const warningBody = document.getElementById('warning-body');
+                const advisoryBody = document.getElementById('advisory-body');
+                const forecastBody = document.getElementById('forecast-body');
+                const infoDiv = document.getElementById('info');
+
+                let majorWarningsExist = false;
+                let warningsExist = false;
+                let advisoriesExist = false;
+                let forecastsExist = false;
+
+                data.forEach(entry => {
+                    entry.areas.forEach(area => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${entry.time}</td>
+                            <td>${area.name}</td>
+                            <td>${area.maxHeight ? area.maxHeight.value + 'm' : 'N/A'}</td>
+                        `;
+
+                        if (entry.cancelled === false) {
+                            if (parseFloat(area.maxHeight.value) >= 5) {
+                                majorWarningsExist = true;
+                                majorWarningBody.appendChild(row);
+                            } else if (parseFloat(area.maxHeight.value) >= 3 && parseFloat(area.maxHeight.value) < 5) {
+                                warningsExist = true;
+                                warningBody.appendChild(row);
+                            } else if (parseFloat(area.maxHeight.value) < 3) {
+                                advisoriesExist = true;
+                                advisoryBody.appendChild(row);
+                            } else if (entry.issue.type === 'Focus') {
+                                forecastsExist = true;
+                                forecastBody.appendChild(row);
+                            }
+                        }
+                    });
+                });
+
+                if (!majorWarningsExist) {
+                    document.getElementById('major-warning-section').classList.add('hidden');
+                }
+                if (!warningsExist) {
+                    document.getElementById('warning-section').classList.add('hidden');
+                }
+                if (!advisoriesExist) {
+                    document.getElementById('advisory-section').classList.add('hidden');
+                }
+                if (!forecastsExist) {
+                    document.getElementById('forecast-section').classList.add('hidden');
+                }
+
+                if (!majorWarningsExist && !warningsExist && !advisoriesExist && !forecastsExist) {
+                    infoDiv.textContent = '大津波警報・津波警報・津波注意報・津波予報（若干の海面変動）は発表されていません。';
+                    infoDiv.classList.remove('hidden');
+                } else {
+                    infoDiv.classList.add('hidden');
+                }
+            } catch (error) {
+                console.error('データの取得に失敗しました:', error);
             }
-          });
-        } else {
-          source.tiles = [this.url];
-          map.style.sourceCaches[key]._tiles = {};
-          map.style.sourceCaches[key].update(map.transform);
-          map.triggerRepaint();
         }
-      }
 
-      setUpdateInterval() {
-        const updateNow = () => {
-          this.update();
-          setInterval(() => this.update(), this.updateInterval);
-        };
-
-        const now = new Date();
-        const seconds = now.getSeconds();
-        const millisecondsUntilNextSecond = (1000 - now.getMilliseconds());
-        setTimeout(updateNow, millisecondsUntilNextSecond);
-      }
-
-      onRemove() {
-        this._map = undefined;
-      }
-
-      getDefaultPosition() {
-        return 'top-left';
-      }
-    }
-
-    function updateClock() {
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = String(now.getMonth() + 1).padStart(2, '0');
-      const day = String(now.getDate()).padStart(2, '0');
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      const dateStr = `${year}-${month}-${day}`;
-      const timeStr = `${hours}:${minutes}:${seconds}`;
-      document.getElementById('clock').textContent = `${dateStr} ${timeStr}`;
-    }
-
-    setInterval(updateClock, 1000);
-
-    const style = {
-      "version": 8,
-      "sources": {
-        "gsi_base": {
-          "type": "raster",
-          "tiles": [
-            "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"
-          ],
-          "tileSize": 256
-        }
-      },
-      "layers": [
-        {
-          "id": "background",
-          "type": "background",
-          "paint": {
-            "background-color": "#ffffff"
-          }
-        },
-        {
-          "id": "gsi_base",
-          "type": "raster",
-          "source": "gsi_base",
-          "minzoom": 0,
-          "maxzoom": 18,
-          "paint": {
-            "raster-saturation": -1
-          }
-        }
-      ],
-      "metadata": {
-        "attribution": {
-          "text": "地理院地図 © <a href='https://maps.gsi.go.jp/' target='_blank' rel='noopener noreferrer'>GSI</a> | 気象庁ナウキャスト © <a href='https://www.jma.go.jp/bosai/nowc/' target='_blank' rel='noopener noreferrer'>JMA</a>",
-          "url": "https://www.jma.go.jp/bosai/nowc/"
-        }
-      }
-    };
-
-    const bounds = [
-      [120.0, 20.0],
-      [156.0, 50.0]
-    ];
-
-    const map = new maplibregl.Map({
-      container: "map",
-      center: [137.0, 38.0], // 修正後の初期中心地
-      zoom: 4,
-      style: style,
-      pitch: 0,
-      bearing: 0
-    });
-
-    map.on('pitchstart', () => map.setPitch(0));
-    map.on('rotate', () => map.setBearing(0));
-
-    map.on('load', () => {
-      map.setMaxBounds(bounds);
-      map.setMaxZoom(12);
-      map.setMinZoom(4);
-      const control = new MyControl();
-      map.addControl(control);
-    });
-
-    function onResize() {
-      const mapContainer = document.getElementById('map');
-      mapContainer.style.width = '100vw';
-      mapContainer.style.height = '100vh';
-      map.resize();
-    }
-
-    window.addEventListener('resize', onResize);
-    onResize();
-  </script>
+        fetchTsunamiData();
+    </script>
 </body>
-
 </html>
