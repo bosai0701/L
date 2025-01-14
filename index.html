@@ -1,202 +1,190 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>津波予報</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .major-warning {
-            color: #B626F6; /* 大津波警報 */
-        }
-        .warning {
-            color: #EA4225; /* 津波警報 */
-        }
-        .advisory {
-            color: #F9F551; /* 津波注意報 */
-        }
-        .forecast {
-            color: #4CA7F8; /* 津波予報 */
-        }
-        .major-warning th {
-            background-color: #B626F6;
-            color: white;
-        }
-        .warning th {
-            background-color: #EA4225;
-            color: black;
-        }
-        .advisory th {
-            background-color: #F9F551;
-            color: black;
-        }
-        .forecast th {
-            background-color: #4CA7F8;
-            color: white;
-        }
-        #info {
-            font-size: 1.2em;
-            color: red;
-            margin-top: 20px;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>リアルタイム津波情報</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <style>
+    body {
+      display: none; /* 初期状態は非表示 */
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .watch {
+      background-color: #F9F551; /* 津波注意報 */
+    }
+    .warning {
+      background-color: #EA4225; /* 津波警報 */
+    }
+    .big-warning {
+      background-color: #B626F6; /* 大津波警報 */
+    }
+    .error-message {
+      color: red;
+      font-size: 18px;
+      margin-top: 20px;
+      display: none; /* 初期状態は非表示 */
+    }
+    #clock {
+      font-size: 20px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <h1>津波予報</h1>
+  <h1>リアルタイム津波情報</h1>
+  <div id="clock"></div>
+  <table id="tsunami-table" style="display: none;">
+    <thead>
+      <tr>
+        <th>地域名</th>
+        <th>種別</th>
+        <th>最大津波高さ</th>
+        <th>状況</th>
+        <th>発表元</th>
+        <th>発表時刻</th>
+      </tr>
+    </thead>
+    <tbody id="tsunami-data">
+      <!-- データがここに挿入される -->
+    </tbody>
+  </table>
+  <div id="error-message" class="error-message">
+    大津波警報・津波警報・津波注意報は発表されていません
+  </div>
 
-    <div id="info" class="hidden"></div>
+  <script>
+    const apiUrl = "https://api.p2pquake.net/v2/history?codes=552&limit=1";
 
-    <div id="major-warning-section" class="hidden">
-        <h2 class="major-warning">大津波警報</h2>
-        <table id="major-warning-table">
-            <thead>
-                <tr>
-                    <th>発表時刻</th>
-                    <th>発表地域</th>
-                    <th>津波の高さ</th>
-                </tr>
-            </thead>
-            <tbody id="major-warning-body">
-                <!-- データがここに挿入されます -->
-            </tbody>
-        </table>
-    </div>
+    // データ取得と表示の処理
+    function fetchAndDisplayData() {
+      // 時計の更新
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const date = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const timeString = `${year}年${month}月${date}日 ${hours}:${minutes}:${seconds}`;
+      const clockElement = document.getElementById("clock");
 
-    <div id="warning-section" class="hidden">
-        <h2 class="warning">津波警報</h2>
-        <table id="warning-table">
-            <thead>
-                <tr>
-                    <th>発表時刻</th>
-                    <th>発表地域</th>
-                    <th>津波の高さ</th>
-                </tr>
-            </thead>
-            <tbody id="warning-body">
-                <!-- データがここに挿入されます -->
-            </tbody>
-        </table>
-    </div>
+      // 津波データの取得
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.getElementById("tsunami-data");
+          const errorMessage = document.getElementById("error-message");
+          const table = document.getElementById("tsunami-table");
 
-    <div id="advisory-section" class="hidden">
-        <h2 class="advisory">津波注意報</h2>
-        <table id="advisory-table">
-            <thead>
-                <tr>
-                    <th>発表時刻</th>
-                    <th>発表地域</th>
-                    <th>津波の高さ</th>
-                </tr>
-            </thead>
-            <tbody id="advisory-body">
-                <!-- データがここに挿入されます -->
-            </tbody>
-        </table>
-    </div>
+          tbody.innerHTML = ""; // 以前のデータを消去
+          errorMessage.style.display = "none"; // エラーメッセージ非表示
+          table.style.display = "none"; // 初期状態で非表示
 
-    <div id="forecast-section" class="hidden">
-        <h2 class="forecast">津波予報(若干の海面変動)</h2>
-        <table id="forecast-table">
-            <thead>
-                <tr>
-                    <th>発表時刻</th>
-                    <th>発表地域</th>
-                    <th>津波の高さ</th>
-                </tr>
-            </thead>
-            <tbody id="forecast-body">
-                <!-- データがここに挿入されます -->
-            </tbody>
-        </table>
-    </div>
+          const allAreas = [];
 
-    <script>
-        async function fetchTsunamiData() {
-            try {
-                const response = await fetch('https://api.p2pquake.net/v2/history?codes=552&limit=1&offset=1');
-                const data = await response.json();
+          data.forEach(event => {
+            event.areas.forEach(area => {
+              const areaData = {
+                name: area.name,
+                grade: area.grade,
+                maxHeight: area.maxHeight?.value || 0,
+                description: area.maxHeight?.description || "不明",
+                condition: area.firstHeight?.condition || "不明",
+                source: event.issue.source || "不明",
+                time: event.issue.time || "不明"
+              };
+              allAreas.push(areaData);
+            });
+          });
 
-                const majorWarningBody = document.getElementById('major-warning-body');
-                const warningBody = document.getElementById('warning-body');
-                const advisoryBody = document.getElementById('advisory-body');
-                const forecastBody = document.getElementById('forecast-body');
-                const infoDiv = document.getElementById('info');
+          if (allAreas.length === 0) {
+            errorMessage.style.display = "block"; // エラーメッセージを表示
+            table.style.display = "none"; // データがない場合、テーブルを非表示
+            return;
+          }
 
-                let majorWarningsExist = false;
-                let warningsExist = false;
-                let advisoriesExist = false;
-                let forecastsExist = false;
+          // データが存在する場合、テーブルを表示
+          table.style.display = "table";
 
-                data.forEach(entry => {
-                    entry.areas.forEach(area => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                            <td>${entry.time}</td>
-                            <td>${area.name}</td>
-                            <td>${area.maxHeight ? area.maxHeight.value + 'm' : 'N/A'}</td>
-                        `;
+          // データを降順にソートしてテーブルに表示
+          const sortedAreas = allAreas.sort((a, b) => b.maxHeight - a.maxHeight);
+          sortedAreas.forEach(area => {
+            const row = document.createElement("tr");
 
-                        if (entry.cancelled === false) {
-                            if (parseFloat(area.maxHeight.value) >= 5) {
-                                majorWarningsExist = true;
-                                majorWarningBody.appendChild(row);
-                            } else if (parseFloat(area.maxHeight.value) >= 3 && parseFloat(area.maxHeight.value) < 5) {
-                                warningsExist = true;
-                                warningBody.appendChild(row);
-                            } else if (parseFloat(area.maxHeight.value) < 3) {
-                                advisoriesExist = true;
-                                advisoryBody.appendChild(row);
-                            } else if (entry.issue.type === 'Focus') {
-                                forecastsExist = true;
-                                forecastBody.appendChild(row);
-                            }
-                        }
-                    });
-                });
-
-                if (!majorWarningsExist) {
-                    document.getElementById('major-warning-section').classList.add('hidden');
-                }
-                if (!warningsExist) {
-                    document.getElementById('warning-section').classList.add('hidden');
-                }
-                if (!advisoriesExist) {
-                    document.getElementById('advisory-section').classList.add('hidden');
-                }
-                if (!forecastsExist) {
-                    document.getElementById('forecast-section').classList.add('hidden');
-                }
-
-                if (!majorWarningsExist && !warningsExist && !advisoriesExist && !forecastsExist) {
-                    infoDiv.textContent = '大津波警報・津波警報・津波注意報・津波予報（若干の海面変動）は発表されていません。';
-                    infoDiv.classList.remove('hidden');
-                } else {
-                    infoDiv.classList.add('hidden');
-                }
-            } catch (error) {
-                console.error('データの取得に失敗しました:', error);
+            // 種別ごとの色設定
+            let rowClass = "";
+            if (area.grade === "Watch") {
+              rowClass = "watch"; // 津波注意報
+            } else if (area.grade === "Warning") {
+              rowClass = "warning"; // 津波警報
+            } else if (area.grade === "BigWarning") {
+              rowClass = "big-warning"; // 大津波警報
             }
-        }
 
-        fetchTsunamiData();
-    </script>
+            row.className = rowClass;
+
+            // 地域名
+            const areaCell = document.createElement("td");
+            areaCell.textContent = area.name;
+            row.appendChild(areaCell);
+
+            // 種別
+            const gradeCell = document.createElement("td");
+            gradeCell.textContent = area.grade === "Watch" ? "津波注意報" :
+                                    area.grade === "Warning" ? "津波警報" : "大津波警報";
+            row.appendChild(gradeCell);
+
+            // 最大津波高さ
+            const heightCell = document.createElement("td");
+            heightCell.textContent = area.description;
+            row.appendChild(heightCell);
+
+            // 状況
+            const conditionCell = document.createElement("td");
+            conditionCell.textContent = area.condition;
+            row.appendChild(conditionCell);
+
+            // 発表元
+            const sourceCell = document.createElement("td");
+            sourceCell.textContent = area.source;
+            row.appendChild(sourceCell);
+
+            // 発表時刻
+            const timeCell = document.createElement("td");
+            timeCell.textContent = area.time;
+            row.appendChild(timeCell);
+
+            tbody.appendChild(row);
+          });
+        })
+        .catch(error => {
+          console.error("データ取得エラー:", error);
+        })
+        .finally(() => {
+          clockElement.textContent = timeString; // 時計を更新
+          document.body.style.display = "block"; // すべてを一度に表示
+        });
+    }
+
+    // 初回データ取得と表示
+    fetchAndDisplayData();
+
+    // 毎秒データと時計を更新
+    setInterval(fetchAndDisplayData, 1000);
+  </script>
 </body>
 </html>
