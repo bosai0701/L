@@ -6,9 +6,6 @@
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
   <style>
-    body {
-      display: none; /* 初期状態は非表示 */
-    }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -113,7 +110,6 @@
 
           if (allAreas.length === 0) {
             errorMessage.style.display = "block"; // エラーメッセージを表示
-            document.body.style.display = "block"; // 画面を表示
             return;
           }
 
@@ -165,7 +161,6 @@
         })
         .finally(() => {
           clockElement.textContent = timeString; // 時計を更新
-          document.body.style.display = "block"; // 画面を表示
         });
     }
 
@@ -177,4 +172,3 @@
   </script>
 </body>
 </html>
-
