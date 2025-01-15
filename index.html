@@ -13,6 +13,7 @@
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
+      display: none; /* 初期状態は非表示 */
     }
     th, td {
       border: 1px solid #ddd;
@@ -47,7 +48,7 @@
 <body>
   <h1>リアルタイム津波情報</h1>
   <div id="clock"></div>
-  <table id="tsunami-table" style="display: none;">
+  <table id="tsunami-table">
     <thead>
       <tr>
         <th>地域名</th>
@@ -71,7 +72,6 @@
 
     // データ取得と表示の処理
     function fetchAndDisplayData() {
-      // 時計の更新
       const now = new Date();
       const year = now.getFullYear();
       const month = String(now.getMonth() + 1).padStart(2, '0');
@@ -92,7 +92,7 @@
 
           tbody.innerHTML = ""; // 以前のデータを消去
           errorMessage.style.display = "none"; // エラーメッセージ非表示
-          table.style.display = "none"; // 初期状態で非表示
+          table.style.display = "none"; // テーブル非表示
 
           const allAreas = [];
 
@@ -113,57 +113,46 @@
 
           if (allAreas.length === 0) {
             errorMessage.style.display = "block"; // エラーメッセージを表示
-            table.style.display = "none"; // データがない場合、テーブルを非表示
+            document.body.style.display = "block"; // 画面を表示
             return;
           }
 
-          // データが存在する場合、テーブルを表示
-          table.style.display = "table";
-
-          // データを降順にソートしてテーブルに表示
+          table.style.display = "table"; // テーブルを表示
           const sortedAreas = allAreas.sort((a, b) => b.maxHeight - a.maxHeight);
           sortedAreas.forEach(area => {
             const row = document.createElement("tr");
 
-            // 種別ごとの色設定
             let rowClass = "";
             if (area.grade === "Watch") {
-              rowClass = "watch"; // 津波注意報
+              rowClass = "watch";
             } else if (area.grade === "Warning") {
-              rowClass = "warning"; // 津波警報
+              rowClass = "warning";
             } else if (area.grade === "BigWarning") {
-              rowClass = "big-warning"; // 大津波警報
+              rowClass = "big-warning";
             }
-
             row.className = rowClass;
 
-            // 地域名
             const areaCell = document.createElement("td");
             areaCell.textContent = area.name;
             row.appendChild(areaCell);
 
-            // 種別
             const gradeCell = document.createElement("td");
             gradeCell.textContent = area.grade === "Watch" ? "津波注意報" :
                                     area.grade === "Warning" ? "津波警報" : "大津波警報";
             row.appendChild(gradeCell);
 
-            // 最大津波高さ
             const heightCell = document.createElement("td");
             heightCell.textContent = area.description;
             row.appendChild(heightCell);
 
-            // 状況
             const conditionCell = document.createElement("td");
             conditionCell.textContent = area.condition;
             row.appendChild(conditionCell);
 
-            // 発表元
             const sourceCell = document.createElement("td");
             sourceCell.textContent = area.source;
             row.appendChild(sourceCell);
 
-            // 発表時刻
             const timeCell = document.createElement("td");
             timeCell.textContent = area.time;
             row.appendChild(timeCell);
@@ -176,7 +165,7 @@
         })
         .finally(() => {
           clockElement.textContent = timeString; // 時計を更新
-          document.body.style.display = "block"; // すべてを一度に表示
+          document.body.style.display = "block"; // 画面を表示
         });
     }
 
