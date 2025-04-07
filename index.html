@@ -19,7 +19,7 @@
   </style>
 </head>
 <body>
-  <h1></h1>
+  <h1>題名</h1>
   <div id="infoContainer" class="section">読み込み中...</div>
 
   <script>
@@ -93,6 +93,10 @@
 
         if (head?.Headline?.Text) {
           html += `<p><strong>コメント:</strong> ${head.Headline.Text}</p>`;
+        }
+
+        if (body?.Comments?.ForecastComment?.Text) {
+          html += `<p><strong>津波情報:</strong> ${body.Comments.ForecastComment.Text}</p>`;
         }
 
         if (control?.PublishingOffice) {
