@@ -21,17 +21,23 @@
     }
     #infoContainer p {
       margin: 0 0 10px;
-      color: #333;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
     }
     .intensity-group {
-      margin-top: 10px;
+      margin-top: 15px;
     }
     .intensity {
       font-weight: bold;
-      color: #d9534f;
+      margin-bottom: 5px;
     }
-    .pref, .area {
+    .area-info {
       margin-left: 20px;
+      white-space: normal;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      line-height: 1.8;
     }
   </style>
 </head>
@@ -94,18 +100,20 @@
           html += `<p><strong>マグニチュード:</strong> ${eq.Magnitude}</p>`;
         }
 
-        let lat = "不明", lon = "不明";
-        const coordMatch = eq?.Hypocenter?.Area?.Coordinate?.match(/\+([0-9.]+)\+([0-9.]+)(-?[0-9]+)/);
+        let lat = "不明", lon = "不明", depth = "不明";
+        const coordMatch = eq?.Hypocenter?.Area?.Coordinate?.match(/\+([0-9.]+)\+([0-9.]+)(-?[0-9]+)?/);
         if (coordMatch) {
           lat = coordMatch[1];
           lon = coordMatch[2];
           html += `<p><strong>座標:</strong> 緯度 ${lat} / 経度 ${lon}</p>`;
-        }
 
-        let depth = "";
-        if (coordMatch) {
-          depth = Math.abs(parseInt(coordMatch[3], 10)) / 1000;
-          html += `<p><strong>深さ:</strong> ${depth} km</p>`;
+          if (coordMatch[3]) {
+            depth = Math.abs(parseInt(coordMatch[3], 10)) / 1000;
+            html += `<p><strong>深さ:</strong> ${depth} km</p>`;
+          } else {
+            depth = "不明";
+            html += `<p><strong>深さ:</strong> ${depth}</p>`;
+          }
         }
 
         if (eq?.OriginTime) {
@@ -131,13 +139,14 @@
           int.Pref.forEach(pref => {
             if (pref.Area) {
               pref.Area.forEach(area => {
-                const intensity = area.MaxInt;
-                if (!intensityGroups[intensity]) {
-                  intensityGroups[intensity] = [];
-                }
-                intensityGroups[intensity].push({
-                  prefName: pref.Name,
-                  areaName: area.Name
+                area.City?.forEach(city => {
+                  city.IntensityStation?.forEach(station => {
+                    const stationName = station.Name.replace('＊', '');
+                    const intensity = station.MaxInt || area.MaxInt;
+                    if (!intensityGroups[intensity]) intensityGroups[intensity] = {};
+                    if (!intensityGroups[intensity][pref.Name]) intensityGroups[intensity][pref.Name] = new Set();
+                    intensityGroups[intensity][pref.Name].add(stationName);
+                  });
                 });
               });
             }
@@ -146,12 +155,15 @@
           const intensityOrder = ['7', '6強', '6弱', '5強', '5弱', '4', '3', '2', '1', '不明'];
 
           intensityOrder.forEach(intensity => {
-            if (intensityGroups[intensity]) {
+            const group = intensityGroups[intensity];
+            if (group) {
               html += `<div class="intensity-group">
-                         <p class="intensity">最大震度 ${intensity}</p>`;
-              intensityGroups[intensity].forEach(item => {
-                html += `<p class="pref">${item.prefName} - ${item.areaName}</p>`;
-              });
+                         <h2 class="intensity">震度 ${intensity}</h2>`;
+              for (const pref in group) {
+                const stations = Array.from(group[pref]).join('　');
+                html += `<p class="prefecture">[${pref}]</p>
+                         <p class="area-info">${stations}</p>`;
+              }
               html += `</div>`;
             }
           });
@@ -168,7 +180,7 @@
     }
 
     fetchLatestQuakeData();
-    setInterval(fetchLatestQuakeData, 100);
+    setInterval(fetchLatestQuakeData, 500);
   </script>
 </body>
 </html>
