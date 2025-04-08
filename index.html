@@ -7,7 +7,7 @@
     body {
       font-family: sans-serif;
       padding: 20px;
-      background-color: #f4f4f4;
+      background-color: #fff;
     }
     .section {
       background: #fff;
@@ -15,19 +15,40 @@
       margin-bottom: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: none;
+      position: relative;
+      z-index: 1;
+    }
+    #infoContainer p {
+      margin: 0 0 10px;
+      color: #333;
+    }
+    .intensity-group {
+      margin-top: 10px;
+    }
+    .intensity {
+      font-weight: bold;
+      color: #d9534f;
+    }
+    .pref, .area {
+      margin-left: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>題名</h1>
-  <div id="infoContainer" class="section">読み込み中...</div>
+  <div id="infoContainer" class="section"></div>
 
   <script>
+    let lastJsonFile = "";
+
     async function fetchLatestQuakeData() {
       try {
         const listRes = await fetch('https://www.jma.go.jp/bosai/quake/data/list.json');
         const listData = await listRes.json();
         const latestJsonFile = listData[0].json;
+
+        if (latestJsonFile === lastJsonFile) return;
+        lastJsonFile = latestJsonFile;
 
         const quakeRes = await fetch(`https://www.jma.go.jp/bosai/quake/data/${latestJsonFile}`);
         const quakeData = await quakeRes.json();
@@ -42,7 +63,7 @@
         const int = body?.Intensity?.Observation;
 
         if (head?.InfoKind) {
-          document.querySelector("h1").innerHTML = head.InfoKind;
+          html += `<h1><strong>${head.InfoKind}</strong></h1>`;
         }
 
         if (control?.Title) {
@@ -103,15 +124,51 @@
           html += `<p><strong>提供元:</strong> ${control.PublishingOffice}</p>`;
         }
 
+        if (int?.Pref) {
+          html += `<h2><strong>各地の震度情報</strong></h2>`;
+          const intensityGroups = {};
+
+          int.Pref.forEach(pref => {
+            if (pref.Area) {
+              pref.Area.forEach(area => {
+                const intensity = area.MaxInt;
+                if (!intensityGroups[intensity]) {
+                  intensityGroups[intensity] = [];
+                }
+                intensityGroups[intensity].push({
+                  prefName: pref.Name,
+                  areaName: area.Name
+                });
+              });
+            }
+          });
+
+          const intensityOrder = ['7', '6強', '6弱', '5強', '5弱', '4', '3', '2', '1', '不明'];
+
+          intensityOrder.forEach(intensity => {
+            if (intensityGroups[intensity]) {
+              html += `<div class="intensity-group">
+                         <p class="intensity">最大震度 ${intensity}</p>`;
+              intensityGroups[intensity].forEach(item => {
+                html += `<p class="pref">${item.prefName} - ${item.areaName}</p>`;
+              });
+              html += `</div>`;
+            }
+          });
+        }
+
         container.innerHTML = html;
+        container.style.display = "block";
 
       } catch (err) {
-        document.getElementById("infoContainer").innerHTML = "エラー: " + err.message;
+        const container = document.getElementById("infoContainer");
+        container.innerHTML = "エラー: " + err.message;
+        container.style.display = "block";
       }
     }
 
     fetchLatestQuakeData();
-    setInterval(fetchLatestQuakeData, 1000);
+    setInterval(fetchLatestQuakeData, 100);
   </script>
 </body>
 </html>
