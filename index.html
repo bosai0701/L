@@ -40,11 +40,6 @@
       white-space: normal;
       word-break: keep-all;
       overflow-wrap: break-word;
-      font-size: 14px;
-      max-width: 100%;
-      line-height: 1.8;
-      letter-spacing: 0.05em;
-      padding-bottom: 0.8em;
     }
   </style>
 </head>
@@ -63,7 +58,7 @@
         if (latestJsonFile === lastJsonFile) return;
         lastJsonFile = latestJsonFile;
 
-        const quakeRes = await fetch(`https://www.jma.go.jp/bosai/quake/data/20250319132909_20250319132516_VXSE5k_1.json`);
+        const quakeRes = await fetch(`https://www.jma.go.jp/bosai/quake/data/${latestJsonFile}`);
         const quakeData = await quakeRes.json();
 
         const container = document.getElementById("infoContainer");
@@ -118,7 +113,7 @@
             depth = Math.abs(parseInt(coordMatch[3], 10)) / 1000;
             html += `<p><strong>深さ:</strong> ${depth} km</p>`;
           } else {
-            html += `<p><strong>深さ:</strong> 不明</p>`;
+            html += `<p><strong>深さ:</strong> ${depth}</p>`;
           }
         }
 
