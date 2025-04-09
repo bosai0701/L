@@ -63,7 +63,7 @@
         if (latestJsonFile === lastJsonFile) return;
         lastJsonFile = latestJsonFile;
 
-        const quakeRes = await fetch(`https://www.jma.go.jp/bosai/quake/data/${latestJsonFile}`);
+        const quakeRes = await fetch(`https://www.jma.go.jp/bosai/quake/data/20250319132909_20250319132516_VXSE5k_1.json`);
         const quakeData = await quakeRes.json();
 
         const container = document.getElementById("infoContainer");
