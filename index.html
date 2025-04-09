@@ -32,12 +32,19 @@
       font-weight: bold;
       margin-bottom: 5px;
     }
+    .prefecture {
+      margin-top: 10px;
+      font-weight: bold;
+    }
     .area-info {
-      margin-left: 20px;
       white-space: normal;
       word-break: keep-all;
       overflow-wrap: break-word;
+      font-size: 14px;
+      max-width: 100%;
       line-height: 1.8;
+      letter-spacing: 0.05em;
+      padding-bottom: 0.8em;
     }
   </style>
 </head>
@@ -111,8 +118,7 @@
             depth = Math.abs(parseInt(coordMatch[3], 10)) / 1000;
             html += `<p><strong>深さ:</strong> ${depth} km</p>`;
           } else {
-            depth = "不明";
-            html += `<p><strong>深さ:</strong> ${depth}</p>`;
+            html += `<p><strong>深さ:</strong> 不明</p>`;
           }
         }
 
