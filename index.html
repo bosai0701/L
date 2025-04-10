@@ -177,8 +177,9 @@
         container.style.display = "block";
 
       } catch (err) {
-        document.getElementById("infoContainer").innerHTML = "エラー: " + err.message;
-        document.getElementById("infoContainer").style.display = "block";
+        const container = document.getElementById("infoContainer");
+        container.innerHTML = "エラー: " + err.message;
+        container.style.display = "block";
       }
     }
 
