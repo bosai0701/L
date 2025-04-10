@@ -73,37 +73,14 @@
         const eq = body?.Earthquake;
         const int = body?.Intensity?.Observation;
 
-        if (head?.InfoKind) {
-          html += `<h1><strong>${head.InfoKind}</strong></h1>`;
-        }
-
-        if (control?.Title) {
-          html += `<p><strong>詳細情報:</strong> ${control.Title}</p>`;
-        }
-
-        if (control?.EditorialOffice) {
-          html += `<p><strong>編集官署:</strong> ${control.EditorialOffice}</p>`;
-        }
-
-        if (head?.InfoType && head?.Serial) {
-          html += `<p><strong>情報種別:</strong> ${head.InfoType} ${head.Serial}</p>`;
-        }
-
-        if (eq?.Hypocenter?.Area?.Name) {
-          html += `<p><strong>震源地:</strong> ${eq.Hypocenter.Area.Name}</p>`;
-        }
-
-        if (eq?.Hypocenter?.Area?.Code) {
-          html += `<p><strong>震央コード:</strong> ${eq.Hypocenter.Area.Code}</p>`;
-        }
-
-        if (int?.MaxInt) {
-          html += `<p><strong>最大震度:</strong> ${int.MaxInt}</p>`;
-        }
-
-        if (eq?.Magnitude) {
-          html += `<p><strong>マグニチュード:</strong> ${eq.Magnitude}</p>`;
-        }
+        if (head?.InfoKind) html += `<h1><strong>${head.InfoKind}</strong></h1>`;
+        if (control?.Title) html += `<p><strong>詳細情報:</strong> ${control.Title}</p>`;
+        if (control?.EditorialOffice) html += `<p><strong>編集官署:</strong> ${control.EditorialOffice}</p>`;
+        if (head?.InfoType && head?.Serial) html += `<p><strong>情報種別:</strong> ${head.InfoType} ${head.Serial}</p>`;
+        if (eq?.Hypocenter?.Area?.Name) html += `<p><strong>震源地:</strong> ${eq.Hypocenter.Area.Name}</p>`;
+        if (eq?.Hypocenter?.Area?.Code) html += `<p><strong>震央コード:</strong> ${eq.Hypocenter.Area.Code}</p>`;
+        if (int?.MaxInt) html += `<p><strong>最大震度:</strong> ${int.MaxInt}</p>`;
+        if (eq?.Magnitude) html += `<p><strong>マグニチュード:</strong> ${eq.Magnitude}</p>`;
 
         let lat = "不明", lon = "不明", depth = "不明";
         const coordMatch = eq?.Hypocenter?.Area?.Coordinate?.match(/\+([0-9.]+)\+([0-9.]+)(-?[0-9]+)?/);
@@ -124,17 +101,9 @@
           html += `<p><strong>発生時刻:</strong> ${new Date(eq.OriginTime).toLocaleString()}</p>`;
         }
 
-        if (head?.Headline?.Text) {
-          html += `<p><strong>コメント:</strong> ${head.Headline.Text}</p>`;
-        }
-
-        if (body?.Comments?.ForecastComment?.Text) {
-          html += `<p><strong>津波情報:</strong> ${body.Comments.ForecastComment.Text}</p>`;
-        }
-
-        if (control?.PublishingOffice) {
-          html += `<p><strong>提供元:</strong> ${control.PublishingOffice}</p>`;
-        }
+        if (head?.Headline?.Text) html += `<p><strong>コメント:</strong> ${head.Headline.Text}</p>`;
+        if (body?.Comments?.ForecastComment?.Text) html += `<p><strong>津波情報:</strong> ${body.Comments.ForecastComment.Text}</p>`;
+        if (control?.PublishingOffice) html += `<p><strong>提供元:</strong> ${control.PublishingOffice}</p>`;
 
         if (int?.Pref) {
           html += `<h2><strong>各地の震度情報</strong></h2>`;
@@ -157,16 +126,13 @@
           });
 
           const intensityOrder = ['7', '6強', '6弱', '5強', '5弱', '4', '3', '2', '1', '不明'];
-
           intensityOrder.forEach(intensity => {
             const group = intensityGroups[intensity];
             if (group) {
-              html += `<div class="intensity-group">
-                         <h2 class="intensity">震度 ${intensity}</h2>`;
+              html += `<div class="intensity-group"><h2 class="intensity">震度 ${intensity}</h2>`;
               for (const pref in group) {
                 const stations = Array.from(group[pref]).join('　');
-                html += `<p class="prefecture">[${pref}]</p>
-                         <p class="area-info">${stations}</p>`;
+                html += `<p class="prefecture">[${pref}]</p><p class="area-info">${stations}</p>`;
               }
               html += `</div>`;
             }
@@ -175,8 +141,8 @@
 
         container.innerHTML = html;
         container.style.display = "block";
-
       } catch (err) {
+        // 本当に失敗したときだけ表示（読み込み途中では沈黙）
         const container = document.getElementById("infoContainer");
         container.innerHTML = "エラー: " + err.message;
         container.style.display = "block";
