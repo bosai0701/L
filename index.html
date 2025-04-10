@@ -55,46 +55,63 @@
     async function fetchLatestQuakeData() {
       try {
         const listRes = await fetch('https://www.jma.go.jp/bosai/quake/data/list.json');
-        if (!listRes.ok) throw new Error("地震リストの取得に失敗");
-
         const listData = await listRes.json();
-        const latestJsonFile = listData?.[0]?.json;
-        if (!latestJsonFile) throw new Error("最新の地震データが存在しません");
+        const latestJsonFile = listData[0].json;
 
         if (latestJsonFile === lastJsonFile) return;
         lastJsonFile = latestJsonFile;
 
         const quakeRes = await fetch(`https://www.jma.go.jp/bosai/quake/data/${latestJsonFile}`);
-        if (!quakeRes.ok) throw new Error("地震データの取得に失敗");
-
         const quakeData = await quakeRes.json();
 
         const container = document.getElementById("infoContainer");
         let html = "";
 
-        const control = quakeData?.Control || {};
-        const head = quakeData?.Head || {};
-        const body = quakeData?.Body || {};
-        const eq = body?.Earthquake || {};
-        const int = body?.Intensity?.Observation || {};
+        const control = quakeData.Control;
+        const head = quakeData.Head;
+        const body = quakeData.Body;
+        const eq = body?.Earthquake;
+        const int = body?.Intensity?.Observation;
 
-        if (head.InfoKind) html += `<h1><strong>${head.InfoKind}</strong></h1>`;
-        if (control.Title) html += `<p><strong>詳細情報:</strong> ${control.Title}</p>`;
-        if (control.EditorialOffice) html += `<p><strong>編集官署:</strong> ${control.EditorialOffice}</p>`;
-        if (head.InfoType && head.Serial) html += `<p><strong>情報種別:</strong> ${head.InfoType} ${head.Serial}</p>`;
-        if (eq.Hypocenter?.Area?.Name) html += `<p><strong>震源地:</strong> ${eq.Hypocenter.Area.Name}</p>`;
-        if (eq.Hypocenter?.Area?.Code) html += `<p><strong>震央コード:</strong> ${eq.Hypocenter.Area.Code}</p>`;
-        if (int.MaxInt) html += `<p><strong>最大震度:</strong> ${int.MaxInt}</p>`;
-        if (eq.Magnitude !== undefined) html += `<p><strong>マグニチュード:</strong> ${eq.Magnitude}</p>`;
+        if (head?.InfoKind) {
+          html += `<h1><strong>${head.InfoKind}</strong></h1>`;
+        }
 
-        // 座標・深さ
+        if (control?.Title) {
+          html += `<p><strong>詳細情報:</strong> ${control.Title}</p>`;
+        }
+
+        if (control?.EditorialOffice) {
+          html += `<p><strong>編集官署:</strong> ${control.EditorialOffice}</p>`;
+        }
+
+        if (head?.InfoType && head?.Serial) {
+          html += `<p><strong>情報種別:</strong> ${head.InfoType} ${head.Serial}</p>`;
+        }
+
+        if (eq?.Hypocenter?.Area?.Name) {
+          html += `<p><strong>震源地:</strong> ${eq.Hypocenter.Area.Name}</p>`;
+        }
+
+        if (eq?.Hypocenter?.Area?.Code) {
+          html += `<p><strong>震央コード:</strong> ${eq.Hypocenter.Area.Code}</p>`;
+        }
+
+        if (int?.MaxInt) {
+          html += `<p><strong>最大震度:</strong> ${int.MaxInt}</p>`;
+        }
+
+        if (eq?.Magnitude) {
+          html += `<p><strong>マグニチュード:</strong> ${eq.Magnitude}</p>`;
+        }
+
         let lat = "不明", lon = "不明", depth = "不明";
-        const coord = eq.Hypocenter?.Area?.Coordinate;
-        const coordMatch = coord?.match(/\+([0-9.]+)\+([0-9.]+)(-?[0-9]+)?/);
+        const coordMatch = eq?.Hypocenter?.Area?.Coordinate?.match(/\+([0-9.]+)\+([0-9.]+)(-?[0-9]+)?/);
         if (coordMatch) {
           lat = coordMatch[1];
           lon = coordMatch[2];
           html += `<p><strong>座標:</strong> 緯度 ${lat} / 経度 ${lon}</p>`;
+
           if (coordMatch[3]) {
             depth = Math.abs(parseInt(coordMatch[3], 10)) / 1000;
             html += `<p><strong>深さ:</strong> ${depth} km</p>`;
@@ -103,43 +120,44 @@
           }
         }
 
-        if (eq.OriginTime) {
-          const time = new Date(eq.OriginTime);
-          html += `<p><strong>発生時刻:</strong> ${time.toLocaleString()}</p>`;
+        if (eq?.OriginTime) {
+          html += `<p><strong>発生時刻:</strong> ${new Date(eq.OriginTime).toLocaleString()}</p>`;
         }
 
-        if (head.Headline?.Text) {
+        if (head?.Headline?.Text) {
           html += `<p><strong>コメント:</strong> ${head.Headline.Text}</p>`;
         }
 
-        if (body.Comments?.ForecastComment?.Text) {
+        if (body?.Comments?.ForecastComment?.Text) {
           html += `<p><strong>津波情報:</strong> ${body.Comments.ForecastComment.Text}</p>`;
         }
 
-        if (control.PublishingOffice) {
+        if (control?.PublishingOffice) {
           html += `<p><strong>提供元:</strong> ${control.PublishingOffice}</p>`;
         }
 
-        // 各地の震度
         if (int?.Pref) {
           html += `<h2><strong>各地の震度情報</strong></h2>`;
           const intensityGroups = {};
 
           int.Pref.forEach(pref => {
-            pref.Area?.forEach(area => {
-              area.City?.forEach(city => {
-                city.IntensityStation?.forEach(station => {
-                  const name = station?.Name?.replace('＊', '') || "不明地点";
-                  const intensity = station?.MaxInt || area?.MaxInt || "不明";
-                  if (!intensityGroups[intensity]) intensityGroups[intensity] = {};
-                  if (!intensityGroups[intensity][pref.Name]) intensityGroups[intensity][pref.Name] = new Set();
-                  intensityGroups[intensity][pref.Name].add(name);
+            if (pref.Area) {
+              pref.Area.forEach(area => {
+                area.City?.forEach(city => {
+                  city.IntensityStation?.forEach(station => {
+                    const stationName = station.Name.replace('＊', '');
+                    const intensity = station.MaxInt || area.MaxInt;
+                    if (!intensityGroups[intensity]) intensityGroups[intensity] = {};
+                    if (!intensityGroups[intensity][pref.Name]) intensityGroups[intensity][pref.Name] = new Set();
+                    intensityGroups[intensity][pref.Name].add(stationName);
+                  });
                 });
               });
-            });
+            }
           });
 
           const intensityOrder = ['7', '6強', '6弱', '5強', '5弱', '4', '3', '2', '1', '不明'];
+
           intensityOrder.forEach(intensity => {
             const group = intensityGroups[intensity];
             if (group) {
@@ -159,8 +177,8 @@
         container.style.display = "block";
 
       } catch (err) {
-        console.error("エラー:", err);
         const container = document.getElementById("infoContainer");
+        container.innerHTML = "エラー: " + err.message;
         container.style.display = "block";
       }
     }
