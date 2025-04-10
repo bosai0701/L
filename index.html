@@ -55,15 +55,16 @@
     async function fetchLatestQuakeData() {
       try {
         const listRes = await fetch('https://www.jma.go.jp/bosai/quake/data/list.json');
-        if (!listRes.ok) return;
+        if (!listRes.ok) throw new Error("list.json fetch failed");
         const listData = await listRes.json();
-        const latestJsonFile = listData[0].json;
+        const latestJsonFile = listData[0]?.json;
+        if (!latestJsonFile) return;
 
         if (latestJsonFile === lastJsonFile) return;
         lastJsonFile = latestJsonFile;
 
         const quakeRes = await fetch(`https://www.jma.go.jp/bosai/quake/data/${latestJsonFile}`);
-        if (!quakeRes.ok) return;
+        if (!quakeRes.ok) throw new Error("quake data fetch failed");
         const quakeData = await quakeRes.json();
 
         const container = document.getElementById("infoContainer");
@@ -179,7 +180,7 @@
         container.style.display = "block";
 
       } catch (err) {
-        if (!(err instanceof TypeError)) {
+        if (err instanceof TypeError || err.message.includes("fetch")) {
           const container = document.getElementById("infoContainer");
           container.innerHTML = "エラー: " + err.message;
           container.style.display = "block";
