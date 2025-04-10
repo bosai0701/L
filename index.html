@@ -142,7 +142,7 @@
         container.innerHTML = html;
         container.style.display = "block";
       } catch (err) {
-        // 本当に失敗したときだけ表示（読み込み途中では沈黙）
+        if (err.message === "Load failed") return; // 絶対に出さない
         const container = document.getElementById("infoContainer");
         container.innerHTML = "エラー: " + err.message;
         container.style.display = "block";
