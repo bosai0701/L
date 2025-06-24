@@ -94,7 +94,7 @@
   </style>
 </head>
 <body>
-  <h1 style="margin-bottom: 20px; margin-left: 20px; font-size: 2em;">地震情報リスト</h1>
+  <h1 id="pageTitle" style="display:none; margin-bottom: 20px; margin-left: 20px; font-size: 2em;">地震情報リスト</h1>
   <div id="quakeContainer"></div>
 
   <script>
@@ -245,6 +245,7 @@
         if (!newestJsonFile || newestJsonFile === lastJsonFile) return;
         lastJsonFile = newestJsonFile;
         await fetchAllAvailableQuakes(jsonList);
+        document.getElementById("pageTitle").style.display = "block"; // ← ここでタイトル表示
       } catch {}
     }
 
