@@ -2,160 +2,276 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>地震情報</title>
+  <title>地震情報リスト</title>
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
   <style>
     body {
       font-family: sans-serif;
+      margin: 0;
+      background: #f4f4f4;
       padding: 20px;
-      background-color: #fff;
     }
-    .section {
-      background: #fff;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: none;
+
+    .quake-card {
       position: relative;
-      z-index: 1;
+      background: white;
+      border-left: 8px solid #999;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    #infoContainer p {
-      margin: 0 0 10px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      white-space: pre-wrap;
+
+    .quake-card:hover {
+      background: #f9f9f9;
     }
-    .intensity-group {
-      margin-top: 15px;
-    }
-    .intensity {
+
+    .quake-header {
       font-weight: bold;
+      font-size: 1.1em;
       margin-bottom: 5px;
     }
-    .prefecture {
-      margin-top: 10px;
-      font-weight: bold;
+
+    .quake-arrow {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
     }
-    .area-info {
+
+    .quake-card.open .quake-arrow {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .quake-meta {
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    .quake-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s ease, padding-top 0.4s ease;
+      opacity: 0;
+      padding-top: 0;
+      font-size: 0.9em;
+      line-height: 1.6em;
+      color: #333;
+    }
+
+    .quake-detail.open {
+      opacity: 1;
+      padding-top: 10px;
+    }
+
+    .quake-detail-section {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+    }
+
+    .shindo-block {
       white-space: normal;
       word-break: keep-all;
       overflow-wrap: break-word;
-      line-height: 1.8;
     }
-    .intensity-group p {
-      line-height: 1.8;
+
+    .border-7 { border-left-color: #AB20B2; }
+    .border-6強 { border-left-color: #701010; }
+    .border-6弱 { border-left-color: #BD2D22; }
+    .border-5強 { border-left-color: #DF6D2B; }
+    .border-5弱 { border-left-color: #FEA02F; }
+    .border-4 { border-left-color: #FFEB30; }
+    .border-3 { border-left-color: #84D384; }
+    .border-2 { border-left-color: #318FBF; }
+    .border-1 { border-left-color: #215070; }
+    .border-不明 { border-left-color: #2F4F4F; }
+
+    #errorMessage {
+      color: #c00;
+      background: #ffe0e0;
+      border: 1px solid #c00;
+      padding: 10px;
+      margin: 10px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div id="infoContainer" class="section"></div>
+  <h1 id="pageTitle" style="display:none; margin-bottom: 20px; margin-left: 20px; font-size: 2em;">地震情報リスト</h1>
+  <div id="errorMessage"></div>
+  <div id="quakeContainer"></div>
 
   <script>
+    const container = document.getElementById("quakeContainer");
+    const errorMessage = document.getElementById("errorMessage");
+
+    const intensityClassMap = {
+      "7": "border-7", "6強": "border-6強", "6弱": "border-6弱",
+      "5強": "border-5強", "5弱": "border-5弱", "4": "border-4",
+      "3": "border-3", "2": "border-2", "1": "border-1", "不明": "border-不明"
+    };
+
     let lastJsonFile = "";
 
-    async function fetchLatestQuakeData() {
-      try {
-        const listRes = await fetch('https://www.jma.go.jp/bosai/quake/data/list.json');
-        const listData = await listRes.json();
-        const latestJsonFile = listData[0].json;
+    function toggleCard(card, detail, arrow) {
+      const isOpen = card.classList.toggle('open');
+      if (isOpen) {
+        detail.classList.add('open');
+        detail.style.maxHeight = detail.scrollHeight + "px";
+        arrow.style.transform = "translateY(-50%) rotate(180deg)";
+      } else {
+        detail.classList.remove('open');
+        detail.style.maxHeight = 0;
+        arrow.style.transform = "translateY(-50%) rotate(0deg)";
+      }
+    }
 
-        if (latestJsonFile === lastJsonFile) return;
-        lastJsonFile = latestJsonFile;
+    async function fetchAllAvailableQuakes(jsonList) {
+      const fragment = document.createDocumentFragment();
 
-        const quakeRes = await fetch(`https://www.jma.go.jp/bosai/quake/data/${latestJsonFile}`);
-        const quakeData = await quakeRes.json();
+      const fetches = jsonList.map(item =>
+        fetch(`https://www.jma.go.jp/bosai/quake/data/${item.json}`)
+          .then(res => res.json())
+          .catch(() => null)
+      );
 
-        const container = document.getElementById("infoContainer");
-        let html = "";
+      const results = await Promise.all(fetches);
 
-        const control = quakeData.Control;
-        const head = quakeData.Head;
+      for (const quakeData of results) {
+        if (!quakeData) continue;
+
         const body = quakeData.Body;
         const eq = body?.Earthquake;
         const int = body?.Intensity?.Observation;
+        if (!eq || !int) continue;
 
-        if (head?.InfoKind) html += `<h1><strong>${head.InfoKind}</strong></h1>`;
-        if (control?.Title) html += `<p><strong>詳細情報:</strong> ${control.Title}</p>`;
-        if (control?.EditorialOffice) html += `<p><strong>編集官署:</strong> ${control.EditorialOffice}</p>`;
-        if (head?.InfoType && head?.Serial) html += `<p><strong>情報種別:</strong> ${head.InfoType} ${head.Serial}</p>`;
-        if (eq?.Hypocenter?.Area?.Name) html += `<p><strong>震源地:</strong> ${eq.Hypocenter.Area.Name}</p>`;
-        if (eq?.Hypocenter?.Area?.Code) html += `<p><strong>震央コード:</strong> ${eq.Hypocenter.Area.Code}</p>`;
-        if (int?.MaxInt) html += `<p><strong>最大震度:</strong> ${int.MaxInt}</p>`;
-        if (eq?.Magnitude) html += `<p><strong>マグニチュード:</strong> ${eq.Magnitude}</p>`;
+        const control = quakeData.Control;
+        const head = quakeData.Head;
 
-        let lat = "不明", lon = "不明", depth = "不明";
-        const coordMatch = eq?.Hypocenter?.Area?.Coordinate?.match(/\+([0-9.]+)\+([0-9.]+)(-?[0-9]+)?/);
-        if (coordMatch) {
-          lat = coordMatch[1];
-          lon = coordMatch[2];
-          html += `<p><strong>座標:</strong> 緯度 ${lat} / 経度 ${lon}</p>`;
+        let maxInt = int?.MaxInt?.replace('5-', '5弱').replace('5+', '5強')
+                                  .replace('6-', '6弱').replace('6+', '6強') || '不明';
+        const className = intensityClassMap[maxInt] || 'border-不明';
+        const hypocenter = eq?.Hypocenter?.Area?.Name || "震源不明";
 
-          if (coordMatch[3]) {
-            depth = Math.abs(parseInt(coordMatch[3], 10)) / 1000;
-            html += `<p><strong>深さ:</strong> ${depth} km</p>`;
-          } else {
-            html += `<p><strong>深さ:</strong> ${depth}</p>`;
+        const card = document.createElement("div");
+        card.className = `quake-card ${className}`;
+
+        const header = document.createElement("div");
+        header.className = "quake-header";
+        header.innerText = `最大震度${maxInt} - ${hypocenter}`;
+        card.appendChild(header);
+
+        const arrow = document.createElement("span");
+        arrow.className = "quake-arrow";
+        arrow.innerText = "▼";
+        card.appendChild(arrow);
+
+        const time = document.createElement("div");
+        time.className = "quake-meta";
+        if (eq?.OriginTime) {
+          time.innerText = `発生時刻: ${new Date(eq.OriginTime).toLocaleString()}`;
+        }
+        card.appendChild(time);
+
+        const detail = document.createElement("div");
+        detail.className = "quake-detail";
+
+        let html = "";
+        if (control?.Title) html += `詳細情報: ${control.Title}<br>`;
+        if (control?.EditorialOffice) html += `編集官署: ${control.EditorialOffice}<br>`;
+        if (head?.InfoType && head?.Serial) html += `情報種別: ${head.InfoType} ${head.Serial}<br>`;
+        if (eq?.Hypocenter?.Area?.Code) html += `震央コード: ${eq.Hypocenter.Area.Code}<br>`;
+        if (eq?.Magnitude) html += `マグニチュード: ${eq.Magnitude}<br>`;
+
+        const coord = eq?.Hypocenter?.Area?.Coordinate;
+        if (coord && /^[\+\-][0-9.]+[\+\-][0-9.]+/.test(coord)) {
+          const match = coord.match(/([+\-][0-9.]+)([+\-][0-9.]+)([+\-][0-9]+)?/);
+          if (match) {
+            const lat = match[1].replace(/[+\-]/g, '');
+            const lon = match[2].replace(/[+\-]/g, '');
+            html += `座標: 緯度 ${lat} / 経度 ${lon}<br>`;
+            if (match[3]) {
+              const depth = Math.abs(parseInt(match[3], 10)) / 1000;
+              html += `深さ: ${depth === 0 ? "ごく浅い" : `約${depth}km`}<br>`;
+            }
           }
         }
 
-        if (eq?.OriginTime) {
-          html += `<p><strong>発生時刻:</strong> ${new Date(eq.OriginTime).toLocaleString()}</p>`;
-        }
+        if (head?.Headline?.Text) html += `コメント: ${head.Headline.Text}<br>`;
+        if (body?.Comments?.ForecastComment?.Text) html += `津波情報: ${body.Comments.ForecastComment.Text}<br>`;
+        if (control?.PublishingOffice) html += `提供元: ${control.PublishingOffice}<br>`;
 
-        if (head?.Headline?.Text) html += `<p><strong>コメント:</strong> ${head.Headline.Text}</p>`;
-        if (body?.Comments?.ForecastComment?.Text) html += `<p><strong>津波情報:</strong> ${body.Comments.ForecastComment.Text}</p>`;
-        if (control?.PublishingOffice) html += `<p><strong>提供元:</strong> ${control.PublishingOffice}</p>`;
-
-        if (int?.Pref) {
-          html += `<h2><strong>各地の震度情報</strong></h2>`;
+        if (int?.Pref?.length > 0) {
           const intensityGroups = {};
-
           int.Pref.forEach(pref => {
-            if (pref.Area) {
-              pref.Area.forEach(area => {
-                area.City?.forEach(city => {
-                  city.IntensityStation?.forEach(station => {
-                    const stationName = station.Name.replace('＊', '');
-                    const intensity = station.Int || '不明';
-
-                    if (!intensityGroups[intensity]) intensityGroups[intensity] = {};
-                    if (!intensityGroups[intensity][pref.Name]) intensityGroups[intensity][pref.Name] = new Set();
-                    intensityGroups[intensity][pref.Name].add(stationName);
-                  });
+            pref.Area?.forEach(area => {
+              area.City?.forEach(city => {
+                city.IntensityStation?.forEach(station => {
+                  let intensity = station.Int || '不明';
+                  intensity = intensity.replace('5-', '5弱').replace('5+', '5強')
+                                       .replace('6-', '6弱').replace('6+', '6強');
+                  const name = station.Name.replace('＊', '');
+                  if (!intensityGroups[intensity]) intensityGroups[intensity] = {};
+                  if (!intensityGroups[intensity][pref.Name]) intensityGroups[intensity][pref.Name] = new Set();
+                  intensityGroups[intensity][pref.Name].add(name);
                 });
               });
-            }
+            });
           });
 
           const intensityOrder = ['7', '6強', '6弱', '5強', '5弱', '4', '3', '2', '1', '不明'];
+          html += `<div class="quake-detail-section shindo-block"><strong>各地の震度</strong><br>`;
           intensityOrder.forEach(intensity => {
-            const group = intensityGroups[intensity];
-            if (group) {
-              html += `<div class="intensity-group"><h2 class="intensity">震度 ${intensity}</h2>`;
-              for (const pref in group) {
-                const stations = Array.from(group[pref]).join('　');
-                html += `<p class="prefecture">[${pref}]</p><p class="area-info">${stations}</p>`;
+            if (intensityGroups[intensity]) {
+              html += `<div style="font-weight:bold; margin-top:8px;">震度 ${intensity}</div>`;
+              for (const pref in intensityGroups[intensity]) {
+                const names = Array.from(intensityGroups[intensity][pref]).join('　');
+                html += `<div>[${pref}]</div><div style="margin-left:10px;">${names}</div>`;
               }
-              html += `</div>`;
             }
           });
+          html += `</div>`;
         }
 
-        container.innerHTML = html;
-        container.style.display = "block";
-      } catch (err) {
+        detail.innerHTML = html;
+        card.appendChild(detail);
+        card.addEventListener("click", () => toggleCard(card, detail, arrow));
+        fragment.appendChild(card);
+      }
+
+      container.innerHTML = "";
+      container.appendChild(fragment);
+    }
+
+    async function checkForUpdates() {
+      try {
+        const res = await fetch('https://www.jma.go.jp/bosai/quake/data/list.json');
+        const jsonList = await res.json();
+        const newestJsonFile = jsonList[0]?.json;
+        if (!newestJsonFile || newestJsonFile === lastJsonFile) return;
+        lastJsonFile = newestJsonFile;
+        await fetchAllAvailableQuakes(jsonList);
+        document.getElementById("pageTitle").style.display = "block";
+        errorMessage.style.display = "none";
+        errorMessage.innerText = "";
+      } catch (e) {
         setTimeout(() => {
-          const container = document.getElementById("infoContainer");
-          container.innerHTML = "エラー: " + err.message;
-          container.style.display = "block";
+          errorMessage.innerText = "地震情報の取得に失敗しました。ネットワークを確認してください。";
+          errorMessage.style.display = "block";
         }, 500);
       }
     }
 
-    fetchLatestQuakeData();
-    setInterval(fetchLatestQuakeData, 500);
+    checkForUpdates();
+    setInterval(checkForUpdates, 500);
   </script>
 </body>
 </html>
