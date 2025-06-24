@@ -247,6 +247,15 @@
         fragment.appendChild(card);
       }
 
+      // 地震データが1件もなかった場合の処理（0.5秒後にエラーメッセージ）
+      if (!fragment.hasChildNodes()) {
+        setTimeout(() => {
+          errorMessage.innerText = "地震データの取得に失敗しました。しばらくしてから再度お試しください。";
+          errorMessage.style.display = "block";
+        }, 500);
+        return;
+      }
+
       container.innerHTML = "";
       container.appendChild(fragment);
     }
@@ -264,7 +273,7 @@
         errorMessage.innerText = "";
       } catch (e) {
         setTimeout(() => {
-          errorMessage.innerText = "地震情報の取得に失敗しました。ネットワークを確認してください。";
+          errorMessage.innerText = "地震情報の取得に失敗しました。ネットワークや気象庁のサーバーをご確認ください。";
           errorMessage.style.display = "block";
         }, 500);
       }
