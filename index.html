@@ -91,28 +91,14 @@
     .border-2 { border-left-color: #318FBF; }
     .border-1 { border-left-color: #215070; }
     .border-不明 { border-left-color: #2F4F4F; }
-
-    #errorMessage {
-      color: #c00;
-      background: #ffe0e0;
-      border: 1px solid #c00;
-      padding: 10px;
-      margin: 10px 20px;
-      border-radius: 4px;
-      font-weight: bold;
-      display: none;
-    }
   </style>
 </head>
 <body>
-  <h1 id="pageTitle" style="display:none; margin-bottom: 20px; margin-left: 20px; font-size: 2em;">地震情報リスト</h1>
-  <div id="errorMessage"></div>
+  <h1 style="margin-bottom: 20px; margin-left: 20px; font-size: 2em;">地震情報リスト</h1>
   <div id="quakeContainer"></div>
 
   <script>
     const container = document.getElementById("quakeContainer");
-    const errorMessage = document.getElementById("errorMessage");
-
     const intensityClassMap = {
       "7": "border-7", "6強": "border-6強", "6弱": "border-6弱",
       "5強": "border-5強", "5弱": "border-5弱", "4": "border-4",
@@ -136,10 +122,6 @@
 
     async function fetchAllAvailableQuakes(jsonList) {
       const fragment = document.createDocumentFragment();
-
-      // 成功時に即エラー非表示
-      errorMessage.style.display = "none";
-      errorMessage.innerText = "";
 
       const fetches = jsonList.map(item =>
         fetch(`https://www.jma.go.jp/bosai/quake/data/${item.json}`)
@@ -251,14 +233,6 @@
         fragment.appendChild(card);
       }
 
-      if (!fragment.hasChildNodes()) {
-        setTimeout(() => {
-          errorMessage.innerText = "地震データの取得に失敗しました。しばらくしてから再度お試しください。";
-          errorMessage.style.display = "block";
-        }, 500);
-        return;
-      }
-
       container.innerHTML = "";
       container.appendChild(fragment);
     }
@@ -271,19 +245,11 @@
         if (!newestJsonFile || newestJsonFile === lastJsonFile) return;
         lastJsonFile = newestJsonFile;
         await fetchAllAvailableQuakes(jsonList);
-        document.getElementById("pageTitle").style.display = "block";
-        errorMessage.style.display = "none";
-        errorMessage.innerText = "";
-      } catch (e) {
-        setTimeout(() => {
-          errorMessage.innerText = "地震情報の取得に失敗しました。ネットワークや気象庁のサーバーをご確認ください。";
-          errorMessage.style.display = "block";
-        }, 500);
-      }
+      } catch {}
     }
 
     checkForUpdates();
-    setInterval(checkForUpdates, 500);
+    setInterval(checkForUpdates, 100);
   </script>
 </body>
 </html>
