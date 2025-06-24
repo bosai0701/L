@@ -137,6 +137,10 @@
     async function fetchAllAvailableQuakes(jsonList) {
       const fragment = document.createDocumentFragment();
 
+      // 成功時に即エラー非表示
+      errorMessage.style.display = "none";
+      errorMessage.innerText = "";
+
       const fetches = jsonList.map(item =>
         fetch(`https://www.jma.go.jp/bosai/quake/data/${item.json}`)
           .then(res => res.json())
@@ -247,7 +251,6 @@
         fragment.appendChild(card);
       }
 
-      // 地震データが1件もなかった場合の処理（0.5秒後にエラーメッセージ）
       if (!fragment.hasChildNodes()) {
         setTimeout(() => {
           errorMessage.innerText = "地震データの取得に失敗しました。しばらくしてから再度お試しください。";
