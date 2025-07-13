@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>地震情報リスト</title>
   <link rel="icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="favicon.ico">
   <style>
     body {
       font-family: sans-serif;
@@ -12,7 +11,12 @@
       background: #f4f4f4;
       padding: 20px;
     }
-
+    h1#pageTitle {
+      display: none;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      font-size: 40px;
+    }
     .quake-card {
       position: relative;
       background: white;
@@ -24,17 +28,14 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     .quake-card:hover {
       background: #f9f9f9;
     }
-
     .quake-header {
       font-weight: bold;
       font-size: 1.1em;
       margin-bottom: 5px;
     }
-
     .quake-arrow {
       position: absolute;
       right: 15px;
@@ -43,16 +44,13 @@
       font-size: 1.2em;
       transition: transform 0.3s ease;
     }
-
     .quake-card.open .quake-arrow {
       transform: translateY(-50%) rotate(180deg);
     }
-
     .quake-meta {
       color: #555;
       font-size: 0.9em;
     }
-
     .quake-detail {
       max-height: 0;
       overflow: hidden;
@@ -63,24 +61,20 @@
       line-height: 1.6em;
       color: #333;
     }
-
     .quake-detail.open {
       opacity: 1;
       padding-top: 10px;
     }
-
     .quake-detail-section {
       margin-top: 10px;
       padding-top: 10px;
       border-top: 1px solid #ddd;
     }
-
     .shindo-block {
       white-space: normal;
       word-break: keep-all;
       overflow-wrap: break-word;
     }
-
     .border-7 { border-left-color: #AB20B2; }
     .border-6強 { border-left-color: #701010; }
     .border-6弱 { border-left-color: #BD2D22; }
@@ -94,18 +88,19 @@
   </style>
 </head>
 <body>
-  <h1 id="pageTitle" style="display:none; margin-bottom: 20px; margin-left: 20px; font-size: 40xp;">地震情報リスト</h1>
+  <h1 id="pageTitle">地震情報リスト</h1>
   <div id="quakeContainer"></div>
 
   <script>
     const container = document.getElementById("quakeContainer");
+    const pageTitle = document.getElementById("pageTitle");
+    let lastJsonFile = "";
+
     const intensityClassMap = {
       "7": "border-7", "6強": "border-6強", "6弱": "border-6弱",
       "5強": "border-5強", "5弱": "border-5弱", "4": "border-4",
       "3": "border-3", "2": "border-2", "1": "border-1", "不明": "border-不明"
     };
-
-    let lastJsonFile = "";
 
     function toggleCard(card, detail, arrow) {
       const isOpen = card.classList.toggle('open');
@@ -121,26 +116,23 @@
     }
 
     async function fetchAllAvailableQuakes(jsonList) {
-      const fragment = document.createDocumentFragment();
+      // ページタイトルを表示
+      pageTitle.style.display = "block";
+      container.innerHTML = "";
 
-      const fetches = jsonList.map(item =>
-        fetch(`https://www.jma.go.jp/bosai/quake/data/${item.json}`)
-          .then(res => res.json())
-          .catch(() => null)
-      );
+      for (const item of jsonList) {
+        const res = await fetch(`https://www.jma.go.jp/bosai/quake/data/${item.json}`);
+        const data = await res.json();
 
-      const results = await Promise.all(fetches);
-
-      for (const quakeData of results) {
-        if (!quakeData) continue;
-
-        const body = quakeData.Body;
+        const control = data.Control;
+        const head = data.Head;
+        const body = data.Body;
         const eq = body?.Earthquake;
         const int = body?.Intensity?.Observation;
-        if (!eq || !int) continue;
 
-        const control = quakeData.Control;
-        const head = quakeData.Head;
+        // 「震源・震度」または「遠地地震」以外は無視
+        const title = control?.Title || head?.Title || "";
+        if (!title.includes("震源・震度") && !title.includes("遠地地震")) continue;
 
         let maxInt = int?.MaxInt?.replace('5-', '5弱').replace('5+', '5強')
                                   .replace('6-', '6弱').replace('6+', '6強') || '不明';
@@ -171,6 +163,7 @@
         detail.className = "quake-detail";
 
         let html = "";
+
         if (control?.Title) html += `詳細情報: ${control.Title}<br>`;
         if (control?.EditorialOffice) html += `編集官署: ${control.EditorialOffice}<br>`;
         if (head?.InfoType && head?.Serial) html += `情報種別: ${head.InfoType} ${head.Serial}<br>`;
@@ -193,10 +186,11 @@
 
         if (head?.Headline?.Text) html += `コメント: ${head.Headline.Text}<br>`;
         if (body?.Comments?.ForecastComment?.Text) html += `津波情報: ${body.Comments.ForecastComment.Text}<br>`;
+        if (body?.Comments?.FreeFormComment) html += `備考: ${body.Comments.FreeFormComment}<br>`;
         if (control?.PublishingOffice) html += `提供元: ${control.PublishingOffice}<br>`;
 
         if (int?.Pref?.length > 0) {
-          const intensityGroups = {};
+          const groups = {};
           int.Pref.forEach(pref => {
             pref.Area?.forEach(area => {
               area.City?.forEach(city => {
@@ -205,21 +199,21 @@
                   intensity = intensity.replace('5-', '5弱').replace('5+', '5強')
                                        .replace('6-', '6弱').replace('6+', '6強');
                   const name = station.Name.replace('＊', '');
-                  if (!intensityGroups[intensity]) intensityGroups[intensity] = {};
-                  if (!intensityGroups[intensity][pref.Name]) intensityGroups[intensity][pref.Name] = new Set();
-                  intensityGroups[intensity][pref.Name].add(name);
+                  if (!groups[intensity]) groups[intensity] = {};
+                  if (!groups[intensity][pref.Name]) groups[intensity][pref.Name] = new Set();
+                  groups[intensity][pref.Name].add(name);
                 });
               });
             });
           });
 
-          const intensityOrder = ['7', '6強', '6弱', '5強', '5弱', '4', '3', '2', '1', '不明'];
+          const order = ['7', '6強', '6弱', '5強', '5弱', '4', '3', '2', '1', '不明'];
           html += `<div class="quake-detail-section shindo-block"><strong>各地の震度</strong><br>`;
-          intensityOrder.forEach(intensity => {
-            if (intensityGroups[intensity]) {
-              html += `<div style="font-weight:bold; margin-top:8px;">震度 ${intensity}</div>`;
-              for (const pref in intensityGroups[intensity]) {
-                const names = Array.from(intensityGroups[intensity][pref]).join('　');
+          order.forEach(level => {
+            if (groups[level]) {
+              html += `<div style="font-weight:bold; margin-top:8px;">震度 ${level}</div>`;
+              for (const pref in groups[level]) {
+                const names = Array.from(groups[level][pref]).join('　');
                 html += `<div>[${pref}]</div><div style="margin-left:10px;">${names}</div>`;
               }
             }
@@ -230,27 +224,26 @@
         detail.innerHTML = html;
         card.appendChild(detail);
         card.addEventListener("click", () => toggleCard(card, detail, arrow));
-        fragment.appendChild(card);
+        container.appendChild(card);
       }
-
-      container.innerHTML = "";
-      container.appendChild(fragment);
     }
 
     async function checkForUpdates() {
       try {
         const res = await fetch('https://www.jma.go.jp/bosai/quake/data/list.json');
         const jsonList = await res.json();
-        const newestJsonFile = jsonList[0]?.json;
-        if (!newestJsonFile || newestJsonFile === lastJsonFile) return;
-        lastJsonFile = newestJsonFile;
+        const latest = jsonList[0]?.json;
+        if (!latest || latest === lastJsonFile) return;
+        lastJsonFile = latest;
         await fetchAllAvailableQuakes(jsonList);
-        document.getElementById("pageTitle").style.display = "block"; // ← ここでタイトル表示
-      } catch {}
+      } catch (e) {
+        container.innerHTML = "エラー: " + e.message;
+      }
     }
 
+    // 初回実行と自動更新
     checkForUpdates();
-    setInterval(checkForUpdates, 100);
+    setInterval(checkForUpdates, 500); // 0.5秒ごとに更新チェック
   </script>
 </body>
 </html>
