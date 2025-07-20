@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>5分前 雨雲レーダー</title>
-  <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+  <title>雨雲レーダー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     html, body, #map {
@@ -21,7 +21,11 @@
       will-change: transform;
       transform: translateZ(0);
       backface-visibility: hidden;
-      filter: contrast(1.2) saturate(1.2) drop-shadow(0 0 0.5px rgba(0,0,0,0.1));
+    }
+
+    /* Cartoベース地図だけ暗くする */
+    .leaflet-tile[src*="basemaps.cartocdn.com"] {
+      filter: brightness(0.55) contrast(3.5) saturate(0);
     }
 
     .gsi-tile {
@@ -74,13 +78,13 @@
   <script>
     const map = L.map("map", {
       center: [34.5, 134.5],
-      zoom: 5,
+      zoom: 4,
       maxZoom: 14,
       minZoom: 3,
       zoomControl: false
     });
 
-    L.tileLayer("https://basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png", {
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png", {
       maxZoom: 16,
       minZoom: 1,
       attribution: "© GSI Japan",
