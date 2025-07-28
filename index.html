@@ -23,7 +23,6 @@
       backface-visibility: hidden;
     }
 
-    /* Cartoベース地図だけ暗くする */
     .leaflet-tile[src*="basemaps.cartocdn.com"] {
       filter: brightness(0.55) contrast(3.5) saturate(0);
     }
@@ -70,8 +69,12 @@
   <div id="map"></div>
   <div id="clock"></div>
   <div id="attribution">
-    <div><a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener noreferrer">地理院地図</a></div>
-    <div><a href="https://www.jma.go.jp/bosai/nowc/" target="_blank" rel="noopener noreferrer">気象庁ナウキャスト</a></div>
+    <div>
+      <a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener noreferrer">地理院地図</a>
+    </div>
+    <div>
+      <a href="https://www.jma.go.jp/bosai/nowc/" target="_blank" rel="noopener noreferrer">気象庁ナウキャスト</a>
+    </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -118,7 +121,7 @@
       const hh = String(dateObj.getUTCHours()).padStart(2, "0");
       const mi = String(dateObj.getUTCMinutes()).padStart(2, "0");
 
-      return `https://tile.weathernews.jp/3/tile/rad_anl/${yyyy}/${mm}/${dd}/${yyyy}-${mm}-${dd}-${hh}-${mi}_Tiles_999999999999/{z}_{x}_{y}.png`;
+      return `https://tile.weathernews.jp/2/tile/rad_anl/${yyyy}/${mm}/${dd}/${yyyy}-${mm}-${dd}-${hh}-${mi}_Tiles_999999999999/{z}_{x}_{y}.png`;
     }
 
     function updateRainLayer() {
@@ -142,8 +145,23 @@
       const ss = String(now.getSeconds()).padStart(2, '0');
       document.getElementById('clock').textContent = `${y}-${m}-${d} ${hh}:${mm}:${ss}`;
     }
+
     updateClock();
     setInterval(updateClock, 100);
+
+    map.createPane("maskPane");
+    map.getPane("maskPane").style.zIndex = 1000;
+
+    const maskLayer = L.tileLayer(
+      "https://www.jma.go.jp/bosai/jmatile/data/map/none/none/none/surf/mask/{z}/{x}/{y}.png",
+      {
+        tileSize: 256,
+        opacity: 1.0,
+        pane: "maskPane",
+        zIndex: 1000,
+        attribution: "JMA"
+      }
+    ).addTo(map);
   </script>
 </body>
 </html>
