@@ -2,260 +2,231 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>地震情報リスト</title>
-  <link rel="icon" href="favicon.ico">
+  <title>緊急地震速報（EEW）ビューワ</title>
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      padding: 20px;
+    :root {
+      --bg: #0b1020;
+      --card: #121a33;
+      --text: #eaeff7;
+      --muted: #9fb0c7;
+      --ok: #2dd36f;
+      --warn: #ffcc00;
+      --bad: #ff4d4f;
     }
-    h1#pageTitle {
-      display: none;
-      margin-bottom: 20px;
-      margin-left: 20px;
-      font-size: 40px;
-    }
-    .quake-card {
-      position: relative;
-      background: white;
-      border-left: 8px solid #999;
-      padding: 15px 20px;
-      margin-bottom: 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .quake-card:hover {
-      background: #f9f9f9;
-    }
-    .quake-header {
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-bottom: 5px;
-    }
-    .quake-arrow {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.2em;
-      transition: transform 0.3s ease;
-    }
-    .quake-card.open .quake-arrow {
-      transform: translateY(-50%) rotate(180deg);
-    }
-    .quake-meta {
-      color: #555;
-      font-size: 0.9em;
-    }
-    .quake-detail {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.4s ease, padding-top 0.4s ease;
-      opacity: 0;
-      padding-top: 0;
-      font-size: 0.9em;
-      line-height: 1.6em;
-      color: #333;
-    }
-    .quake-detail.open {
-      opacity: 1;
-      padding-top: 10px;
-    }
-    .quake-detail-section {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid #ddd;
-    }
-    .shindo-block {
-      white-space: normal;
-      word-break: keep-all;
-      overflow-wrap: break-word;
-    }
-    .border-7 { border-left-color: #AB20B2; }
-    .border-6強 { border-left-color: #701010; }
-    .border-6弱 { border-left-color: #BD2D22; }
-    .border-5強 { border-left-color: #DF6D2B; }
-    .border-5弱 { border-left-color: #FEA02F; }
-    .border-4 { border-left-color: #FFEB30; }
-    .border-3 { border-left-color: #84D384; }
-    .border-2 { border-left-color: #318FBF; }
-    .border-1 { border-left-color: #215070; }
-    .border-不明 { border-left-color: #2F4F4F; }
+    html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; }
+    header { padding: 14px 16px; display:flex; gap:10px; align-items:center; border-bottom: 1px solid #223; }
+    header h1 { font-size: 18px; margin: 0; letter-spacing: .06em; }
+    #statusBadge { padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 12px; }
+    #statusBadge.ok { background: #11331f; color: var(--ok); }
+    #statusBadge.warn { background: #332f11; color: var(--warn); }
+    #statusBadge.bad { background: #331112; color: var(--bad); }
+    main { display: grid; grid-template-columns: 420px 1fr; gap: 14px; padding: 14px; }
+    @media (max-width: 980px){ main { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid #223; border-radius: 10px; padding: 14px; }
+    .kvs { display: grid; grid-template-columns: 110px 1fr; gap: 6px 10px; font-size: 14px; }
+    .kvs div.key { color: var(--muted); text-align: right; }
+    .big { font-size: 20px; font-weight: 800; letter-spacing: .04em; }
+    #map { height: 62vh; min-height: 360px; border-radius: 10px; overflow: hidden; }
+    .footer { color: var(--muted); font-size: 12px; display:flex; gap: 12px; align-items:center; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
   </style>
 </head>
 <body>
-  <h1 id="pageTitle">地震情報リスト</h1>
-  <div id="quakeContainer"></div>
+  <header>
+    <h1>緊急地震速報（EEW）</h1>
+    <span id="statusBadge" class="ok">EEWなし</span>
+    <div class="footer" id="meta">
+      <span>取得対象: <span id="targetTime" class="mono">--</span></span>
+      <span>最終更新: <span id="updatedAt" class="mono">--</span></span>
+    </div>
+  </header>
 
+  <main>
+    <section class="card" id="infoCard">
+      <div class="big" id="headline">平常（EEWなし）</div>
+      <div style="height:10px"></div>
+      <div class="kvs">
+        <div class="key">震源</div><div id="region">--</div>
+        <div class="key">発生時刻</div><div id="originTime">--</div>
+        <div class="key">最大推定震度</div><div id="calcIntensity">--</div>
+        <div class="key">マグニチュード</div><div id="magnitude">--</div>
+        <div class="key">深さ</div><div id="depth">--</div>
+        <div class="key">緯度/経度</div><div id="latlon">--</div>
+        <div class="key">レポートID/番号</div><div id="report">--</div>
+        <div class="key">P波半径</div><div id="pRadius">--</div>
+        <div class="key">S波半径</div><div id="sRadius">--</div>
+      </div>
+      <div style="height:12px"></div>
+      <div class="footer">
+        <span>データ: Yahoo!天気「リアルタイム震度」JSON</span>
+        <span class="mono">/RealTimeData/yyyyMMdd/yyyyMMddHHmmss.json</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const container = document.getElementById("quakeContainer");
-    const pageTitle = document.getElementById("pageTitle");
-    let lastJsonFile = "";
+    // ====== 時刻ユーティリティ（JST） ======
+    const TZ_OFFSET_MIN = 9 * 60; // JST
+    const pad = (n, w=2) => String(n).padStart(w, '0');
 
-    const intensityClassMap = {
-      "7": "border-7", "6強": "border-6強", "6弱": "border-6弱",
-      "5強": "border-5強", "5弱": "border-5弱", "4": "border-4",
-      "3": "border-3", "2": "border-2", "1": "border-1", "不明": "border-不明"
-    };
+    function toJSTDate(d=new Date()){
+      // 内部Dateは常にUTC保持、表示はJSTに変換
+      const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+      return new Date(utc + TZ_OFFSET_MIN * 60000);
+    }
 
-    function toggleCard(card, detail, arrow) {
-      const isOpen = card.classList.toggle('open');
-      if (isOpen) {
-        detail.classList.add('open');
-        detail.style.maxHeight = detail.scrollHeight + "px";
-        arrow.style.transform = "translateY(-50%) rotate(180deg)";
+    function formatJST(d){
+      const y = d.getFullYear();
+      const m = pad(d.getMonth()+1);
+      const dd = pad(d.getDate());
+      const hh = pad(d.getHours());
+      const mm = pad(d.getMinutes());
+      const ss = pad(d.getSeconds());
+      return { ymd:`${y}${m}${dd}`, ymdhms:`${y}${m}${dd}${hh}${mm}${ss}`, iso:`${y}-${m}-${dd} ${hh}:${mm}:${ss} JST` };
+    }
+
+    // ====== 取得URLを組み立て（既定は「現在の1秒前」） ======
+    function buildUrl(secAgo = 1){
+      const nowJST = toJSTDate();
+      nowJST.setSeconds(nowJST.getSeconds() - secAgo);
+      const f = formatJST(nowJST);
+      return {
+        url: `https://weather-kyoshin.west.edge.storage-yahoo.jp/RealTimeData/${f.ymd}/${f.ymdhms}.json`,
+        human: f.iso
+      };
+    }
+
+    // ====== Leaflet マップ初期化 ======
+    const map = L.map('map', { zoomControl: true, attributionControl: true }).setView([36.5, 137.5], 5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18, attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // 予想円（P:青 / S:赤）
+    const pCircle = L.circle([0,0], { radius: 0, color: '#399ade', fillColor: '#399ade', fillOpacity: 0.25 }).addTo(map);
+    const sCircle = L.circle([0,0], { radius: 0, color: '#dc143c', fillColor: '#dc143c', fillOpacity: 0.12 }).addTo(map);
+    const epicenterMarker = L.circleMarker([0,0], { radius: 6, color: '#fff', weight: 2, fillColor: '#ff4d4f', fillOpacity: 0.9 }).addTo(map);
+
+    // ====== DOM参照 ======
+    const $targetTime = document.getElementById('targetTime');
+    const $updatedAt = document.getElementById('updatedAt');
+    const $badge = document.getElementById('statusBadge');
+    const $headline = document.getElementById('headline');
+    const $region = document.getElementById('region');
+    const $originTime = document.getElementById('originTime');
+    const $calcIntensity = document.getElementById('calcIntensity');
+    const $magnitude = document.getElementById('magnitude');
+    const $depth = document.getElementById('depth');
+    const $latlon = document.getElementById('latlon');
+    const $report = document.getElementById('report');
+    const $pRadius = document.getElementById('pRadius');
+    const $sRadius = document.getElementById('sRadius');
+
+    // ====== JSONを取得してUIに反映 ======
+    async function fetchKyoshinJson() {
+      // 1秒前から開始し、最大10秒遡ってリトライ
+      let lastError;
+      for (let back = 2; back <= 10; back++) {
+        const { url, human } = buildUrl(back);
+        $targetTime.textContent = human;
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const json = await res.json();
+          render(json);
+          return;
+        } catch (e) {
+          lastError = e;
+          // 次ループで再試行
+        }
+      }
+      // 取得失敗時の表示
+      $headline.textContent = 'データ取得エラー（再試行中）';
+      $badge.className = 'bad';
+      $badge.textContent = 'エラー';
+      console.error('Fetch failed:', lastError);
+    }
+
+    function render(data){
+      const nowDisp = formatJST(toJSTDate(new Date()));
+      $updatedAt.textContent = nowDisp.iso;
+
+      const hypo = data?.hypoInfo?.items?.[0] || null;
+      const ps   = data?.psWave?.items?.[0] || null;
+
+      const hasEEW = !!(hypo && ps);
+
+      if (hasEEW) {
+        $badge.className = 'warn';
+        $badge.textContent = 'EEW発表中';
+        $headline.textContent = `${hypo.regionName ?? '震源不明'}  /  M${hypo.magnitude ?? '?'}  震度推定: ${hypo.calcintensity ?? '-'}`;
       } else {
-        detail.classList.remove('open');
-        detail.style.maxHeight = 0;
-        arrow.style.transform = "translateY(-50%) rotate(0deg)";
+        $badge.className = 'ok';
+        $badge.textContent = 'EEWなし';
+        $headline.textContent = '平常（EEWなし）';
+      }
+
+      // テキスト部
+      $region.textContent = hypo ? `${hypo.regionName}` : '—';
+      $originTime.textContent = hypo?.originTime ?? '—';
+      $calcIntensity.textContent = hypo?.calcintensity ?? '—';
+      $magnitude.textContent = hypo?.magnitude ?? '—';
+      $depth.textContent = hypo?.depth ?? '—';
+      if (hypo?.latitude && hypo?.longitude) {
+        // 緯度経度は "N37.7" / "E141.8" のような文字列
+        $latlon.textContent = `${hypo.latitude} / ${hypo.longitude}`;
+      } else {
+        $latlon.textContent = '—';
+      }
+      $report.textContent = hypo ? `${hypo.reportId ?? '-'} / #${hypo.reportNum ?? '-'}` : '—';
+
+      // 予想円＆震源プロット
+      if (ps && hypo?.latitude && hypo?.longitude) {
+        const toDeg = (s) => {
+          // "N37.7" "S.." "E.." "W.."
+          const dir = s[0], val = parseFloat(s.slice(1));
+          if (Number.isNaN(val)) return null;
+          if (dir === 'S' || dir === 'W') return -val;
+          return val;
+        };
+        const lat = toDeg(hypo.latitude);
+        const lon = toDeg(hypo.longitude);
+
+        const pRkm = parseFloat(ps.pRadius); // km想定
+        const sRkm = parseFloat(ps.sRadius);
+
+        if (Number.isFinite(lat) && Number.isFinite(lon)) {
+          epicenterMarker.setLatLng([lat, lon]).setStyle({ opacity: 1 });
+
+          const pMeters = Number.isFinite(pRkm) ? pRkm * 1000 : 0;
+          const sMeters = Number.isFinite(sRkm) ? sRkm * 1000 : 0;
+
+          pCircle.setLatLng([lat, lon]).setRadius(pMeters);
+          sCircle.setLatLng([lat, lon]).setRadius(sMeters);
+
+          map.flyTo([lat, lon], 6, { duration: 0.6 });
+        }
+
+        $pRadius.textContent = Number.isFinite(pRkm) ? `${pRkm.toFixed(1)} km` : '—';
+        $sRadius.textContent = Number.isFinite(sRkm) ? `${sRkm.toFixed(1)} km` : '—';
+      } else {
+        pCircle.setRadius(0);
+        sCircle.setRadius(0);
+        epicenterMarker.setStyle({ opacity: 0 });
+        $pRadius.textContent = '—';
+        $sRadius.textContent = '—';
       }
     }
 
-    async function fetchAllAvailableQuakes(jsonList) {
-      pageTitle.style.display = "block";
-      container.innerHTML = "";
-
-      // 発表情報の中で最新のSerialのみを抽出
-      const latestByEvent = {};
-      for (const item of jsonList) {
-        const res = await fetch(`https://www.jma.go.jp/bosai/quake/data/${item.json}`);
-        const data = await res.json();
-        const eventId = data.Head?.EventID || data.Control?.EventID;
-        const serial = parseInt(data.Head?.Serial || "1", 10);
-        if (!eventId) continue;
-        if (!latestByEvent[eventId] || latestByEvent[eventId].serial < serial) {
-          latestByEvent[eventId] = { item, serial };
-        }
-      }
-
-      const filteredList = Object.values(latestByEvent).map(obj => obj.item);
-
-      for (const item of filteredList) {
-        const res = await fetch(`https://www.jma.go.jp/bosai/quake/data/${item.json}`);
-        const data = await res.json();
-
-        const control = data.Control;
-        const head = data.Head;
-        const body = data.Body;
-        const eq = body?.Earthquake;
-        const int = body?.Intensity?.Observation;
-
-        const title = control?.Title || head?.Title || "";
-        if (!title.includes("震源・震度") && !title.includes("遠地地震")) continue;
-
-        let maxInt = int?.MaxInt?.replace('5-', '5弱').replace('5+', '5強')
-                                  .replace('6-', '6弱').replace('6+', '6強') || '不明';
-        const className = intensityClassMap[maxInt] || 'border-不明';
-        const hypocenter = eq?.Hypocenter?.Area?.Name || "震源不明";
-
-        const card = document.createElement("div");
-        card.className = `quake-card ${className}`;
-
-        const header = document.createElement("div");
-        header.className = "quake-header";
-        header.innerText = `最大震度${maxInt} - ${hypocenter}`;
-        card.appendChild(header);
-
-        const arrow = document.createElement("span");
-        arrow.className = "quake-arrow";
-        arrow.innerText = "▼";
-        card.appendChild(arrow);
-
-        const time = document.createElement("div");
-        time.className = "quake-meta";
-        if (eq?.OriginTime) {
-          time.innerText = `発生時刻: ${new Date(eq.OriginTime).toLocaleString()}`;
-        }
-        card.appendChild(time);
-
-        const detail = document.createElement("div");
-        detail.className = "quake-detail";
-
-        let html = "";
-
-        if (control?.Title) html += `詳細情報: ${control.Title}<br>`;
-        if (control?.EditorialOffice) html += `編集官署: ${control.EditorialOffice}<br>`;
-        if (head?.InfoType && head?.Serial) html += `情報種別: ${head.InfoType} ${head.Serial}<br>`;
-        if (eq?.Hypocenter?.Area?.Code) html += `震央コード: ${eq.Hypocenter.Area.Code}<br>`;
-        if (eq?.Magnitude) html += `マグニチュード: ${eq.Magnitude}<br>`;
-
-        const coord = eq?.Hypocenter?.Area?.Coordinate;
-        if (coord && /^[\+\-][0-9.]+[\+\-][0-9.]+/.test(coord)) {
-          const match = coord.match(/([+\-][0-9.]+)([+\-][0-9.]+)([+\-][0-9]+)?/);
-          if (match) {
-            const lat = match[1].replace(/[+\-]/g, '');
-            const lon = match[2].replace(/[+\-]/g, '');
-            html += `座標: 緯度 ${lat} / 経度 ${lon}<br>`;
-            if (match[3]) {
-              const depth = Math.abs(parseInt(match[3], 10)) / 1000;
-              html += `深さ: ${depth === 0 ? "ごく浅い" : `約${depth}km`}<br>`;
-            }
-          }
-        }
-
-        if (head?.Headline?.Text) html += `コメント: ${head.Headline.Text}<br>`;
-        if (body?.Comments?.ForecastComment?.Text) html += `津波情報: ${body.Comments.ForecastComment.Text}<br>`;
-        if (body?.Comments?.FreeFormComment) html += `備考: ${body.Comments.FreeFormComment}<br>`;
-        if (control?.PublishingOffice) html += `提供元: ${control.PublishingOffice}<br>`;
-
-        if (int?.Pref?.length > 0) {
-          const groups = {};
-          int.Pref.forEach(pref => {
-            pref.Area?.forEach(area => {
-              area.City?.forEach(city => {
-                city.IntensityStation?.forEach(station => {
-                  let intensity = station.Int || '不明';
-                  intensity = intensity.replace('5-', '5弱').replace('5+', '5強')
-                                       .replace('6-', '6弱').replace('6+', '6強');
-                  const name = station.Name.replace('＊', '');
-                  if (!groups[intensity]) groups[intensity] = {};
-                  if (!groups[intensity][pref.Name]) groups[intensity][pref.Name] = new Set();
-                  groups[intensity][pref.Name].add(name);
-                });
-              });
-            });
-          });
-
-          const order = ['7', '6強', '6弱', '5強', '5弱', '4', '3', '2', '1', '不明'];
-          html += `<div class="quake-detail-section shindo-block"><strong>各地の震度</strong><br>`;
-          order.forEach(level => {
-            if (groups[level]) {
-              html += `<div style="font-weight:bold; margin-top:8px;">震度 ${level}</div>`;
-              for (const pref in groups[level]) {
-                const names = Array.from(groups[level][pref]).join('　');
-                html += `<div>[${pref}]</div><div style="margin-left:10px;">${names}</div>`;
-              }
-            }
-          });
-          html += `</div>`;
-        }
-
-        detail.innerHTML = html;
-        card.appendChild(detail);
-        card.addEventListener("click", () => toggleCard(card, detail, arrow));
-        container.appendChild(card);
-      }
-    }
-
-    async function checkForUpdates() {
-      try {
-        const res = await fetch('https://www.jma.go.jp/bosai/quake/data/list.json');
-        const jsonList = await res.json();
-        const latest = jsonList[0]?.json;
-        if (!latest || latest === lastJsonFile) return;
-        lastJsonFile = latest;
-        await fetchAllAvailableQuakes(jsonList);
-      } catch (e) {
-        container.innerHTML = "エラー: " + e.message;
-      }
-    }
-
-    checkForUpdates();
-    setInterval(checkForUpdates, 500);
+    // ====== 自動更新（毎秒） ======
+    fetchKyoshinJson();
+    setInterval(fetchKyoshinJson, 1000);
   </script>
 </body>
-</html>
