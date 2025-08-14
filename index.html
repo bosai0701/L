@@ -24,7 +24,13 @@ header h1 { font-size: 18px; margin: 0; letter-spacing: .06em; }
 main { display: grid; grid-template-columns: 420px 1fr; gap: 14px; padding: 14px; }
 @media (max-width: 980px){ main { grid-template-columns: 1fr; } }
 .card { background: var(--card); border: 1px solid #223; border-radius: 10px; padding: 14px; }
-.kvs { display: grid; grid-template-columns: 110px 1fr; gap: 6px 10px; font-size: 14px; }
+.kvs { 
+  display: grid; 
+  grid-template-columns: 110px 1fr; 
+  gap: 6px 10px; 
+  font-size: 14px; 
+  align-items: center; /* 縦中央揃え */
+}
 .kvs div.key { color: var(--muted); text-align: right; }
 .big { font-size: 20px; font-weight: 800; letter-spacing: .04em; }
 #map { height: 62vh; min-height: 360px; border-radius: 10px; overflow: hidden; }
@@ -46,16 +52,16 @@ main { display: grid; grid-template-columns: 420px 1fr; gap: 14px; padding: 14px
 <section class="card" id="infoCard">
 <div class="big" id="headline">緊急地震速報は発表されていません</div>
 <div style="height:10px"></div>
-<div class="kvs" id="detailSection">
-<div class="key">震源</div><div id="region">--</div>
-<div class="key">発生時刻</div><div id="originTime">--</div>
-<div class="key">最大推定震度</div><div id="calcIntensity">--</div>
-<div class="key">マグニチュード</div><div id="magnitude">--</div>
-<div class="key">深さ</div><div id="depth">--</div>
-<div class="key">緯度/経度</div><div id="latlon">--</div>
-<div class="key">レポートID/番号</div><div id="report">--</div>
-<div class="key">P波半径</div><div id="pRadius">--</div>
-<div class="key">S波半径</div><div id="sRadius">--</div>
+<div class="kvs">
+<div class="key">震源</div><div id="region">—</div>
+<div class="key">発生時刻</div><div id="originTime">—</div>
+<div class="key">最大推定震度</div><div id="calcIntensity">—</div>
+<div class="key">マグニチュード</div><div id="magnitude">—</div>
+<div class="key">深さ</div><div id="depth">—</div>
+<div class="key">緯度/経度</div><div id="latlon">—</div>
+<div class="key">レポートID/番号</div><div id="report">—</div>
+<div class="key">P波半径</div><div id="pRadius">—</div>
+<div class="key">S波半径</div><div id="sRadius">—</div>
 </div>
 <div style="height:12px"></div>
 <div class="footer">
@@ -89,7 +95,6 @@ const $targetTime=document.getElementById('targetTime'), $updatedAt=document.get
 const $headline=document.getElementById('headline'), $region=document.getElementById('region'), $originTime=document.getElementById('originTime');
 const $calcIntensity=document.getElementById('calcIntensity'), $magnitude=document.getElementById('magnitude'), $depth=document.getElementById('depth');
 const $latlon=document.getElementById('latlon'), $report=document.getElementById('report'), $pRadius=document.getElementById('pRadius'), $sRadius=document.getElementById('sRadius');
-const $detailSection=document.getElementById('detailSection');
 
 let animState = { pRadius:0, sRadius:0 };
 function animateCircle(target, key, duration=0.5){
@@ -129,44 +134,41 @@ function render(data){
   $updatedAt.textContent=nowDisp.iso;
   const hypo=data?.hypoInfo?.items?.[0]??null;
   const ps=data?.psWave?.items?.[0]??null;
-  const hasEEW=!!hypo;
+  const hasEEW=!!(hypo&&ps);
 
   if(hasEEW){
     $badge.className='warn'; $badge.textContent='EEW発表中';
     $headline.textContent=`${hypo.regionName??'震源不明'} / M${hypo.magnitude??'?'}  震度推定: ${hypo.calcintensity??'-'}`;
-    $detailSection.style.display='grid';
-
-    $region.textContent=hypo.regionName??'—';
-    $originTime.textContent=hypo.originTime??'—';
-    $calcIntensity.textContent=hypo.calcintensity??'—';
-    $magnitude.textContent=hypo.magnitude??'—';
-    $depth.textContent=hypo.depth??'—';
-    if(hypo.latitude && hypo.longitude) $latlon.textContent=`${hypo.latitude} / ${hypo.longitude}`;
-    else $latlon.textContent='—';
-    $report.textContent=`${hypo.reportId??'-'} / #${hypo.reportNum??'-'}`;
-
-    if(ps && hypo.latitude && hypo.longitude){
-      const toDeg=s=>{ const dir=s[0], val=parseFloat(s.slice(1)); if(Number.isNaN(val)) return null; return (dir==='S'||dir==='W')?-val:val; };
-      const lat=toDeg(hypo.latitude), lon=toDeg(hypo.longitude);
-      epicenterMarker.setLatLng([lat,lon]).setStyle({ opacity:1 });
-
-      const pRkm=parseFloat(ps.pRadius), sRkm=parseFloat(ps.sRadius);
-      animateCircle(Number.isFinite(pRkm)?pRkm*1000:0,'pRadius');
-      animateCircle(Number.isFinite(sRkm)?sRkm*1000:0,'sRadius');
-      $pRadius.textContent=Number.isFinite(pRkm)?`${pRkm.toFixed(1)} km`:'—';
-      $sRadius.textContent=Number.isFinite(sRkm)?`${sRkm.toFixed(1)} km`:'—';
-    } else {
-      animateCircle(0,'pRadius'); animateCircle(0,'sRadius');
-      epicenterMarker.setStyle({ opacity:0 });
-      $pRadius.textContent='—'; $sRadius.textContent='—';
-    }
-
-  } else {
+  }else{
     $badge.className='ok'; $badge.textContent='EEW発表なし';
     $headline.textContent='緊急地震速報は発表されていません';
-    $detailSection.style.display='none';
+  }
+
+  $region.textContent=hypo?`${hypo.regionName}`:'—';
+  $originTime.textContent=hypo?.originTime??'—';
+  $calcIntensity.textContent=hypo?.calcintensity??'—';
+  $magnitude.textContent=hypo?.magnitude??'—';
+  $depth.textContent=hypo?.depth??'—';
+  if(hypo?.latitude&&hypo?.longitude) $latlon.textContent=`${hypo.latitude} / ${hypo.longitude}`;
+  else $latlon.textContent='—';
+  $report.textContent=hypo?`${hypo.reportId??'-'} / #${hypo.reportNum??'-'}`:'—';
+
+  if(ps && hypo?.latitude && hypo?.longitude){
+    const toDeg=s=>{ const dir=s[0], val=parseFloat(s.slice(1)); if(Number.isNaN(val)) return null; return (dir==='S'||dir==='W')?-val:val; };
+    const lat=toDeg(hypo.latitude), lon=toDeg(hypo.longitude);
+
+    epicenterMarker.setLatLng([lat,lon]).setStyle({ opacity:1 });
+
+    const pRkm=parseFloat(ps.pRadius), sRkm=parseFloat(ps.sRadius);
+    animateCircle(Number.isFinite(pRkm)?pRkm*1000:0,'pRadius');
+    animateCircle(Number.isFinite(sRkm)?sRkm*1000:0,'sRadius');
+
+    $pRadius.textContent=Number.isFinite(pRkm)?`${pRkm.toFixed(1)} km`:'—';
+    $sRadius.textContent=Number.isFinite(sRkm)?`${sRkm.toFixed(1)} km`:'—';
+  }else{
     animateCircle(0,'pRadius'); animateCircle(0,'sRadius');
     epicenterMarker.setStyle({ opacity:0 });
+    $pRadius.textContent='—'; $sRadius.textContent='—';
   }
 }
 
