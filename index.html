@@ -113,8 +113,8 @@ function updateMarkers() {
     .finally(()=>{ loading=false; });
 }
 
-// 0.5秒ごと更新で初期表示高速化
-setInterval(updateMarkers,500);
+// 0.1秒ごと更新で初期表示高速化
+setInterval(updateMarkers,100);
 </script>
 </body>
 </html>
