@@ -2,9 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>強震モニタ</title>
+  <title>強震モニタ 高速版</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map { height: 100vh; width:100%; }
@@ -18,11 +17,8 @@
   </style>
 </head>
 <body>
-
 <div id="map"></div>
-
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
 <script>
 // ----------------------------------------
 const map = L.map("map", {
@@ -37,12 +33,8 @@ L.tileLayer("https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}", {
   minZoom: 1,
   attribution: "© GSI Japan",
 }).addTo(map);
+
 // ----------------------------------------
-
-var siteCoords = [];
-var markers = {};
-var markerLayer = L.layerGroup().addTo(map);
-
 var info = L.control({position: 'topright'});
 info.onAdd = function () {
   var div = L.DomUtil.create('div', 'info');
@@ -59,20 +51,24 @@ var colorMap = {
   t:'#FF4400', u:'#FA2100', v:'#F50000', w:'#D00000'
 };
 
-// sitelist.json 読み込み
+var siteCoords = [];
+var markers = {};
+var markerLayer = L.layerGroup({ renderer: L.canvas() }).addTo(map); // Canvas renderer
+
+// サイトリスト取得
 fetch('https://weather-kyoshin.west.edge.storage-yahoo.jp/SiteList/sitelist.json')
   .then(r => r.json())
   .then(data => {
     siteCoords = data.items;
     info.getContainer().innerHTML = '<b>観測点数:</b> ' + siteCoords.length;
+    // 初期灰色丸なし
     updateMarkers();
-  })
-  .catch(e => console.error('sitelist読み込み失敗', e));
+  });
 
 // ----------------------------------------
-function getRealTimeUrlMinus1Sec() {
+function getRealTimeUrl(secondsAgo = 5) {
   var now = new Date();
-  now.setSeconds(now.getSeconds() - 1);
+  now.setSeconds(now.getSeconds() - secondsAgo);
   var YYYY = now.getFullYear();
   var MM = String(now.getMonth()+1).padStart(2,'0');
   var DD = String(now.getDate()).padStart(2,'0');
@@ -83,61 +79,41 @@ function getRealTimeUrlMinus1Sec() {
 }
 
 let loading = false;
-
 function updateMarkers() {
-  if (loading) return;
-  if (siteCoords.length === 0) return;
-
+  if(loading || siteCoords.length===0) return;
   loading = true;
 
-  var url = getRealTimeUrlMinus1Sec();
-  fetch(url)
-    .then(r => {
-      if (!r.ok) throw new Error("データなし");
-      return r.json();
-    })
-    .then(data => {
+  fetch(getRealTimeUrl())
+    .then(r=>{ if(!r.ok) throw new Error("データなし"); return r.json(); })
+    .then(data=>{
       var intensities = data.realTimeData.intensity;
-      var radius = 2;
-
       var N = Math.min(intensities.length, siteCoords.length);
-
-      for (let i = 0; i < N; i++) {
+      for(let i=0;i<N;i++){
         var code = intensities.charAt(i);
-        if (code === 'c') continue;
+        if(code==='c') continue;
 
-        var lat = siteCoords[i][0];
-        var lng = siteCoords[i][1];
-        if (lat == null || lng == null) continue;
-
-        if (!markers[i]) {
-          markers[i] = L.circleMarker([lat, lng], {
-            radius: radius,
-            fillColor: colorMap[code] || "#AA0000",
-            color: "#fff",
+        // マーカーがなければ新規作成、あれば色更新
+        if(!markers[i]) {
+          markers[i] = L.circleMarker(siteCoords[i], {
+            radius: 2,
+            fillColor: colorMap[code] || '#AA0000',
+            color: '#fff',
             weight: 0.2,
             opacity: 1,
-            fillOpacity: 1
+            fillOpacity: 1,
+            renderer: markerLayer.options.renderer
           }).addTo(markerLayer);
         } else {
-          markers[i].setStyle({
-            fillColor: colorMap[code] || "#AA0000",
-            radius: radius
-          });
+          markers[i].setStyle({ fillColor: colorMap[code] || '#AA0000' });
         }
       }
     })
-    .catch(e => {
-      console.warn("リアルタイム取得失敗（丸保持）", e);
-    })
-    .finally(() => {
-      loading = false;
-    });
+    .catch(e=>console.warn("リアルタイム取得失敗（丸保持）", e))
+    .finally(()=>{ loading=false; });
 }
 
-// 1秒ごと更新
-setInterval(updateMarkers, 1000);
+// 0.5秒ごと更新で初期表示高速化
+setInterval(updateMarkers,500);
 </script>
-
 </body>
 </html>
