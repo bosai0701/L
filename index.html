@@ -24,18 +24,28 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
-// ■ Leaflet 初期化
-var map = L.map('map').setView([34.5, 134.5], 4);
+// ----------------------------------------
+// ★ 指定された map 初期設定に変更
+// ----------------------------------------
+const map = L.map("map", {
+  center: [34.5, 134.5],
+  zoom: 4,
+  maxZoom: 10,
+  minZoom: 4,
+  zoomControl: false
+});
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
+L.tileLayer("https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}", {
+  minZoom: 1,
+  attribution: "© GSI Japan",
 }).addTo(map);
 
+// ----------------------------------------
+
 var siteCoords = [];
-var markers = {};  // { index: CircleMarker }
+var markers = {};
 var markerLayer = L.layerGroup().addTo(map);
 
-// 右上に観測点数表示
 var info = L.control({position: 'topright'});
 info.onAdd = function () {
   var div = L.DomUtil.create('div', 'info');
@@ -44,7 +54,6 @@ info.onAdd = function () {
 };
 info.addTo(map);
 
-// 色マップ
 var colorMap = {
   d:'#0000CD', e:'#0024E3', f:'#000ED6', g:'#0048FA',
   h:'#008CC2', i:'#00D08B', j:'#1FE460', k:'#7DFC21',
@@ -53,19 +62,16 @@ var colorMap = {
   t:'#FF4400', u:'#FA2100', v:'#F50000', w:'#D00000'
 };
 
-// sitelist.json 読み込み
+// sitelist.json
 fetch('https://weather-kyoshin.west.edge.storage-yahoo.jp/SiteList/sitelist.json')
   .then(r => r.json())
   .then(data => {
     siteCoords = data.items;
     info.getContainer().innerHTML = '<b>観測点数:</b> ' + siteCoords.length;
-    // ★初期マーカー生成はなし
-    // マーカーはリアルタイム取得時に必要な分だけ生成する
-    updateMarkers(); // 即時更新
+    updateMarkers();
   })
   .catch(e => console.error('sitelist読み込み失敗', e));
 
-// リアルタイムデータ URL（-1秒）
 function getRealTimeUrlMinus1Sec() {
   var now = new Date();
   now.setSeconds(now.getSeconds() - 1);
@@ -78,7 +84,6 @@ function getRealTimeUrlMinus1Sec() {
   return `https://weather-kyoshin.west.edge.storage-yahoo.jp/RealTimeData/${YYYY}${MM}${DD}/${YYYY}${MM}${DD}${HH}${mm}${SS}.json`;
 }
 
-// データ取得＆描画
 function updateMarkers() {
   if(siteCoords.length === 0) return;
 
@@ -90,30 +95,32 @@ function updateMarkers() {
     })
     .then(data => {
       var intensities = data.realTimeData.intensity;
-      var zoom = map.getZoom();
-      var radius = 0.5 * (zoom / 1);
+
+      // ★ 完全固定サイズ（縮小も拡大もしない）
+      var radius = 2;
 
       for (let i = 0; i < intensities.length; i++) {
         var code = intensities.charAt(i);
-        if(code === 'c') continue; // 無効点は無視
+        if(code === 'c') continue;
 
-        // まだマーカー生成していなければ作る
         if(!markers[i]) {
           var lat = siteCoords[i][0];
           var lng = siteCoords[i][1];
           markers[i] = L.circleMarker([lat, lng], {
             radius: radius,
             fillColor: colorMap[code] || '#AA0000',
-            color:'#000',
-            weight:0,
-            opacity:0,
-            fillOpacity:1
+            color: '#fff',
+            weight: 0.2,
+            opacity: 1,
+            fillOpacity: 1
           }).addTo(markerLayer);
         } else {
           markers[i].setStyle({
-            fillColor: colorMap[code] || '#AA0000',
             radius: radius,
-            fillOpacity:1
+            fillColor: colorMap[code] || '#AA0000',
+            color: '#fff',
+            weight: 0.2,
+            fillOpacity: 1
           });
         }
       }
@@ -121,10 +128,10 @@ function updateMarkers() {
     .catch(e => console.error('リアルタイムデータ取得失敗', e));
 }
 
-// 1秒ごと更新
+// 更新処理
 setInterval(updateMarkers, 1000);
 
-// ズーム時もサイズ更新
+// ズーム時もサイズ変えず維持
 map.on('zoomend', updateMarkers);
 </script>
 
