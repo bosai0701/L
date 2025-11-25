@@ -1,267 +1,132 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>地震•津波情報</title>
-  <link rel="icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="favicon.ico">
+  <meta charset="utf-8" />
+  <title>強震モニタ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-      background-color: #fff;
-    }
-
-    #menuBar {
-      position: relative !important;
-      top: 1.1%;
-      left: 0px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 25px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      padding: 6px 12px;
-      margin-left: 0px;
-      margin-top: 0px;
-      display: inline-block;
-    }
-
-    #menuBar select {
+    #map { height: 100vh; width:100%; }
+    .info {
+      padding: 6px 8px;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
       font-size: 14px;
-      border: none;
-      background: transparent;
-      outline: none;
-    }
-
-    .section {
-      background: #fff;
-      padding: 15px;
-      margin-top: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: none;
-      position: relative;
-      z-index: 1;
-    }
-
-    #infoContainer p {
-      margin: 0 0 10px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      white-space: pre-wrap;
-    }
-    #infoContainer p:not(.area-info):not(.prefecture) {
-      line-height: 1.6;
-    }
-
-    #infoContainer p.comment-detail {
-      margin-top: 0.3em;
-      font-weight: normal;
-      font-size: 1em;
-      white-space: pre-wrap;
-      line-height: 1.2;
-    }
-
-    .intensity-group {
-      margin-top: 15px;
-    }
-
-    .intensity {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .prefecture {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    .area-info {
-      white-space: normal;
-      word-break: keep-all;
-      overflow-wrap: break-word;
-      line-height: 1.8;
-    }
-
-    .intensity-group p {
-      line-height: 1.8;
     }
   </style>
 </head>
 <body>
 
-  <div id="menuBar">
-    <select id="infoSelector">
-      <option value="quake" selected>地震情報</option>
-      <option value="tsunami">津波情報</option>
-    </select>
-  </div>
+<div id="map"></div>
 
-  <div id="infoContainer" class="section"></div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-  <script>
-    let lastJsonFile = "";
+<script>
+// ■ Leaflet 初期化
+var map = L.map('map').setView([34.5, 134.5], 4);
 
-    document.getElementById('infoSelector').addEventListener('change', (e) => {
-      const value = e.target.value;
-      if (value === 'quake') {
-        document.getElementById('infoContainer').style.display = 'block';
-      } else if (value === 'tsunami') {
-        location.href = 'index2.html';
-      }
-    });
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
 
-    async function tryFetchJson(url) {
-      try {
-        const res = await fetch(url, { cache: "no-store" });
-        if (!res.ok) throw new Error("Network error");
-        return await res.json();
-      } catch {
-        return null;
-      }
-    }
+var siteCoords = [];
+var markers = {};  // { index: CircleMarker }
+var markerLayer = L.layerGroup().addTo(map);
 
-    async function fetchLatestQuakeData(retry = 0) {
-      const listData = await tryFetchJson('https://www.jma.go.jp/bosai/quake/data/list.json');
-      if (!listData || !listData.length) {
-        if (retry < 5) {
-          setTimeout(() => fetchLatestQuakeData(retry + 1), 200);
+// 右上に観測点数表示
+var info = L.control({position: 'topright'});
+info.onAdd = function () {
+  var div = L.DomUtil.create('div', 'info');
+  div.innerHTML = '<b>観測所数:</b> 0';
+  return div;
+};
+info.addTo(map);
+
+// 色マップ
+var colorMap = {
+  d:'#0000CD', e:'#0024E3', f:'#000ED6', g:'#0048FA',
+  h:'#008CC2', i:'#00D08B', j:'#1FE460', k:'#7DFC21',
+  l:'#BDFF0C', m:'#DEFF05', n:'#FFFF00', o:'#FFEE00',
+  p:'#FFDD00', q:'#FFB600', r:'#FF9000', s:'#FF6A00',
+  t:'#FF4400', u:'#FA2100', v:'#F50000', w:'#D00000'
+};
+
+// sitelist.json 読み込み
+fetch('https://weather-kyoshin.west.edge.storage-yahoo.jp/SiteList/sitelist.json')
+  .then(r => r.json())
+  .then(data => {
+    siteCoords = data.items;
+    info.getContainer().innerHTML = '<b>観測点数:</b> ' + siteCoords.length;
+    // ★初期マーカー生成はなし
+    // マーカーはリアルタイム取得時に必要な分だけ生成する
+    updateMarkers(); // 即時更新
+  })
+  .catch(e => console.error('sitelist読み込み失敗', e));
+
+// リアルタイムデータ URL（-1秒）
+function getRealTimeUrlMinus1Sec() {
+  var now = new Date();
+  now.setSeconds(now.getSeconds() - 1);
+  var YYYY = now.getFullYear();
+  var MM = String(now.getMonth()+1).padStart(2,'0');
+  var DD = String(now.getDate()).padStart(2,'0');
+  var HH = String(now.getHours()).padStart(2,'0');
+  var mm = String(now.getMinutes()).padStart(2,'0');
+  var SS = String(now.getSeconds()).padStart(2,'0');
+  return `https://weather-kyoshin.west.edge.storage-yahoo.jp/RealTimeData/${YYYY}${MM}${DD}/${YYYY}${MM}${DD}${HH}${mm}${SS}.json`;
+}
+
+// データ取得＆描画
+function updateMarkers() {
+  if(siteCoords.length === 0) return;
+
+  var url = getRealTimeUrlMinus1Sec();
+  fetch(url)
+    .then(r => {
+      if(!r.ok) throw new Error('データなし');
+      return r.json();
+    })
+    .then(data => {
+      var intensities = data.realTimeData.intensity;
+      var zoom = map.getZoom();
+      var radius = 0.5 * (zoom / 1);
+
+      for (let i = 0; i < intensities.length; i++) {
+        var code = intensities.charAt(i);
+        if(code === 'c') continue; // 無効点は無視
+
+        // まだマーカー生成していなければ作る
+        if(!markers[i]) {
+          var lat = siteCoords[i][0];
+          var lng = siteCoords[i][1];
+          markers[i] = L.circleMarker([lat, lng], {
+            radius: radius,
+            fillColor: colorMap[code] || '#AA0000',
+            color:'#000',
+            weight:0,
+            opacity:0,
+            fillOpacity:1
+          }).addTo(markerLayer);
         } else {
-          showQuakeError();
-        }
-        return;
-      }
-
-      const latestJsonFile = listData[0].json;
-      if (latestJsonFile === lastJsonFile) return;
-      lastJsonFile = latestJsonFile;
-
-      const quakeData = await tryFetchJson(`https://www.jma.go.jp/bosai/quake/data/${latestJsonFile}`);
-      if (!quakeData) {
-        if (retry < 5) {
-          setTimeout(() => fetchLatestQuakeData(retry + 1), 200);
-        } else {
-          showQuakeError();
-        }
-        return;
-      }
-
-      const container = document.getElementById("infoContainer");
-      let html = "";
-
-      const control = quakeData.Control;
-      const head = quakeData.Head;
-      const body = quakeData.Body;
-      const eq = body?.Earthquake;
-      const int = body?.Intensity?.Observation;
-
-      if (head?.InfoKind) html += `<h1><strong>${head.InfoKind}</strong></h1>`;
-      if (control?.Title) html += `<p><strong>詳細情報:</strong> ${control.Title}</p>`;
-      if (control?.EditorialOffice) {
-        html += `<p><strong>編集官署:</strong> ${control.EditorialOffice}</p>`;
-      }
-      if (head?.InfoType && head?.Serial) html += `<p><strong>情報種別:</strong> ${head.InfoType} ${head.Serial}</p>`;
-      if (eq?.Hypocenter?.Area?.Name) html += `<p><strong>震源地:</strong> ${eq.Hypocenter.Area.Name}</p>`;
-      if (eq?.Hypocenter?.Area?.Code) html += `<p><strong>震央コード:</strong> ${eq.Hypocenter.Area.Code}</p>`;
-      if (int?.MaxInt) {
-        let maxInt = int.MaxInt;
-        maxInt = maxInt.replace('5-', '5弱').replace('5+', '5強')
-                       .replace('6-', '6弱').replace('6+', '6強');
-        html += `<p><strong>最大震度:</strong> ${maxInt}</p>`;
-      }
-      if (eq?.Magnitude) html += `<p><strong>マグニチュード:</strong> ${eq.Magnitude}</p>`;
-
-      let lat = "不明", lon = "不明", depth = "不明";
-      const coord = eq?.Hypocenter?.Area?.Coordinate;
-      if (coord && /^[\+\-][0-9.]+[\+\-][0-9.]+/.test(coord)) {
-        const match = coord.match(/([+\-][0-9.]+)([+\-][0-9.]+)([+\-][0-9]+)?/);
-        if (match) {
-          lat = match[1].replace(/[+\-]/g, '');
-          lon = match[2].replace(/[+\-]/g, '');
-          html += `<p><strong>座標:</strong> 緯度 ${lat} / 経度 ${lon}</p>`;
-
-          if (match[3]) {
-            const rawDepth = parseInt(match[3], 10);
-            if (rawDepth === 0) {
-              html += `<p><strong>深さ:</strong> ごく浅い</p>`;
-            } else {
-              depth = Math.abs(rawDepth) / 1000;
-              html += `<p><strong>深さ:</strong> ${depth} km</p>`;
-            }
-          } else {
-            html += `<p><strong>深さ:</strong> ${depth}</p>`;
-          }
-        }
-      }
-
-      if (eq?.OriginTime) {
-        html += `<p><strong>発生時刻:</strong> ${new Date(eq.OriginTime).toLocaleString()}</p>`;
-      }
-
-      // コメントを津波情報の前に移動
-      if (body?.EarthquakeInfo && body.EarthquakeInfo.Text.trim() !== "") {
-        html += `<p><strong>コメント:</strong> <span style="font-weight: normal; white-space: pre-wrap;">${head?.Headline?.Text || ""}</span></p>`;
-        html += `<p class="comment-detail">${body.EarthquakeInfo.Text}</p>`;
-      } else if (head?.Headline?.Text) {
-        html += `<p><strong>コメント:</strong> <span style="font-weight: normal; white-space: pre-wrap;">${head.Headline.Text}</span></p>`;
-      }
-
-      if (body?.Comments?.ForecastComment?.Text) {
-        html += `<p><strong>津波情報:</strong> ${body.Comments.ForecastComment.Text}</p>`;
-      }
-      if (control?.PublishingOffice) {
-        html += `<p><strong>提供元:</strong> ${control.PublishingOffice}</p>`;
-      }
-
-      if (int?.Pref?.length > 0) {
-        const intensityGroups = {};
-        int.Pref.forEach(pref => {
-          if (pref.Area) {
-            pref.Area.forEach(area => {
-              area.City?.forEach(city => {
-                city.IntensityStation?.forEach(station => {
-                  let intensity = station.Int || '不明';
-                  intensity = intensity.replace('5-', '5弱').replace('5+', '5強')
-                                       .replace('6-', '6弱').replace('6+', '6強');
-                  const name = station.Name.replace('＊', '');
-                  if (!intensityGroups[intensity]) intensityGroups[intensity] = {};
-                  if (!intensityGroups[intensity][pref.Name]) intensityGroups[intensity][pref.Name] = new Set();
-                  intensityGroups[intensity][pref.Name].add(name);
-                });
-              });
-            });
-          }
-        });
-
-        const keys = Object.keys(intensityGroups);
-        if (keys.length > 0) {
-          html += `<h2><strong>各地の震度情報</strong></h2>`;
-          const intensityOrder = ['7', '6強', '6弱', '5強', '5弱', '4', '3', '2', '1', '不明'];
-          intensityOrder.forEach(intensity => {
-            const group = intensityGroups[intensity];
-            if (group) {
-              html += `<div class="intensity-group"><h2 class="intensity">震度 ${intensity}</h2>`;
-              for (const pref in group) {
-                const stations = Array.from(group[pref]).join('　');
-                html += `<p class="prefecture">[${pref}]</p><p class="area-info">${stations}</p>`;
-              }
-              html += `</div>`;
-            }
+          markers[i].setStyle({
+            fillColor: colorMap[code] || '#AA0000',
+            radius: radius,
+            fillOpacity:1
           });
         }
       }
+    })
+    .catch(e => console.error('リアルタイムデータ取得失敗', e));
+}
 
-      container.innerHTML = html;
-      if (document.getElementById('infoSelector').value === 'quake') {
-        container.style.display = "block";
-      }
-    }
+// 1秒ごと更新
+setInterval(updateMarkers, 1000);
 
-    function showQuakeError() {
-    }
+// ズーム時もサイズ更新
+map.on('zoomend', updateMarkers);
+</script>
 
-    fetchLatestQuakeData();
-    setInterval(fetchLatestQuakeData, 100);
-  </script>
 </body>
 </html>
