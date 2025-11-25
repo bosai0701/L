@@ -25,8 +25,6 @@
 
 <script>
 // ----------------------------------------
-// ★ 指定された map 初期設定に変更
-// ----------------------------------------
 const map = L.map("map", {
   center: [34.5, 134.5],
   zoom: 4,
@@ -39,7 +37,6 @@ L.tileLayer("https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}", {
   minZoom: 1,
   attribution: "© GSI Japan",
 }).addTo(map);
-
 // ----------------------------------------
 
 var siteCoords = [];
@@ -49,7 +46,7 @@ var markerLayer = L.layerGroup().addTo(map);
 var info = L.control({position: 'topright'});
 info.onAdd = function () {
   var div = L.DomUtil.create('div', 'info');
-  div.innerHTML = '<b>観測所数:</b> 0';
+  div.innerHTML = '<b>観測点数:</b> 0';
   return div;
 };
 info.addTo(map);
@@ -62,7 +59,7 @@ var colorMap = {
   t:'#FF4400', u:'#FA2100', v:'#F50000', w:'#D00000'
 };
 
-// sitelist.json
+// sitelist.json 読み込み
 fetch('https://weather-kyoshin.west.edge.storage-yahoo.jp/SiteList/sitelist.json')
   .then(r => r.json())
   .then(data => {
@@ -72,6 +69,7 @@ fetch('https://weather-kyoshin.west.edge.storage-yahoo.jp/SiteList/sitelist.json
   })
   .catch(e => console.error('sitelist読み込み失敗', e));
 
+// ----------------------------------------
 function getRealTimeUrlMinus1Sec() {
   var now = new Date();
   now.setSeconds(now.getSeconds() - 1);
@@ -84,55 +82,61 @@ function getRealTimeUrlMinus1Sec() {
   return `https://weather-kyoshin.west.edge.storage-yahoo.jp/RealTimeData/${YYYY}${MM}${DD}/${YYYY}${MM}${DD}${HH}${mm}${SS}.json`;
 }
 
+let loading = false;
+
 function updateMarkers() {
-  if(siteCoords.length === 0) return;
+  if (loading) return;
+  if (siteCoords.length === 0) return;
+
+  loading = true;
 
   var url = getRealTimeUrlMinus1Sec();
   fetch(url)
     .then(r => {
-      if(!r.ok) throw new Error('データなし');
+      if (!r.ok) throw new Error("データなし");
       return r.json();
     })
     .then(data => {
       var intensities = data.realTimeData.intensity;
-
-      // ★ 完全固定サイズ（縮小も拡大もしない）
       var radius = 2;
 
-      for (let i = 0; i < intensities.length; i++) {
-        var code = intensities.charAt(i);
-        if(code === 'c') continue;
+      var N = Math.min(intensities.length, siteCoords.length);
 
-        if(!markers[i]) {
-          var lat = siteCoords[i][0];
-          var lng = siteCoords[i][1];
+      for (let i = 0; i < N; i++) {
+        var code = intensities.charAt(i);
+        if (code === 'c') continue;
+
+        var lat = siteCoords[i][0];
+        var lng = siteCoords[i][1];
+        if (lat == null || lng == null) continue;
+
+        if (!markers[i]) {
           markers[i] = L.circleMarker([lat, lng], {
             radius: radius,
-            fillColor: colorMap[code] || '#AA0000',
-            color: '#fff',
+            fillColor: colorMap[code] || "#AA0000",
+            color: "#fff",
             weight: 0.2,
             opacity: 1,
             fillOpacity: 1
           }).addTo(markerLayer);
         } else {
           markers[i].setStyle({
-            radius: radius,
-            fillColor: colorMap[code] || '#AA0000',
-            color: '#fff',
-            weight: 0.2,
-            fillOpacity: 1
+            fillColor: colorMap[code] || "#AA0000",
+            radius: radius
           });
         }
       }
     })
-    .catch(e => console.error('リアルタイムデータ取得失敗', e));
+    .catch(e => {
+      console.warn("リアルタイム取得失敗（丸保持）", e);
+    })
+    .finally(() => {
+      loading = false;
+    });
 }
 
-// 更新処理
+// 1秒ごと更新
 setInterval(updateMarkers, 1000);
-
-// ズーム時もサイズ変えず維持
-map.on('zoomend', updateMarkers);
 </script>
 
 </body>
