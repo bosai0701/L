@@ -4,10 +4,18 @@
   <meta charset="utf-8" />
   <title>強震モニタ 高速版</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
+  <!-- MapLibre -->
+  <link href="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.js"></script>
+
   <style>
     #map { height: 100vh; width:100%; }
     .info {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 10;
       padding: 6px 8px;
       background: rgba(255,255,255,0.8);
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -17,31 +25,38 @@
   </style>
 </head>
 <body>
+
 <div id="map"></div>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<div class="info"><b>観測点数:</b> 0</div>
+
 <script>
 // ----------------------------------------
-const map = L.map("map", {
-  center: [34.5, 134.5],
-  zoom: 4,
-  maxZoom: 10,
-  minZoom: 4,
-  zoomControl: false
+const map = new maplibregl.Map({
+  container: 'map',
+  style: {
+    version: 8,
+    sources: {
+      google: {
+        type: "raster",
+        tiles: [
+          "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+        ],
+        tileSize: 256
+      }
+    },
+    layers: [
+      { id: "google", type: "raster", source: "google" }
+    ]
+  },
+  center: [134.5, 34.5],
+  zoom: 3,
+  maxZoom: 9,
+  minZoom: 3,
+  attributionControl: false
 });
 
-L.tileLayer("https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}", {
-  minZoom: 1,
-  attribution: "© GSI Japan",
-}).addTo(map);
-
 // ----------------------------------------
-var info = L.control({position: 'topright'});
-info.onAdd = function () {
-  var div = L.DomUtil.create('div', 'info');
-  div.innerHTML = '<b>観測点数:</b> 0';
-  return div;
-};
-info.addTo(map);
+var infoBox = document.querySelector(".info");
 
 var colorMap = {
   d:'#0000CD', e:'#0024E3', f:'#000ED6', g:'#0048FA',
@@ -52,16 +67,41 @@ var colorMap = {
   x:'#AA0000'
 };
 
+// GeoJSON (マーカー全体)
+var geojson = {
+  type: "FeatureCollection",
+  features: []
+};
+
+// MapLibre用データソース
+map.on("load", () => {
+  map.addSource("points", {
+    type: "geojson",
+    data: geojson
+  });
+
+  map.addLayer({
+    id: "points-layer",
+    type: "circle",
+    source: "points",
+    paint: {
+      "circle-radius": 2,
+      "circle-color": ["get", "color"],
+      "circle-stroke-color": "#ffffff",
+      "circle-stroke-width": 0.2,
+      "circle-opacity": 1
+    }
+  });
+});
+
 var siteCoords = [];
-var markers = {};
-var markerLayer = L.layerGroup({ renderer: L.canvas() }).addTo(map); // Canvas renderer
+var markersCount = 0;
 
 // サイトリスト取得
 fetch('https://weather-kyoshin.west.edge.storage-yahoo.jp/SiteList/sitelist.json')
   .then(r => r.json())
   .then(data => {
     siteCoords = data.items;
-    // 初期値はまだ0にしておく
     updateMarkers();
   });
 
@@ -79,6 +119,8 @@ function getRealTimeUrl(secondsAgo = 5) {
 }
 
 let loading = false;
+
+// ----------------------------------------
 function updateMarkers() {
   if(loading || siteCoords.length===0) return;
   loading = true;
@@ -88,28 +130,31 @@ function updateMarkers() {
     .then(data=>{
       var intensities = data.realTimeData.intensity;
       var N = Math.min(intensities.length, siteCoords.length);
+
+      geojson.features = [];
+      markersCount = 0;
+
       for(let i=0;i<N;i++){
         var code = intensities.charAt(i);
         if(code==='c') continue;
 
-        // マーカーがなければ新規作成、あれば色更新
-        if(!markers[i]) {
-          markers[i] = L.circleMarker(siteCoords[i], {
-            radius: 2,
-            fillColor: colorMap[code] || '#AA0000',
-            color: '#fff',
-            weight: 0.2,
-            opacity: 1,
-            fillOpacity: 1,
-            renderer: markerLayer.options.renderer
-          }).addTo(markerLayer);
-        } else {
-          markers[i].setStyle({ fillColor: colorMap[code] || '#AA0000' });
-        }
+        markersCount++;
+
+        geojson.features.push({
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [siteCoords[i][1], siteCoords[i][0]]
+          },
+          properties: {
+            color: colorMap[code] || "#AA0000"
+          }
+        });
       }
 
-      // 観測点数をリアルタイム更新
-      info.getContainer().innerHTML = '<b>観測点数:</b> ' + Object.keys(markers).length;
+      map.getSource("points").setData(geojson);
+
+      infoBox.innerHTML = "<b>観測点数:</b> " + markersCount;
     })
     .catch(e=>console.warn("リアルタイム取得失敗（丸保持）", e))
     .finally(()=>{ loading=false; });
