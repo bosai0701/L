@@ -45,5 +45,5 @@ NIED防災科学研究所(強震モニタ利用にあたってのお願いから
 - (リアルタイム震度)  
 [リアルタイム震度（強震モニタ） - Yahoo！天気・災害](https://www.lmoni.bosai.go.jp/monitor/)
 
-- (世界地図)
+- (世界地図)/n
 [Google Map(航空写真)](https://www.google.co.jp/maps/)
