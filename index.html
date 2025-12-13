@@ -1,178 +1,260 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>強震モニタ 高速版</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- MapLibre -->
-  <link href="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.css" rel="stylesheet" />
-  <script src="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.js"></script>
+<meta charset="utf-8" />
+<title>RS-Monitor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    /* 画面サイズに完全フィットさせるための修正 */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="favicon.ico">
+<link href="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.css" rel="stylesheet" />
 
-    #map {
-      width: 100%;
-      height: 100dvh;   /* ← スマホのアドレスバー対策で常に画面にフィット */
-    }
+<style>
+html, body { margin:0; padding:0; height:100%; }
+#map { width:100%; height:100dvh; }
 
-    .info {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 10;
-      padding: 6px 8px;
-      background: rgba(255,255,255,0.8);
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      border-radius: 5px;
-      font-size: 14px;
-    }
-  </style>
+#eq-box {
+  position: fixed;
+  left: 35px;
+  bottom: 10px;
+  background: rgba(255,255,255,0.85);
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 9999;
+  font-size: 13px;
+  width: 235px;
+  min-height: 40px;
+  max-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+.eq-title { font-size:15px; font-weight:bold; margin-bottom:4px; word-break:break-word; }
+.eq-small { opacity:0.9; font-size:12px; margin-top:3px; }
+
+.info {
+  position:absolute; top:15px; right:15px; z-index:10;
+  padding:6px 8px; background:rgba(255,255,255,0.75);
+  box-shadow:0 0 15px rgba(0,0,0,0.2);
+  border-radius:5px; font-size:14px; font-family: sans-serif;
+}
+
+#legend { position:absolute; bottom:40px; right:10px; z-index:10; background:rgba(255, 255, 255, 0.75);
+border-radius:8px; padding:8px 10px; box-shadow:0 0 10px rgba(0, 0, 0, 0.25); }
+#legend img { display:block; width:100%; height:auto; }
+
+.epicenter-marker { position: relative; width: 20px; height: 20px; }
+.epicenter-marker::before, .epicenter-marker::after {
+  content: ''; position: absolute; top:50%; left:50%; width:2px; height:20px; background:red;
+}
+.epicenter-marker::before { transform:translate(-50%,-50%) rotate(45deg); }
+.epicenter-marker::after  { transform:translate(-50%,-50%) rotate(-45deg); }
+</style>
 </head>
 <body>
-
 <div id="map"></div>
-<div class="info"><b>観測点数:</b> 0</div>
+<div id="legend"></div>
+<div id="eq-box"><div class="eq-content"></div></div>
 
+<script src="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.js"></script>
 <script>
-// ----------------------------------------
-const map = new maplibregl.Map({
-  container: 'map',
-  style: {
-    version: 8,
-    sources: {
-      google: {
-        type: "raster",
-        tiles: [
-          "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
-        ],
-        tileSize: 256
-      }
-    },
-    layers: [
-      { id: "google", type: "raster", source: "google" }
-    ]
-  },
-  center: [134.5, 34.5],
-  zoom: 3,
-  maxZoom: 9,
-  minZoom: 3,
-  attributionControl: false
+function formatDate(str){
+  const d=new Date(str);
+  return `${d.getFullYear()}/${("0"+(d.getMonth()+1)).slice(-2)}/${("0"+d.getDate()).slice(-2)} ${("0"+d.getHours()).slice(-2)}:${("0"+d.getMinutes()).slice(-2)}:${("0"+d.getSeconds()).slice(-2)}`;
+}
+
+const infoBox=document.createElement("div");
+infoBox.className="info";
+infoBox.innerHTML="<b>観測点数:</b> 0";
+document.body.appendChild(infoBox);
+
+const map=new maplibregl.Map({
+  container:'map',
+  style:{version:8,sources:{google:{type:"raster",tiles:["https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"],tileSize:256}},
+    layers:[{id:"google",type:"raster",source:"google"}]},
+  center:[134.5,34.5], zoom:3, maxZoom:9, minZoom:3, attributionControl:false
+});
+map.addControl(new maplibregl.AttributionControl({ compact:true, customAttribution:"© Google" }));
+
+const colorMap={ d:'#0000CD', e:'#0024E3', f:'#0048FA', g:'#008CC2', h:'#00D08B', i:'#1FE460', j:'#3FFA36', k:'#7DFC21', l:'#BDFF0C', m:'#DEFF05', n:'#FFFF00', o:'#FFEE00', p:'#FFDD00', q:'#FFB600', r:'#FF9000', s:'#FF6A00', t:'#FF4400', u:'#FA2100', v:'#F50000', w:'#D00000', x:'#AA0000'};
+
+let geojson={type:"FeatureCollection",features:[]};
+let siteCoords=[];
+let epicenterMarker=null;
+let lastData=null;
+
+map.on("load",()=>{
+  map.addSource("points",{type:"geojson",data:geojson});
+  map.addLayer({id:"points-layer",type:"circle",source:"points",paint:{"circle-radius":2,"circle-color":["get","color"],"circle-stroke-color":"#fff","circle-stroke-width":0.2,"circle-opacity":1}});
+  map.addSource("pWaveSource",{type:"geojson",data:{type:"FeatureCollection",features:[]}});
+  map.addSource("sWaveSource",{type:"geojson",data:{type:"FeatureCollection",features:[]}});
+  map.addLayer({id:"pWaveLayer",type:"line",source:"pWaveSource",paint:{"line-color":"blue","line-width":1}});
+  map.addLayer({id:"sWaveLayer",type:"line",source:"sWaveSource",paint:{"line-color":"red","line-width":1}});
 });
 
-// ----------------------------------------
-var infoBox = document.querySelector(".info");
-
-var colorMap = {
-  d:'#0000CD', e:'#0024E3', f:'#000ED6', g:'#0048FA',
-  h:'#008CC2', i:'#00D08B', j:'#1FE460', k:'#7DFC21',
-  l:'#BDFF0C', m:'#DEFF05', n:'#FFFF00', o:'#FFEE00',
-  p:'#FFDD00', q:'#FFB600', r:'#FF9000', s:'#FF6A00',
-  t:'#FF4400', u:'#FA2100', v:'#F50000', w:'#D00000',
-  x:'#AA0000'
-};
-
-// GeoJSON (マーカー全体)
-var geojson = {
-  type: "FeatureCollection",
-  features: []
-};
-
-// MapLibre用データソース
-map.on("load", () => {
-  map.addSource("points", {
-    type: "geojson",
-    data: geojson
-  });
-
-  map.addLayer({
-    id: "points-layer",
-    type: "circle",
-    source: "points",
-    paint: {
-      "circle-radius": 2,
-      "circle-color": ["get", "color"],
-      "circle-stroke-color": "#ffffff",
-      "circle-stroke-width": 0.2,
-      "circle-opacity": 1
-    }
-  });
-});
-
-var siteCoords = [];
-var markersCount = 0;
-
-// サイトリスト取得
 fetch('https://weather-kyoshin.west.edge.storage-yahoo.jp/SiteList/sitelist.json')
-  .then(r => r.json())
-  .then(data => {
-    siteCoords = data.items;
-    updateMarkers();
-  });
+  .then(r=>r.json()).then(data=>{ siteCoords=data.items; });
 
-// ----------------------------------------
-function getRealTimeUrl(secondsAgo = 5) {
-  var now = new Date();
-  now.setSeconds(now.getSeconds() - secondsAgo);
-  var YYYY = now.getFullYear();
-  var MM = String(now.getMonth()+1).padStart(2,'0');
-  var DD = String(now.getDate()).padStart(2,'0');
-  var HH = String(now.getHours()).padStart(2,'0');
-  var mm = String(now.getMinutes()).padStart(2,'0');
-  var SS = String(now.getSeconds()).padStart(2,'0');
+function getRealTimeUrl(secondsAgo=2){
+  let now=new Date(); now.setSeconds(now.getSeconds()-secondsAgo);
+  const YYYY=now.getFullYear(), MM=String(now.getMonth()+1).padStart(2,'0'), DD=String(now.getDate()).padStart(2,'0');
+  const HH=String(now.getHours()).padStart(2,'0'), mm=String(now.getMinutes()).padStart(2,'0'), SS=String(now.getSeconds()).padStart(2,'0');
   return `https://weather-kyoshin.west.edge.storage-yahoo.jp/RealTimeData/${YYYY}${MM}${DD}/${YYYY}${MM}${DD}${HH}${mm}${SS}.json`;
 }
 
-let loading = false;
-
-// ----------------------------------------
-function updateMarkers() {
-  if(loading || siteCoords.length===0) return;
-  loading = true;
-
-  fetch(getRealTimeUrl())
-    .then(r=>{ if(!r.ok) throw new Error("データなし"); return r.json(); })
-    .then(data=>{
-      var intensities = data.realTimeData.intensity;
-      var N = Math.min(intensities.length, siteCoords.length);
-
-      geojson.features = [];
-      markersCount = 0;
-
-      for(let i=0;i<N;i++){
-        var code = intensities.charAt(i);
-        if(code==='c') continue;
-
-        markersCount++;
-
-        geojson.features.push({
-          type: "Feature",
-          geometry: {
-            type: "Point",
-            coordinates: [siteCoords[i][1], siteCoords[i][0]]
-          },
-          properties: {
-            color: colorMap[code] || "#AA0000"
-          }
-        });
-      }
-
-      map.getSource("points").setData(geojson);
-
-      infoBox.innerHTML = "<b>観測点数:</b> " + markersCount;
-    })
-    .catch(e=>console.warn("リアルタイム取得失敗（丸保持）", e))
-    .finally(()=>{ loading=false; });
+function convertIntensity(code){
+  if(!code) return '';
+  if(code==="01") return "1";
+  if(code==="02") return "2";
+  if(code==="03") return "3";
+  if(code==="04") return "4";
+  if(code==="5-") return "5弱";
+  if(code==="5+") return "5強";
+  if(code==="6-") return "6弱";
+  if(code==="6+") return "6強";
+  if(code==="07") return "7";
+  return code;
 }
 
-// 0.1秒ごと更新
-setInterval(updateMarkers,10);
+function updateEqBox(data){
+  const hypo=data.hypoInfo?.items?.[0];
+  const box=document.getElementById("eq-box").firstElementChild;
+
+  if(!hypo){
+    if(lastData){
+      data = lastData;
+    } else {
+      box.innerHTML='緊急地震速報は発表されていません';
+      return;
+    }
+  }
+
+  const origin=formatDate(data.hypoInfo.items[0].originTime);
+  const h=data.hypoInfo.items[0];
+  const reportText=h.isFinal==="true" ? "最終報" : `第${h.reportNum}報`;
+  const intensityStr=convertIntensity(h.calcintensity);
+
+  box.innerHTML=`
+    <div class="eq-title">${h.regionName}</div>
+    <div>最大震度：${intensityStr}　${reportText}</div>
+    <div>M${h.magnitude}　深さ：${h.depth}</div>
+    <div class="eq-small">${origin} 発生</div>
+  `;
+
+  lastData=data;
+}
+
+function applyData(data){
+  updateEqBox(data);
+
+  const intensities=data.realTimeData?.intensity;
+  if(!intensities){ return; }
+
+  const N=Math.min(intensities.length, siteCoords.length);
+  geojson.features=[];
+  for(let i=0;i<N;i++){
+    let code=intensities.charAt(i);
+    if(code==='c') continue;
+    geojson.features.push({
+      type:"Feature",
+      geometry:{ type:"Point", coordinates:[siteCoords[i][1],siteCoords[i][0]] },
+      properties:{ color:colorMap[code]||"#AA0000" }
+    });
+  }
+  map.getSource("points").setData(geojson);
+  infoBox.innerHTML="<b>観測点数:</b> "+geojson.features.length;
+
+  const w=data.psWave?.items;
+
+  if(w && w.length>0){
+    const p=w[0].pRadius*1000, s=w[0].sRadius*1000;
+    const lat=parseFloat(w[0].latitude.replace("N","")), lng=parseFloat(w[0].longitude.replace("E",""));
+    const center=[lng,lat];
+
+    map.getSource("pWaveSource").setData({ type:"FeatureCollection", features:[createCircleGeoJSON(center,p)] });
+    map.getSource("sWaveSource").setData({ type:"FeatureCollection", features:[createCircleGeoJSON(center,s)] });
+
+    if(!epicenterMarker){
+      const el=document.createElement('div'); el.className='epicenter-marker';
+      epicenterMarker=new maplibregl.Marker({ element:el }).setLngLat(center).addTo(map);
+    } else {
+      epicenterMarker.setLngLat(center);
+    }
+  }
+
+  /*--------------------------------------------*
+   *  ✔ 地震終了状態の判定（追加した部分）
+   *--------------------------------------------*/
+  const noHypo = !data.hypoInfo?.items?.length;
+  const noWave = !data.psWave?.items?.length;
+
+  if(noHypo && noWave){
+    // eq-box 初期化
+    document.querySelector("#eq-box .eq-content").innerHTML =
+      '緊急地震速報は発表されていません';
+
+    // P波・S波円を消す
+    map.getSource("pWaveSource").setData({ type:"FeatureCollection", features:[] });
+    map.getSource("sWaveSource").setData({ type:"FeatureCollection", features:[] });
+
+    // 震源マーカー削除
+    if(epicenterMarker){
+      epicenterMarker.remove();
+      epicenterMarker=null;
+    }
+
+    // 最後のデータも初期化
+    lastData=null;
+  }
+}
+
+function createCircleGeoJSON(center,radius,steps=64){
+  const coords=[]; const [lng,lat]=center; const latRad=lat*Math.PI/180;
+  for(let i=0;i<=steps;i++){
+    const angle=(i/steps)*2*Math.PI;
+    const dx=(radius/111000)/Math.cos(latRad)*Math.cos(angle);
+    const dy=(radius/111000)*Math.sin(angle);
+    coords.push([lng+dx,lat+dy]);
+  }
+  return { type:"Feature", geometry:{ type:"Polygon", coordinates:[coords] } };
+}
+
+let loading=false;
+function updateAll(){
+  if(loading||siteCoords.length===0) return;
+  loading=true;
+
+  if(navigator.onLine){
+    fetch(getRealTimeUrl())
+      .then(r=>r.json())
+      .then(data=>applyData(data))
+      .catch(()=>{})
+      .finally(()=>{ loading=false; });
+  } else {
+    loading=false;
+  }
+}
+
+setInterval(updateAll,450);
+updateAll();
+
+const legendBox=document.getElementById("legend");
+const img=document.createElement("img");
+img.id="legendImg";
+img.src="colormap.svg";
+legendBox.appendChild(img);
+
+function setLegendSize(width,height){
+  const img=document.getElementById("legendImg");
+  if(!img) return;
+  if(width) img.style.width=width+"px";
+  if(height) img.style.height=height+"px";
+}
+setLegendSize(30,250);
 </script>
 </body>
 </html>
