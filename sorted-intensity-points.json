@@ -1,0 +1,10705 @@
+[
+  {
+    "code": "AIC001",
+    "name": "尾西",
+    "region": "愛知県",
+    "latitude": 35.2974,
+    "longitude": 136.7505
+  },
+  {
+    "code": "AIC002",
+    "name": "小牧",
+    "region": "愛知県",
+    "latitude": 35.2979,
+    "longitude": 136.9154
+  },
+  {
+    "code": "AIC003",
+    "name": "津島",
+    "region": "愛知県",
+    "latitude": 35.1734,
+    "longitude": 136.7402
+  },
+  {
+    "code": "AIC004",
+    "name": "名古屋",
+    "region": "愛知県",
+    "latitude": 35.0631,
+    "longitude": 136.9738
+  },
+  {
+    "code": "AIC005",
+    "name": "藤岡",
+    "region": "愛知県",
+    "latitude": 35.1983,
+    "longitude": 137.2061
+  },
+  {
+    "code": "AIC006",
+    "name": "稲武",
+    "region": "愛知県",
+    "latitude": 35.2158,
+    "longitude": 137.5089
+  },
+  {
+    "code": "AIC008",
+    "name": "設楽",
+    "region": "愛知県",
+    "latitude": 35.1006,
+    "longitude": 137.5757
+  },
+  {
+    "code": "AIC009",
+    "name": "豊田",
+    "region": "愛知県",
+    "latitude": 35.0813,
+    "longitude": 137.1466
+  },
+  {
+    "code": "AIC010",
+    "name": "作手",
+    "region": "愛知県",
+    "latitude": 34.9803,
+    "longitude": 137.4297
+  },
+  {
+    "code": "AIC011",
+    "name": "知多",
+    "region": "愛知県",
+    "latitude": 34.9966,
+    "longitude": 136.8641
+  },
+  {
+    "code": "AIC012",
+    "name": "安城",
+    "region": "愛知県",
+    "latitude": 34.9119,
+    "longitude": 137.0446
+  },
+  {
+    "code": "AIC013",
+    "name": "長篠",
+    "region": "愛知県",
+    "latitude": 34.9529,
+    "longitude": 137.6067
+  },
+  {
+    "code": "AIC014",
+    "name": "蒲郡",
+    "region": "愛知県",
+    "latitude": 34.8285,
+    "longitude": 137.2199
+  },
+  {
+    "code": "AIC015",
+    "name": "豊橋",
+    "region": "愛知県",
+    "latitude": 34.7552,
+    "longitude": 137.404
+  },
+  {
+    "code": "AIC016",
+    "name": "美浜",
+    "region": "愛知県",
+    "latitude": 34.7784,
+    "longitude": 136.9082
+  },
+  {
+    "code": "AIC017",
+    "name": "田原",
+    "region": "愛知県",
+    "latitude": 34.6697,
+    "longitude": 137.2638
+  },
+  {
+    "code": "AIC018",
+    "name": "渥美",
+    "region": "愛知県",
+    "latitude": 34.622,
+    "longitude": 137.1086
+  },
+  {
+    "code": "AKT003",
+    "name": "藤里",
+    "region": "秋田県",
+    "latitude": 40.2784,
+    "longitude": 140.2631
+  },
+  {
+    "code": "AKT004",
+    "name": "八森",
+    "region": "秋田県",
+    "latitude": 40.3886,
+    "longitude": 139.9822
+  },
+  {
+    "code": "AKT005",
+    "name": "能代",
+    "region": "秋田県",
+    "latitude": 40.202,
+    "longitude": 140.0286
+  },
+  {
+    "code": "AKT006",
+    "name": "鹿角",
+    "region": "秋田県",
+    "latitude": 40.2153,
+    "longitude": 140.7873
+  },
+  {
+    "code": "AKT007",
+    "name": "琴丘",
+    "region": "秋田県",
+    "latitude": 40.0376,
+    "longitude": 140.0919
+  },
+  {
+    "code": "AKT008",
+    "name": "飯田川",
+    "region": "秋田県",
+    "latitude": 39.884,
+    "longitude": 140.0706
+  },
+  {
+    "code": "AKT009",
+    "name": "男鹿",
+    "region": "秋田県",
+    "latitude": 39.8869,
+    "longitude": 139.8467
+  },
+  {
+    "code": "AKT010",
+    "name": "秋田",
+    "region": "秋田県",
+    "latitude": 39.7223,
+    "longitude": 140.0998
+  },
+  {
+    "code": "AKTH01",
+    "name": "西木北",
+    "region": "秋田県",
+    "latitude": 39.8147,
+    "longitude": 140.579
+  },
+  {
+    "code": "AKT012",
+    "name": "田沢湖",
+    "region": "秋田県",
+    "latitude": 39.7014,
+    "longitude": 140.7178
+  },
+  {
+    "code": "AKT014",
+    "name": "角館",
+    "region": "秋田県",
+    "latitude": 39.595,
+    "longitude": 140.5573
+  },
+  {
+    "code": "AKT015",
+    "name": "本荘",
+    "region": "秋田県",
+    "latitude": 39.3844,
+    "longitude": 140.0519
+  },
+  {
+    "code": "AKT016",
+    "name": "大曲",
+    "region": "秋田県",
+    "latitude": 39.4545,
+    "longitude": 140.4758
+  },
+  {
+    "code": "AKT017",
+    "name": "横手",
+    "region": "秋田県",
+    "latitude": 39.2978,
+    "longitude": 140.5621
+  },
+  {
+    "code": "AKT018",
+    "name": "鳥海",
+    "region": "秋田県",
+    "latitude": 39.1937,
+    "longitude": 140.1899
+  },
+  {
+    "code": "AKT019",
+    "name": "雄勝",
+    "region": "秋田県",
+    "latitude": 39.039,
+    "longitude": 140.449
+  },
+  {
+    "code": "AKT020",
+    "name": "象潟",
+    "region": "秋田県",
+    "latitude": 39.2027,
+    "longitude": 139.9088
+  },
+  {
+    "code": "AKT021",
+    "name": "阿仁",
+    "region": "秋田県",
+    "latitude": 39.994,
+    "longitude": 140.4035
+  },
+  {
+    "code": "AKT022",
+    "name": "玉川",
+    "region": "秋田県",
+    "latitude": 39.7739,
+    "longitude": 140.6669
+  },
+  {
+    "code": "AKT023",
+    "name": "椿台",
+    "region": "秋田県",
+    "latitude": 39.1464,
+    "longitude": 140.7161
+  },
+  {
+    "code": "AOMH01",
+    "name": "大間",
+    "region": "青森県",
+    "latitude": 41.5273,
+    "longitude": 140.9127
+  },
+  {
+    "code": "AOM002",
+    "name": "福浦",
+    "region": "青森県",
+    "latitude": 41.328,
+    "longitude": 140.8132
+  },
+  {
+    "code": "AOM003",
+    "name": "大畑",
+    "region": "青森県",
+    "latitude": 41.4054,
+    "longitude": 141.1699
+  },
+  {
+    "code": "AOM004",
+    "name": "尻屋",
+    "region": "青森県",
+    "latitude": 41.4064,
+    "longitude": 141.4477
+  },
+  {
+    "code": "AOM005",
+    "name": "むつ",
+    "region": "青森県",
+    "latitude": 41.2949,
+    "longitude": 141.1972
+  },
+  {
+    "code": "AOM006",
+    "name": "川内",
+    "region": "青森県",
+    "latitude": 41.1976,
+    "longitude": 140.9979
+  },
+  {
+    "code": "AOM007",
+    "name": "南通",
+    "region": "青森県",
+    "latitude": 41.1689,
+    "longitude": 141.3845
+  },
+  {
+    "code": "AOM008",
+    "name": "横浜",
+    "region": "青森県",
+    "latitude": 41.0844,
+    "longitude": 141.2554
+  },
+  {
+    "code": "AOMH06",
+    "name": "六ヶ所",
+    "region": "青森県",
+    "latitude": 40.9664,
+    "longitude": 141.3738
+  },
+  {
+    "code": "AOM010",
+    "name": "野辺地",
+    "region": "青森県",
+    "latitude": 40.8724,
+    "longitude": 141.1427
+  },
+  {
+    "code": "AOM011",
+    "name": "三沢",
+    "region": "青森県",
+    "latitude": 40.6803,
+    "longitude": 141.3669
+  },
+  {
+    "code": "AOM012",
+    "name": "八戸",
+    "region": "青森県",
+    "latitude": 40.5127,
+    "longitude": 141.488
+  },
+  {
+    "code": "AOM013",
+    "name": "南部",
+    "region": "青森県",
+    "latitude": 40.4126,
+    "longitude": 141.2813
+  },
+  {
+    "code": "AOM014",
+    "name": "子ノ口",
+    "region": "青森県",
+    "latitude": 40.4472,
+    "longitude": 140.9403
+  },
+  {
+    "code": "AOM015",
+    "name": "碇ヶ関",
+    "region": "青森県",
+    "latitude": 40.4791,
+    "longitude": 140.6268
+  },
+  {
+    "code": "AOM016",
+    "name": "弘前",
+    "region": "青森県",
+    "latitude": 40.6021,
+    "longitude": 140.4982
+  },
+  {
+    "code": "AOM017",
+    "name": "深浦",
+    "region": "青森県",
+    "latitude": 40.6388,
+    "longitude": 139.9295
+  },
+  {
+    "code": "AOM018",
+    "name": "鯵ヶ沢",
+    "region": "青森県",
+    "latitude": 40.7776,
+    "longitude": 140.206
+  },
+  {
+    "code": "AOM019",
+    "name": "五所川原",
+    "region": "青森県",
+    "latitude": 40.8152,
+    "longitude": 140.447
+  },
+  {
+    "code": "AOM020",
+    "name": "青森",
+    "region": "青森県",
+    "latitude": 40.8194,
+    "longitude": 140.7498
+  },
+  {
+    "code": "AOM021",
+    "name": "十和田",
+    "region": "青森県",
+    "latitude": 40.615,
+    "longitude": 141.2083
+  },
+  {
+    "code": "AOM022",
+    "name": "東田沢",
+    "region": "青森県",
+    "latitude": 40.9923,
+    "longitude": 140.9161
+  },
+  {
+    "code": "AOM023",
+    "name": "中里",
+    "region": "青森県",
+    "latitude": 40.9664,
+    "longitude": 140.4317
+  },
+  {
+    "code": "AOM024",
+    "name": "蟹田",
+    "region": "青森県",
+    "latitude": 41.0473,
+    "longitude": 140.6399
+  },
+  {
+    "code": "AOM025",
+    "name": "今別",
+    "region": "青森県",
+    "latitude": 41.1797,
+    "longitude": 140.4805
+  },
+  {
+    "code": "AOM026",
+    "name": "小泊",
+    "region": "青森県",
+    "latitude": 41.128,
+    "longitude": 140.3107
+  },
+  {
+    "code": "AOM027",
+    "name": "脇野沢",
+    "region": "青森県",
+    "latitude": 41.1457,
+    "longitude": 140.8219
+  },
+  {
+    "code": "AOM029",
+    "name": "西目屋",
+    "region": "青森県",
+    "latitude": 40.5764,
+    "longitude": 140.2968
+  },
+  {
+    "code": "CHB001",
+    "name": "野田",
+    "region": "千葉県",
+    "latitude": 35.9571,
+    "longitude": 139.8731
+  },
+  {
+    "code": "CHB002",
+    "name": "松戸",
+    "region": "千葉県",
+    "latitude": 35.7871,
+    "longitude": 139.9024
+  },
+  {
+    "code": "CHB003",
+    "name": "白井",
+    "region": "千葉県",
+    "latitude": 35.7926,
+    "longitude": 140.0577
+  },
+  {
+    "code": "CHB004",
+    "name": "佐原",
+    "region": "千葉県",
+    "latitude": 35.8889,
+    "longitude": 140.4903
+  },
+  {
+    "code": "CHBH14",
+    "name": "銚子中",
+    "region": "千葉県",
+    "latitude": 35.7342,
+    "longitude": 140.823
+  },
+  {
+    "code": "CHB006",
+    "name": "成田",
+    "region": "千葉県",
+    "latitude": 35.779,
+    "longitude": 140.3073
+  },
+  {
+    "code": "CHB007",
+    "name": "佐倉",
+    "region": "千葉県",
+    "latitude": 35.7237,
+    "longitude": 140.2246
+  },
+  {
+    "code": "TKY025",
+    "name": "篠崎",
+    "region": "東京都",
+    "latitude": 35.7136,
+    "longitude": 139.8972
+  },
+  {
+    "code": "CHB009",
+    "name": "千葉",
+    "region": "千葉県",
+    "latitude": 35.5871,
+    "longitude": 140.2378
+  },
+  {
+    "code": "CHB010",
+    "name": "八日市場",
+    "region": "千葉県",
+    "latitude": 35.7086,
+    "longitude": 140.5637
+  },
+  {
+    "code": "CHBH19",
+    "name": "蓮沼",
+    "region": "千葉県",
+    "latitude": 35.5943,
+    "longitude": 140.5107
+  },
+  {
+    "code": "CHB012",
+    "name": "東金",
+    "region": "千葉県",
+    "latitude": 35.5721,
+    "longitude": 140.3436
+  },
+  {
+    "code": "CHB013",
+    "name": "茂原",
+    "region": "千葉県",
+    "latitude": 35.4294,
+    "longitude": 140.2892
+  },
+  {
+    "code": "CHB014",
+    "name": "姉崎",
+    "region": "千葉県",
+    "latitude": 35.471,
+    "longitude": 140.0454
+  },
+  {
+    "code": "CHB015",
+    "name": "木更津",
+    "region": "千葉県",
+    "latitude": 35.3738,
+    "longitude": 139.9199
+  },
+  {
+    "code": "CHB016",
+    "name": "岬",
+    "region": "千葉県",
+    "latitude": 35.2998,
+    "longitude": 140.3866
+  },
+  {
+    "code": "CHB017",
+    "name": "市場",
+    "region": "千葉県",
+    "latitude": 35.2976,
+    "longitude": 140.0734
+  },
+  {
+    "code": "CHB027",
+    "name": "勝浦北",
+    "region": "千葉県",
+    "latitude": 35.1806,
+    "longitude": 140.2655
+  },
+  {
+    "code": "CHB019",
+    "name": "鋸南",
+    "region": "千葉県",
+    "latitude": 35.1106,
+    "longitude": 139.836
+  },
+  {
+    "code": "CHB020",
+    "name": "鴨川",
+    "region": "千葉県",
+    "latitude": 35.1132,
+    "longitude": 140.1006
+  },
+  {
+    "code": "CHB021",
+    "name": "白浜",
+    "region": "千葉県",
+    "latitude": 34.9078,
+    "longitude": 139.8994
+  },
+  {
+    "code": "CHB022",
+    "name": "富津",
+    "region": "千葉県",
+    "latitude": 35.3033,
+    "longitude": 139.8555
+  },
+  {
+    "code": "CHB024",
+    "name": "稲毛",
+    "region": "千葉県",
+    "latitude": 35.6337,
+    "longitude": 140.0781
+  },
+  {
+    "code": "CHB025",
+    "name": "千倉",
+    "region": "千葉県",
+    "latitude": 34.9705,
+    "longitude": 139.9458
+  },
+  {
+    "code": "CHB026",
+    "name": "長南",
+    "region": "千葉県",
+    "latitude": 35.3858,
+    "longitude": 140.2404
+  },
+  {
+    "code": "CHB027",
+    "name": "勝浦北",
+    "region": "千葉県",
+    "latitude": 35.1806,
+    "longitude": 140.2655
+  },
+  {
+    "code": "CHB028",
+    "name": "市川北",
+    "region": "千葉県",
+    "latitude": 35.7664,
+    "longitude": 139.9655
+  },
+  {
+    "code": "TKY025",
+    "name": "篠崎",
+    "region": "東京都",
+    "latitude": 35.7136,
+    "longitude": 139.8972
+  },
+  {
+    "code": "EHM001",
+    "name": "伊予三島",
+    "region": "愛媛県",
+    "latitude": 33.9788,
+    "longitude": 133.5494
+  },
+  {
+    "code": "EHM002",
+    "name": "新居浜",
+    "region": "愛媛県",
+    "latitude": 33.9211,
+    "longitude": 133.3079
+  },
+  {
+    "code": "EHM003",
+    "name": "東予",
+    "region": "愛媛県",
+    "latitude": 33.9253,
+    "longitude": 133.0844
+  },
+  {
+    "code": "EHM004",
+    "name": "今治",
+    "region": "愛媛県",
+    "latitude": 34.0627,
+    "longitude": 132.9986
+  },
+  {
+    "code": "EHM005",
+    "name": "川内",
+    "region": "愛媛県",
+    "latitude": 33.7973,
+    "longitude": 132.9144
+  },
+  {
+    "code": "EHM006",
+    "name": "美川",
+    "region": "愛媛県",
+    "latitude": 33.6412,
+    "longitude": 133.008
+  },
+  {
+    "code": "EHM007",
+    "name": "北条",
+    "region": "愛媛県",
+    "latitude": 33.9616,
+    "longitude": 132.7719
+  },
+  {
+    "code": "EHM016",
+    "name": "伊予",
+    "region": "愛媛県",
+    "latitude": 33.7654,
+    "longitude": 132.7089
+  },
+  {
+    "code": "EHM009",
+    "name": "広田",
+    "region": "愛媛県",
+    "latitude": 33.6333,
+    "longitude": 132.7965
+  },
+  {
+    "code": "EHM010",
+    "name": "肱川",
+    "region": "愛媛県",
+    "latitude": 33.4511,
+    "longitude": 132.6881
+  },
+  {
+    "code": "EHM011",
+    "name": "八幡浜",
+    "region": "愛媛県",
+    "latitude": 33.4498,
+    "longitude": 132.4341
+  },
+  {
+    "code": "EHM012",
+    "name": "宇和島",
+    "region": "愛媛県",
+    "latitude": 33.2217,
+    "longitude": 132.5724
+  },
+  {
+    "code": "EHM015",
+    "name": "長浜",
+    "region": "愛媛県",
+    "latitude": 33.6094,
+    "longitude": 132.4768
+  },
+  {
+    "code": "EHM016",
+    "name": "伊予",
+    "region": "愛媛県",
+    "latitude": 33.7654,
+    "longitude": 132.7089
+  },
+  {
+    "code": "FKI001",
+    "name": "三国",
+    "region": "福井県",
+    "latitude": 36.2193,
+    "longitude": 136.1565
+  },
+  {
+    "code": "FKI003",
+    "name": "福井",
+    "region": "福井県",
+    "latitude": 36.074,
+    "longitude": 136.2687
+  },
+  {
+    "code": "FKI004",
+    "name": "大野",
+    "region": "福井県",
+    "latitude": 35.9793,
+    "longitude": 136.4867
+  },
+  {
+    "code": "FKI008",
+    "name": "三方",
+    "region": "福井県",
+    "latitude": 35.5483,
+    "longitude": 135.9091
+  },
+  {
+    "code": "FKI009",
+    "name": "小浜",
+    "region": "福井県",
+    "latitude": 35.4956,
+    "longitude": 135.7509
+  },
+  {
+    "code": "FKI010",
+    "name": "高浜",
+    "region": "福井県",
+    "latitude": 35.4904,
+    "longitude": 135.5518
+  },
+  {
+    "code": "FKO001",
+    "name": "玄海",
+    "region": "福岡県",
+    "latitude": 33.8425,
+    "longitude": 130.5087
+  },
+  {
+    "code": "FKO002",
+    "name": "中間",
+    "region": "福岡県",
+    "latitude": 33.8253,
+    "longitude": 130.7058
+  },
+  {
+    "code": "FKO003",
+    "name": "北九州",
+    "region": "福岡県",
+    "latitude": 33.8324,
+    "longitude": 130.9013
+  },
+  {
+    "code": "FKO004",
+    "name": "行橋",
+    "region": "福岡県",
+    "latitude": 33.7366,
+    "longitude": 131.0121
+  },
+  {
+    "code": "FKO005",
+    "name": "飯塚",
+    "region": "福岡県",
+    "latitude": 33.652,
+    "longitude": 130.6965
+  },
+  {
+    "code": "FKO006",
+    "name": "福岡",
+    "region": "福岡県",
+    "latitude": 33.5989,
+    "longitude": 130.399
+  },
+  {
+    "code": "FKO007",
+    "name": "前原",
+    "region": "福岡県",
+    "latitude": 33.5614,
+    "longitude": 130.2024
+  },
+  {
+    "code": "FKO011",
+    "name": "久留米",
+    "region": "福岡県",
+    "latitude": 33.3237,
+    "longitude": 130.5118
+  },
+  {
+    "code": "FKO012",
+    "name": "浮羽",
+    "region": "福岡県",
+    "latitude": 33.332,
+    "longitude": 130.794
+  },
+  {
+    "code": "FKO013",
+    "name": "八女",
+    "region": "福岡県",
+    "latitude": 33.2254,
+    "longitude": 130.5608
+  },
+  {
+    "code": "FKO015",
+    "name": "柳川",
+    "region": "福岡県",
+    "latitude": 33.1629,
+    "longitude": 130.4052
+  },
+  {
+    "code": "FKS001",
+    "name": "相馬",
+    "region": "福島県",
+    "latitude": 37.7946,
+    "longitude": 140.9192
+  },
+  {
+    "code": "FKS002",
+    "name": "梁川",
+    "region": "福島県",
+    "latitude": 37.8453,
+    "longitude": 140.6008
+  },
+  {
+    "code": "FKS003",
+    "name": "福島",
+    "region": "福島県",
+    "latitude": 37.7624,
+    "longitude": 140.4781
+  },
+  {
+    "code": "FKS004",
+    "name": "飯舘",
+    "region": "福島県",
+    "latitude": 37.6798,
+    "longitude": 140.7342
+  },
+  {
+    "code": "FKS005",
+    "name": "原町",
+    "region": "福島県",
+    "latitude": 37.6389,
+    "longitude": 140.9853
+  },
+  {
+    "code": "FKS006",
+    "name": "葛尾",
+    "region": "福島県",
+    "latitude": 37.5022,
+    "longitude": 140.7593
+  },
+  {
+    "code": "FKS007",
+    "name": "大熊",
+    "region": "福島県",
+    "latitude": 37.4061,
+    "longitude": 140.9632
+  },
+  {
+    "code": "FKS008",
+    "name": "船引",
+    "region": "福島県",
+    "latitude": 37.4343,
+    "longitude": 140.567
+  },
+  {
+    "code": "FKS009",
+    "name": "小野",
+    "region": "福島県",
+    "latitude": 37.2796,
+    "longitude": 140.6344
+  },
+  {
+    "code": "FKS010",
+    "name": "広野",
+    "region": "福島県",
+    "latitude": 37.2338,
+    "longitude": 141.0018
+  },
+  {
+    "code": "FKS011",
+    "name": "いわき",
+    "region": "福島県",
+    "latitude": 37.0917,
+    "longitude": 140.9031
+  },
+  {
+    "code": "FKS012",
+    "name": "勿来",
+    "region": "福島県",
+    "latitude": 36.9066,
+    "longitude": 140.7928
+  },
+  {
+    "code": "FKS013",
+    "name": "古殿",
+    "region": "福島県",
+    "latitude": 37.0893,
+    "longitude": 140.5546
+  },
+  {
+    "code": "FKS015",
+    "name": "棚倉",
+    "region": "福島県",
+    "latitude": 37.0237,
+    "longitude": 140.3763
+  },
+  {
+    "code": "FKS016",
+    "name": "白河",
+    "region": "福島県",
+    "latitude": 37.1232,
+    "longitude": 140.191
+  },
+  {
+    "code": "FKS017",
+    "name": "須賀川",
+    "region": "福島県",
+    "latitude": 37.2844,
+    "longitude": 140.3689
+  },
+  {
+    "code": "FKS018",
+    "name": "郡山",
+    "region": "福島県",
+    "latitude": 37.3959,
+    "longitude": 140.3619
+  },
+  {
+    "code": "FKS019",
+    "name": "二本松",
+    "region": "福島県",
+    "latitude": 37.6031,
+    "longitude": 140.4381
+  },
+  {
+    "code": "FKS020",
+    "name": "猪苗代",
+    "region": "福島県",
+    "latitude": 37.556,
+    "longitude": 140.1226
+  },
+  {
+    "code": "FKS021",
+    "name": "喜多方",
+    "region": "福島県",
+    "latitude": 37.6537,
+    "longitude": 139.8607
+  },
+  {
+    "code": "FKS023",
+    "name": "会津若松",
+    "region": "福島県",
+    "latitude": 37.4775,
+    "longitude": 139.9309
+  },
+  {
+    "code": "FKS024",
+    "name": "中野",
+    "region": "福島県",
+    "latitude": 37.3963,
+    "longitude": 140.1326
+  },
+  {
+    "code": "FKS025",
+    "name": "下郷",
+    "region": "福島県",
+    "latitude": 37.3082,
+    "longitude": 139.8994
+  },
+  {
+    "code": "FKS026",
+    "name": "南郷",
+    "region": "福島県",
+    "latitude": 37.2664,
+    "longitude": 139.5368
+  },
+  {
+    "code": "FKS027",
+    "name": "滝原",
+    "region": "福島県",
+    "latitude": 37.0701,
+    "longitude": 139.6807
+  },
+  {
+    "code": "FKS028",
+    "name": "只見",
+    "region": "福島県",
+    "latitude": 37.3037,
+    "longitude": 139.3619
+  },
+  {
+    "code": "FKSH07",
+    "name": "檜枝岐",
+    "region": "福島県",
+    "latitude": 37.0103,
+    "longitude": 139.3755
+  },
+  {
+    "code": "FKS030",
+    "name": "金山",
+    "region": "福島県",
+    "latitude": 37.4548,
+    "longitude": 139.5252
+  },
+  {
+    "code": "FKS031",
+    "name": "川内",
+    "region": "福島県",
+    "latitude": 37.3363,
+    "longitude": 140.8087
+  },
+  {
+    "code": "GIFH13",
+    "name": "白川",
+    "region": "岐阜県",
+    "latitude": 36.2743,
+    "longitude": 136.8979
+  },
+  {
+    "code": "GIF002",
+    "name": "河合",
+    "region": "岐阜県",
+    "latitude": 36.2734,
+    "longitude": 137.0261
+  },
+  {
+    "code": "GIF003",
+    "name": "神岡",
+    "region": "岐阜県",
+    "latitude": 36.3326,
+    "longitude": 137.3019
+  },
+  {
+    "code": "GIFH14",
+    "name": "上宝",
+    "region": "岐阜県",
+    "latitude": 36.2493,
+    "longitude": 137.5174
+  },
+  {
+    "code": "GIF005",
+    "name": "高山",
+    "region": "岐阜県",
+    "latitude": 36.1537,
+    "longitude": 137.2513
+  },
+  {
+    "code": "GIF006",
+    "name": "荘川",
+    "region": "岐阜県",
+    "latitude": 36.0334,
+    "longitude": 136.9533
+  },
+  {
+    "code": "GIF007",
+    "name": "高根",
+    "region": "岐阜県",
+    "latitude": 36.0378,
+    "longitude": 137.4854
+  },
+  {
+    "code": "GIF008",
+    "name": "小坂",
+    "region": "岐阜県",
+    "latitude": 35.9517,
+    "longitude": 137.2604
+  },
+  {
+    "code": "GIF009",
+    "name": "白鳥",
+    "region": "岐阜県",
+    "latitude": 35.925,
+    "longitude": 136.8318
+  },
+  {
+    "code": "GIF010",
+    "name": "下呂",
+    "region": "岐阜県",
+    "latitude": 35.8005,
+    "longitude": 137.2484
+  },
+  {
+    "code": "GIF011",
+    "name": "八幡",
+    "region": "岐阜県",
+    "latitude": 35.7596,
+    "longitude": 136.9809
+  },
+  {
+    "code": "GIF012",
+    "name": "東杉原",
+    "region": "岐阜県",
+    "latitude": 35.6364,
+    "longitude": 136.4879
+  },
+  {
+    "code": "GIF013",
+    "name": "金山",
+    "region": "岐阜県",
+    "latitude": 35.663,
+    "longitude": 137.1618
+  },
+  {
+    "code": "GIF014",
+    "name": "付知",
+    "region": "岐阜県",
+    "latitude": 35.6582,
+    "longitude": 137.4253
+  },
+  {
+    "code": "GIF015",
+    "name": "美濃",
+    "region": "岐阜県",
+    "latitude": 35.5456,
+    "longitude": 136.9076
+  },
+  {
+    "code": "GIF016",
+    "name": "七宗",
+    "region": "岐阜県",
+    "latitude": 35.5427,
+    "longitude": 137.1195
+  },
+  {
+    "code": "GIF017",
+    "name": "揖斐川",
+    "region": "岐阜県",
+    "latitude": 35.483,
+    "longitude": 136.5713
+  },
+  {
+    "code": "GIF018",
+    "name": "中津川",
+    "region": "岐阜県",
+    "latitude": 35.4955,
+    "longitude": 137.4998
+  },
+  {
+    "code": "GIF019",
+    "name": "恵那",
+    "region": "岐阜県",
+    "latitude": 35.4492,
+    "longitude": 137.4042
+  },
+  {
+    "code": "GIF020",
+    "name": "岐阜",
+    "region": "岐阜県",
+    "latitude": 35.4248,
+    "longitude": 136.7568
+  },
+  {
+    "code": "GIFH29",
+    "name": "上石津",
+    "region": "岐阜県",
+    "latitude": 35.2953,
+    "longitude": 136.4732
+  },
+  {
+    "code": "GIF023",
+    "name": "土岐",
+    "region": "岐阜県",
+    "latitude": 35.3879,
+    "longitude": 137.2166
+  },
+  {
+    "code": "GIF024",
+    "name": "明智",
+    "region": "岐阜県",
+    "latitude": 35.3015,
+    "longitude": 137.3869
+  },
+  {
+    "code": "GIF026",
+    "name": "美山",
+    "region": "岐阜県",
+    "latitude": 35.5909,
+    "longitude": 136.7418
+  },
+  {
+    "code": "GNM001",
+    "name": "片品",
+    "region": "群馬県",
+    "latitude": 36.7719,
+    "longitude": 139.2246
+  },
+  {
+    "code": "GNM002",
+    "name": "水上",
+    "region": "群馬県",
+    "latitude": 36.7821,
+    "longitude": 138.9695
+  },
+  {
+    "code": "GNM003",
+    "name": "沼田",
+    "region": "群馬県",
+    "latitude": 36.6581,
+    "longitude": 139.0786
+  },
+  {
+    "code": "GNM004",
+    "name": "草津",
+    "region": "群馬県",
+    "latitude": 36.6171,
+    "longitude": 138.5921
+  },
+  {
+    "code": "GNMH08",
+    "name": "嬬恋",
+    "region": "群馬県",
+    "latitude": 36.4917,
+    "longitude": 138.5244
+  },
+  {
+    "code": "GNM006",
+    "name": "吾妻",
+    "region": "群馬県",
+    "latitude": 36.5105,
+    "longitude": 138.7527
+  },
+  {
+    "code": "GNM007",
+    "name": "渋川",
+    "region": "群馬県",
+    "latitude": 36.4637,
+    "longitude": 139.0093
+  },
+  {
+    "code": "GNM008",
+    "name": "前橋",
+    "region": "群馬県",
+    "latitude": 36.3479,
+    "longitude": 139.1368
+  },
+  {
+    "code": "GNM009",
+    "name": "桐生",
+    "region": "群馬県",
+    "latitude": 36.4105,
+    "longitude": 139.3253
+  },
+  {
+    "code": "GNM010",
+    "name": "館林",
+    "region": "群馬県",
+    "latitude": 36.2184,
+    "longitude": 139.4808
+  },
+  {
+    "code": "GNM011",
+    "name": "太田",
+    "region": "群馬県",
+    "latitude": 36.2913,
+    "longitude": 139.3607
+  },
+  {
+    "code": "GNMH05",
+    "name": "伊勢崎",
+    "region": "群馬県",
+    "latitude": 36.3143,
+    "longitude": 139.1847
+  },
+  {
+    "code": "GNM013",
+    "name": "高崎",
+    "region": "群馬県",
+    "latitude": 36.3181,
+    "longitude": 139.0174
+  },
+  {
+    "code": "GNM014",
+    "name": "坂本",
+    "region": "群馬県",
+    "latitude": 36.3467,
+    "longitude": 138.7211
+  },
+  {
+    "code": "GNM015",
+    "name": "下仁田",
+    "region": "群馬県",
+    "latitude": 36.2286,
+    "longitude": 138.7578
+  },
+  {
+    "code": "GNMH12",
+    "name": "神流",
+    "region": "群馬県",
+    "latitude": 36.144,
+    "longitude": 138.9129
+  },
+  {
+    "code": "HKD001",
+    "name": "稚内",
+    "region": "北海道",
+    "latitude": 45.4163,
+    "longitude": 141.672
+  },
+  {
+    "code": "HKD003",
+    "name": "豊富",
+    "region": "北海道",
+    "latitude": 45.1033,
+    "longitude": 141.7665
+  },
+  {
+    "code": "SOYH02",
+    "name": "猿払南",
+    "region": "北海道",
+    "latitude": 45.2163,
+    "longitude": 142.2254
+  },
+  {
+    "code": "HKD005",
+    "name": "猿払",
+    "region": "北海道",
+    "latitude": 45.3329,
+    "longitude": 142.1747
+  },
+  {
+    "code": "HKD007",
+    "name": "中頓別",
+    "region": "北海道",
+    "latitude": 44.9702,
+    "longitude": 142.29
+  },
+  {
+    "code": "HKD008",
+    "name": "枝幸",
+    "region": "北海道",
+    "latitude": 44.9375,
+    "longitude": 142.5744
+  },
+  {
+    "code": "HKD011",
+    "name": "東利尻",
+    "region": "北海道",
+    "latitude": 45.246,
+    "longitude": 141.217
+  },
+  {
+    "code": "HKD012",
+    "name": "船泊",
+    "region": "北海道",
+    "latitude": 45.4408,
+    "longitude": 141.0367
+  },
+  {
+    "code": "HKD013",
+    "name": "礼文",
+    "region": "北海道",
+    "latitude": 45.3049,
+    "longitude": 141.0475
+  },
+  {
+    "code": "HKD014",
+    "name": "沼川",
+    "region": "北海道",
+    "latitude": 45.2525,
+    "longitude": 141.8531
+  },
+  {
+    "code": "HKD015",
+    "name": "天塩",
+    "region": "北海道",
+    "latitude": 44.8846,
+    "longitude": 141.7503
+  },
+  {
+    "code": "HKD019",
+    "name": "羽幌",
+    "region": "北海道",
+    "latitude": 44.3611,
+    "longitude": 141.6978
+  },
+  {
+    "code": "HKD020",
+    "name": "港町",
+    "region": "北海道",
+    "latitude": 44.1487,
+    "longitude": 141.6647
+  },
+  {
+    "code": "HKD021",
+    "name": "留萌",
+    "region": "北海道",
+    "latitude": 43.9407,
+    "longitude": 141.637
+  },
+  {
+    "code": "HKD022",
+    "name": "増毛",
+    "region": "北海道",
+    "latitude": 43.8516,
+    "longitude": 141.5279
+  },
+  {
+    "code": "HKD023",
+    "name": "雄冬",
+    "region": "北海道",
+    "latitude": 43.7734,
+    "longitude": 141.3686
+  },
+  {
+    "code": "HKD025",
+    "name": "中川",
+    "region": "北海道",
+    "latitude": 44.8116,
+    "longitude": 142.0712
+  },
+  {
+    "code": "HKD026",
+    "name": "音威子府",
+    "region": "北海道",
+    "latitude": 44.7283,
+    "longitude": 142.2633
+  },
+  {
+    "code": "HKD027",
+    "name": "美深",
+    "region": "北海道",
+    "latitude": 44.4806,
+    "longitude": 142.3428
+  },
+  {
+    "code": "HKD028",
+    "name": "名寄",
+    "region": "北海道",
+    "latitude": 44.3598,
+    "longitude": 142.4547
+  },
+  {
+    "code": "HKD029",
+    "name": "下川",
+    "region": "北海道",
+    "latitude": 44.3114,
+    "longitude": 142.6421
+  },
+  {
+    "code": "HKD030",
+    "name": "士別",
+    "region": "北海道",
+    "latitude": 44.1821,
+    "longitude": 142.3942
+  },
+  {
+    "code": "HKD031",
+    "name": "朝日",
+    "region": "北海道",
+    "latitude": 44.1185,
+    "longitude": 142.5952
+  },
+  {
+    "code": "HKD032",
+    "name": "和寒",
+    "region": "北海道",
+    "latitude": 44.0235,
+    "longitude": 142.4123
+  },
+  {
+    "code": "KKWH15",
+    "name": "上川",
+    "region": "北海道",
+    "latitude": 43.8546,
+    "longitude": 142.7656
+  },
+  {
+    "code": "HKD036",
+    "name": "旭川",
+    "region": "北海道",
+    "latitude": 43.7726,
+    "longitude": 142.3648
+  },
+  {
+    "code": "HKD037",
+    "name": "美瑛",
+    "region": "北海道",
+    "latitude": 43.5889,
+    "longitude": 142.4673
+  },
+  {
+    "code": "HKD038",
+    "name": "南富良野",
+    "region": "北海道",
+    "latitude": 43.1666,
+    "longitude": 142.5662
+  },
+  {
+    "code": "HKD039",
+    "name": "富良野",
+    "region": "北海道",
+    "latitude": 43.3421,
+    "longitude": 142.3845
+  },
+  {
+    "code": "HKD040",
+    "name": "占冠",
+    "region": "北海道",
+    "latitude": 42.9806,
+    "longitude": 142.3994
+  },
+  {
+    "code": "HKD042",
+    "name": "仁宇布",
+    "region": "北海道",
+    "latitude": 44.5449,
+    "longitude": 142.5692
+  },
+  {
+    "code": "HKD044",
+    "name": "興部",
+    "region": "北海道",
+    "latitude": 44.4796,
+    "longitude": 143.1276
+  },
+  {
+    "code": "HKD045",
+    "name": "西興部",
+    "region": "北海道",
+    "latitude": 44.3288,
+    "longitude": 142.9453
+  },
+  {
+    "code": "ABSH04",
+    "name": "滝上北",
+    "region": "北海道",
+    "latitude": 44.192,
+    "longitude": 143.0767
+  },
+  {
+    "code": "HKD047",
+    "name": "紋別",
+    "region": "北海道",
+    "latitude": 44.3677,
+    "longitude": 143.3454
+  },
+  {
+    "code": "ABSH06",
+    "name": "湧別北",
+    "region": "北海道",
+    "latitude": 44.2146,
+    "longitude": 143.6202
+  },
+  {
+    "code": "HKD049",
+    "name": "遠軽",
+    "region": "北海道",
+    "latitude": 44.0921,
+    "longitude": 143.5336
+  },
+  {
+    "code": "HKD050",
+    "name": "白滝",
+    "region": "北海道",
+    "latitude": 43.8785,
+    "longitude": 143.1747
+  },
+  {
+    "code": "HKD051",
+    "name": "佐呂間",
+    "region": "北海道",
+    "latitude": 44.0187,
+    "longitude": 143.7747
+  },
+  {
+    "code": "HKD052",
+    "name": "常呂",
+    "region": "北海道",
+    "latitude": 44.1204,
+    "longitude": 144.0712
+  },
+  {
+    "code": "HKD053",
+    "name": "留辺蘂",
+    "region": "北海道",
+    "latitude": 43.7849,
+    "longitude": 143.6072
+  },
+  {
+    "code": "HKD054",
+    "name": "北見",
+    "region": "北海道",
+    "latitude": 43.7996,
+    "longitude": 143.9008
+  },
+  {
+    "code": "HKD055",
+    "name": "美幌",
+    "region": "北海道",
+    "latitude": 43.8244,
+    "longitude": 144.1087
+  },
+  {
+    "code": "HKD056",
+    "name": "置戸",
+    "region": "北海道",
+    "latitude": 43.6705,
+    "longitude": 143.5781
+  },
+  {
+    "code": "HKD057",
+    "name": "津別",
+    "region": "北海道",
+    "latitude": 43.7054,
+    "longitude": 144.0273
+  },
+  {
+    "code": "HKD058",
+    "name": "網走",
+    "region": "北海道",
+    "latitude": 44.0242,
+    "longitude": 144.2637
+  },
+  {
+    "code": "HKD059",
+    "name": "小清水",
+    "region": "北海道",
+    "latitude": 43.8574,
+    "longitude": 144.4609
+  },
+  {
+    "code": "HKD060",
+    "name": "斜里",
+    "region": "北海道",
+    "latitude": 43.9136,
+    "longitude": 144.6657
+  },
+  {
+    "code": "ABSH08",
+    "name": "斜里北",
+    "region": "北海道",
+    "latitude": 44.064,
+    "longitude": 144.9935
+  },
+  {
+    "code": "HKD064",
+    "name": "羅臼",
+    "region": "北海道",
+    "latitude": 44.0202,
+    "longitude": 145.1886
+  },
+  {
+    "code": "HKD066",
+    "name": "標津",
+    "region": "北海道",
+    "latitude": 43.6619,
+    "longitude": 145.1307
+  },
+  {
+    "code": "NMRH03",
+    "name": "中標津",
+    "region": "北海道",
+    "latitude": 43.5508,
+    "longitude": 144.9665
+  },
+  {
+    "code": "NMRH04",
+    "name": "別海東",
+    "region": "北海道",
+    "latitude": 43.3978,
+    "longitude": 145.1224
+  },
+  {
+    "code": "HKD071",
+    "name": "厚床",
+    "region": "北海道",
+    "latitude": 43.2326,
+    "longitude": 145.2604
+  },
+  {
+    "code": "HKD072",
+    "name": "落石",
+    "region": "北海道",
+    "latitude": 43.1948,
+    "longitude": 145.5209
+  },
+  {
+    "code": "HKD073",
+    "name": "根室",
+    "region": "北海道",
+    "latitude": 43.3327,
+    "longitude": 145.6003
+  },
+  {
+    "code": "HKD074",
+    "name": "納沙布",
+    "region": "北海道",
+    "latitude": 43.368,
+    "longitude": 145.8026
+  },
+  {
+    "code": "HKD077",
+    "name": "釧路",
+    "region": "北海道",
+    "latitude": 42.9845,
+    "longitude": 144.3824
+  },
+  {
+    "code": "HKD079",
+    "name": "標茶",
+    "region": "北海道",
+    "latitude": 43.3034,
+    "longitude": 144.5998
+  },
+  {
+    "code": "HKD080",
+    "name": "弟子屈",
+    "region": "北海道",
+    "latitude": 43.5077,
+    "longitude": 144.4485
+  },
+  {
+    "code": "HKD081",
+    "name": "川湯",
+    "region": "北海道",
+    "latitude": 43.6427,
+    "longitude": 144.3901
+  },
+  {
+    "code": "KSRH01",
+    "name": "阿寒北",
+    "region": "北海道",
+    "latitude": 43.4361,
+    "longitude": 144.0844
+  },
+  {
+    "code": "HKD083",
+    "name": "鶴居",
+    "region": "北海道",
+    "latitude": 43.2329,
+    "longitude": 144.3251
+  },
+  {
+    "code": "KSRH02",
+    "name": "阿寒南",
+    "region": "北海道",
+    "latitude": 43.1142,
+    "longitude": 144.123
+  },
+  {
+    "code": "HKD085",
+    "name": "白糠",
+    "region": "北海道",
+    "latitude": 42.9581,
+    "longitude": 144.0698
+  },
+  {
+    "code": "HKD088",
+    "name": "陸別",
+    "region": "北海道",
+    "latitude": 43.4704,
+    "longitude": 143.7488
+  },
+  {
+    "code": "HKD089",
+    "name": "足寄",
+    "region": "北海道",
+    "latitude": 43.2436,
+    "longitude": 143.5544
+  },
+  {
+    "code": "TKCH05",
+    "name": "本別",
+    "region": "北海道",
+    "latitude": 43.1211,
+    "longitude": 143.6181
+  },
+  {
+    "code": "HKD092",
+    "name": "池田",
+    "region": "北海道",
+    "latitude": 42.9283,
+    "longitude": 143.4485
+  },
+  {
+    "code": "HKD093",
+    "name": "糠平",
+    "region": "北海道",
+    "latitude": 43.3191,
+    "longitude": 143.3049
+  },
+  {
+    "code": "HKD094",
+    "name": "士幌",
+    "region": "北海道",
+    "latitude": 43.1692,
+    "longitude": 143.241
+  },
+  {
+    "code": "HKD095",
+    "name": "帯広",
+    "region": "北海道",
+    "latitude": 42.9311,
+    "longitude": 143.2137
+  },
+  {
+    "code": "HKD096",
+    "name": "中札内",
+    "region": "北海道",
+    "latitude": 42.6977,
+    "longitude": 143.1357
+  },
+  {
+    "code": "HKD098",
+    "name": "大樹",
+    "region": "北海道",
+    "latitude": 42.4985,
+    "longitude": 143.279
+  },
+  {
+    "code": "HKD099",
+    "name": "新得",
+    "region": "北海道",
+    "latitude": 43.0736,
+    "longitude": 142.8392
+  },
+  {
+    "code": "HKD100",
+    "name": "広尾",
+    "region": "北海道",
+    "latitude": 42.2864,
+    "longitude": 143.312
+  },
+  {
+    "code": "HKD102",
+    "name": "日高",
+    "region": "北海道",
+    "latitude": 42.8778,
+    "longitude": 142.4481
+  },
+  {
+    "code": "HKD103",
+    "name": "幌毛志",
+    "region": "北海道",
+    "latitude": 42.7275,
+    "longitude": 142.2973
+  },
+  {
+    "code": "HKD104",
+    "name": "平取",
+    "region": "北海道",
+    "latitude": 42.5886,
+    "longitude": 142.131
+  },
+  {
+    "code": "HKD105",
+    "name": "門別",
+    "region": "北海道",
+    "latitude": 42.4826,
+    "longitude": 142.0538
+  },
+  {
+    "code": "HKD106",
+    "name": "静内",
+    "region": "北海道",
+    "latitude": 42.3414,
+    "longitude": 142.3688
+  },
+  {
+    "code": "HKD108",
+    "name": "三石",
+    "region": "北海道",
+    "latitude": 42.2528,
+    "longitude": 142.5643
+  },
+  {
+    "code": "HKD109",
+    "name": "浦河",
+    "region": "北海道",
+    "latitude": 42.1678,
+    "longitude": 142.7673
+  },
+  {
+    "code": "HDKH07",
+    "name": "様似",
+    "region": "北海道",
+    "latitude": 42.133,
+    "longitude": 142.9164
+  },
+  {
+    "code": "HKD111",
+    "name": "えりも",
+    "region": "北海道",
+    "latitude": 42.017,
+    "longitude": 143.1487
+  },
+  {
+    "code": "HKD112",
+    "name": "えりも岬",
+    "region": "北海道",
+    "latitude": 41.937,
+    "longitude": 143.2403
+  },
+  {
+    "code": "HKD113",
+    "name": "目黒",
+    "region": "北海道",
+    "latitude": 42.1287,
+    "longitude": 143.3153
+  },
+  {
+    "code": "HKD114",
+    "name": "朱鞠内",
+    "region": "北海道",
+    "latitude": 44.2829,
+    "longitude": 142.1619
+  },
+  {
+    "code": "HKD116",
+    "name": "沼田",
+    "region": "北海道",
+    "latitude": 43.8005,
+    "longitude": 141.9343
+  },
+  {
+    "code": "HKD117",
+    "name": "深川",
+    "region": "北海道",
+    "latitude": 43.7241,
+    "longitude": 142.0527
+  },
+  {
+    "code": "HKD118",
+    "name": "滝川",
+    "region": "北海道",
+    "latitude": 43.5524,
+    "longitude": 141.9175
+  },
+  {
+    "code": "HKD120",
+    "name": "月形",
+    "region": "北海道",
+    "latitude": 43.3442,
+    "longitude": 141.6633
+  },
+  {
+    "code": "HKD121",
+    "name": "美唄",
+    "region": "北海道",
+    "latitude": 43.3332,
+    "longitude": 141.8553
+  },
+  {
+    "code": "HKD122",
+    "name": "岩見沢",
+    "region": "北海道",
+    "latitude": 43.1974,
+    "longitude": 141.7754
+  },
+  {
+    "code": "SRCH10",
+    "name": "夕張",
+    "region": "北海道",
+    "latitude": 42.993,
+    "longitude": 142.0085
+  },
+  {
+    "code": "HKD124",
+    "name": "由仁",
+    "region": "北海道",
+    "latitude": 42.9986,
+    "longitude": 141.7903
+  },
+  {
+    "code": "IBUH03",
+    "name": "厚真",
+    "region": "北海道",
+    "latitude": 42.6486,
+    "longitude": 141.8641
+  },
+  {
+    "code": "HKD127",
+    "name": "追分",
+    "region": "北海道",
+    "latitude": 42.8743,
+    "longitude": 141.8204
+  },
+  {
+    "code": "HKD128",
+    "name": "早来",
+    "region": "北海道",
+    "latitude": 42.7656,
+    "longitude": 141.8219
+  },
+  {
+    "code": "HKD129",
+    "name": "苫小牧",
+    "region": "北海道",
+    "latitude": 42.6347,
+    "longitude": 141.6057
+  },
+  {
+    "code": "HKD131",
+    "name": "登別",
+    "region": "北海道",
+    "latitude": 42.4206,
+    "longitude": 141.0809
+  },
+  {
+    "code": "HKD132",
+    "name": "室蘭",
+    "region": "北海道",
+    "latitude": 42.3484,
+    "longitude": 141.0318
+  },
+  {
+    "code": "HKD133",
+    "name": "伊達",
+    "region": "北海道",
+    "latitude": 42.4727,
+    "longitude": 140.8657
+  },
+  {
+    "code": "HKD135",
+    "name": "壮瞥",
+    "region": "北海道",
+    "latitude": 42.5533,
+    "longitude": 140.8864
+  },
+  {
+    "code": "HKD136",
+    "name": "豊浦",
+    "region": "北海道",
+    "latitude": 42.5901,
+    "longitude": 140.6441
+  },
+  {
+    "code": "HKD138",
+    "name": "積丹",
+    "region": "北海道",
+    "latitude": 43.2923,
+    "longitude": 140.6013
+  },
+  {
+    "code": "HKD139",
+    "name": "余市",
+    "region": "北海道",
+    "latitude": 43.1975,
+    "longitude": 140.7819
+  },
+  {
+    "code": "HKD140",
+    "name": "小樽",
+    "region": "北海道",
+    "latitude": 43.1908,
+    "longitude": 140.9933
+  },
+  {
+    "code": "HKD141",
+    "name": "神恵内",
+    "region": "北海道",
+    "latitude": 43.1449,
+    "longitude": 140.4355
+  },
+  {
+    "code": "SBSH03",
+    "name": "赤井川",
+    "region": "北海道",
+    "latitude": 43.0842,
+    "longitude": 140.8199
+  },
+  {
+    "code": "HKD143",
+    "name": "岩内",
+    "region": "北海道",
+    "latitude": 42.9793,
+    "longitude": 140.5093
+  },
+  {
+    "code": "HKD144",
+    "name": "倶知安",
+    "region": "北海道",
+    "latitude": 42.9059,
+    "longitude": 140.767
+  },
+  {
+    "code": "HKD146",
+    "name": "ニセコ",
+    "region": "北海道",
+    "latitude": 42.8076,
+    "longitude": 140.6878
+  },
+  {
+    "code": "HKD147",
+    "name": "蘭越",
+    "region": "北海道",
+    "latitude": 42.8056,
+    "longitude": 140.5305
+  },
+  {
+    "code": "HKD148",
+    "name": "黒松内",
+    "region": "北海道",
+    "latitude": 42.668,
+    "longitude": 140.305
+  },
+  {
+    "code": "HKD149",
+    "name": "寿都",
+    "region": "北海道",
+    "latitude": 42.7905,
+    "longitude": 140.2305
+  },
+  {
+    "code": "HKD150",
+    "name": "島牧",
+    "region": "北海道",
+    "latitude": 42.701,
+    "longitude": 140.0619
+  },
+  {
+    "code": "HKD151",
+    "name": "長万部",
+    "region": "北海道",
+    "latitude": 42.4948,
+    "longitude": 140.3539
+  },
+  {
+    "code": "HKD152",
+    "name": "八雲",
+    "region": "北海道",
+    "latitude": 42.2586,
+    "longitude": 140.2638
+  },
+  {
+    "code": "HKD153",
+    "name": "上の湯",
+    "region": "北海道",
+    "latitude": 42.1245,
+    "longitude": 140.3755
+  },
+  {
+    "code": "HKD154",
+    "name": "森",
+    "region": "北海道",
+    "latitude": 42.0965,
+    "longitude": 140.5636
+  },
+  {
+    "code": "HKD155",
+    "name": "鹿部",
+    "region": "北海道",
+    "latitude": 42.0438,
+    "longitude": 140.8064
+  },
+  {
+    "code": "HKD156",
+    "name": "七飯",
+    "region": "北海道",
+    "latitude": 41.8996,
+    "longitude": 140.696
+  },
+  {
+    "code": "HKD157",
+    "name": "南茅部",
+    "region": "北海道",
+    "latitude": 41.9053,
+    "longitude": 140.9698
+  },
+  {
+    "code": "HKD158",
+    "name": "椴法華",
+    "region": "北海道",
+    "latitude": 41.8349,
+    "longitude": 141.1408
+  },
+  {
+    "code": "HKD159",
+    "name": "戸井",
+    "region": "北海道",
+    "latitude": 41.716,
+    "longitude": 141.0046
+  },
+  {
+    "code": "HKD160",
+    "name": "函館",
+    "region": "北海道",
+    "latitude": 41.77,
+    "longitude": 140.7383
+  },
+  {
+    "code": "HKD161",
+    "name": "木古内",
+    "region": "北海道",
+    "latitude": 41.68,
+    "longitude": 140.4329
+  },
+  {
+    "code": "HKD162",
+    "name": "福島",
+    "region": "北海道",
+    "latitude": 41.4859,
+    "longitude": 140.2469
+  },
+  {
+    "code": "HKD163",
+    "name": "松前",
+    "region": "北海道",
+    "latitude": 41.4338,
+    "longitude": 140.1117
+  },
+  {
+    "code": "HKD164",
+    "name": "瀬棚",
+    "region": "北海道",
+    "latitude": 42.4502,
+    "longitude": 139.8533
+  },
+  {
+    "code": "HKD165",
+    "name": "今金",
+    "region": "北海道",
+    "latitude": 42.4287,
+    "longitude": 140.0178
+  },
+  {
+    "code": "HKD166",
+    "name": "大成",
+    "region": "北海道",
+    "latitude": 42.2286,
+    "longitude": 139.8186
+  },
+  {
+    "code": "HKD167",
+    "name": "熊石",
+    "region": "北海道",
+    "latitude": 42.1297,
+    "longitude": 139.9813
+  },
+  {
+    "code": "HKD168",
+    "name": "江差",
+    "region": "北海道",
+    "latitude": 41.8691,
+    "longitude": 140.1266
+  },
+  {
+    "code": "HKD169",
+    "name": "木間内",
+    "region": "北海道",
+    "latitude": 41.9351,
+    "longitude": 140.3678
+  },
+  {
+    "code": "HKD170",
+    "name": "湯ノ岱",
+    "region": "北海道",
+    "latitude": 41.7495,
+    "longitude": 140.251
+  },
+  {
+    "code": "HKD171",
+    "name": "小砂子",
+    "region": "北海道",
+    "latitude": 41.649,
+    "longitude": 139.9979
+  },
+  {
+    "code": "HKD172",
+    "name": "稲穂",
+    "region": "北海道",
+    "latitude": 42.2402,
+    "longitude": 139.5519
+  },
+  {
+    "code": "HKD173",
+    "name": "青苗",
+    "region": "北海道",
+    "latitude": 42.0662,
+    "longitude": 139.4515
+  },
+  {
+    "code": "HKD174",
+    "name": "北島歌",
+    "region": "北海道",
+    "latitude": 42.595,
+    "longitude": 139.8286
+  },
+  {
+    "code": "HKD175",
+    "name": "浜益",
+    "region": "北海道",
+    "latitude": 43.6015,
+    "longitude": 141.3882
+  },
+  {
+    "code": "HKD177",
+    "name": "厚田",
+    "region": "北海道",
+    "latitude": 43.4001,
+    "longitude": 141.4346
+  },
+  {
+    "code": "HKD178",
+    "name": "石狩",
+    "region": "北海道",
+    "latitude": 43.172,
+    "longitude": 141.3043
+  },
+  {
+    "code": "HKD179",
+    "name": "当別",
+    "region": "北海道",
+    "latitude": 43.2236,
+    "longitude": 141.5175
+  },
+  {
+    "code": "HKD180",
+    "name": "札幌",
+    "region": "北海道",
+    "latitude": 43.1391,
+    "longitude": 141.3513
+  },
+  {
+    "code": "HKD181",
+    "name": "江別",
+    "region": "北海道",
+    "latitude": 43.1161,
+    "longitude": 141.5462
+  },
+  {
+    "code": "HKD183",
+    "name": "定山渓",
+    "region": "北海道",
+    "latitude": 42.9714,
+    "longitude": 141.1779
+  },
+  {
+    "code": "HKD184",
+    "name": "千歳",
+    "region": "北海道",
+    "latitude": 42.7898,
+    "longitude": 141.6008
+  },
+  {
+    "code": "HRS003",
+    "name": "三次",
+    "region": "広島県",
+    "latitude": 34.8138,
+    "longitude": 132.8427
+  },
+  {
+    "code": "HRS011",
+    "name": "府中",
+    "region": "広島県",
+    "latitude": 34.5686,
+    "longitude": 133.2364
+  },
+  {
+    "code": "HRS012",
+    "name": "東広島",
+    "region": "広島県",
+    "latitude": 34.4274,
+    "longitude": 132.7422
+  },
+  {
+    "code": "HRS013",
+    "name": "広島",
+    "region": "広島県",
+    "latitude": 34.3768,
+    "longitude": 132.4502
+  },
+  {
+    "code": "HRS014",
+    "name": "大野",
+    "region": "広島県",
+    "latitude": 34.2864,
+    "longitude": 132.2765
+  },
+  {
+    "code": "HRS015",
+    "name": "福山",
+    "region": "広島県",
+    "latitude": 34.4852,
+    "longitude": 133.3619
+  },
+  {
+    "code": "HRS016",
+    "name": "尾道",
+    "region": "広島県",
+    "latitude": 34.4201,
+    "longitude": 133.1979
+  },
+  {
+    "code": "HRS018",
+    "name": "竹原",
+    "region": "広島県",
+    "latitude": 34.3413,
+    "longitude": 132.9069
+  },
+  {
+    "code": "HRS019",
+    "name": "呉",
+    "region": "広島県",
+    "latitude": 34.253,
+    "longitude": 132.5617
+  },
+  {
+    "code": "HRS020",
+    "name": "因島",
+    "region": "広島県",
+    "latitude": 34.2936,
+    "longitude": 133.1776
+  },
+  {
+    "code": "HYG002",
+    "name": "香住",
+    "region": "兵庫県",
+    "latitude": 35.6394,
+    "longitude": 134.628
+  },
+  {
+    "code": "HYGH14",
+    "name": "出石",
+    "region": "兵庫県",
+    "latitude": 35.4574,
+    "longitude": 134.8621
+  },
+  {
+    "code": "HYG009",
+    "name": "黒井",
+    "region": "兵庫県",
+    "latitude": 35.1699,
+    "longitude": 135.1025
+  },
+  {
+    "code": "HYG010",
+    "name": "丹南",
+    "region": "兵庫県",
+    "latitude": 35.0592,
+    "longitude": 135.1776
+  },
+  {
+    "code": "HYG012",
+    "name": "山崎",
+    "region": "兵庫県",
+    "latitude": 34.9958,
+    "longitude": 134.5523
+  },
+  {
+    "code": "HYG013",
+    "name": "市川",
+    "region": "兵庫県",
+    "latitude": 34.9895,
+    "longitude": 134.7636
+  },
+  {
+    "code": "HYG014",
+    "name": "西脇",
+    "region": "兵庫県",
+    "latitude": 35.0019,
+    "longitude": 134.9994
+  },
+  {
+    "code": "HYG016",
+    "name": "赤穂",
+    "region": "兵庫県",
+    "latitude": 34.7553,
+    "longitude": 134.39
+  },
+  {
+    "code": "HYG017",
+    "name": "龍野",
+    "region": "兵庫県",
+    "latitude": 34.8591,
+    "longitude": 134.5446
+  },
+  {
+    "code": "HYG018",
+    "name": "姫路",
+    "region": "兵庫県",
+    "latitude": 34.8145,
+    "longitude": 134.6871
+  },
+  {
+    "code": "HYGH10",
+    "name": "加古川",
+    "region": "兵庫県",
+    "latitude": 34.8164,
+    "longitude": 134.8078
+  },
+  {
+    "code": "HYG020",
+    "name": "三木",
+    "region": "兵庫県",
+    "latitude": 34.7974,
+    "longitude": 134.9889
+  },
+  {
+    "code": "HYG021",
+    "name": "神戸",
+    "region": "兵庫県",
+    "latitude": 34.6904,
+    "longitude": 135.1591
+  },
+  {
+    "code": "HYG022",
+    "name": "西宮",
+    "region": "兵庫県",
+    "latitude": 34.7463,
+    "longitude": 135.3501
+  },
+  {
+    "code": "HYG024",
+    "name": "東浦",
+    "region": "兵庫県",
+    "latitude": 34.533,
+    "longitude": 134.9904
+  },
+  {
+    "code": "HYG025",
+    "name": "洲本",
+    "region": "兵庫県",
+    "latitude": 34.3389,
+    "longitude": 134.9011
+  },
+  {
+    "code": "HYG026",
+    "name": "五色",
+    "region": "兵庫県",
+    "latitude": 34.4147,
+    "longitude": 134.7914
+  },
+  {
+    "code": "HYG027",
+    "name": "南淡",
+    "region": "兵庫県",
+    "latitude": 34.2496,
+    "longitude": 134.7292
+  },
+  {
+    "code": "IBR001",
+    "name": "大子",
+    "region": "茨城県",
+    "latitude": 36.7763,
+    "longitude": 140.3582
+  },
+  {
+    "code": "IBR002",
+    "name": "高萩",
+    "region": "茨城県",
+    "latitude": 36.7126,
+    "longitude": 140.7073
+  },
+  {
+    "code": "IBR003",
+    "name": "日立",
+    "region": "茨城県",
+    "latitude": 36.5914,
+    "longitude": 140.6453
+  },
+  {
+    "code": "IBR004",
+    "name": "大宮",
+    "region": "茨城県",
+    "latitude": 36.5516,
+    "longitude": 140.4102
+  },
+  {
+    "code": "IBR005",
+    "name": "笠間",
+    "region": "茨城県",
+    "latitude": 36.3851,
+    "longitude": 140.2373
+  },
+  {
+    "code": "IBR006",
+    "name": "水戸",
+    "region": "茨城県",
+    "latitude": 36.3665,
+    "longitude": 140.4543
+  },
+  {
+    "code": "IBR007",
+    "name": "那珂湊",
+    "region": "茨城県",
+    "latitude": 36.3526,
+    "longitude": 140.5954
+  },
+  {
+    "code": "IBR008",
+    "name": "下館",
+    "region": "茨城県",
+    "latitude": 36.3061,
+    "longitude": 139.9826
+  },
+  {
+    "code": "IBR009",
+    "name": "古河",
+    "region": "茨城県",
+    "latitude": 36.185,
+    "longitude": 139.7037
+  },
+  {
+    "code": "IBR010",
+    "name": "下妻",
+    "region": "茨城県",
+    "latitude": 36.1844,
+    "longitude": 139.9652
+  },
+  {
+    "code": "IBR011",
+    "name": "つくば",
+    "region": "茨城県",
+    "latitude": 36.1256,
+    "longitude": 140.0901
+  },
+  {
+    "code": "IBR012",
+    "name": "石岡",
+    "region": "茨城県",
+    "latitude": 36.1954,
+    "longitude": 140.2713
+  },
+  {
+    "code": "IBR013",
+    "name": "鉾田",
+    "region": "茨城県",
+    "latitude": 36.1587,
+    "longitude": 140.4892
+  },
+  {
+    "code": "IBR014",
+    "name": "土浦",
+    "region": "茨城県",
+    "latitude": 36.0729,
+    "longitude": 140.1948
+  },
+  {
+    "code": "IBR015",
+    "name": "岩井",
+    "region": "茨城県",
+    "latitude": 36.0698,
+    "longitude": 139.9082
+  },
+  {
+    "code": "IBR016",
+    "name": "取手",
+    "region": "茨城県",
+    "latitude": 35.9114,
+    "longitude": 140.0494
+  },
+  {
+    "code": "IBRH07",
+    "name": "江戸崎",
+    "region": "茨城県",
+    "latitude": 35.9521,
+    "longitude": 140.3301
+  },
+  {
+    "code": "IBR018",
+    "name": "鹿嶋",
+    "region": "茨城県",
+    "latitude": 35.9766,
+    "longitude": 140.6306
+  },
+  {
+    "code": "ISK002",
+    "name": "正院",
+    "region": "石川県",
+    "latitude": 37.4473,
+    "longitude": 137.2877
+  },
+  {
+    "code": "ISK003",
+    "name": "輪島",
+    "region": "石川県",
+    "latitude": 37.3924,
+    "longitude": 136.9078
+  },
+  {
+    "code": "ISK004",
+    "name": "能都",
+    "region": "石川県",
+    "latitude": 37.308,
+    "longitude": 137.1471
+  },
+  {
+    "code": "ISK005",
+    "name": "穴水",
+    "region": "石川県",
+    "latitude": 37.2309,
+    "longitude": 136.9041
+  },
+  {
+    "code": "ISK007",
+    "name": "七尾",
+    "region": "石川県",
+    "latitude": 37.0426,
+    "longitude": 136.968
+  },
+  {
+    "code": "ISK008",
+    "name": "羽咋",
+    "region": "石川県",
+    "latitude": 36.8938,
+    "longitude": 136.7783
+  },
+  {
+    "code": "ISK009",
+    "name": "七塚",
+    "region": "石川県",
+    "latitude": 36.7334,
+    "longitude": 136.7025
+  },
+  {
+    "code": "ISK010",
+    "name": "金沢",
+    "region": "石川県",
+    "latitude": 36.5421,
+    "longitude": 136.6435
+  },
+  {
+    "code": "ISK011",
+    "name": "小松",
+    "region": "石川県",
+    "latitude": 36.3976,
+    "longitude": 136.4409
+  },
+  {
+    "code": "ISK014",
+    "name": "加賀",
+    "region": "石川県",
+    "latitude": 36.3031,
+    "longitude": 136.3154
+  },
+  {
+    "code": "ISK005",
+    "name": "穴水",
+    "region": "石川県",
+    "latitude": 37.2309,
+    "longitude": 136.9041
+  },
+  {
+    "code": "IWT001",
+    "name": "種市",
+    "region": "岩手県",
+    "latitude": 40.4101,
+    "longitude": 141.7193
+  },
+  {
+    "code": "IWT002",
+    "name": "久慈",
+    "region": "岩手県",
+    "latitude": 40.182,
+    "longitude": 141.7643
+  },
+  {
+    "code": "IWT003",
+    "name": "普代",
+    "region": "岩手県",
+    "latitude": 40.0083,
+    "longitude": 141.8885
+  },
+  {
+    "code": "IWT004",
+    "name": "田老",
+    "region": "岩手県",
+    "latitude": 39.7356,
+    "longitude": 141.9671
+  },
+  {
+    "code": "IWT005",
+    "name": "宮古",
+    "region": "岩手県",
+    "latitude": 39.6478,
+    "longitude": 141.9465
+  },
+  {
+    "code": "IWT006",
+    "name": "山田",
+    "region": "岩手県",
+    "latitude": 39.485,
+    "longitude": 141.9748
+  },
+  {
+    "code": "IWT008",
+    "name": "大船渡",
+    "region": "岩手県",
+    "latitude": 39.0815,
+    "longitude": 141.7093
+  },
+  {
+    "code": "IWT009",
+    "name": "大東",
+    "region": "岩手県",
+    "latitude": 39.019,
+    "longitude": 141.4053
+  },
+  {
+    "code": "IWT010",
+    "name": "一関",
+    "region": "岩手県",
+    "latitude": 38.9346,
+    "longitude": 141.1264
+  },
+  {
+    "code": "IWT011",
+    "name": "水沢",
+    "region": "岩手県",
+    "latitude": 39.1453,
+    "longitude": 141.1527
+  },
+  {
+    "code": "IWT026",
+    "name": "相去",
+    "region": "岩手県",
+    "latitude": 39.2569,
+    "longitude": 141.0983
+  },
+  {
+    "code": "IWT013",
+    "name": "遠野",
+    "region": "岩手県",
+    "latitude": 39.329,
+    "longitude": 141.5638
+  },
+  {
+    "code": "IWT014",
+    "name": "石鳥谷",
+    "region": "岩手県",
+    "latitude": 39.4846,
+    "longitude": 141.1466
+  },
+  {
+    "code": "IWT016",
+    "name": "川井",
+    "region": "岩手県",
+    "latitude": 39.6,
+    "longitude": 141.679
+  },
+  {
+    "code": "IWT017",
+    "name": "門馬",
+    "region": "岩手県",
+    "latitude": 39.6339,
+    "longitude": 141.4379
+  },
+  {
+    "code": "IWT018",
+    "name": "盛岡",
+    "region": "岩手県",
+    "latitude": 39.6954,
+    "longitude": 141.1477
+  },
+  {
+    "code": "IWTH03",
+    "name": "岩泉",
+    "region": "岩手県",
+    "latitude": 39.802,
+    "longitude": 141.652
+  },
+  {
+    "code": "IWT021",
+    "name": "西根",
+    "region": "岩手県",
+    "latitude": 39.9203,
+    "longitude": 141.0822
+  },
+  {
+    "code": "IWT022",
+    "name": "安代",
+    "region": "岩手県",
+    "latitude": 40.1009,
+    "longitude": 141.0528
+  },
+  {
+    "code": "IWT024",
+    "name": "二戸",
+    "region": "岩手県",
+    "latitude": 40.2612,
+    "longitude": 141.2908
+  },
+  {
+    "code": "IWT026",
+    "name": "相去",
+    "region": "岩手県",
+    "latitude": 39.2569,
+    "longitude": 141.0983
+  },
+  {
+    "code": "KGS001",
+    "name": "東",
+    "region": "鹿児島県",
+    "latitude": 32.1947,
+    "longitude": 130.1763
+  },
+  {
+    "code": "KGS002",
+    "name": "出水",
+    "region": "鹿児島県",
+    "latitude": 32.0916,
+    "longitude": 130.3519
+  },
+  {
+    "code": "KGS004",
+    "name": "阿久根",
+    "region": "鹿児島県",
+    "latitude": 32.0145,
+    "longitude": 130.1927
+  },
+  {
+    "code": "KGSH05",
+    "name": "祁答院",
+    "region": "鹿児島県",
+    "latitude": 31.8699,
+    "longitude": 130.4958
+  },
+  {
+    "code": "KGS006",
+    "name": "横川",
+    "region": "鹿児島県",
+    "latitude": 31.906,
+    "longitude": 130.7021
+  },
+  {
+    "code": "KGS008",
+    "name": "蒲生",
+    "region": "鹿児島県",
+    "latitude": 31.7638,
+    "longitude": 130.5659
+  },
+  {
+    "code": "KGS009",
+    "name": "国分",
+    "region": "鹿児島県",
+    "latitude": 31.7368,
+    "longitude": 130.7613
+  },
+  {
+    "code": "KGS010",
+    "name": "串木野",
+    "region": "鹿児島県",
+    "latitude": 31.7123,
+    "longitude": 130.2735
+  },
+  {
+    "code": "KGS011",
+    "name": "日吉",
+    "region": "鹿児島県",
+    "latitude": 31.5896,
+    "longitude": 130.349
+  },
+  {
+    "code": "KGS012",
+    "name": "鹿児島",
+    "region": "鹿児島県",
+    "latitude": 31.6057,
+    "longitude": 130.574
+  },
+  {
+    "code": "KGS013",
+    "name": "大隅",
+    "region": "鹿児島県",
+    "latitude": 31.5973,
+    "longitude": 130.9938
+  },
+  {
+    "code": "KGS014",
+    "name": "垂水",
+    "region": "鹿児島県",
+    "latitude": 31.4963,
+    "longitude": 130.6994
+  },
+  {
+    "code": "KGS015",
+    "name": "大崎",
+    "region": "鹿児島県",
+    "latitude": 31.4308,
+    "longitude": 131.0109
+  },
+  {
+    "code": "KGS016",
+    "name": "加世田",
+    "region": "鹿児島県",
+    "latitude": 31.4162,
+    "longitude": 130.3225
+  },
+  {
+    "code": "KGS017",
+    "name": "鹿屋",
+    "region": "鹿児島県",
+    "latitude": 31.3954,
+    "longitude": 130.8702
+  },
+  {
+    "code": "KGS018",
+    "name": "喜入",
+    "region": "鹿児島県",
+    "latitude": 31.3757,
+    "longitude": 130.5449
+  },
+  {
+    "code": "KGS019",
+    "name": "枕崎",
+    "region": "鹿児島県",
+    "latitude": 31.2776,
+    "longitude": 130.3008
+  },
+  {
+    "code": "KGS020",
+    "name": "頴娃",
+    "region": "鹿児島県",
+    "latitude": 31.2396,
+    "longitude": 130.4915
+  },
+  {
+    "code": "KGS021",
+    "name": "指宿",
+    "region": "鹿児島県",
+    "latitude": 31.2535,
+    "longitude": 130.6324
+  },
+  {
+    "code": "KGS023",
+    "name": "田代",
+    "region": "鹿児島県",
+    "latitude": 31.199,
+    "longitude": 130.849
+  },
+  {
+    "code": "KGSH11",
+    "name": "佐多",
+    "region": "鹿児島県",
+    "latitude": 31.0899,
+    "longitude": 130.699
+  },
+  {
+    "code": "KGS025",
+    "name": "西之表",
+    "region": "鹿児島県",
+    "latitude": 30.7319,
+    "longitude": 130.9977
+  },
+  {
+    "code": "KGS026",
+    "name": "中種子",
+    "region": "鹿児島県",
+    "latitude": 30.5199,
+    "longitude": 130.9553
+  },
+  {
+    "code": "KGS027",
+    "name": "門倉崎",
+    "region": "鹿児島県",
+    "latitude": 30.3488,
+    "longitude": 130.8829
+  },
+  {
+    "code": "KGS028",
+    "name": "上屋久",
+    "region": "鹿児島県",
+    "latitude": 30.4204,
+    "longitude": 130.5771
+  },
+  {
+    "code": "KGS029",
+    "name": "屋久",
+    "region": "鹿児島県",
+    "latitude": 30.2363,
+    "longitude": 130.5553
+  },
+  {
+    "code": "KGS030",
+    "name": "笠利",
+    "region": "鹿児島県",
+    "latitude": 28.451,
+    "longitude": 129.6784
+  },
+  {
+    "code": "KGS031",
+    "name": "大和",
+    "region": "鹿児島県",
+    "latitude": 28.3553,
+    "longitude": 129.3924
+  },
+  {
+    "code": "KGS032",
+    "name": "瀬戸内",
+    "region": "鹿児島県",
+    "latitude": 28.1388,
+    "longitude": 129.3206
+  },
+  {
+    "code": "KGS033",
+    "name": "伊仙",
+    "region": "鹿児島県",
+    "latitude": 27.6883,
+    "longitude": 128.9421
+  },
+  {
+    "code": "KGS034",
+    "name": "知名",
+    "region": "鹿児島県",
+    "latitude": 27.334,
+    "longitude": 128.5743
+  },
+  {
+    "code": "KGS035",
+    "name": "与論",
+    "region": "鹿児島県",
+    "latitude": 27.0522,
+    "longitude": 128.4241
+  },
+  {
+    "code": "KGS036",
+    "name": "上甑",
+    "region": "鹿児島県",
+    "latitude": 31.836,
+    "longitude": 129.8678
+  },
+  {
+    "code": "KGS037",
+    "name": "下甑",
+    "region": "鹿児島県",
+    "latitude": 31.639,
+    "longitude": 129.7078
+  },
+  {
+    "code": "KGW001",
+    "name": "土庄",
+    "region": "香川県",
+    "latitude": 34.5452,
+    "longitude": 134.2804
+  },
+  {
+    "code": "KGW001",
+    "name": "土庄",
+    "region": "香川県",
+    "latitude": 34.5452,
+    "longitude": 134.2804
+  },
+  {
+    "code": "KGW003",
+    "name": "丸亀",
+    "region": "香川県",
+    "latitude": 34.2644,
+    "longitude": 133.7896
+  },
+  {
+    "code": "KGW004",
+    "name": "高松",
+    "region": "香川県",
+    "latitude": 34.3473,
+    "longitude": 134.0375
+  },
+  {
+    "code": "KGW005",
+    "name": "観音寺",
+    "region": "香川県",
+    "latitude": 34.1139,
+    "longitude": 133.6353
+  },
+  {
+    "code": "KGW006",
+    "name": "長尾",
+    "region": "香川県",
+    "latitude": 34.2499,
+    "longitude": 134.1856
+  },
+  {
+    "code": "KGW007",
+    "name": "引田",
+    "region": "香川県",
+    "latitude": 34.213,
+    "longitude": 134.4133
+  },
+  {
+    "code": "KMM002",
+    "name": "山鹿",
+    "region": "熊本県",
+    "latitude": 33.0189,
+    "longitude": 130.6846
+  },
+  {
+    "code": "KMM003",
+    "name": "玉名",
+    "region": "熊本県",
+    "latitude": 32.9335,
+    "longitude": 130.5477
+  },
+  {
+    "code": "KMM005",
+    "name": "大津",
+    "region": "熊本県",
+    "latitude": 32.8761,
+    "longitude": 130.8771
+  },
+  {
+    "code": "KMM006",
+    "name": "熊本",
+    "region": "熊本県",
+    "latitude": 32.7934,
+    "longitude": 130.7772
+  },
+  {
+    "code": "KMM008",
+    "name": "宇土",
+    "region": "熊本県",
+    "latitude": 32.6875,
+    "longitude": 130.6598
+  },
+  {
+    "code": "KMM009",
+    "name": "矢部",
+    "region": "熊本県",
+    "latitude": 32.6864,
+    "longitude": 130.9886
+  },
+  {
+    "code": "KMM010",
+    "name": "三角",
+    "region": "熊本県",
+    "latitude": 32.6134,
+    "longitude": 130.4873
+  },
+  {
+    "code": "KMM012",
+    "name": "八代",
+    "region": "熊本県",
+    "latitude": 32.5099,
+    "longitude": 130.5908
+  },
+  {
+    "code": "KMM013",
+    "name": "田浦",
+    "region": "熊本県",
+    "latitude": 32.3644,
+    "longitude": 130.5089
+  },
+  {
+    "code": "KMM015",
+    "name": "水俣",
+    "region": "熊本県",
+    "latitude": 32.2161,
+    "longitude": 130.4059
+  },
+  {
+    "code": "KMM016",
+    "name": "人吉",
+    "region": "熊本県",
+    "latitude": 32.1965,
+    "longitude": 130.7757
+  },
+  {
+    "code": "KMM017",
+    "name": "多良木",
+    "region": "熊本県",
+    "latitude": 32.2567,
+    "longitude": 130.9245
+  },
+  {
+    "code": "KMM018",
+    "name": "龍ヶ岳",
+    "region": "熊本県",
+    "latitude": 32.3941,
+    "longitude": 130.3898
+  },
+  {
+    "code": "KMM019",
+    "name": "本渡",
+    "region": "熊本県",
+    "latitude": 32.4548,
+    "longitude": 130.1807
+  },
+  {
+    "code": "KMM021",
+    "name": "天草",
+    "region": "熊本県",
+    "latitude": 32.3793,
+    "longitude": 129.9996
+  },
+  {
+    "code": "KMM022",
+    "name": "牛深",
+    "region": "熊本県",
+    "latitude": 32.1945,
+    "longitude": 130.027
+  },
+  {
+    "code": "KNG001",
+    "name": "川崎",
+    "region": "神奈川県",
+    "latitude": 35.5291,
+    "longitude": 139.7061
+  },
+  {
+    "code": "KNG002",
+    "name": "横浜",
+    "region": "神奈川県",
+    "latitude": 35.4372,
+    "longitude": 139.6334
+  },
+  {
+    "code": "KNG003",
+    "name": "横須賀",
+    "region": "神奈川県",
+    "latitude": 35.2731,
+    "longitude": 139.6582
+  },
+  {
+    "code": "KNG004",
+    "name": "三崎",
+    "region": "神奈川県",
+    "latitude": 35.1442,
+    "longitude": 139.6223
+  },
+  {
+    "code": "KNG007",
+    "name": "藤沢",
+    "region": "神奈川県",
+    "latitude": 35.3382,
+    "longitude": 139.4926
+  },
+  {
+    "code": "KNG006",
+    "name": "二俣川",
+    "region": "神奈川県",
+    "latitude": 35.4541,
+    "longitude": 139.5391
+  },
+  {
+    "code": "KNG007",
+    "name": "藤沢",
+    "region": "神奈川県",
+    "latitude": 35.3382,
+    "longitude": 139.4926
+  },
+  {
+    "code": "KNG008",
+    "name": "相模原",
+    "region": "神奈川県",
+    "latitude": 35.5749,
+    "longitude": 139.3262
+  },
+  {
+    "code": "KNG009",
+    "name": "厚木",
+    "region": "神奈川県",
+    "latitude": 35.4425,
+    "longitude": 139.3621
+  },
+  {
+    "code": "KNG010",
+    "name": "平塚",
+    "region": "神奈川県",
+    "latitude": 35.3339,
+    "longitude": 139.3446
+  },
+  {
+    "code": "KNG011",
+    "name": "藤野",
+    "region": "神奈川県",
+    "latitude": 35.6151,
+    "longitude": 139.1554
+  },
+  {
+    "code": "KNG012",
+    "name": "秦野",
+    "region": "神奈川県",
+    "latitude": 35.3793,
+    "longitude": 139.2044
+  },
+  {
+    "code": "KNG013",
+    "name": "小田原",
+    "region": "神奈川県",
+    "latitude": 35.2642,
+    "longitude": 139.1521
+  },
+  {
+    "code": "KNGH22",
+    "name": "山北南",
+    "region": "神奈川県",
+    "latitude": 35.3583,
+    "longitude": 139.091
+  },
+  {
+    "code": "KNG201",
+    "name": "平塚ST1",
+    "region": "-",
+    "latitude": 34.5956,
+    "longitude": 139.9183
+  },
+  {
+    "code": "KNG202",
+    "name": "平塚ST2",
+    "region": "-",
+    "latitude": 34.7396,
+    "longitude": 139.8393
+  },
+  {
+    "code": "KNG203",
+    "name": "平塚ST3",
+    "region": "-",
+    "latitude": 34.7983,
+    "longitude": 139.6435
+  },
+  {
+    "code": "KNG204",
+    "name": "平塚ST4",
+    "region": "-",
+    "latitude": 34.8931,
+    "longitude": 139.5711
+  },
+  {
+    "code": "KNG205",
+    "name": "平塚ST5",
+    "region": "-",
+    "latitude": 34.9413,
+    "longitude": 139.4213
+  },
+  {
+    "code": "KNG206",
+    "name": "平塚ST6",
+    "region": "-",
+    "latitude": 35.0966,
+    "longitude": 139.3778
+  },
+  {
+    "code": "KOC003",
+    "name": "安芸",
+    "region": "高知県",
+    "latitude": 33.5014,
+    "longitude": 133.9071
+  },
+  {
+    "code": "KOC004",
+    "name": "物部",
+    "region": "高知県",
+    "latitude": 33.6975,
+    "longitude": 133.8764
+  },
+  {
+    "code": "KOC005",
+    "name": "土佐山田",
+    "region": "高知県",
+    "latitude": 33.5929,
+    "longitude": 133.6923
+  },
+  {
+    "code": "KOC006",
+    "name": "土佐",
+    "region": "高知県",
+    "latitude": 33.4943,
+    "longitude": 133.4166
+  },
+  {
+    "code": "KOC007",
+    "name": "高知",
+    "region": "高知県",
+    "latitude": 33.5612,
+    "longitude": 133.5273
+  },
+  {
+    "code": "KOC008",
+    "name": "本川",
+    "region": "高知県",
+    "latitude": 33.7758,
+    "longitude": 133.3467
+  },
+  {
+    "code": "KOC009",
+    "name": "吾川",
+    "region": "高知県",
+    "latitude": 33.5736,
+    "longitude": 133.172
+  },
+  {
+    "code": "KOCH07",
+    "name": "須崎",
+    "region": "高知県",
+    "latitude": 33.392,
+    "longitude": 133.2866
+  },
+  {
+    "code": "KOC013",
+    "name": "佐賀",
+    "region": "高知県",
+    "latitude": 33.0797,
+    "longitude": 133.1023
+  },
+  {
+    "code": "KOC014",
+    "name": "中村",
+    "region": "高知県",
+    "latitude": 32.9897,
+    "longitude": 132.9403
+  },
+  {
+    "code": "KOC015",
+    "name": "宿毛",
+    "region": "高知県",
+    "latitude": 32.9393,
+    "longitude": 132.7258
+  },
+  {
+    "code": "KOC016",
+    "name": "土佐清水",
+    "region": "高知県",
+    "latitude": 32.7359,
+    "longitude": 132.9754
+  },
+  {
+    "code": "KYT003",
+    "name": "伊根",
+    "region": "京都府",
+    "latitude": 35.6762,
+    "longitude": 135.2927
+  },
+  {
+    "code": "KYT004",
+    "name": "宮津",
+    "region": "京都府",
+    "latitude": 35.5356,
+    "longitude": 135.1959
+  },
+  {
+    "code": "KYT006",
+    "name": "福知山",
+    "region": "京都府",
+    "latitude": 35.2766,
+    "longitude": 135.182
+  },
+  {
+    "code": "KYT009",
+    "name": "日吉",
+    "region": "京都府",
+    "latitude": 35.1639,
+    "longitude": 135.5017
+  },
+  {
+    "code": "KYT011",
+    "name": "亀岡",
+    "region": "京都府",
+    "latitude": 35.0171,
+    "longitude": 135.5637
+  },
+  {
+    "code": "KYT012",
+    "name": "京都",
+    "region": "京都府",
+    "latitude": 34.9977,
+    "longitude": 135.8177
+  },
+  {
+    "code": "KYT013",
+    "name": "宇治",
+    "region": "京都府",
+    "latitude": 34.8784,
+    "longitude": 135.8046
+  },
+  {
+    "code": "KYT015",
+    "name": "広河原",
+    "region": "京都府",
+    "latitude": 35.2496,
+    "longitude": 135.7667
+  },
+  {
+    "code": "MIE001",
+    "name": "藤原",
+    "region": "三重県",
+    "latitude": 35.1719,
+    "longitude": 136.4948
+  },
+  {
+    "code": "MIE002",
+    "name": "菰野",
+    "region": "三重県",
+    "latitude": 35.0283,
+    "longitude": 136.5069
+  },
+  {
+    "code": "MIE003",
+    "name": "四日市",
+    "region": "三重県",
+    "latitude": 34.9708,
+    "longitude": 136.6356
+  },
+  {
+    "code": "MIE004",
+    "name": "亀山",
+    "region": "三重県",
+    "latitude": 34.8568,
+    "longitude": 136.4489
+  },
+  {
+    "code": "MIE005",
+    "name": "上野",
+    "region": "三重県",
+    "latitude": 34.7679,
+    "longitude": 136.1149
+  },
+  {
+    "code": "MIE006",
+    "name": "津",
+    "region": "三重県",
+    "latitude": 34.7178,
+    "longitude": 136.5039
+  },
+  {
+    "code": "MIE007",
+    "name": "白山",
+    "region": "三重県",
+    "latitude": 34.6398,
+    "longitude": 136.3399
+  },
+  {
+    "code": "MIE008",
+    "name": "名張",
+    "region": "三重県",
+    "latitude": 34.6291,
+    "longitude": 136.1074
+  },
+  {
+    "code": "MIE009",
+    "name": "松阪",
+    "region": "三重県",
+    "latitude": 34.5752,
+    "longitude": 136.5296
+  },
+  {
+    "code": "MIE010",
+    "name": "伊勢",
+    "region": "三重県",
+    "latitude": 34.4909,
+    "longitude": 136.7331
+  },
+  {
+    "code": "MIE011",
+    "name": "飯高",
+    "region": "三重県",
+    "latitude": 34.4284,
+    "longitude": 136.3328
+  },
+  {
+    "code": "MIEH07",
+    "name": "志摩",
+    "region": "三重県",
+    "latitude": 34.2544,
+    "longitude": 136.8216
+  },
+  {
+    "code": "MIE013",
+    "name": "南島",
+    "region": "三重県",
+    "latitude": 34.2778,
+    "longitude": 136.4993
+  },
+  {
+    "code": "MIEH05",
+    "name": "尾鷲",
+    "region": "三重県",
+    "latitude": 34.0637,
+    "longitude": 136.1689
+  },
+  {
+    "code": "MIE015",
+    "name": "熊野",
+    "region": "三重県",
+    "latitude": 33.8788,
+    "longitude": 136.0816
+  },
+  {
+    "code": "MIE016",
+    "name": "紀和",
+    "region": "三重県",
+    "latitude": 33.8764,
+    "longitude": 135.9191
+  },
+  {
+    "code": "MIE011",
+    "name": "飯高",
+    "region": "三重県",
+    "latitude": 34.4284,
+    "longitude": 136.3328
+  },
+  {
+    "code": "MYG001",
+    "name": "気仙沼",
+    "region": "宮城県",
+    "latitude": 38.9017,
+    "longitude": 141.5709
+  },
+  {
+    "code": "MYG018",
+    "name": "伊里前",
+    "region": "宮城県",
+    "latitude": 38.7194,
+    "longitude": 141.5228
+  },
+  {
+    "code": "MYG003",
+    "name": "東和",
+    "region": "宮城県",
+    "latitude": 38.7349,
+    "longitude": 141.3116
+  },
+  {
+    "code": "MYG004",
+    "name": "築館",
+    "region": "宮城県",
+    "latitude": 38.7324,
+    "longitude": 141.027
+  },
+  {
+    "code": "MYG019",
+    "name": "鳴子温泉",
+    "region": "宮城県",
+    "latitude": 38.7513,
+    "longitude": 140.7226
+  },
+  {
+    "code": "MYG006",
+    "name": "古川",
+    "region": "宮城県",
+    "latitude": 38.566,
+    "longitude": 140.9767
+  },
+  {
+    "code": "MYG007",
+    "name": "豊里",
+    "region": "宮城県",
+    "latitude": 38.5877,
+    "longitude": 141.251
+  },
+  {
+    "code": "MYG008",
+    "name": "北上",
+    "region": "宮城県",
+    "latitude": 38.5676,
+    "longitude": 141.4267
+  },
+  {
+    "code": "MYG009",
+    "name": "大和",
+    "region": "宮城県",
+    "latitude": 38.4466,
+    "longitude": 140.8871
+  },
+  {
+    "code": "MYG010",
+    "name": "石巻",
+    "region": "宮城県",
+    "latitude": 38.4292,
+    "longitude": 141.2819
+  },
+  {
+    "code": "MYG011",
+    "name": "牡鹿",
+    "region": "宮城県",
+    "latitude": 38.302,
+    "longitude": 141.5079
+  },
+  {
+    "code": "MYG012",
+    "name": "塩竈",
+    "region": "宮城県",
+    "latitude": 38.3288,
+    "longitude": 141.0128
+  },
+  {
+    "code": "MYG013",
+    "name": "仙台",
+    "region": "宮城県",
+    "latitude": 38.2661,
+    "longitude": 140.9286
+  },
+  {
+    "code": "MYG014",
+    "name": "作並",
+    "region": "宮城県",
+    "latitude": 38.3173,
+    "longitude": 140.6362
+  },
+  {
+    "code": "MYG015",
+    "name": "岩沼",
+    "region": "宮城県",
+    "latitude": 38.1037,
+    "longitude": 140.8708
+  },
+  {
+    "code": "MYGH09",
+    "name": "白石",
+    "region": "宮城県",
+    "latitude": 38.0091,
+    "longitude": 140.6027
+  },
+  {
+    "code": "MYG017",
+    "name": "角田",
+    "region": "宮城県",
+    "latitude": 37.976,
+    "longitude": 140.7822
+  },
+  {
+    "code": "MYG018",
+    "name": "伊里前",
+    "region": "宮城県",
+    "latitude": 38.7194,
+    "longitude": 141.5228
+  },
+  {
+    "code": "MYG019",
+    "name": "鳴子温泉",
+    "region": "宮城県",
+    "latitude": 38.7513,
+    "longitude": 140.7226
+  },
+  {
+    "code": "MYZ003",
+    "name": "延岡",
+    "region": "宮崎県",
+    "latitude": 32.5659,
+    "longitude": 131.6602
+  },
+  {
+    "code": "MYZ005",
+    "name": "日向",
+    "region": "宮崎県",
+    "latitude": 32.4286,
+    "longitude": 131.6009
+  },
+  {
+    "code": "MYZ006",
+    "name": "都農",
+    "region": "宮崎県",
+    "latitude": 32.2564,
+    "longitude": 131.5609
+  },
+  {
+    "code": "MYZ008",
+    "name": "西都",
+    "region": "宮崎県",
+    "latitude": 32.1056,
+    "longitude": 131.3931
+  },
+  {
+    "code": "MYZ009",
+    "name": "えびの",
+    "region": "宮崎県",
+    "latitude": 32.0461,
+    "longitude": 130.8115
+  },
+  {
+    "code": "MYZ010",
+    "name": "小林",
+    "region": "宮崎県",
+    "latitude": 31.9968,
+    "longitude": 130.9722
+  },
+  {
+    "code": "MYZ013",
+    "name": "宮崎",
+    "region": "宮崎県",
+    "latitude": 31.9086,
+    "longitude": 131.4188
+  },
+  {
+    "code": "MYZ014",
+    "name": "田野",
+    "region": "宮崎県",
+    "latitude": 31.8457,
+    "longitude": 131.307
+  },
+  {
+    "code": "MYZH13",
+    "name": "都城南",
+    "region": "宮崎県",
+    "latitude": 31.7301,
+    "longitude": 131.0791
+  },
+  {
+    "code": "MYZ016",
+    "name": "日南",
+    "region": "宮崎県",
+    "latitude": 31.6131,
+    "longitude": 131.3745
+  },
+  {
+    "code": "MYZ017",
+    "name": "串間",
+    "region": "宮崎県",
+    "latitude": 31.4639,
+    "longitude": 131.2281
+  },
+  {
+    "code": "MYZ018",
+    "name": "都井岬",
+    "region": "宮崎県",
+    "latitude": 31.3987,
+    "longitude": 131.3054
+  },
+  {
+    "code": "NAR001",
+    "name": "生駒",
+    "region": "奈良県",
+    "latitude": 34.7153,
+    "longitude": 135.7276
+  },
+  {
+    "code": "NAR002",
+    "name": "奈良",
+    "region": "奈良県",
+    "latitude": 34.6682,
+    "longitude": 135.8353
+  },
+  {
+    "code": "NAR003",
+    "name": "大和高田",
+    "region": "奈良県",
+    "latitude": 34.5171,
+    "longitude": 135.7171
+  },
+  {
+    "code": "NAR004",
+    "name": "榛原",
+    "region": "奈良県",
+    "latitude": 34.5277,
+    "longitude": 135.9511
+  },
+  {
+    "code": "NAR005",
+    "name": "五條",
+    "region": "奈良県",
+    "latitude": 34.3414,
+    "longitude": 135.6844
+  },
+  {
+    "code": "NGN001",
+    "name": "飯山",
+    "region": "長野県",
+    "latitude": 36.8513,
+    "longitude": 138.3657
+  },
+  {
+    "code": "NGN002",
+    "name": "信濃",
+    "region": "長野県",
+    "latitude": 36.8068,
+    "longitude": 138.2069
+  },
+  {
+    "code": "NGN003",
+    "name": "山ノ内",
+    "region": "長野県",
+    "latitude": 36.74,
+    "longitude": 138.4137
+  },
+  {
+    "code": "NGN004",
+    "name": "長野",
+    "region": "長野県",
+    "latitude": 36.6475,
+    "longitude": 138.1941
+  },
+  {
+    "code": "NGN006",
+    "name": "大町",
+    "region": "長野県",
+    "latitude": 36.5084,
+    "longitude": 137.8514
+  },
+  {
+    "code": "NGN007",
+    "name": "杭瀬下",
+    "region": "長野県",
+    "latitude": 36.5344,
+    "longitude": 138.1188
+  },
+  {
+    "code": "NGN008",
+    "name": "上田",
+    "region": "長野県",
+    "latitude": 36.4018,
+    "longitude": 138.2483
+  },
+  {
+    "code": "NGN009",
+    "name": "穂高",
+    "region": "長野県",
+    "latitude": 36.3371,
+    "longitude": 137.8718
+  },
+  {
+    "code": "NGN010",
+    "name": "小諸",
+    "region": "長野県",
+    "latitude": 36.3282,
+    "longitude": 138.4349
+  },
+  {
+    "code": "NGN011",
+    "name": "長門",
+    "region": "長野県",
+    "latitude": 36.2718,
+    "longitude": 138.2584
+  },
+  {
+    "code": "NGN012",
+    "name": "松本",
+    "region": "長野県",
+    "latitude": 36.2571,
+    "longitude": 137.9796
+  },
+  {
+    "code": "NGN013",
+    "name": "安曇",
+    "region": "長野県",
+    "latitude": 36.1827,
+    "longitude": 137.785
+  },
+  {
+    "code": "NGN014",
+    "name": "小海",
+    "region": "長野県",
+    "latitude": 36.0956,
+    "longitude": 138.4839
+  },
+  {
+    "code": "NGN015",
+    "name": "諏訪",
+    "region": "長野県",
+    "latitude": 36.0451,
+    "longitude": 138.1114
+  },
+  {
+    "code": "NGNH16",
+    "name": "茅野",
+    "region": "長野県",
+    "latitude": 35.9465,
+    "longitude": 138.1848
+  },
+  {
+    "code": "NGN017",
+    "name": "楢川",
+    "region": "長野県",
+    "latitude": 35.9749,
+    "longitude": 137.8259
+  },
+  {
+    "code": "NGN018",
+    "name": "王滝",
+    "region": "長野県",
+    "latitude": 35.8129,
+    "longitude": 137.5298
+  },
+  {
+    "code": "NGN019",
+    "name": "木曽福島",
+    "region": "長野県",
+    "latitude": 35.8561,
+    "longitude": 137.708
+  },
+  {
+    "code": "NGN020",
+    "name": "伊那",
+    "region": "長野県",
+    "latitude": 35.8278,
+    "longitude": 137.9548
+  },
+  {
+    "code": "NGN021",
+    "name": "駒ヶ根",
+    "region": "長野県",
+    "latitude": 35.7293,
+    "longitude": 137.9336
+  },
+  {
+    "code": "NGNH23",
+    "name": "南木曽",
+    "region": "長野県",
+    "latitude": 35.6056,
+    "longitude": 137.6105
+  },
+  {
+    "code": "NGN023",
+    "name": "大鹿",
+    "region": "長野県",
+    "latitude": 35.5775,
+    "longitude": 138.0338
+  },
+  {
+    "code": "NGN025",
+    "name": "天龍",
+    "region": "長野県",
+    "latitude": 35.2864,
+    "longitude": 137.8571
+  },
+  {
+    "code": "NGS002",
+    "name": "松浦",
+    "region": "長崎県",
+    "latitude": 33.3442,
+    "longitude": 129.7056
+  },
+  {
+    "code": "NGSH01",
+    "name": "平戸",
+    "region": "長崎県",
+    "latitude": 33.2116,
+    "longitude": 129.4353
+  },
+  {
+    "code": "NGS004",
+    "name": "佐世保",
+    "region": "長崎県",
+    "latitude": 33.181,
+    "longitude": 129.7173
+  },
+  {
+    "code": "NGS009",
+    "name": "諫早",
+    "region": "長崎県",
+    "latitude": 32.8457,
+    "longitude": 130.0216
+  },
+  {
+    "code": "NGS010",
+    "name": "長崎",
+    "region": "長崎県",
+    "latitude": 32.7351,
+    "longitude": 129.8765
+  },
+  {
+    "code": "NGS011",
+    "name": "千々石",
+    "region": "長崎県",
+    "latitude": 32.7843,
+    "longitude": 130.2023
+  },
+  {
+    "code": "NGS012",
+    "name": "島原",
+    "region": "長崎県",
+    "latitude": 32.7883,
+    "longitude": 130.3463
+  },
+  {
+    "code": "NGS014",
+    "name": "口之津",
+    "region": "長崎県",
+    "latitude": 32.6104,
+    "longitude": 130.1851
+  },
+  {
+    "code": "NGS015",
+    "name": "宇久",
+    "region": "長崎県",
+    "latitude": 33.2557,
+    "longitude": 129.1256
+  },
+  {
+    "code": "NGS016",
+    "name": "若松",
+    "region": "長崎県",
+    "latitude": 32.8876,
+    "longitude": 129.0213
+  },
+  {
+    "code": "NGS017",
+    "name": "福江",
+    "region": "長崎県",
+    "latitude": 32.6693,
+    "longitude": 128.8432
+  },
+  {
+    "code": "NGS019",
+    "name": "大村",
+    "region": "長崎県",
+    "latitude": 32.9003,
+    "longitude": 129.9583
+  },
+  {
+    "code": "NGS020",
+    "name": "上対馬",
+    "region": "長崎県",
+    "latitude": 34.6551,
+    "longitude": 129.4591
+  },
+  {
+    "code": "NGS022",
+    "name": "国分",
+    "region": "長崎県",
+    "latitude": 34.2031,
+    "longitude": 129.2874
+  },
+  {
+    "code": "NGS023",
+    "name": "郷ノ浦",
+    "region": "長崎県",
+    "latitude": 33.75,
+    "longitude": 129.691
+  },
+  {
+    "code": "NIG001",
+    "name": "岩谷口",
+    "region": "新潟県",
+    "latitude": 38.257,
+    "longitude": 138.4318
+  },
+  {
+    "code": "NIG002",
+    "name": "両津",
+    "region": "新潟県",
+    "latitude": 38.0748,
+    "longitude": 138.4407
+  },
+  {
+    "code": "NIG003",
+    "name": "佐和田",
+    "region": "新潟県",
+    "latitude": 37.9977,
+    "longitude": 138.3231
+  },
+  {
+    "code": "NIG004",
+    "name": "小木",
+    "region": "新潟県",
+    "latitude": 37.82,
+    "longitude": 138.2788
+  },
+  {
+    "code": "NIG005",
+    "name": "松ヶ崎",
+    "region": "新潟県",
+    "latitude": 37.9207,
+    "longitude": 138.4971
+  },
+  {
+    "code": "NIG006",
+    "name": "寒川",
+    "region": "新潟県",
+    "latitude": 38.4514,
+    "longitude": 139.4963
+  },
+  {
+    "code": "NIG007",
+    "name": "村上",
+    "region": "新潟県",
+    "latitude": 38.2306,
+    "longitude": 139.4863
+  },
+  {
+    "code": "NIG008",
+    "name": "中条",
+    "region": "新潟県",
+    "latitude": 38.0514,
+    "longitude": 139.4086
+  },
+  {
+    "code": "NIG009",
+    "name": "新発田",
+    "region": "新潟県",
+    "latitude": 37.951,
+    "longitude": 139.3377
+  },
+  {
+    "code": "NIG010",
+    "name": "新潟",
+    "region": "新潟県",
+    "latitude": 37.9144,
+    "longitude": 139.0107
+  },
+  {
+    "code": "NIG011",
+    "name": "新津",
+    "region": "新潟県",
+    "latitude": 37.8012,
+    "longitude": 139.1457
+  },
+  {
+    "code": "NIGH08",
+    "name": "津川",
+    "region": "新潟県",
+    "latitude": 37.6708,
+    "longitude": 139.4648
+  },
+  {
+    "code": "NIG013",
+    "name": "巻",
+    "region": "新潟県",
+    "latitude": 37.7634,
+    "longitude": 138.883
+  },
+  {
+    "code": "NIG014",
+    "name": "三条",
+    "region": "新潟県",
+    "latitude": 37.6412,
+    "longitude": 138.9553
+  },
+  {
+    "code": "NIG015",
+    "name": "村松",
+    "region": "新潟県",
+    "latitude": 37.6938,
+    "longitude": 139.1884
+  },
+  {
+    "code": "NIG016",
+    "name": "寺泊",
+    "region": "新潟県",
+    "latitude": 37.6458,
+    "longitude": 138.773
+  },
+  {
+    "code": "NIG017",
+    "name": "長岡",
+    "region": "新潟県",
+    "latitude": 37.441,
+    "longitude": 138.8425
+  },
+  {
+    "code": "NIG018",
+    "name": "柏崎",
+    "region": "新潟県",
+    "latitude": 37.3727,
+    "longitude": 138.5583
+  },
+  {
+    "code": "NIG019",
+    "name": "小千谷",
+    "region": "新潟県",
+    "latitude": 37.3043,
+    "longitude": 138.8121
+  },
+  {
+    "code": "NIG020",
+    "name": "小出",
+    "region": "新潟県",
+    "latitude": 37.2348,
+    "longitude": 138.9621
+  },
+  {
+    "code": "NIG021",
+    "name": "十日町",
+    "region": "新潟県",
+    "latitude": 37.2011,
+    "longitude": 138.7783
+  },
+  {
+    "code": "NIG023",
+    "name": "津南",
+    "region": "新潟県",
+    "latitude": 37.0134,
+    "longitude": 138.6546
+  },
+  {
+    "code": "NIG024",
+    "name": "安塚",
+    "region": "新潟県",
+    "latitude": 37.1274,
+    "longitude": 138.4442
+  },
+  {
+    "code": "NIG025",
+    "name": "直江津",
+    "region": "新潟県",
+    "latitude": 37.161,
+    "longitude": 138.2234
+  },
+  {
+    "code": "NIG026",
+    "name": "新井",
+    "region": "新潟県",
+    "latitude": 37.0224,
+    "longitude": 138.2506
+  },
+  {
+    "code": "NIG027",
+    "name": "糸魚川",
+    "region": "新潟県",
+    "latitude": 37.0235,
+    "longitude": 137.8613
+  },
+  {
+    "code": "NIGH01",
+    "name": "長岡",
+    "region": "新潟県",
+    "latitude": 37.4272,
+    "longitude": 138.8876
+  },
+  {
+    "code": "OIT001",
+    "name": "国見",
+    "region": "大分県",
+    "latitude": 33.6788,
+    "longitude": 131.5949
+  },
+  {
+    "code": "OIT002",
+    "name": "中津",
+    "region": "大分県",
+    "latitude": 33.5691,
+    "longitude": 131.2675
+  },
+  {
+    "code": "OIT007",
+    "name": "杵築",
+    "region": "大分県",
+    "latitude": 33.4169,
+    "longitude": 131.6142
+  },
+  {
+    "code": "OIT009",
+    "name": "湯布院",
+    "region": "大分県",
+    "latitude": 33.2568,
+    "longitude": 131.3443
+  },
+  {
+    "code": "OIT010",
+    "name": "大分",
+    "region": "大分県",
+    "latitude": 33.2317,
+    "longitude": 131.5934
+  },
+  {
+    "code": "OIT011",
+    "name": "佐賀関",
+    "region": "大分県",
+    "latitude": 33.2468,
+    "longitude": 131.8816
+  },
+  {
+    "code": "OIT014",
+    "name": "津久見",
+    "region": "大分県",
+    "latitude": 33.0656,
+    "longitude": 131.8588
+  },
+  {
+    "code": "OIT016",
+    "name": "佐伯",
+    "region": "大分県",
+    "latitude": 32.9748,
+    "longitude": 131.903
+  },
+  {
+    "code": "OIT018",
+    "name": "蒲江",
+    "region": "大分県",
+    "latitude": 32.798,
+    "longitude": 131.9255
+  },
+  {
+    "code": "OKN001",
+    "name": "国頭",
+    "region": "沖縄県",
+    "latitude": 26.7402,
+    "longitude": 128.1736
+  },
+  {
+    "code": "OKN002",
+    "name": "名護",
+    "region": "沖縄県",
+    "latitude": 26.5916,
+    "longitude": 127.9767
+  },
+  {
+    "code": "OKN003",
+    "name": "具志川",
+    "region": "沖縄県",
+    "latitude": 26.38,
+    "longitude": 127.8572
+  },
+  {
+    "code": "OKN004",
+    "name": "那覇",
+    "region": "沖縄県",
+    "latitude": 26.2497,
+    "longitude": 127.6786
+  },
+  {
+    "code": "OKN005",
+    "name": "知念",
+    "region": "沖縄県",
+    "latitude": 26.1686,
+    "longitude": 127.8267
+  },
+  {
+    "code": "OKN006",
+    "name": "久米島",
+    "region": "沖縄県",
+    "latitude": 26.3497,
+    "longitude": 126.7479
+  },
+  {
+    "code": "OKN007",
+    "name": "狩俣",
+    "region": "沖縄県",
+    "latitude": 24.853,
+    "longitude": 125.2964
+  },
+  {
+    "code": "OKN008",
+    "name": "城辺",
+    "region": "沖縄県",
+    "latitude": 24.7558,
+    "longitude": 125.3864
+  },
+  {
+    "code": "OKN009",
+    "name": "新栄",
+    "region": "沖縄県",
+    "latitude": 24.3413,
+    "longitude": 124.1526
+  },
+  {
+    "code": "OKN010",
+    "name": "伊原間",
+    "region": "沖縄県",
+    "latitude": 24.5088,
+    "longitude": 124.282
+  },
+  {
+    "code": "OKN011",
+    "name": "上原",
+    "region": "沖縄県",
+    "latitude": 24.4324,
+    "longitude": 123.7798
+  },
+  {
+    "code": "OKY006",
+    "name": "津山",
+    "region": "岡山県",
+    "latitude": 35.0685,
+    "longitude": 134.0054
+  },
+  {
+    "code": "OKY007",
+    "name": "高梁",
+    "region": "岡山県",
+    "latitude": 34.7805,
+    "longitude": 133.6104
+  },
+  {
+    "code": "OKY010",
+    "name": "備前",
+    "region": "岡山県",
+    "latitude": 34.7228,
+    "longitude": 134.1229
+  },
+  {
+    "code": "OKY011",
+    "name": "岡山",
+    "region": "岡山県",
+    "latitude": 34.6554,
+    "longitude": 133.9075
+  },
+  {
+    "code": "OKY012",
+    "name": "倉敷",
+    "region": "岡山県",
+    "latitude": 34.5897,
+    "longitude": 133.754
+  },
+  {
+    "code": "OKY013",
+    "name": "笠岡",
+    "region": "岡山県",
+    "latitude": 34.5094,
+    "longitude": 133.509
+  },
+  {
+    "code": "OKY014",
+    "name": "下津井",
+    "region": "岡山県",
+    "latitude": 34.4483,
+    "longitude": 133.787
+  },
+  {
+    "code": "OSK001",
+    "name": "能勢",
+    "region": "大阪府",
+    "latitude": 34.9688,
+    "longitude": 135.396
+  },
+  {
+    "code": "OSK002",
+    "name": "高槻",
+    "region": "大阪府",
+    "latitude": 34.8572,
+    "longitude": 135.5958
+  },
+  {
+    "code": "OSK003",
+    "name": "豊中",
+    "region": "大阪府",
+    "latitude": 34.7668,
+    "longitude": 135.4684
+  },
+  {
+    "code": "OSK004",
+    "name": "四條畷",
+    "region": "大阪府",
+    "latitude": 34.7407,
+    "longitude": 135.6396
+  },
+  {
+    "code": "OSKH05",
+    "name": "大阪",
+    "region": "大阪府",
+    "latitude": 34.7159,
+    "longitude": 135.5199
+  },
+  {
+    "code": "OSK006",
+    "name": "堺",
+    "region": "大阪府",
+    "latitude": 34.5894,
+    "longitude": 135.471
+  },
+  {
+    "code": "OSK007",
+    "name": "羽曳野",
+    "region": "大阪府",
+    "latitude": 34.5575,
+    "longitude": 135.606
+  },
+  {
+    "code": "OSK008",
+    "name": "岸和田",
+    "region": "大阪府",
+    "latitude": 34.4404,
+    "longitude": 135.3918
+  },
+  {
+    "code": "OSK009",
+    "name": "河内長野",
+    "region": "大阪府",
+    "latitude": 34.4364,
+    "longitude": 135.5805
+  },
+  {
+    "code": "SAG002",
+    "name": "唐津",
+    "region": "佐賀県",
+    "latitude": 33.4228,
+    "longitude": 129.9192
+  },
+  {
+    "code": "SAGH02",
+    "name": "伊万里",
+    "region": "佐賀県",
+    "latitude": 33.2656,
+    "longitude": 129.8798
+  },
+  {
+    "code": "SAG005",
+    "name": "厳木",
+    "region": "佐賀県",
+    "latitude": 33.3213,
+    "longitude": 130.0645
+  },
+  {
+    "code": "SAG006",
+    "name": "武雄",
+    "region": "佐賀県",
+    "latitude": 33.1917,
+    "longitude": 130.0317
+  },
+  {
+    "code": "SAG007",
+    "name": "佐賀",
+    "region": "佐賀県",
+    "latitude": 33.2626,
+    "longitude": 130.3005
+  },
+  {
+    "code": "SAG008",
+    "name": "鹿島",
+    "region": "佐賀県",
+    "latitude": 33.1041,
+    "longitude": 130.0998
+  },
+  {
+    "code": "SIG001",
+    "name": "余呉",
+    "region": "滋賀県",
+    "latitude": 35.5399,
+    "longitude": 136.2066
+  },
+  {
+    "code": "SIG002",
+    "name": "今津",
+    "region": "滋賀県",
+    "latitude": 35.4214,
+    "longitude": 136.0243
+  },
+  {
+    "code": "SIG003",
+    "name": "長浜",
+    "region": "滋賀県",
+    "latitude": 35.3773,
+    "longitude": 136.2642
+  },
+  {
+    "code": "SIG005",
+    "name": "彦根",
+    "region": "滋賀県",
+    "latitude": 35.2499,
+    "longitude": 136.2414
+  },
+  {
+    "code": "SIG007",
+    "name": "近江八幡",
+    "region": "滋賀県",
+    "latitude": 35.1339,
+    "longitude": 136.0957
+  },
+  {
+    "code": "SIG009",
+    "name": "甲西",
+    "region": "滋賀県",
+    "latitude": 35.0052,
+    "longitude": 136.0841
+  },
+  {
+    "code": "SIG010",
+    "name": "大津",
+    "region": "滋賀県",
+    "latitude": 34.9719,
+    "longitude": 135.8965
+  },
+  {
+    "code": "SIT001",
+    "name": "本庄",
+    "region": "埼玉県",
+    "latitude": 36.2431,
+    "longitude": 139.1938
+  },
+  {
+    "code": "SIT007",
+    "name": "東松山",
+    "region": "埼玉県",
+    "latitude": 36.0542,
+    "longitude": 139.3933
+  },
+  {
+    "code": "SIT003",
+    "name": "久喜",
+    "region": "埼玉県",
+    "latitude": 36.0721,
+    "longitude": 139.6969
+  },
+  {
+    "code": "SIT004",
+    "name": "長瀞",
+    "region": "埼玉県",
+    "latitude": 36.1178,
+    "longitude": 139.1044
+  },
+  {
+    "code": "SIT005",
+    "name": "小川",
+    "region": "埼玉県",
+    "latitude": 36.0563,
+    "longitude": 139.2626
+  },
+  {
+    "code": "SIT006",
+    "name": "秩父",
+    "region": "埼玉県",
+    "latitude": 35.9959,
+    "longitude": 139.0713
+  },
+  {
+    "code": "SIT007",
+    "name": "東松山",
+    "region": "埼玉県",
+    "latitude": 36.0542,
+    "longitude": 139.3933
+  },
+  {
+    "code": "SIT008",
+    "name": "春日部",
+    "region": "埼玉県",
+    "latitude": 35.9829,
+    "longitude": 139.7456
+  },
+  {
+    "code": "SIT009",
+    "name": "川越",
+    "region": "埼玉県",
+    "latitude": 35.9033,
+    "longitude": 139.4826
+  },
+  {
+    "code": "SIT010",
+    "name": "大宮",
+    "region": "埼玉県",
+    "latitude": 35.9071,
+    "longitude": 139.6478
+  },
+  {
+    "code": "TKY003",
+    "name": "青梅",
+    "region": "東京都",
+    "latitude": 35.7968,
+    "longitude": 139.2916
+  },
+  {
+    "code": "SIT013",
+    "name": "所沢",
+    "region": "埼玉県",
+    "latitude": 35.7966,
+    "longitude": 139.4659
+  },
+  {
+    "code": "SIT014",
+    "name": "中津川",
+    "region": "埼玉県",
+    "latitude": 35.9954,
+    "longitude": 138.801
+  },
+  {
+    "code": "SMN002",
+    "name": "松江",
+    "region": "島根県",
+    "latitude": 35.4713,
+    "longitude": 133.0681
+  },
+  {
+    "code": "SMN004",
+    "name": "木次",
+    "region": "島根県",
+    "latitude": 35.2875,
+    "longitude": 132.9022
+  },
+  {
+    "code": "SMN005",
+    "name": "出雲",
+    "region": "島根県",
+    "latitude": 35.3608,
+    "longitude": 132.7449
+  },
+  {
+    "code": "SMN006",
+    "name": "大田",
+    "region": "島根県",
+    "latitude": 35.1908,
+    "longitude": 132.4981
+  },
+  {
+    "code": "SMN009",
+    "name": "江津",
+    "region": "島根県",
+    "latitude": 35.0117,
+    "longitude": 132.2219
+  },
+  {
+    "code": "SMN010",
+    "name": "浜田",
+    "region": "島根県",
+    "latitude": 34.8876,
+    "longitude": 132.0757
+  },
+  {
+    "code": "SMN012",
+    "name": "六日市",
+    "region": "島根県",
+    "latitude": 34.3551,
+    "longitude": 131.9354
+  },
+  {
+    "code": "SMN013",
+    "name": "益田",
+    "region": "島根県",
+    "latitude": 34.6696,
+    "longitude": 131.8461
+  },
+  {
+    "code": "SMN014",
+    "name": "津和野",
+    "region": "島根県",
+    "latitude": 34.4668,
+    "longitude": 131.7747
+  },
+  {
+    "code": "SMN017",
+    "name": "西ノ島",
+    "region": "島根県",
+    "latitude": 36.093,
+    "longitude": 132.9838
+  },
+  {
+    "code": "SMN018",
+    "name": "都万",
+    "region": "島根県",
+    "latitude": 36.1969,
+    "longitude": 133.2348
+  },
+  {
+    "code": "SMN019",
+    "name": "布施",
+    "region": "島根県",
+    "latitude": 36.2938,
+    "longitude": 133.3526
+  },
+  {
+    "code": "SZO001",
+    "name": "熱海",
+    "region": "静岡県",
+    "latitude": 35.1425,
+    "longitude": 139.0798
+  },
+  {
+    "code": "SZO028",
+    "name": "川奈",
+    "region": "静岡県",
+    "latitude": 34.9522,
+    "longitude": 139.1379
+  },
+  {
+    "code": "SZO003",
+    "name": "東伊豆",
+    "region": "静岡県",
+    "latitude": 34.8158,
+    "longitude": 139.0544
+  },
+  {
+    "code": "SZO004",
+    "name": "南伊豆",
+    "region": "静岡県",
+    "latitude": 34.6471,
+    "longitude": 138.8193
+  },
+  {
+    "code": "SZO027",
+    "name": "西伊豆",
+    "region": "静岡県",
+    "latitude": 34.7809,
+    "longitude": 138.7934
+  },
+  {
+    "code": "SZO006",
+    "name": "土肥",
+    "region": "静岡県",
+    "latitude": 34.9111,
+    "longitude": 138.7948
+  },
+  {
+    "code": "SZO007",
+    "name": "修善寺",
+    "region": "静岡県",
+    "latitude": 34.9771,
+    "longitude": 138.9468
+  },
+  {
+    "code": "SZO008",
+    "name": "沼津",
+    "region": "静岡県",
+    "latitude": 35.1105,
+    "longitude": 138.8436
+  },
+  {
+    "code": "SZO009",
+    "name": "裾野",
+    "region": "静岡県",
+    "latitude": 35.1972,
+    "longitude": 138.9129
+  },
+  {
+    "code": "SZO010",
+    "name": "御殿場",
+    "region": "静岡県",
+    "latitude": 35.3134,
+    "longitude": 138.9063
+  },
+  {
+    "code": "SZO011",
+    "name": "富士宮",
+    "region": "静岡県",
+    "latitude": 35.2129,
+    "longitude": 138.6015
+  },
+  {
+    "code": "SZO012",
+    "name": "蒲原",
+    "region": "静岡県",
+    "latitude": 35.1257,
+    "longitude": 138.6222
+  },
+  {
+    "code": "SZO013",
+    "name": "清水",
+    "region": "静岡県",
+    "latitude": 35.0409,
+    "longitude": 138.4765
+  },
+  {
+    "code": "SZO014",
+    "name": "静岡",
+    "region": "静岡県",
+    "latitude": 34.9649,
+    "longitude": 138.3741
+  },
+  {
+    "code": "SZO015",
+    "name": "梅ヶ島",
+    "region": "静岡県",
+    "latitude": 35.2433,
+    "longitude": 138.341
+  },
+  {
+    "code": "SZO016",
+    "name": "焼津",
+    "region": "静岡県",
+    "latitude": 34.8564,
+    "longitude": 138.312
+  },
+  {
+    "code": "SZO017",
+    "name": "浜岡",
+    "region": "静岡県",
+    "latitude": 34.6375,
+    "longitude": 138.1286
+  },
+  {
+    "code": "SZO018",
+    "name": "榛原",
+    "region": "静岡県",
+    "latitude": 34.7389,
+    "longitude": 138.2247
+  },
+  {
+    "code": "SZO019",
+    "name": "掛川",
+    "region": "静岡県",
+    "latitude": 34.7705,
+    "longitude": 137.9989
+  },
+  {
+    "code": "SZO020",
+    "name": "川根",
+    "region": "静岡県",
+    "latitude": 35.0084,
+    "longitude": 138.1474
+  },
+  {
+    "code": "SZO021",
+    "name": "本川根",
+    "region": "静岡県",
+    "latitude": 35.0978,
+    "longitude": 138.1332
+  },
+  {
+    "code": "SZO022",
+    "name": "佐久間",
+    "region": "静岡県",
+    "latitude": 35.0918,
+    "longitude": 137.8127
+  },
+  {
+    "code": "SZO023",
+    "name": "天竜",
+    "region": "静岡県",
+    "latitude": 34.8736,
+    "longitude": 137.8167
+  },
+  {
+    "code": "SZO024",
+    "name": "浜松",
+    "region": "静岡県",
+    "latitude": 34.7104,
+    "longitude": 137.7199
+  },
+  {
+    "code": "SZO025",
+    "name": "湖西",
+    "region": "静岡県",
+    "latitude": 34.7189,
+    "longitude": 137.5318
+  },
+  {
+    "code": "SZO026",
+    "name": "春野",
+    "region": "静岡県",
+    "latitude": 34.9812,
+    "longitude": 137.8964
+  },
+  {
+    "code": "SZO027",
+    "name": "西伊豆",
+    "region": "静岡県",
+    "latitude": 34.7809,
+    "longitude": 138.7934
+  },
+  {
+    "code": "SZO028",
+    "name": "川奈",
+    "region": "静岡県",
+    "latitude": 34.9522,
+    "longitude": 139.1379
+  },
+  {
+    "code": "TCGH19",
+    "name": "大田原2",
+    "region": "栃木県",
+    "latitude": 36.906,
+    "longitude": 140.1119
+  },
+  {
+    "code": "TCG002",
+    "name": "塩原",
+    "region": "栃木県",
+    "latitude": 36.9903,
+    "longitude": 139.8029
+  },
+  {
+    "code": "TCG003",
+    "name": "藤原",
+    "region": "栃木県",
+    "latitude": 36.8153,
+    "longitude": 139.7184
+  },
+  {
+    "code": "TCG004",
+    "name": "湯元",
+    "region": "栃木県",
+    "latitude": 36.8065,
+    "longitude": 139.4221
+  },
+  {
+    "code": "TCG005",
+    "name": "矢板",
+    "region": "栃木県",
+    "latitude": 36.8061,
+    "longitude": 139.9264
+  },
+  {
+    "code": "TCG006",
+    "name": "小川",
+    "region": "栃木県",
+    "latitude": 36.7638,
+    "longitude": 140.1295
+  },
+  {
+    "code": "TCG007",
+    "name": "宇都宮",
+    "region": "栃木県",
+    "latitude": 36.5677,
+    "longitude": 139.8873
+  },
+  {
+    "code": "TCG008",
+    "name": "鹿沼",
+    "region": "栃木県",
+    "latitude": 36.56,
+    "longitude": 139.7676
+  },
+  {
+    "code": "TCG015",
+    "name": "芹沼",
+    "region": "栃木県",
+    "latitude": 36.7488,
+    "longitude": 139.7144
+  },
+  {
+    "code": "TCG010",
+    "name": "足尾",
+    "region": "栃木県",
+    "latitude": 36.6348,
+    "longitude": 139.4379
+  },
+  {
+    "code": "TCG011",
+    "name": "葛生",
+    "region": "栃木県",
+    "latitude": 36.3869,
+    "longitude": 139.6144
+  },
+  {
+    "code": "TCG012",
+    "name": "小山",
+    "region": "栃木県",
+    "latitude": 36.2863,
+    "longitude": 139.8048
+  },
+  {
+    "code": "TCG013",
+    "name": "真岡",
+    "region": "栃木県",
+    "latitude": 36.4368,
+    "longitude": 140.0227
+  },
+  {
+    "code": "TCG014",
+    "name": "茂木",
+    "region": "栃木県",
+    "latitude": 36.5428,
+    "longitude": 140.1804
+  },
+  {
+    "code": "TCG015",
+    "name": "芹沼",
+    "region": "栃木県",
+    "latitude": 36.7488,
+    "longitude": 139.7144
+  },
+  {
+    "code": "TCG014",
+    "name": "茂木",
+    "region": "栃木県",
+    "latitude": 36.5428,
+    "longitude": 140.1804
+  },
+  {
+    "code": "TKS001",
+    "name": "鳴門",
+    "region": "徳島県",
+    "latitude": 34.2034,
+    "longitude": 134.6096
+  },
+  {
+    "code": "TKS002",
+    "name": "徳島",
+    "region": "徳島県",
+    "latitude": 34.0439,
+    "longitude": 134.582
+  },
+  {
+    "code": "TKS007",
+    "name": "市場",
+    "region": "徳島県",
+    "latitude": 34.0903,
+    "longitude": 134.2854
+  },
+  {
+    "code": "TKS012",
+    "name": "池田",
+    "region": "徳島県",
+    "latitude": 34.0317,
+    "longitude": 133.8064
+  },
+  {
+    "code": "TKY001",
+    "name": "氷川",
+    "region": "東京都",
+    "latitude": 35.8031,
+    "longitude": 139.0953
+  },
+  {
+    "code": "TKY002",
+    "name": "桧原",
+    "region": "東京都",
+    "latitude": 35.7306,
+    "longitude": 139.1454
+  },
+  {
+    "code": "TKY003",
+    "name": "青梅",
+    "region": "東京都",
+    "latitude": 35.7968,
+    "longitude": 139.2916
+  },
+  {
+    "code": "TKY005",
+    "name": "町田",
+    "region": "東京都",
+    "latitude": 35.5798,
+    "longitude": 139.4137
+  },
+  {
+    "code": "TKY005",
+    "name": "町田",
+    "region": "東京都",
+    "latitude": 35.5798,
+    "longitude": 139.4137
+  },
+  {
+    "code": "TKY006",
+    "name": "小金井",
+    "region": "東京都",
+    "latitude": 35.6989,
+    "longitude": 139.5028
+  },
+  {
+    "code": "TKY031",
+    "name": "千駄ヶ谷",
+    "region": "東京都",
+    "latitude": 35.6789,
+    "longitude": 139.707
+  },
+  {
+    "code": "TKY008",
+    "name": "岡田",
+    "region": "東京都",
+    "latitude": 34.7851,
+    "longitude": 139.3909
+  },
+  {
+    "code": "TKY009",
+    "name": "波浮港",
+    "region": "東京都",
+    "latitude": 34.6867,
+    "longitude": 139.441
+  },
+  {
+    "code": "TKY010",
+    "name": "新島",
+    "region": "東京都",
+    "latitude": 34.3779,
+    "longitude": 139.2573
+  },
+  {
+    "code": "TKY012",
+    "name": "八丈",
+    "region": "東京都",
+    "latitude": 33.1195,
+    "longitude": 139.7986
+  },
+  {
+    "code": "TKY028",
+    "name": "越中島",
+    "region": "東京都",
+    "latitude": 35.6698,
+    "longitude": 139.7891
+  },
+  {
+    "code": "TKY028",
+    "name": "越中島",
+    "region": "東京都",
+    "latitude": 35.6698,
+    "longitude": 139.7891
+  },
+  {
+    "code": "TKYH11",
+    "name": "江東",
+    "region": "東京都",
+    "latitude": 35.6114,
+    "longitude": 139.8125
+  },
+  {
+    "code": "TKYH11",
+    "name": "江東",
+    "region": "東京都",
+    "latitude": 35.6114,
+    "longitude": 139.8125
+  },
+  {
+    "code": "TKY028",
+    "name": "越中島",
+    "region": "東京都",
+    "latitude": 35.6698,
+    "longitude": 139.7891
+  },
+  {
+    "code": "TKY028",
+    "name": "越中島",
+    "region": "東京都",
+    "latitude": 35.6698,
+    "longitude": 139.7891
+  },
+  {
+    "code": "TKY028",
+    "name": "越中島",
+    "region": "東京都",
+    "latitude": 35.6698,
+    "longitude": 139.7891
+  },
+  {
+    "code": "TKY025",
+    "name": "篠崎",
+    "region": "東京都",
+    "latitude": 35.7136,
+    "longitude": 139.8972
+  },
+  {
+    "code": "TKY028",
+    "name": "越中島",
+    "region": "東京都",
+    "latitude": 35.6698,
+    "longitude": 139.7891
+  },
+  {
+    "code": "TKY029",
+    "name": "三宅",
+    "region": "東京都",
+    "latitude": 34.0757,
+    "longitude": 139.4789
+  },
+  {
+    "code": "TKY031",
+    "name": "千駄ヶ谷",
+    "region": "東京都",
+    "latitude": 35.6789,
+    "longitude": 139.707
+  },
+  {
+    "code": "TKY031",
+    "name": "千駄ヶ谷",
+    "region": "東京都",
+    "latitude": 35.6789,
+    "longitude": 139.707
+  },
+  {
+    "code": "TTR002",
+    "name": "鳥取",
+    "region": "鳥取県",
+    "latitude": 35.4859,
+    "longitude": 134.2201
+  },
+  {
+    "code": "TTR004",
+    "name": "鹿野",
+    "region": "鳥取県",
+    "latitude": 35.4606,
+    "longitude": 134.0548
+  },
+  {
+    "code": "TTR005",
+    "name": "倉吉",
+    "region": "鳥取県",
+    "latitude": 35.4298,
+    "longitude": 133.8258
+  },
+  {
+    "code": "TTR006",
+    "name": "赤碕",
+    "region": "鳥取県",
+    "latitude": 35.5144,
+    "longitude": 133.6297
+  },
+  {
+    "code": "TTR008",
+    "name": "米子",
+    "region": "鳥取県",
+    "latitude": 35.4259,
+    "longitude": 133.3301
+  },
+  {
+    "code": "TYM001",
+    "name": "境",
+    "region": "富山県",
+    "latitude": 36.9764,
+    "longitude": 137.6257
+  },
+  {
+    "code": "TYM002",
+    "name": "氷見",
+    "region": "富山県",
+    "latitude": 36.8659,
+    "longitude": 136.975
+  },
+  {
+    "code": "TYM003",
+    "name": "魚津",
+    "region": "富山県",
+    "latitude": 36.8164,
+    "longitude": 137.42
+  },
+  {
+    "code": "TYM004",
+    "name": "宇奈月",
+    "region": "富山県",
+    "latitude": 36.8626,
+    "longitude": 137.5274
+  },
+  {
+    "code": "TYM005",
+    "name": "新湊",
+    "region": "富山県",
+    "latitude": 36.7611,
+    "longitude": 137.0931
+  },
+  {
+    "code": "TYM006",
+    "name": "小矢部",
+    "region": "富山県",
+    "latitude": 36.6731,
+    "longitude": 136.8974
+  },
+  {
+    "code": "TYM007",
+    "name": "富山",
+    "region": "富山県",
+    "latitude": 36.6687,
+    "longitude": 137.2123
+  },
+  {
+    "code": "TYM008",
+    "name": "大山",
+    "region": "富山県",
+    "latitude": 36.6085,
+    "longitude": 137.2826
+  },
+  {
+    "code": "TYM009",
+    "name": "八尾",
+    "region": "富山県",
+    "latitude": 36.5853,
+    "longitude": 137.1403
+  },
+  {
+    "code": "TYM010",
+    "name": "福光",
+    "region": "富山県",
+    "latitude": 36.5556,
+    "longitude": 136.8883
+  },
+  {
+    "code": "WKY001",
+    "name": "和歌山",
+    "region": "和歌山県",
+    "latitude": 34.2293,
+    "longitude": 135.1694
+  },
+  {
+    "code": "WKY002",
+    "name": "那賀",
+    "region": "和歌山県",
+    "latitude": 34.2755,
+    "longitude": 135.4306
+  },
+  {
+    "code": "WKY003",
+    "name": "有田",
+    "region": "和歌山県",
+    "latitude": 34.0996,
+    "longitude": 135.1161
+  },
+  {
+    "code": "WKY006",
+    "name": "御坊",
+    "region": "和歌山県",
+    "latitude": 33.9146,
+    "longitude": 135.1639
+  },
+  {
+    "code": "WKY007",
+    "name": "本宮",
+    "region": "和歌山県",
+    "latitude": 33.8374,
+    "longitude": 135.7736
+  },
+  {
+    "code": "WKY008",
+    "name": "田辺",
+    "region": "和歌山県",
+    "latitude": 33.7289,
+    "longitude": 135.3771
+  },
+  {
+    "code": "WKY009",
+    "name": "新宮",
+    "region": "和歌山県",
+    "latitude": 33.7208,
+    "longitude": 135.9814
+  },
+  {
+    "code": "WKY011",
+    "name": "太地",
+    "region": "和歌山県",
+    "latitude": 33.5948,
+    "longitude": 135.9462
+  },
+  {
+    "code": "WKY012",
+    "name": "串本",
+    "region": "和歌山県",
+    "latitude": 33.4719,
+    "longitude": 135.7835
+  },
+  {
+    "code": "WKY013",
+    "name": "高野",
+    "region": "和歌山県",
+    "latitude": 34.2159,
+    "longitude": 135.5864
+  },
+  {
+    "code": "YMG002",
+    "name": "萩",
+    "region": "山口県",
+    "latitude": 34.4077,
+    "longitude": 131.3986
+  },
+  {
+    "code": "YMG005",
+    "name": "豊北",
+    "region": "山口県",
+    "latitude": 34.2907,
+    "longitude": 130.9487
+  },
+  {
+    "code": "YMGH08",
+    "name": "豊浦",
+    "region": "山口県",
+    "latitude": 34.1349,
+    "longitude": 130.9323
+  },
+  {
+    "code": "YMG007",
+    "name": "美祢",
+    "region": "山口県",
+    "latitude": 34.1659,
+    "longitude": 131.2065
+  },
+  {
+    "code": "YMG008",
+    "name": "山口",
+    "region": "山口県",
+    "latitude": 34.0119,
+    "longitude": 131.4099
+  },
+  {
+    "code": "YMG011",
+    "name": "下関",
+    "region": "山口県",
+    "latitude": 34.0643,
+    "longitude": 131.0213
+  },
+  {
+    "code": "YMG012",
+    "name": "宇部",
+    "region": "山口県",
+    "latitude": 33.9943,
+    "longitude": 131.2179
+  },
+  {
+    "code": "YMG013",
+    "name": "防府",
+    "region": "山口県",
+    "latitude": 34.0313,
+    "longitude": 131.5342
+  },
+  {
+    "code": "YMG014",
+    "name": "徳山",
+    "region": "山口県",
+    "latitude": 34.0542,
+    "longitude": 131.8077
+  },
+  {
+    "code": "YMG015",
+    "name": "玖珂",
+    "region": "山口県",
+    "latitude": 34.0966,
+    "longitude": 132.0761
+  },
+  {
+    "code": "YMG016",
+    "name": "岩国",
+    "region": "山口県",
+    "latitude": 34.1703,
+    "longitude": 132.1764
+  },
+  {
+    "code": "YMG017",
+    "name": "柳井",
+    "region": "山口県",
+    "latitude": 33.9649,
+    "longitude": 132.1011
+  },
+  {
+    "code": "YMG018",
+    "name": "東和",
+    "region": "山口県",
+    "latitude": 33.9091,
+    "longitude": 132.3559
+  },
+  {
+    "code": "YMN001",
+    "name": "丹波山",
+    "region": "山梨県",
+    "latitude": 35.7895,
+    "longitude": 138.9198
+  },
+  {
+    "code": "YMN002",
+    "name": "大月",
+    "region": "山梨県",
+    "latitude": 35.6133,
+    "longitude": 138.9473
+  },
+  {
+    "code": "YMN003",
+    "name": "富士吉田",
+    "region": "山梨県",
+    "latitude": 35.4651,
+    "longitude": 138.8129
+  },
+  {
+    "code": "YMNH08",
+    "name": "西野原",
+    "region": "山梨県",
+    "latitude": 35.6895,
+    "longitude": 138.734
+  },
+  {
+    "code": "YMN005",
+    "name": "甲府",
+    "region": "山梨県",
+    "latitude": 35.6551,
+    "longitude": 138.5679
+  },
+  {
+    "code": "YMN006",
+    "name": "本栖",
+    "region": "山梨県",
+    "latitude": 35.4685,
+    "longitude": 138.6069
+  },
+  {
+    "code": "YMN007",
+    "name": "南部",
+    "region": "山梨県",
+    "latitude": 35.279,
+    "longitude": 138.4651
+  },
+  {
+    "code": "YMNH09",
+    "name": "早川",
+    "region": "山梨県",
+    "latitude": 35.4327,
+    "longitude": 138.3325
+  },
+  {
+    "code": "YMN009",
+    "name": "六郷",
+    "region": "山梨県",
+    "latitude": 35.4966,
+    "longitude": 138.4628
+  },
+  {
+    "code": "YMN010",
+    "name": "須玉",
+    "region": "山梨県",
+    "latitude": 35.7919,
+    "longitude": 138.4182
+  },
+  {
+    "code": "YMN011",
+    "name": "芦安",
+    "region": "山梨県",
+    "latitude": 35.6384,
+    "longitude": 138.3836
+  },
+  {
+    "code": "YMT001",
+    "name": "酒田",
+    "region": "山形県",
+    "latitude": 38.9142,
+    "longitude": 139.8123
+  },
+  {
+    "code": "YMT002",
+    "name": "新庄",
+    "region": "山形県",
+    "latitude": 38.7686,
+    "longitude": 140.2965
+  },
+  {
+    "code": "YMT003",
+    "name": "鶴岡",
+    "region": "山形県",
+    "latitude": 38.726,
+    "longitude": 139.8023
+  },
+  {
+    "code": "YMT004",
+    "name": "温海",
+    "region": "山形県",
+    "latitude": 38.6208,
+    "longitude": 139.5889
+  },
+  {
+    "code": "YMT006",
+    "name": "尾花沢",
+    "region": "山形県",
+    "latitude": 38.6001,
+    "longitude": 140.4057
+  },
+  {
+    "code": "YMT007",
+    "name": "東根",
+    "region": "山形県",
+    "latitude": 38.4302,
+    "longitude": 140.3902
+  },
+  {
+    "code": "YMTH14",
+    "name": "西川西",
+    "region": "山形県",
+    "latitude": 38.386,
+    "longitude": 139.9916
+  },
+  {
+    "code": "YMT009",
+    "name": "寒河江",
+    "region": "山形県",
+    "latitude": 38.3902,
+    "longitude": 140.2742
+  },
+  {
+    "code": "YMT010",
+    "name": "山形",
+    "region": "山形県",
+    "latitude": 38.2608,
+    "longitude": 140.3484
+  },
+  {
+    "code": "YMT011",
+    "name": "上山",
+    "region": "山形県",
+    "latitude": 38.1484,
+    "longitude": 140.2671
+  },
+  {
+    "code": "YMT012",
+    "name": "長井",
+    "region": "山形県",
+    "latitude": 38.1087,
+    "longitude": 140.043
+  },
+  {
+    "code": "YMT013",
+    "name": "小国",
+    "region": "山形県",
+    "latitude": 38.0631,
+    "longitude": 139.7596
+  },
+  {
+    "code": "YMT014",
+    "name": "下屋地",
+    "region": "山形県",
+    "latitude": 37.9193,
+    "longitude": 139.8816
+  },
+  {
+    "code": "YMT015",
+    "name": "米沢",
+    "region": "山形県",
+    "latitude": 37.9049,
+    "longitude": 140.099
+  },
+  {
+    "code": "YMT016",
+    "name": "清川",
+    "region": "山形県",
+    "latitude": 38.7906,
+    "longitude": 140.0207
+  },
+  {
+    "code": "YMT002",
+    "name": "新庄",
+    "region": "山形県",
+    "latitude": 38.7686,
+    "longitude": 140.2965
+  },
+  {
+    "code": "ABSH01",
+    "name": "雄武",
+    "region": "北海道",
+    "latitude": 44.5276,
+    "longitude": 142.8444
+  },
+  {
+    "code": "ABSH02",
+    "name": "興部西",
+    "region": "北海道",
+    "latitude": 44.4234,
+    "longitude": 143.0264
+  },
+  {
+    "code": "ABSH03",
+    "name": "興部東",
+    "region": "北海道",
+    "latitude": 44.3843,
+    "longitude": 143.2407
+  },
+  {
+    "code": "ABSH04",
+    "name": "滝上北",
+    "region": "北海道",
+    "latitude": 44.192,
+    "longitude": 143.0767
+  },
+  {
+    "code": "ABSH05",
+    "name": "滝上南",
+    "region": "北海道",
+    "latitude": 44.1146,
+    "longitude": 143.0111
+  },
+  {
+    "code": "ABSH06",
+    "name": "湧別北",
+    "region": "北海道",
+    "latitude": 44.2146,
+    "longitude": 143.6202
+  },
+  {
+    "code": "ABSH07",
+    "name": "白滝",
+    "region": "北海道",
+    "latitude": 43.8494,
+    "longitude": 143.0861
+  },
+  {
+    "code": "ABSH08",
+    "name": "斜里北",
+    "region": "北海道",
+    "latitude": 44.064,
+    "longitude": 144.9935
+  },
+  {
+    "code": "ABSH09",
+    "name": "斜里南",
+    "region": "北海道",
+    "latitude": 43.9269,
+    "longitude": 144.8071
+  },
+  {
+    "code": "ABSH10",
+    "name": "佐呂間",
+    "region": "北海道",
+    "latitude": 44.0813,
+    "longitude": 143.9455
+  },
+  {
+    "code": "ABSH11",
+    "name": "女満別",
+    "region": "北海道",
+    "latitude": 43.9144,
+    "longitude": 144.1913
+  },
+  {
+    "code": "HKD059",
+    "name": "小清水",
+    "region": "北海道",
+    "latitude": 43.8574,
+    "longitude": 144.4609
+  },
+  {
+    "code": "ABSH13",
+    "name": "留辺蘂",
+    "region": "北海道",
+    "latitude": 43.7419,
+    "longitude": 143.4514
+  },
+  {
+    "code": "ABSH14",
+    "name": "美幌",
+    "region": "北海道",
+    "latitude": 43.7228,
+    "longitude": 144.1835
+  },
+  {
+    "code": "ABSH15",
+    "name": "置戸東",
+    "region": "北海道",
+    "latitude": 43.6352,
+    "longitude": 143.51
+  },
+  {
+    "code": "AICH04",
+    "name": "安城",
+    "region": "愛知県",
+    "latitude": 34.9319,
+    "longitude": 137.0568
+  },
+  {
+    "code": "AICH06",
+    "name": "渥美",
+    "region": "愛知県",
+    "latitude": 34.6158,
+    "longitude": 137.0419
+  },
+  {
+    "code": "AICH07",
+    "name": "旭",
+    "region": "愛知県",
+    "latitude": 35.2194,
+    "longitude": 137.4039
+  },
+  {
+    "code": "AICH08",
+    "name": "額田",
+    "region": "愛知県",
+    "latitude": 34.9189,
+    "longitude": 137.2993
+  },
+  {
+    "code": "AICH09",
+    "name": "豊橋",
+    "region": "愛知県",
+    "latitude": 34.6643,
+    "longitude": 137.3902
+  },
+  {
+    "code": "AIC013",
+    "name": "長篠",
+    "region": "愛知県",
+    "latitude": 34.9529,
+    "longitude": 137.6067
+  },
+  {
+    "code": "AICH11",
+    "name": "春日井",
+    "region": "愛知県",
+    "latitude": 35.3059,
+    "longitude": 137.057
+  },
+  {
+    "code": "AICH12",
+    "name": "幡豆",
+    "region": "愛知県",
+    "latitude": 34.7884,
+    "longitude": 137.1057
+  },
+  {
+    "code": "AICH13",
+    "name": "清洲",
+    "region": "愛知県",
+    "latitude": 35.2177,
+    "longitude": 136.8509
+  },
+  {
+    "code": "AICH14",
+    "name": "長久手",
+    "region": "愛知県",
+    "latitude": 35.1842,
+    "longitude": 137.0474
+  },
+  {
+    "code": "AICH15",
+    "name": "足助",
+    "region": "愛知県",
+    "latitude": 35.1392,
+    "longitude": 137.3359
+  },
+  {
+    "code": "AIC006",
+    "name": "稲武",
+    "region": "愛知県",
+    "latitude": 35.2158,
+    "longitude": 137.5089
+  },
+  {
+    "code": "AICH17",
+    "name": "豊根",
+    "region": "愛知県",
+    "latitude": 35.184,
+    "longitude": 137.7268
+  },
+  {
+    "code": "AICH18",
+    "name": "岡崎",
+    "region": "愛知県",
+    "latitude": 34.9635,
+    "longitude": 137.2377
+  },
+  {
+    "code": "AIC010",
+    "name": "作手",
+    "region": "愛知県",
+    "latitude": 34.9803,
+    "longitude": 137.4297
+  },
+  {
+    "code": "AICH20",
+    "name": "新城",
+    "region": "愛知県",
+    "latitude": 34.8976,
+    "longitude": 137.4876
+  },
+  {
+    "code": "AICH21",
+    "name": "南知多",
+    "region": "愛知県",
+    "latitude": 34.7401,
+    "longitude": 136.9385
+  },
+  {
+    "code": "AIC015",
+    "name": "豊橋",
+    "region": "愛知県",
+    "latitude": 34.7552,
+    "longitude": 137.404
+  },
+  {
+    "code": "AICH23",
+    "name": "常滑2",
+    "region": "愛知県",
+    "latitude": 34.8806,
+    "longitude": 136.8316
+  },
+  {
+    "code": "AKTH01",
+    "name": "西木北",
+    "region": "秋田県",
+    "latitude": 39.8147,
+    "longitude": 140.579
+  },
+  {
+    "code": "AKTH02",
+    "name": "西木南",
+    "region": "秋田県",
+    "latitude": 39.6634,
+    "longitude": 140.5721
+  },
+  {
+    "code": "AKTH03",
+    "name": "矢島",
+    "region": "秋田県",
+    "latitude": 39.2223,
+    "longitude": 140.1283
+  },
+  {
+    "code": "AKTH04",
+    "name": "東成瀬",
+    "region": "秋田県",
+    "latitude": 39.174,
+    "longitude": 140.7129
+  },
+  {
+    "code": "AKTH05",
+    "name": "鳥海",
+    "region": "秋田県",
+    "latitude": 39.0718,
+    "longitude": 140.3185
+  },
+  {
+    "code": "AKTH06",
+    "name": "雄勝",
+    "region": "秋田県",
+    "latitude": 38.9801,
+    "longitude": 140.4952
+  },
+  {
+    "code": "AKTH07",
+    "name": "小坂",
+    "region": "秋田県",
+    "latitude": 40.4563,
+    "longitude": 140.8395
+  },
+  {
+    "code": "AKTH08",
+    "name": "藤里",
+    "region": "秋田県",
+    "latitude": 40.3188,
+    "longitude": 140.2341
+  },
+  {
+    "code": "AKTH09",
+    "name": "田代",
+    "region": "秋田県",
+    "latitude": 40.2755,
+    "longitude": 140.4596
+  },
+  {
+    "code": "AKT002",
+    "name": "大館",
+    "region": "秋田県",
+    "latitude": 40.2676,
+    "longitude": 140.5664
+  },
+  {
+    "code": "AKTH11",
+    "name": "男鹿",
+    "region": "秋田県",
+    "latitude": 39.9554,
+    "longitude": 139.7623
+  },
+  {
+    "code": "AKTH12",
+    "name": "五城目",
+    "region": "秋田県",
+    "latitude": 39.9155,
+    "longitude": 140.2221
+  },
+  {
+    "code": "AKT021",
+    "name": "阿仁",
+    "region": "秋田県",
+    "latitude": 39.994,
+    "longitude": 140.4035
+  },
+  {
+    "code": "AKTH14",
+    "name": "鹿角",
+    "region": "秋田県",
+    "latitude": 40.0622,
+    "longitude": 140.8084
+  },
+  {
+    "code": "AKTH15",
+    "name": "協和",
+    "region": "秋田県",
+    "latitude": 39.6884,
+    "longitude": 140.4075
+  },
+  {
+    "code": "AKTH16",
+    "name": "西仙北",
+    "region": "秋田県",
+    "latitude": 39.545,
+    "longitude": 140.3481
+  },
+  {
+    "code": "AKT014",
+    "name": "角館",
+    "region": "秋田県",
+    "latitude": 39.595,
+    "longitude": 140.5573
+  },
+  {
+    "code": "AKTH18",
+    "name": "大森",
+    "region": "秋田県",
+    "latitude": 39.3548,
+    "longitude": 140.3869
+  },
+  {
+    "code": "AKTH19",
+    "name": "湯沢",
+    "region": "秋田県",
+    "latitude": 39.1913,
+    "longitude": 140.471
+  },
+  {
+    "code": "AOMH01",
+    "name": "大間",
+    "region": "青森県",
+    "latitude": 41.5273,
+    "longitude": 140.9127
+  },
+  {
+    "code": "AOMH02",
+    "name": "佐井",
+    "region": "青森県",
+    "latitude": 41.4049,
+    "longitude": 140.8567
+  },
+  {
+    "code": "AOM006",
+    "name": "川内",
+    "region": "青森県",
+    "latitude": 41.1976,
+    "longitude": 140.9979
+  },
+  {
+    "code": "AOMH04",
+    "name": "青森",
+    "region": "青森県",
+    "latitude": 40.8524,
+    "longitude": 140.6759
+  },
+  {
+    "code": "AOM010",
+    "name": "野辺地",
+    "region": "青森県",
+    "latitude": 40.8724,
+    "longitude": 141.1427
+  },
+  {
+    "code": "AOMH06",
+    "name": "六ヶ所",
+    "region": "青森県",
+    "latitude": 40.9664,
+    "longitude": 141.3738
+  },
+  {
+    "code": "AOMH07",
+    "name": "深浦",
+    "region": "青森県",
+    "latitude": 40.7451,
+    "longitude": 140.0233
+  },
+  {
+    "code": "AOMH08",
+    "name": "鰺ヶ沢",
+    "region": "青森県",
+    "latitude": 40.7618,
+    "longitude": 140.3121
+  },
+  {
+    "code": "AOM029",
+    "name": "西目屋",
+    "region": "青森県",
+    "latitude": 40.5764,
+    "longitude": 140.2968
+  },
+  {
+    "code": "AOMH10",
+    "name": "黒石",
+    "region": "青森県",
+    "latitude": 40.6091,
+    "longitude": 140.6646
+  },
+  {
+    "code": "AOMH11",
+    "name": "十和田湖西",
+    "region": "青森県",
+    "latitude": 40.58,
+    "longitude": 140.995
+  },
+  {
+    "code": "AOM021",
+    "name": "十和田",
+    "region": "青森県",
+    "latitude": 40.615,
+    "longitude": 141.2083
+  },
+  {
+    "code": "AOMH13",
+    "name": "八戸",
+    "region": "青森県",
+    "latitude": 40.5794,
+    "longitude": 141.4451
+  },
+  {
+    "code": "AOMH14",
+    "name": "西目屋",
+    "region": "青森県",
+    "latitude": 40.5488,
+    "longitude": 140.2726
+  },
+  {
+    "code": "AOM015",
+    "name": "碇ヶ関",
+    "region": "青森県",
+    "latitude": 40.4791,
+    "longitude": 140.6268
+  },
+  {
+    "code": "AOMH16",
+    "name": "新郷",
+    "region": "青森県",
+    "latitude": 40.4624,
+    "longitude": 141.0923
+  },
+  {
+    "code": "AOM013",
+    "name": "南部",
+    "region": "青森県",
+    "latitude": 40.4126,
+    "longitude": 141.2813
+  },
+  {
+    "code": "AOMH18",
+    "name": "田子",
+    "region": "青森県",
+    "latitude": 40.2962,
+    "longitude": 141.0145
+  },
+  {
+    "code": "CHBH06",
+    "name": "匝瑳",
+    "region": "千葉県",
+    "latitude": 35.7215,
+    "longitude": 140.5046
+  },
+  {
+    "code": "CHBH10",
+    "name": "千葉",
+    "region": "千葉県",
+    "latitude": 35.5458,
+    "longitude": 140.2417
+  },
+  {
+    "code": "CHBH11",
+    "name": "養老",
+    "region": "千葉県",
+    "latitude": 35.2867,
+    "longitude": 140.1529
+  },
+  {
+    "code": "CHB022",
+    "name": "富津",
+    "region": "千葉県",
+    "latitude": 35.3033,
+    "longitude": 139.8555
+  },
+  {
+    "code": "CHB006",
+    "name": "成田",
+    "region": "千葉県",
+    "latitude": 35.779,
+    "longitude": 140.3073
+  },
+  {
+    "code": "CHBH14",
+    "name": "銚子中",
+    "region": "千葉県",
+    "latitude": 35.7342,
+    "longitude": 140.823
+  },
+  {
+    "code": "CHBH15",
+    "name": "館山西",
+    "region": "千葉県",
+    "latitude": 34.9591,
+    "longitude": 139.7885
+  },
+  {
+    "code": "CHBH16",
+    "name": "鴨川",
+    "region": "千葉県",
+    "latitude": 35.1384,
+    "longitude": 139.9649
+  },
+  {
+    "code": "CHB027",
+    "name": "勝浦北",
+    "region": "千葉県",
+    "latitude": 35.1806,
+    "longitude": 140.2655
+  },
+  {
+    "code": "CHBH19",
+    "name": "蓮沼",
+    "region": "千葉県",
+    "latitude": 35.5943,
+    "longitude": 140.5107
+  },
+  {
+    "code": "CHB020",
+    "name": "鴨川",
+    "region": "千葉県",
+    "latitude": 35.1132,
+    "longitude": 140.1006
+  },
+  {
+    "code": "EHMH01",
+    "name": "津島",
+    "region": "愛媛県",
+    "latitude": 33.0556,
+    "longitude": 132.5552
+  },
+  {
+    "code": "EHMH02",
+    "name": "西条",
+    "region": "愛媛県",
+    "latitude": 33.865,
+    "longitude": 133.184
+  },
+  {
+    "code": "EHMH03",
+    "name": "新宮",
+    "region": "愛媛県",
+    "latitude": 33.9154,
+    "longitude": 133.6497
+  },
+  {
+    "code": "EHM003",
+    "name": "東予",
+    "region": "愛媛県",
+    "latitude": 33.9253,
+    "longitude": 133.0844
+  },
+  {
+    "code": "EHMH05",
+    "name": "砥部",
+    "region": "愛媛県",
+    "latitude": 33.7112,
+    "longitude": 132.8032
+  },
+  {
+    "code": "EHMH06",
+    "name": "日吉",
+    "region": "愛媛県",
+    "latitude": 33.3348,
+    "longitude": 132.798
+  },
+  {
+    "code": "EHM010",
+    "name": "肱川",
+    "region": "愛媛県",
+    "latitude": 33.4511,
+    "longitude": 132.6881
+  },
+  {
+    "code": "EHMH08",
+    "name": "柳谷",
+    "region": "愛媛県",
+    "latitude": 33.5388,
+    "longitude": 133.0016
+  },
+  {
+    "code": "EHMH09",
+    "name": "伊方",
+    "region": "愛媛県",
+    "latitude": 33.4719,
+    "longitude": 132.3072
+  },
+  {
+    "code": "EHMH10",
+    "name": "宮窪",
+    "region": "愛媛県",
+    "latitude": 34.1918,
+    "longitude": 133.0581
+  },
+  {
+    "code": "EHMH11",
+    "name": "大洲",
+    "region": "愛媛県",
+    "latitude": 33.5807,
+    "longitude": 132.6011
+  },
+  {
+    "code": "EHMH12",
+    "name": "宇和",
+    "region": "愛媛県",
+    "latitude": 33.427,
+    "longitude": 132.5055
+  },
+  {
+    "code": "EHM013",
+    "name": "三崎",
+    "region": "愛媛県",
+    "latitude": 33.3917,
+    "longitude": 132.114
+  },
+  {
+    "code": "FKIH01",
+    "name": "永平寺",
+    "region": "福井県",
+    "latitude": 36.0955,
+    "longitude": 136.3617
+  },
+  {
+    "code": "FKIH02",
+    "name": "織田",
+    "region": "福井県",
+    "latitude": 35.9483,
+    "longitude": 136.0556
+  },
+  {
+    "code": "FKIH03",
+    "name": "和泉",
+    "region": "福井県",
+    "latitude": 35.9415,
+    "longitude": 136.699
+  },
+  {
+    "code": "FKIH04",
+    "name": "三方",
+    "region": "福井県",
+    "latitude": 35.5587,
+    "longitude": 135.8694
+  },
+  {
+    "code": "FKIH05",
+    "name": "敦賀",
+    "region": "福井県",
+    "latitude": 35.639,
+    "longitude": 136.0303
+  },
+  {
+    "code": "FKIH06",
+    "name": "高浜",
+    "region": "福井県",
+    "latitude": 35.4907,
+    "longitude": 135.4841
+  },
+  {
+    "code": "FKIH07",
+    "name": "小浜",
+    "region": "福井県",
+    "latitude": 35.4573,
+    "longitude": 135.7266
+  },
+  {
+    "code": "FKOH01",
+    "name": "北九州",
+    "region": "福岡県",
+    "latitude": 33.8849,
+    "longitude": 130.9798
+  },
+  {
+    "code": "FKOH02",
+    "name": "若宮",
+    "region": "福岡県",
+    "latitude": 33.6963,
+    "longitude": 130.5963
+  },
+  {
+    "code": "FKOH03",
+    "name": "宇美",
+    "region": "福岡県",
+    "latitude": 33.5608,
+    "longitude": 130.5499
+  },
+  {
+    "code": "FKOH04",
+    "name": "嘉穂",
+    "region": "福岡県",
+    "latitude": 33.5512,
+    "longitude": 130.7451
+  },
+  {
+    "code": "FKOH05",
+    "name": "犀川",
+    "region": "福岡県",
+    "latitude": 33.5293,
+    "longitude": 130.9503
+  },
+  {
+    "code": "FKOH06",
+    "name": "豊前",
+    "region": "福岡県",
+    "latitude": 33.5925,
+    "longitude": 131.1348
+  },
+  {
+    "code": "FKOH07",
+    "name": "大刀洗",
+    "region": "福岡県",
+    "latitude": 33.3678,
+    "longitude": 130.6354
+  },
+  {
+    "code": "FKOH08",
+    "name": "小石原",
+    "region": "福岡県",
+    "latitude": 33.4654,
+    "longitude": 130.8285
+  },
+  {
+    "code": "FKOH09",
+    "name": "玄海",
+    "region": "福岡県",
+    "latitude": 33.8501,
+    "longitude": 130.5432
+  },
+  {
+    "code": "FKO012",
+    "name": "浮羽",
+    "region": "福岡県",
+    "latitude": 33.332,
+    "longitude": 130.794
+  },
+  {
+    "code": "FKSH01",
+    "name": "西会津",
+    "region": "福島県",
+    "latitude": 37.7565,
+    "longitude": 139.715
+  },
+  {
+    "code": "FKS021",
+    "name": "喜多方",
+    "region": "福島県",
+    "latitude": 37.6537,
+    "longitude": 139.8607
+  },
+  {
+    "code": "FKSH03",
+    "name": "高郷",
+    "region": "福島県",
+    "latitude": 37.6078,
+    "longitude": 139.7533
+  },
+  {
+    "code": "FKSH04",
+    "name": "会津高田",
+    "region": "福島県",
+    "latitude": 37.4508,
+    "longitude": 139.8126
+  },
+  {
+    "code": "FKS025",
+    "name": "下郷",
+    "region": "福島県",
+    "latitude": 37.3082,
+    "longitude": 139.8994
+  },
+  {
+    "code": "FKSH06",
+    "name": "伊南",
+    "region": "福島県",
+    "latitude": 37.1723,
+    "longitude": 139.5199
+  },
+  {
+    "code": "FKSH07",
+    "name": "檜枝岐",
+    "region": "福島県",
+    "latitude": 37.0103,
+    "longitude": 139.3755
+  },
+  {
+    "code": "FKSH08",
+    "name": "長沼",
+    "region": "福島県",
+    "latitude": 37.2822,
+    "longitude": 140.2144
+  },
+  {
+    "code": "FKS018",
+    "name": "郡山",
+    "region": "福島県",
+    "latitude": 37.3959,
+    "longitude": 140.3619
+  },
+  {
+    "code": "FKSH10",
+    "name": "西郷",
+    "region": "福島県",
+    "latitude": 37.1616,
+    "longitude": 140.093
+  },
+  {
+    "code": "FKSH11",
+    "name": "矢吹",
+    "region": "福島県",
+    "latitude": 37.2006,
+    "longitude": 140.3386
+  },
+  {
+    "code": "FKSH12",
+    "name": "平田",
+    "region": "福島県",
+    "latitude": 37.2169,
+    "longitude": 140.5703
+  },
+  {
+    "code": "FKSH13",
+    "name": "いわき西",
+    "region": "福島県",
+    "latitude": 36.9951,
+    "longitude": 140.5853
+  },
+  {
+    "code": "FKSH14",
+    "name": "いわき東",
+    "region": "福島県",
+    "latitude": 37.0264,
+    "longitude": 140.9702
+  },
+  {
+    "code": "FKSH15",
+    "name": "猪苗代",
+    "region": "福島県",
+    "latitude": 37.6461,
+    "longitude": 140.1735
+  },
+  {
+    "code": "FKSH16",
+    "name": "福島",
+    "region": "福島県",
+    "latitude": 37.7643,
+    "longitude": 140.3766
+  },
+  {
+    "code": "FKSH17",
+    "name": "川俣",
+    "region": "福島県",
+    "latitude": 37.6636,
+    "longitude": 140.5974
+  },
+  {
+    "code": "FKSH18",
+    "name": "三春",
+    "region": "福島県",
+    "latitude": 37.4894,
+    "longitude": 140.538
+  },
+  {
+    "code": "FKSH19",
+    "name": "都路",
+    "region": "福島県",
+    "latitude": 37.4703,
+    "longitude": 140.7227
+  },
+  {
+    "code": "FKSH20",
+    "name": "浪江",
+    "region": "福島県",
+    "latitude": 37.4911,
+    "longitude": 140.9871
+  },
+  {
+    "code": "FKSH21",
+    "name": "只見",
+    "region": "福島県",
+    "latitude": 37.3421,
+    "longitude": 139.3147
+  },
+  {
+    "code": "GIFH03",
+    "name": "根尾",
+    "region": "岐阜県",
+    "latitude": 35.6325,
+    "longitude": 136.6134
+  },
+  {
+    "code": "GIFH04",
+    "name": "古川",
+    "region": "岐阜県",
+    "latitude": 36.2448,
+    "longitude": 137.1983
+  },
+  {
+    "code": "GIFH05",
+    "name": "荘川",
+    "region": "岐阜県",
+    "latitude": 36.0654,
+    "longitude": 136.9479
+  },
+  {
+    "code": "GIFH06",
+    "name": "高富",
+    "region": "岐阜県",
+    "latitude": 35.5038,
+    "longitude": 136.7939
+  },
+  {
+    "code": "GIFH07",
+    "name": "春日",
+    "region": "岐阜県",
+    "latitude": 35.4179,
+    "longitude": 136.4347
+  },
+  {
+    "code": "GIF011",
+    "name": "八幡",
+    "region": "岐阜県",
+    "latitude": 35.7596,
+    "longitude": 136.9809
+  },
+  {
+    "code": "GIFH09",
+    "name": "羽島",
+    "region": "岐阜県",
+    "latitude": 35.2768,
+    "longitude": 136.7002
+  },
+  {
+    "code": "GIFH10",
+    "name": "神岡",
+    "region": "岐阜県",
+    "latitude": 36.3779,
+    "longitude": 137.3716
+  },
+  {
+    "code": "GIFH11",
+    "name": "八百津",
+    "region": "岐阜県",
+    "latitude": 35.4865,
+    "longitude": 137.2464
+  },
+  {
+    "code": "GIFH12",
+    "name": "坂内",
+    "region": "岐阜県",
+    "latitude": 35.6033,
+    "longitude": 136.4134
+  },
+  {
+    "code": "GIFH13",
+    "name": "白川",
+    "region": "岐阜県",
+    "latitude": 36.2743,
+    "longitude": 136.8979
+  },
+  {
+    "code": "GIFH14",
+    "name": "上宝",
+    "region": "岐阜県",
+    "latitude": 36.2493,
+    "longitude": 137.5174
+  },
+  {
+    "code": "GIFH15",
+    "name": "高山",
+    "region": "岐阜県",
+    "latitude": 36.1338,
+    "longitude": 137.2208
+  },
+  {
+    "code": "GIFH16",
+    "name": "朝日北",
+    "region": "岐阜県",
+    "latitude": 36.094,
+    "longitude": 137.3438
+  },
+  {
+    "code": "GIFH17",
+    "name": "高鷲",
+    "region": "岐阜県",
+    "latitude": 35.9514,
+    "longitude": 136.8732
+  },
+  {
+    "code": "GIFH18",
+    "name": "馬瀬",
+    "region": "岐阜県",
+    "latitude": 35.8991,
+    "longitude": 137.1495
+  },
+  {
+    "code": "GIFH19",
+    "name": "朝日南",
+    "region": "岐阜県",
+    "latitude": 36.0216,
+    "longitude": 137.3906
+  },
+  {
+    "code": "GIFH20",
+    "name": "下呂北",
+    "region": "岐阜県",
+    "latitude": 35.7991,
+    "longitude": 137.2531
+  },
+  {
+    "code": "GIFH21",
+    "name": "美並",
+    "region": "岐阜県",
+    "latitude": 35.6665,
+    "longitude": 136.9618
+  },
+  {
+    "code": "GIFH22",
+    "name": "金山",
+    "region": "岐阜県",
+    "latitude": 35.6682,
+    "longitude": 137.1054
+  },
+  {
+    "code": "GIFH23",
+    "name": "板取",
+    "region": "岐阜県",
+    "latitude": 35.7235,
+    "longitude": 136.7847
+  },
+  {
+    "code": "GIFH24",
+    "name": "東白川",
+    "region": "岐阜県",
+    "latitude": 35.6401,
+    "longitude": 137.3187
+  },
+  {
+    "code": "GIF017",
+    "name": "揖斐川",
+    "region": "岐阜県",
+    "latitude": 35.483,
+    "longitude": 136.5713
+  },
+  {
+    "code": "GIFH26",
+    "name": "各務原",
+    "region": "岐阜県",
+    "latitude": 35.4121,
+    "longitude": 136.8764
+  },
+  {
+    "code": "GIFH27",
+    "name": "美濃加茂",
+    "region": "岐阜県",
+    "latitude": 35.4527,
+    "longitude": 137.004
+  },
+  {
+    "code": "GIF018",
+    "name": "中津川",
+    "region": "岐阜県",
+    "latitude": 35.4955,
+    "longitude": 137.4998
+  },
+  {
+    "code": "GIFH29",
+    "name": "上石津",
+    "region": "岐阜県",
+    "latitude": 35.2953,
+    "longitude": 136.4732
+  },
+  {
+    "code": "GNMH05",
+    "name": "伊勢崎",
+    "region": "群馬県",
+    "latitude": 36.3143,
+    "longitude": 139.1847
+  },
+  {
+    "code": "GNM010",
+    "name": "館林",
+    "region": "群馬県",
+    "latitude": 36.2184,
+    "longitude": 139.4808
+  },
+  {
+    "code": "GNMH07",
+    "name": "利根",
+    "region": "群馬県",
+    "latitude": 36.6998,
+    "longitude": 139.2104
+  },
+  {
+    "code": "GNMH08",
+    "name": "嬬恋",
+    "region": "群馬県",
+    "latitude": 36.4917,
+    "longitude": 138.5244
+  },
+  {
+    "code": "GNMH09",
+    "name": "高山",
+    "region": "群馬県",
+    "latitude": 36.6212,
+    "longitude": 138.9068
+  },
+  {
+    "code": "GNMH10",
+    "name": "下仁田",
+    "region": "群馬県",
+    "latitude": 36.2356,
+    "longitude": 138.7291
+  },
+  {
+    "code": "GNMH11",
+    "name": "富岡",
+    "region": "群馬県",
+    "latitude": 36.2862,
+    "longitude": 138.921
+  },
+  {
+    "code": "GNMH12",
+    "name": "神流",
+    "region": "群馬県",
+    "latitude": 36.144,
+    "longitude": 138.9129
+  },
+  {
+    "code": "GNMH13",
+    "name": "水上2",
+    "region": "群馬県",
+    "latitude": 36.862,
+    "longitude": 139.0627
+  },
+  {
+    "code": "GNMH14",
+    "name": "みどり",
+    "region": "群馬県",
+    "latitude": 36.4931,
+    "longitude": 139.3219
+  },
+  {
+    "code": "HDKH01",
+    "name": "平取西",
+    "region": "北海道",
+    "latitude": 42.7031,
+    "longitude": 142.2296
+  },
+  {
+    "code": "HDKH02",
+    "name": "平取東",
+    "region": "北海道",
+    "latitude": 42.7061,
+    "longitude": 142.4054
+  },
+  {
+    "code": "HDKH03",
+    "name": "門別東",
+    "region": "北海道",
+    "latitude": 42.5934,
+    "longitude": 142.3521
+  },
+  {
+    "code": "HDKH04",
+    "name": "門別西",
+    "region": "北海道",
+    "latitude": 42.5126,
+    "longitude": 142.0381
+  },
+  {
+    "code": "HDKH05",
+    "name": "新冠",
+    "region": "北海道",
+    "latitude": 42.5977,
+    "longitude": 142.5446
+  },
+  {
+    "code": "HKD106",
+    "name": "静内",
+    "region": "北海道",
+    "latitude": 42.3414,
+    "longitude": 142.3688
+  },
+  {
+    "code": "HDKH07",
+    "name": "様似",
+    "region": "北海道",
+    "latitude": 42.133,
+    "longitude": 142.9164
+  },
+  {
+    "code": "HRSH01",
+    "name": "三原",
+    "region": "広島県",
+    "latitude": 34.3736,
+    "longitude": 133.0236
+  },
+  {
+    "code": "HRSH02",
+    "name": "大和",
+    "region": "広島県",
+    "latitude": 34.5482,
+    "longitude": 132.948
+  },
+  {
+    "code": "HRSH03",
+    "name": "御調",
+    "region": "広島県",
+    "latitude": 34.5183,
+    "longitude": 133.1375
+  },
+  {
+    "code": "HRSH04",
+    "name": "沼隈",
+    "region": "広島県",
+    "latitude": 34.3785,
+    "longitude": 133.3493
+  },
+  {
+    "code": "HRSH05",
+    "name": "神辺",
+    "region": "広島県",
+    "latitude": 34.5566,
+    "longitude": 133.4179
+  },
+  {
+    "code": "HRSH06",
+    "name": "口和",
+    "region": "広島県",
+    "latitude": 34.9137,
+    "longitude": 132.9123
+  },
+  {
+    "code": "HRS019",
+    "name": "呉",
+    "region": "広島県",
+    "latitude": 34.253,
+    "longitude": 132.5617
+  },
+  {
+    "code": "HRSH08",
+    "name": "佐伯",
+    "region": "広島県",
+    "latitude": 34.3935,
+    "longitude": 132.1611
+  },
+  {
+    "code": "HRSH09",
+    "name": "吉舎",
+    "region": "広島県",
+    "latitude": 34.7016,
+    "longitude": 132.9524
+  },
+  {
+    "code": "HRSH10",
+    "name": "芸北",
+    "region": "広島県",
+    "latitude": 34.7471,
+    "longitude": 132.3794
+  },
+  {
+    "code": "HRSH11",
+    "name": "神石",
+    "region": "広島県",
+    "latitude": 34.8225,
+    "longitude": 133.1674
+  },
+  {
+    "code": "HRSH12",
+    "name": "広島",
+    "region": "広島県",
+    "latitude": 34.581,
+    "longitude": 132.4295
+  },
+  {
+    "code": "HRSH13",
+    "name": "広島南",
+    "region": "広島県",
+    "latitude": 34.4122,
+    "longitude": 132.3907
+  },
+  {
+    "code": "HRSH14",
+    "name": "沖美",
+    "region": "広島県",
+    "latitude": 34.209,
+    "longitude": 132.4063
+  },
+  {
+    "code": "HRSH15",
+    "name": "倉橋",
+    "region": "広島県",
+    "latitude": 34.1161,
+    "longitude": 132.5053
+  },
+  {
+    "code": "HRSH16",
+    "name": "吉田",
+    "region": "広島県",
+    "latitude": 34.6629,
+    "longitude": 132.6689
+  },
+  {
+    "code": "HRSH17",
+    "name": "戸河内",
+    "region": "広島県",
+    "latitude": 34.5716,
+    "longitude": 132.2326
+  },
+  {
+    "code": "HRSH18",
+    "name": "東広島",
+    "region": "広島県",
+    "latitude": 34.4572,
+    "longitude": 132.7923
+  },
+  {
+    "code": "HYGH01",
+    "name": "三原",
+    "region": "兵庫県",
+    "latitude": 34.2937,
+    "longitude": 134.7941
+  },
+  {
+    "code": "HYGH02",
+    "name": "南光",
+    "region": "兵庫県",
+    "latitude": 35.0671,
+    "longitude": 134.4234
+  },
+  {
+    "code": "HYGH03",
+    "name": "波賀",
+    "region": "兵庫県",
+    "latitude": 35.2193,
+    "longitude": 134.5237
+  },
+  {
+    "code": "HYGH04",
+    "name": "篠山",
+    "region": "兵庫県",
+    "latitude": 35.0708,
+    "longitude": 135.2811
+  },
+  {
+    "code": "HYGH05",
+    "name": "上郡",
+    "region": "兵庫県",
+    "latitude": 34.8995,
+    "longitude": 134.3284
+  },
+  {
+    "code": "HYGH06",
+    "name": "相生",
+    "region": "兵庫県",
+    "latitude": 34.7935,
+    "longitude": 134.4792
+  },
+  {
+    "code": "HYGH07",
+    "name": "夢前",
+    "region": "兵庫県",
+    "latitude": 35.0322,
+    "longitude": 134.6701
+  },
+  {
+    "code": "HYGH08",
+    "name": "加美",
+    "region": "兵庫県",
+    "latitude": 35.101,
+    "longitude": 134.9036
+  },
+  {
+    "code": "HYGH09",
+    "name": "東条",
+    "region": "兵庫県",
+    "latitude": 34.9082,
+    "longitude": 135.0844
+  },
+  {
+    "code": "HYGH10",
+    "name": "加古川",
+    "region": "兵庫県",
+    "latitude": 34.8164,
+    "longitude": 134.8078
+  },
+  {
+    "code": "HYG005",
+    "name": "和田山",
+    "region": "兵庫県",
+    "latitude": 35.3408,
+    "longitude": 134.8616
+  },
+  {
+    "code": "HYG017",
+    "name": "龍野",
+    "region": "兵庫県",
+    "latitude": 34.8591,
+    "longitude": 134.5446
+  },
+  {
+    "code": "HYGH13",
+    "name": "香住",
+    "region": "兵庫県",
+    "latitude": 35.6208,
+    "longitude": 134.6566
+  },
+  {
+    "code": "HYGH14",
+    "name": "出石",
+    "region": "兵庫県",
+    "latitude": 35.4574,
+    "longitude": 134.8621
+  },
+  {
+    "code": "HYGH15",
+    "name": "村岡",
+    "region": "兵庫県",
+    "latitude": 35.4697,
+    "longitude": 134.5953
+  },
+  {
+    "code": "HYMH01",
+    "name": "北檜山",
+    "region": "北海道",
+    "latitude": 42.4851,
+    "longitude": 139.9678
+  },
+  {
+    "code": "HYMH02",
+    "name": "厚沢部",
+    "region": "北海道",
+    "latitude": 41.9856,
+    "longitude": 140.3087
+  },
+  {
+    "code": "HKD167",
+    "name": "熊石",
+    "region": "北海道",
+    "latitude": 42.1297,
+    "longitude": 139.9813
+  },
+  {
+    "code": "IBRH06",
+    "name": "北茨城2",
+    "region": "茨城県",
+    "latitude": 36.8809,
+    "longitude": 140.6545
+  },
+  {
+    "code": "IBRH07",
+    "name": "江戸崎",
+    "region": "茨城県",
+    "latitude": 35.9521,
+    "longitude": 140.3301
+  },
+  {
+    "code": "IBRH08",
+    "name": "大洋",
+    "region": "茨城県",
+    "latitude": 36.1188,
+    "longitude": 140.5621
+  },
+  {
+    "code": "IBRH09",
+    "name": "常北",
+    "region": "茨城県",
+    "latitude": 36.439,
+    "longitude": 140.3559
+  },
+  {
+    "code": "IBRH10",
+    "name": "石下",
+    "region": "茨城県",
+    "latitude": 36.1112,
+    "longitude": 139.9889
+  },
+  {
+    "code": "IBRH11",
+    "name": "岩瀬",
+    "region": "茨城県",
+    "latitude": 36.3701,
+    "longitude": 140.1401
+  },
+  {
+    "code": "IBRH12",
+    "name": "大子",
+    "region": "茨城県",
+    "latitude": 36.8369,
+    "longitude": 140.3181
+  },
+  {
+    "code": "IBRH13",
+    "name": "高萩",
+    "region": "茨城県",
+    "latitude": 36.7955,
+    "longitude": 140.575
+  },
+  {
+    "code": "IBRH14",
+    "name": "十王",
+    "region": "茨城県",
+    "latitude": 36.6922,
+    "longitude": 140.5484
+  },
+  {
+    "code": "IBRH15",
+    "name": "御前山",
+    "region": "茨城県",
+    "latitude": 36.5566,
+    "longitude": 140.3013
+  },
+  {
+    "code": "IBR004",
+    "name": "大宮",
+    "region": "茨城県",
+    "latitude": 36.5516,
+    "longitude": 140.4102
+  },
+  {
+    "code": "IBRH17",
+    "name": "霞ヶ浦",
+    "region": "茨城県",
+    "latitude": 36.0864,
+    "longitude": 140.314
+  },
+  {
+    "code": "IBR007",
+    "name": "那珂湊",
+    "region": "茨城県",
+    "latitude": 36.3526,
+    "longitude": 140.5954
+  },
+  {
+    "code": "IBRH19",
+    "name": "つくば",
+    "region": "茨城県",
+    "latitude": 36.2137,
+    "longitude": 140.0893
+  },
+  {
+    "code": "IBRH20",
+    "name": "波崎2",
+    "region": "茨城県",
+    "latitude": 35.8284,
+    "longitude": 140.7323
+  },
+  {
+    "code": "HKD127",
+    "name": "追分",
+    "region": "北海道",
+    "latitude": 42.8743,
+    "longitude": 141.8204
+  },
+  {
+    "code": "IBUH02",
+    "name": "穂別",
+    "region": "北海道",
+    "latitude": 42.8714,
+    "longitude": 142.1285
+  },
+  {
+    "code": "IBUH03",
+    "name": "厚真",
+    "region": "北海道",
+    "latitude": 42.6486,
+    "longitude": 141.8641
+  },
+  {
+    "code": "IBUH04",
+    "name": "豊浦",
+    "region": "北海道",
+    "latitude": 42.6415,
+    "longitude": 140.665
+  },
+  {
+    "code": "IBUH05",
+    "name": "白老",
+    "region": "北海道",
+    "latitude": 42.5629,
+    "longitude": 141.3497
+  },
+  {
+    "code": "IBUH06",
+    "name": "室蘭",
+    "region": "北海道",
+    "latitude": 42.4116,
+    "longitude": 141.0017
+  },
+  {
+    "code": "IBUH07",
+    "name": "大滝",
+    "region": "北海道",
+    "latitude": 42.6476,
+    "longitude": 141.0643
+  },
+  {
+    "code": "IKRH01",
+    "name": "当別",
+    "region": "北海道",
+    "latitude": 43.4087,
+    "longitude": 141.5836
+  },
+  {
+    "code": "IKRH02",
+    "name": "新篠津",
+    "region": "北海道",
+    "latitude": 43.2204,
+    "longitude": 141.6523
+  },
+  {
+    "code": "IKRH03",
+    "name": "千歳",
+    "region": "北海道",
+    "latitude": 42.888,
+    "longitude": 141.6399
+  },
+  {
+    "code": "ISKH01",
+    "name": "珠洲",
+    "region": "石川県",
+    "latitude": 37.5266,
+    "longitude": 137.2844
+  },
+  {
+    "code": "ISKH02",
+    "name": "柳田",
+    "region": "石川県",
+    "latitude": 37.3644,
+    "longitude": 137.0413
+  },
+  {
+    "code": "ISKH03",
+    "name": "内浦",
+    "region": "石川県",
+    "latitude": 37.3458,
+    "longitude": 137.2436
+  },
+  {
+    "code": "ISKH04",
+    "name": "富来",
+    "region": "石川県",
+    "latitude": 37.1902,
+    "longitude": 136.7176
+  },
+  {
+    "code": "ISKH05",
+    "name": "穴水",
+    "region": "石川県",
+    "latitude": 37.2224,
+    "longitude": 136.9689
+  },
+  {
+    "code": "ISKH06",
+    "name": "志賀",
+    "region": "石川県",
+    "latitude": 37.0533,
+    "longitude": 136.8206
+  },
+  {
+    "code": "ISK010",
+    "name": "金沢",
+    "region": "石川県",
+    "latitude": 36.5421,
+    "longitude": 136.6435
+  },
+  {
+    "code": "ISKH08",
+    "name": "津幡",
+    "region": "石川県",
+    "latitude": 36.738,
+    "longitude": 136.7906
+  },
+  {
+    "code": "ISKH09",
+    "name": "尾口",
+    "region": "石川県",
+    "latitude": 36.2667,
+    "longitude": 136.7168
+  },
+  {
+    "code": "IWTH01",
+    "name": "二戸東",
+    "region": "岩手県",
+    "latitude": 40.2383,
+    "longitude": 141.3423
+  },
+  {
+    "code": "IWTH02",
+    "name": "玉山",
+    "region": "岩手県",
+    "latitude": 39.825,
+    "longitude": 141.3826
+  },
+  {
+    "code": "IWTH03",
+    "name": "岩泉",
+    "region": "岩手県",
+    "latitude": 39.802,
+    "longitude": 141.652
+  },
+  {
+    "code": "IWTH04",
+    "name": "住田",
+    "region": "岩手県",
+    "latitude": 39.1809,
+    "longitude": 141.3909
+  },
+  {
+    "code": "IWTH05",
+    "name": "藤沢",
+    "region": "岩手県",
+    "latitude": 38.8654,
+    "longitude": 141.3512
+  },
+  {
+    "code": "IWTH06",
+    "name": "二戸西",
+    "region": "岩手県",
+    "latitude": 40.2611,
+    "longitude": 141.1709
+  },
+  {
+    "code": "IWTH07",
+    "name": "軽米",
+    "region": "岩手県",
+    "latitude": 40.2705,
+    "longitude": 141.5709
+  },
+  {
+    "code": "IWTH08",
+    "name": "久慈北",
+    "region": "岩手県",
+    "latitude": 40.2686,
+    "longitude": 141.7831
+  },
+  {
+    "code": "IWTH09",
+    "name": "久慈南",
+    "region": "岩手県",
+    "latitude": 40.0861,
+    "longitude": 141.712
+  },
+  {
+    "code": "IWTH10",
+    "name": "安代",
+    "region": "岩手県",
+    "latitude": 40.1391,
+    "longitude": 140.9529
+  },
+  {
+    "code": "IWTH11",
+    "name": "一戸",
+    "region": "岩手県",
+    "latitude": 40.0811,
+    "longitude": 141.1915
+  },
+  {
+    "code": "IWTH12",
+    "name": "九戸",
+    "region": "岩手県",
+    "latitude": 40.1533,
+    "longitude": 141.4245
+  },
+  {
+    "code": "IWTH13",
+    "name": "葛巻",
+    "region": "岩手県",
+    "latitude": 39.9398,
+    "longitude": 141.5492
+  },
+  {
+    "code": "IWTH14",
+    "name": "田老",
+    "region": "岩手県",
+    "latitude": 39.7435,
+    "longitude": 141.9087
+  },
+  {
+    "code": "IWTH15",
+    "name": "矢巾",
+    "region": "岩手県",
+    "latitude": 39.6148,
+    "longitude": 141.0929
+  },
+  {
+    "code": "IWTH16",
+    "name": "雫石",
+    "region": "岩手県",
+    "latitude": 39.6436,
+    "longitude": 140.9465
+  },
+  {
+    "code": "IWTH17",
+    "name": "川井北",
+    "region": "岩手県",
+    "latitude": 39.6442,
+    "longitude": 141.5977
+  },
+  {
+    "code": "IWTH18",
+    "name": "川井南",
+    "region": "岩手県",
+    "latitude": 39.463,
+    "longitude": 141.6775
+  },
+  {
+    "code": "IWTH19",
+    "name": "花巻北",
+    "region": "岩手県",
+    "latitude": 39.4559,
+    "longitude": 141.0001
+  },
+  {
+    "code": "IWTH20",
+    "name": "花巻南",
+    "region": "岩手県",
+    "latitude": 39.3434,
+    "longitude": 141.0473
+  },
+  {
+    "code": "IWTH21",
+    "name": "山田",
+    "region": "岩手県",
+    "latitude": 39.4734,
+    "longitude": 141.9336
+  },
+  {
+    "code": "IWTH22",
+    "name": "東和",
+    "region": "岩手県",
+    "latitude": 39.334,
+    "longitude": 141.3015
+  },
+  {
+    "code": "IWTH23",
+    "name": "釜石",
+    "region": "岩手県",
+    "latitude": 39.2741,
+    "longitude": 141.8233
+  },
+  {
+    "code": "IWTH24",
+    "name": "金ヶ崎",
+    "region": "岩手県",
+    "latitude": 39.1979,
+    "longitude": 141.0118
+  },
+  {
+    "code": "IWTH26",
+    "name": "一関東",
+    "region": "岩手県",
+    "latitude": 38.969,
+    "longitude": 141.0013
+  },
+  {
+    "code": "IWTH27",
+    "name": "陸前高田",
+    "region": "岩手県",
+    "latitude": 39.0307,
+    "longitude": 141.532
+  },
+  {
+    "code": "IWTH28",
+    "name": "一関西2",
+    "region": "岩手県",
+    "latitude": 39.0094,
+    "longitude": 140.864
+  },
+  {
+    "code": "KGSH01",
+    "name": "長島",
+    "region": "鹿児島県",
+    "latitude": 32.1554,
+    "longitude": 130.1191
+  },
+  {
+    "code": "KGS004",
+    "name": "阿久根",
+    "region": "鹿児島県",
+    "latitude": 32.0145,
+    "longitude": 130.1927
+  },
+  {
+    "code": "KGSH03",
+    "name": "宮之城",
+    "region": "鹿児島県",
+    "latitude": 31.9812,
+    "longitude": 130.4438
+  },
+  {
+    "code": "KGSH04",
+    "name": "川内",
+    "region": "鹿児島県",
+    "latitude": 31.8374,
+    "longitude": 130.3602
+  },
+  {
+    "code": "KGSH05",
+    "name": "祁答院",
+    "region": "鹿児島県",
+    "latitude": 31.8699,
+    "longitude": 130.4958
+  },
+  {
+    "code": "KGSH06",
+    "name": "郡山",
+    "region": "鹿児島県",
+    "latitude": 31.6988,
+    "longitude": 130.4594
+  },
+  {
+    "code": "KGSH07",
+    "name": "姶良",
+    "region": "鹿児島県",
+    "latitude": 31.714,
+    "longitude": 130.6149
+  },
+  {
+    "code": "KGS013",
+    "name": "大隅",
+    "region": "鹿児島県",
+    "latitude": 31.5973,
+    "longitude": 130.9938
+  },
+  {
+    "code": "KGSH09",
+    "name": "知覧",
+    "region": "鹿児島県",
+    "latitude": 31.3741,
+    "longitude": 130.4333
+  },
+  {
+    "code": "KGSH10",
+    "name": "山川",
+    "region": "鹿児島県",
+    "latitude": 31.2066,
+    "longitude": 130.6183
+  },
+  {
+    "code": "KGSH11",
+    "name": "佐多",
+    "region": "鹿児島県",
+    "latitude": 31.0899,
+    "longitude": 130.699
+  },
+  {
+    "code": "KGS022",
+    "name": "内之浦",
+    "region": "鹿児島県",
+    "latitude": 31.2804,
+    "longitude": 131.0504
+  },
+  {
+    "code": "KGS017",
+    "name": "鹿屋",
+    "region": "鹿児島県",
+    "latitude": 31.3954,
+    "longitude": 130.8702
+  },
+  {
+    "code": "KGW008",
+    "name": "琴南",
+    "region": "香川県",
+    "latitude": 34.1645,
+    "longitude": 133.9241
+  },
+  {
+    "code": "KGWH02",
+    "name": "三野",
+    "region": "香川県",
+    "latitude": 34.198,
+    "longitude": 133.7081
+  },
+  {
+    "code": "KGWH03",
+    "name": "三木",
+    "region": "香川県",
+    "latitude": 34.27,
+    "longitude": 134.1482
+  },
+  {
+    "code": "KGWH04",
+    "name": "大内",
+    "region": "香川県",
+    "latitude": 34.2264,
+    "longitude": 134.3043
+  },
+  {
+    "code": "KGW001",
+    "name": "土庄",
+    "region": "香川県",
+    "latitude": 34.5452,
+    "longitude": 134.2804
+  },
+  {
+    "code": "KKWH01",
+    "name": "美深北",
+    "region": "北海道",
+    "latitude": 44.5973,
+    "longitude": 142.3036
+  },
+  {
+    "code": "KKWH02",
+    "name": "美深東",
+    "region": "北海道",
+    "latitude": 44.5509,
+    "longitude": 142.5736
+  },
+  {
+    "code": "HKD027",
+    "name": "美深",
+    "region": "北海道",
+    "latitude": 44.4806,
+    "longitude": 142.3428
+  },
+  {
+    "code": "KKWH04",
+    "name": "名寄",
+    "region": "北海道",
+    "latitude": 44.4376,
+    "longitude": 142.4056
+  },
+  {
+    "code": "HKD029",
+    "name": "下川",
+    "region": "北海道",
+    "latitude": 44.3114,
+    "longitude": 142.6421
+  },
+  {
+    "code": "KKWH06",
+    "name": "下川東",
+    "region": "北海道",
+    "latitude": 44.3207,
+    "longitude": 142.7656
+  },
+  {
+    "code": "KKWH07",
+    "name": "富良野",
+    "region": "北海道",
+    "latitude": 43.3697,
+    "longitude": 142.3409
+  },
+  {
+    "code": "KKWH08",
+    "name": "占冠",
+    "region": "北海道",
+    "latitude": 43.0406,
+    "longitude": 142.6562
+  },
+  {
+    "code": "KKWH09",
+    "name": "音威子府",
+    "region": "北海道",
+    "latitude": 44.7745,
+    "longitude": 142.2542
+  },
+  {
+    "code": "KKWH10",
+    "name": "中川",
+    "region": "北海道",
+    "latitude": 44.6617,
+    "longitude": 142.0528
+  },
+  {
+    "code": "KKWH11",
+    "name": "和寒",
+    "region": "北海道",
+    "latitude": 43.9754,
+    "longitude": 142.2834
+  },
+  {
+    "code": "KKWH12",
+    "name": "美瑛東",
+    "region": "北海道",
+    "latitude": 43.5038,
+    "longitude": 142.6006
+  },
+  {
+    "code": "KKWH13",
+    "name": "美瑛西",
+    "region": "北海道",
+    "latitude": 43.5113,
+    "longitude": 142.3906
+  },
+  {
+    "code": "KKWH14",
+    "name": "中富良野",
+    "region": "北海道",
+    "latitude": 43.3841,
+    "longitude": 142.5245
+  },
+  {
+    "code": "KKWH15",
+    "name": "上川",
+    "region": "北海道",
+    "latitude": 43.8546,
+    "longitude": 142.7656
+  },
+  {
+    "code": "KMMH01",
+    "name": "鹿北",
+    "region": "熊本県",
+    "latitude": 33.1089,
+    "longitude": 130.6949
+  },
+  {
+    "code": "KMMH02",
+    "name": "小国",
+    "region": "熊本県",
+    "latitude": 33.122,
+    "longitude": 131.0629
+  },
+  {
+    "code": "KMMH03",
+    "name": "菊池",
+    "region": "熊本県",
+    "latitude": 32.9984,
+    "longitude": 130.8301
+  },
+  {
+    "code": "KMMH05",
+    "name": "波野",
+    "region": "熊本県",
+    "latitude": 32.9553,
+    "longitude": 131.2207
+  },
+  {
+    "code": "KMM007",
+    "name": "高森",
+    "region": "熊本県",
+    "latitude": 32.8268,
+    "longitude": 131.1224
+  },
+  {
+    "code": "KMMH07",
+    "name": "三角",
+    "region": "熊本県",
+    "latitude": 32.6234,
+    "longitude": 130.5584
+  },
+  {
+    "code": "KMM009",
+    "name": "矢部",
+    "region": "熊本県",
+    "latitude": 32.6864,
+    "longitude": 130.9886
+  },
+  {
+    "code": "KMMH09",
+    "name": "泉",
+    "region": "熊本県",
+    "latitude": 32.4901,
+    "longitude": 130.9046
+  },
+  {
+    "code": "KMMH10",
+    "name": "新和",
+    "region": "熊本県",
+    "latitude": 32.3151,
+    "longitude": 130.1811
+  },
+  {
+    "code": "KMMH11",
+    "name": "芦北",
+    "region": "熊本県",
+    "latitude": 32.2918,
+    "longitude": 130.5777
+  },
+  {
+    "code": "KMMH12",
+    "name": "人吉",
+    "region": "熊本県",
+    "latitude": 32.2054,
+    "longitude": 130.7371
+  },
+  {
+    "code": "KMMH13",
+    "name": "上",
+    "region": "熊本県",
+    "latitude": 32.2209,
+    "longitude": 130.9096
+  },
+  {
+    "code": "KMMH14",
+    "name": "豊野",
+    "region": "熊本県",
+    "latitude": 32.6345,
+    "longitude": 130.7521
+  },
+  {
+    "code": "KMM015",
+    "name": "水俣",
+    "region": "熊本県",
+    "latitude": 32.2161,
+    "longitude": 130.4059
+  },
+  {
+    "code": "KMM006",
+    "name": "熊本",
+    "region": "熊本県",
+    "latitude": 32.7934,
+    "longitude": 130.7772
+  },
+  {
+    "code": "KMMH17",
+    "name": "玉名",
+    "region": "熊本県",
+    "latitude": 32.9873,
+    "longitude": 130.5608
+  },
+  {
+    "code": "KMMH18",
+    "name": "阿蘇2",
+    "region": "熊本県",
+    "latitude": 33.0031,
+    "longitude": 131.0071
+  },
+  {
+    "code": "KNG006",
+    "name": "二俣川",
+    "region": "神奈川県",
+    "latitude": 35.4541,
+    "longitude": 139.5391
+  },
+  {
+    "code": "KNG009",
+    "name": "厚木",
+    "region": "神奈川県",
+    "latitude": 35.4425,
+    "longitude": 139.3621
+  },
+  {
+    "code": "KNGH18",
+    "name": "藤野",
+    "region": "神奈川県",
+    "latitude": 35.6437,
+    "longitude": 139.1283
+  },
+  {
+    "code": "KNGH19",
+    "name": "山北中",
+    "region": "神奈川県",
+    "latitude": 35.4173,
+    "longitude": 139.0436
+  },
+  {
+    "code": "KNGH22",
+    "name": "山北南",
+    "region": "神奈川県",
+    "latitude": 35.3583,
+    "longitude": 139.091
+  },
+  {
+    "code": "KNGH21",
+    "name": "清川",
+    "region": "神奈川県",
+    "latitude": 35.4628,
+    "longitude": 139.2146
+  },
+  {
+    "code": "KNGH22",
+    "name": "山北南",
+    "region": "神奈川県",
+    "latitude": 35.3583,
+    "longitude": 139.091
+  },
+  {
+    "code": "KNGH23",
+    "name": "葉山",
+    "region": "神奈川県",
+    "latitude": 35.2624,
+    "longitude": 139.611
+  },
+  {
+    "code": "KOCH01",
+    "name": "北川",
+    "region": "高知県",
+    "latitude": 33.5421,
+    "longitude": 134.1197
+  },
+  {
+    "code": "KOCH02",
+    "name": "吾北",
+    "region": "高知県",
+    "latitude": 33.7079,
+    "longitude": 133.3641
+  },
+  {
+    "code": "KOCH03",
+    "name": "大正",
+    "region": "高知県",
+    "latitude": 33.2683,
+    "longitude": 132.9891
+  },
+  {
+    "code": "KOCH04",
+    "name": "大月",
+    "region": "高知県",
+    "latitude": 32.8414,
+    "longitude": 132.7066
+  },
+  {
+    "code": "KOCH05",
+    "name": "池川",
+    "region": "高知県",
+    "latitude": 33.6472,
+    "longitude": 133.1444
+  },
+  {
+    "code": "KOCH06",
+    "name": "中村",
+    "region": "高知県",
+    "latitude": 33.0754,
+    "longitude": 132.9524
+  },
+  {
+    "code": "KOCH07",
+    "name": "須崎",
+    "region": "高知県",
+    "latitude": 33.392,
+    "longitude": 133.2866
+  },
+  {
+    "code": "KOCH08",
+    "name": "土佐清水",
+    "region": "高知県",
+    "latitude": 32.7797,
+    "longitude": 132.9718
+  },
+  {
+    "code": "KOCH09",
+    "name": "香北",
+    "region": "高知県",
+    "latitude": 33.6748,
+    "longitude": 133.8243
+  },
+  {
+    "code": "KOC006",
+    "name": "土佐",
+    "region": "高知県",
+    "latitude": 33.4943,
+    "longitude": 133.4166
+  },
+  {
+    "code": "KOCH11",
+    "name": "室戸",
+    "region": "高知県",
+    "latitude": 33.2866,
+    "longitude": 134.1603
+  },
+  {
+    "code": "KOCH12",
+    "name": "芸西",
+    "region": "高知県",
+    "latitude": 33.5294,
+    "longitude": 133.8192
+  },
+  {
+    "code": "KOCH13",
+    "name": "本山",
+    "region": "高知県",
+    "latitude": 33.7543,
+    "longitude": 133.576
+  },
+  {
+    "code": "KSRH01",
+    "name": "阿寒北",
+    "region": "北海道",
+    "latitude": 43.4361,
+    "longitude": 144.0844
+  },
+  {
+    "code": "KSRH02",
+    "name": "阿寒南",
+    "region": "北海道",
+    "latitude": 43.1142,
+    "longitude": 144.123
+  },
+  {
+    "code": "KSRH03",
+    "name": "標茶北",
+    "region": "北海道",
+    "latitude": 43.3848,
+    "longitude": 144.6279
+  },
+  {
+    "code": "KSRH04",
+    "name": "標茶南",
+    "region": "北海道",
+    "latitude": 43.2139,
+    "longitude": 144.6804
+  },
+  {
+    "code": "KSRH05",
+    "name": "鶴居西",
+    "region": "北海道",
+    "latitude": 43.2556,
+    "longitude": 144.2338
+  },
+  {
+    "code": "KSRH06",
+    "name": "鶴居東",
+    "region": "北海道",
+    "latitude": 43.22,
+    "longitude": 144.4285
+  },
+  {
+    "code": "KSRH07",
+    "name": "鶴居南",
+    "region": "北海道",
+    "latitude": 43.1359,
+    "longitude": 144.3274
+  },
+  {
+    "code": "KSRH08",
+    "name": "白糠北",
+    "region": "北海道",
+    "latitude": 43.1603,
+    "longitude": 143.8936
+  },
+  {
+    "code": "KSRH09",
+    "name": "白糠南",
+    "region": "北海道",
+    "latitude": 42.9856,
+    "longitude": 143.9841
+  },
+  {
+    "code": "KSRH10",
+    "name": "浜中",
+    "region": "北海道",
+    "latitude": 43.2084,
+    "longitude": 145.1168
+  },
+  {
+    "code": "KYTH01",
+    "name": "野田川",
+    "region": "京都府",
+    "latitude": 35.5243,
+    "longitude": 135.1243
+  },
+  {
+    "code": "KYTH02",
+    "name": "伊根",
+    "region": "京都府",
+    "latitude": 35.7101,
+    "longitude": 135.2496
+  },
+  {
+    "code": "KYTH03",
+    "name": "福知山",
+    "region": "京都府",
+    "latitude": 35.313,
+    "longitude": 135.1334
+  },
+  {
+    "code": "KYTH04",
+    "name": "美山",
+    "region": "京都府",
+    "latitude": 35.2685,
+    "longitude": 135.5508
+  },
+  {
+    "code": "KYTH05",
+    "name": "網野",
+    "region": "京都府",
+    "latitude": 35.6814,
+    "longitude": 135.0268
+  },
+  {
+    "code": "KYTH06",
+    "name": "亀岡",
+    "region": "京都府",
+    "latitude": 35.0469,
+    "longitude": 135.4846
+  },
+  {
+    "code": "KYTH07",
+    "name": "久御山",
+    "region": "京都府",
+    "latitude": 34.8983,
+    "longitude": 135.7461
+  },
+  {
+    "code": "KYTH08",
+    "name": "京都",
+    "region": "京都府",
+    "latitude": 35.0094,
+    "longitude": 135.7304
+  },
+  {
+    "code": "MIE002",
+    "name": "菰野",
+    "region": "三重県",
+    "latitude": 35.0283,
+    "longitude": 136.5069
+  },
+  {
+    "code": "MIEH02",
+    "name": "大山田",
+    "region": "三重県",
+    "latitude": 34.7662,
+    "longitude": 136.2835
+  },
+  {
+    "code": "MIEH03",
+    "name": "嬉野",
+    "region": "三重県",
+    "latitude": 34.547,
+    "longitude": 136.3692
+  },
+  {
+    "code": "MIEH04",
+    "name": "度会",
+    "region": "三重県",
+    "latitude": 34.3532,
+    "longitude": 136.5866
+  },
+  {
+    "code": "MIEH05",
+    "name": "尾鷲",
+    "region": "三重県",
+    "latitude": 34.0637,
+    "longitude": 136.1689
+  },
+  {
+    "code": "MIE011",
+    "name": "飯高",
+    "region": "三重県",
+    "latitude": 34.4284,
+    "longitude": 136.3328
+  },
+  {
+    "code": "MIEH07",
+    "name": "志摩",
+    "region": "三重県",
+    "latitude": 34.2544,
+    "longitude": 136.8216
+  },
+  {
+    "code": "MIEH08",
+    "name": "松阪",
+    "region": "三重県",
+    "latitude": 34.5424,
+    "longitude": 136.5033
+  },
+  {
+    "code": "MIEH09",
+    "name": "紀宝",
+    "region": "三重県",
+    "latitude": 33.7644,
+    "longitude": 135.9969
+  },
+  {
+    "code": "MIEH10",
+    "name": "芸濃",
+    "region": "三重県",
+    "latitude": 34.8224,
+    "longitude": 136.4245
+  },
+  {
+    "code": "MYGH02",
+    "name": "鳴子",
+    "region": "宮城県",
+    "latitude": 38.8587,
+    "longitude": 140.6513
+  },
+  {
+    "code": "MYG001",
+    "name": "気仙沼",
+    "region": "宮城県",
+    "latitude": 38.9017,
+    "longitude": 141.5709
+  },
+  {
+    "code": "MYGH04",
+    "name": "東和",
+    "region": "宮城県",
+    "latitude": 38.786,
+    "longitude": 141.3254
+  },
+  {
+    "code": "MYGH05",
+    "name": "小野田",
+    "region": "宮城県",
+    "latitude": 38.5793,
+    "longitude": 140.7804
+  },
+  {
+    "code": "MYGH06",
+    "name": "田尻",
+    "region": "宮城県",
+    "latitude": 38.5907,
+    "longitude": 141.071
+  },
+  {
+    "code": "MYGH07",
+    "name": "川崎",
+    "region": "宮城県",
+    "latitude": 38.1802,
+    "longitude": 140.6405
+  },
+  {
+    "code": "MYGH08",
+    "name": "岩沼",
+    "region": "宮城県",
+    "latitude": 38.1133,
+    "longitude": 140.8441
+  },
+  {
+    "code": "MYGH09",
+    "name": "白石",
+    "region": "宮城県",
+    "latitude": 38.0091,
+    "longitude": 140.6027
+  },
+  {
+    "code": "MYGH10",
+    "name": "山元",
+    "region": "宮城県",
+    "latitude": 37.9411,
+    "longitude": 140.8924
+  },
+  {
+    "code": "MYGH11",
+    "name": "河北",
+    "region": "宮城県",
+    "latitude": 38.5158,
+    "longitude": 141.3421
+  },
+  {
+    "code": "MYGH13",
+    "name": "南三陸",
+    "region": "宮城県",
+    "latitude": 38.6993,
+    "longitude": 141.4176
+  },
+  {
+    "code": "MYG012",
+    "name": "塩竈",
+    "region": "宮城県",
+    "latitude": 38.3288,
+    "longitude": 141.0128
+  },
+  {
+    "code": "MYZH01",
+    "name": "五ヶ瀬",
+    "region": "宮崎県",
+    "latitude": 32.6536,
+    "longitude": 131.2257
+  },
+  {
+    "code": "MYZH02",
+    "name": "北川",
+    "region": "宮崎県",
+    "latitude": 32.6972,
+    "longitude": 131.6829
+  },
+  {
+    "code": "MYZH03",
+    "name": "椎葉",
+    "region": "宮崎県",
+    "latitude": 32.4754,
+    "longitude": 131.1043
+  },
+  {
+    "code": "MYZH04",
+    "name": "諸塚",
+    "region": "宮崎県",
+    "latitude": 32.5181,
+    "longitude": 131.3349
+  },
+  {
+    "code": "MYZH05",
+    "name": "南郷",
+    "region": "宮崎県",
+    "latitude": 32.347,
+    "longitude": 131.2668
+  },
+  {
+    "code": "MYZH06",
+    "name": "東郷",
+    "region": "宮崎県",
+    "latitude": 32.3607,
+    "longitude": 131.4643
+  },
+  {
+    "code": "MYZH07",
+    "name": "西米良",
+    "region": "宮崎県",
+    "latitude": 32.1987,
+    "longitude": 131.1946
+  },
+  {
+    "code": "MYZH08",
+    "name": "川南",
+    "region": "宮崎県",
+    "latitude": 32.2132,
+    "longitude": 131.5309
+  },
+  {
+    "code": "MYZH09",
+    "name": "須木",
+    "region": "宮崎県",
+    "latitude": 32.0421,
+    "longitude": 131.0618
+  },
+  {
+    "code": "MYZH10",
+    "name": "国富",
+    "region": "宮崎県",
+    "latitude": 32.0215,
+    "longitude": 131.29
+  },
+  {
+    "code": "MYZH11",
+    "name": "佐土原",
+    "region": "宮崎県",
+    "latitude": 32.0208,
+    "longitude": 131.47
+  },
+  {
+    "code": "MYZH12",
+    "name": "都城北",
+    "region": "宮崎県",
+    "latitude": 31.8643,
+    "longitude": 130.9454
+  },
+  {
+    "code": "MYZH13",
+    "name": "都城南",
+    "region": "宮崎県",
+    "latitude": 31.7301,
+    "longitude": 131.0791
+  },
+  {
+    "code": "MYZ016",
+    "name": "日南",
+    "region": "宮崎県",
+    "latitude": 31.6131,
+    "longitude": 131.3745
+  },
+  {
+    "code": "MYZ005",
+    "name": "日向",
+    "region": "宮崎県",
+    "latitude": 32.4286,
+    "longitude": 131.6009
+  },
+  {
+    "code": "MYZH16",
+    "name": "延岡",
+    "region": "宮崎県",
+    "latitude": 32.506,
+    "longitude": 131.6958
+  },
+  {
+    "code": "NARH01",
+    "name": "十津川西",
+    "region": "奈良県",
+    "latitude": 33.9666,
+    "longitude": 135.6489
+  },
+  {
+    "code": "NARH02",
+    "name": "十津川東",
+    "region": "奈良県",
+    "latitude": 33.9692,
+    "longitude": 135.8574
+  },
+  {
+    "code": "NAR006",
+    "name": "川上",
+    "region": "奈良県",
+    "latitude": 34.3384,
+    "longitude": 135.9545
+  },
+  {
+    "code": "NARH04",
+    "name": "黒滝",
+    "region": "奈良県",
+    "latitude": 34.3061,
+    "longitude": 135.8369
+  },
+  {
+    "code": "NARH05",
+    "name": "東吉野",
+    "region": "奈良県",
+    "latitude": 34.4237,
+    "longitude": 136.0294
+  },
+  {
+    "code": "MIE008",
+    "name": "名張",
+    "region": "三重県",
+    "latitude": 34.6291,
+    "longitude": 136.1074
+  },
+  {
+    "code": "NARH07",
+    "name": "天理",
+    "region": "奈良県",
+    "latitude": 34.5843,
+    "longitude": 135.8541
+  },
+  {
+    "code": "NGNH03",
+    "name": "阿智2",
+    "region": "長野県",
+    "latitude": 35.4786,
+    "longitude": 137.7346
+  },
+  {
+    "code": "NGN003",
+    "name": "山ノ内",
+    "region": "長野県",
+    "latitude": 36.74,
+    "longitude": 138.4137
+  },
+  {
+    "code": "NGN009",
+    "name": "穂高",
+    "region": "長野県",
+    "latitude": 36.3371,
+    "longitude": 137.8718
+  },
+  {
+    "code": "NGNH09",
+    "name": "武石",
+    "region": "長野県",
+    "latitude": 36.2859,
+    "longitude": 138.2491
+  },
+  {
+    "code": "NGN017",
+    "name": "楢川",
+    "region": "長野県",
+    "latitude": 35.9749,
+    "longitude": 137.8259
+  },
+  {
+    "code": "NGNH11",
+    "name": "富士見",
+    "region": "長野県",
+    "latitude": 35.9157,
+    "longitude": 138.3052
+  },
+  {
+    "code": "NGNH12",
+    "name": "南牧",
+    "region": "長野県",
+    "latitude": 35.9696,
+    "longitude": 138.4797
+  },
+  {
+    "code": "NGNH13",
+    "name": "喬木",
+    "region": "長野県",
+    "latitude": 35.5143,
+    "longitude": 137.8767
+  },
+  {
+    "code": "NGNH14",
+    "name": "平谷",
+    "region": "長野県",
+    "latitude": 35.3095,
+    "longitude": 137.6261
+  },
+  {
+    "code": "NGNH15",
+    "name": "辰野",
+    "region": "長野県",
+    "latitude": 36.0088,
+    "longitude": 137.9305
+  },
+  {
+    "code": "NGNH16",
+    "name": "茅野",
+    "region": "長野県",
+    "latitude": 35.9465,
+    "longitude": 138.1848
+  },
+  {
+    "code": "NGNH17",
+    "name": "佐久",
+    "region": "長野県",
+    "latitude": 36.1425,
+    "longitude": 138.5504
+  },
+  {
+    "code": "NGNH18",
+    "name": "開田",
+    "region": "長野県",
+    "latitude": 35.9324,
+    "longitude": 137.595
+  },
+  {
+    "code": "NGNH19",
+    "name": "川上",
+    "region": "長野県",
+    "latitude": 35.9735,
+    "longitude": 138.5845
+  },
+  {
+    "code": "NGNH20",
+    "name": "上松",
+    "region": "長野県",
+    "latitude": 35.787,
+    "longitude": 137.7173
+  },
+  {
+    "code": "NGNH21",
+    "name": "伊那",
+    "region": "長野県",
+    "latitude": 35.8315,
+    "longitude": 137.9236
+  },
+  {
+    "code": "NGNH22",
+    "name": "長谷",
+    "region": "長野県",
+    "latitude": 35.7946,
+    "longitude": 138.0824
+  },
+  {
+    "code": "NGNH23",
+    "name": "南木曽",
+    "region": "長野県",
+    "latitude": 35.6056,
+    "longitude": 137.6105
+  },
+  {
+    "code": "NGNH24",
+    "name": "松川",
+    "region": "長野県",
+    "latitude": 35.6152,
+    "longitude": 137.8797
+  },
+  {
+    "code": "NGN025",
+    "name": "天龍",
+    "region": "長野県",
+    "latitude": 35.2864,
+    "longitude": 137.8571
+  },
+  {
+    "code": "NGN007",
+    "name": "杭瀬下",
+    "region": "長野県",
+    "latitude": 36.5344,
+    "longitude": 138.1188
+  },
+  {
+    "code": "NGNH27",
+    "name": "信州新",
+    "region": "長野県",
+    "latitude": 36.577,
+    "longitude": 138.0479
+  },
+  {
+    "code": "NGNH28",
+    "name": "戸隠",
+    "region": "長野県",
+    "latitude": 36.7075,
+    "longitude": 138.0964
+  },
+  {
+    "code": "NGN001",
+    "name": "飯山",
+    "region": "長野県",
+    "latitude": 36.8513,
+    "longitude": 138.3657
+  },
+  {
+    "code": "NGNH30",
+    "name": "奈川",
+    "region": "長野県",
+    "latitude": 36.064,
+    "longitude": 137.6849
+  },
+  {
+    "code": "NGNH31",
+    "name": "塩尻",
+    "region": "長野県",
+    "latitude": 36.1184,
+    "longitude": 137.9389
+  },
+  {
+    "code": "NGN012",
+    "name": "松本",
+    "region": "長野県",
+    "latitude": 36.2571,
+    "longitude": 137.9796
+  },
+  {
+    "code": "NGNH33",
+    "name": "生坂",
+    "region": "長野県",
+    "latitude": 36.4598,
+    "longitude": 137.9637
+  },
+  {
+    "code": "NGNH34",
+    "name": "大町中",
+    "region": "長野県",
+    "latitude": 36.5327,
+    "longitude": 137.8201
+  },
+  {
+    "code": "NGNH35",
+    "name": "穂高",
+    "region": "長野県",
+    "latitude": 36.3824,
+    "longitude": 137.8201
+  },
+  {
+    "code": "NGNH36",
+    "name": "白馬",
+    "region": "長野県",
+    "latitude": 36.6984,
+    "longitude": 137.8482
+  },
+  {
+    "code": "NGNH37",
+    "name": "御代田",
+    "region": "長野県",
+    "latitude": 36.3308,
+    "longitude": 138.4967
+  },
+  {
+    "code": "NGNH54",
+    "name": "飯田",
+    "region": "長野県",
+    "latitude": 35.4489,
+    "longitude": 138.0058
+  },
+  {
+    "code": "NGSH01",
+    "name": "平戸",
+    "region": "長崎県",
+    "latitude": 33.2116,
+    "longitude": 129.4353
+  },
+  {
+    "code": "NGSH02",
+    "name": "佐世保北",
+    "region": "長崎県",
+    "latitude": 33.2122,
+    "longitude": 129.7652
+  },
+  {
+    "code": "NGSH03",
+    "name": "佐世保南",
+    "region": "長崎県",
+    "latitude": 33.1256,
+    "longitude": 129.8102
+  },
+  {
+    "code": "NGSH04",
+    "name": "琴海",
+    "region": "長崎県",
+    "latitude": 32.9553,
+    "longitude": 129.8026
+  },
+  {
+    "code": "NGSH05",
+    "name": "高来",
+    "region": "長崎県",
+    "latitude": 32.9103,
+    "longitude": 130.1408
+  },
+  {
+    "code": "NGS010",
+    "name": "長崎",
+    "region": "長崎県",
+    "latitude": 32.7351,
+    "longitude": 129.8765
+  },
+  {
+    "code": "NIGH01",
+    "name": "長岡",
+    "region": "新潟県",
+    "latitude": 37.4272,
+    "longitude": 138.8876
+  },
+  {
+    "code": "NIGH02",
+    "name": "朝日",
+    "region": "新潟県",
+    "latitude": 38.2799,
+    "longitude": 139.5486
+  },
+  {
+    "code": "NIG008",
+    "name": "中条",
+    "region": "新潟県",
+    "latitude": 38.0514,
+    "longitude": 139.4086
+  },
+  {
+    "code": "NIGH04",
+    "name": "関川",
+    "region": "新潟県",
+    "latitude": 38.1313,
+    "longitude": 139.5428
+  },
+  {
+    "code": "NIG009",
+    "name": "新発田",
+    "region": "新潟県",
+    "latitude": 37.951,
+    "longitude": 139.3377
+  },
+  {
+    "code": "NIGH06",
+    "name": "加茂",
+    "region": "新潟県",
+    "latitude": 37.6527,
+    "longitude": 139.0676
+  },
+  {
+    "code": "NIGH07",
+    "name": "村松",
+    "region": "新潟県",
+    "latitude": 37.6658,
+    "longitude": 139.261
+  },
+  {
+    "code": "NIGH08",
+    "name": "津川",
+    "region": "新潟県",
+    "latitude": 37.6708,
+    "longitude": 139.4648
+  },
+  {
+    "code": "NIGH09",
+    "name": "下田",
+    "region": "新潟県",
+    "latitude": 37.5386,
+    "longitude": 139.1279
+  },
+  {
+    "code": "NIGH10",
+    "name": "上川",
+    "region": "新潟県",
+    "latitude": 37.5438,
+    "longitude": 139.3648
+  },
+  {
+    "code": "NIGH11",
+    "name": "川西",
+    "region": "新潟県",
+    "latitude": 37.1728,
+    "longitude": 138.744
+  },
+  {
+    "code": "NIG020",
+    "name": "小出",
+    "region": "新潟県",
+    "latitude": 37.2348,
+    "longitude": 138.9621
+  },
+  {
+    "code": "NIG024",
+    "name": "安塚",
+    "region": "新潟県",
+    "latitude": 37.1274,
+    "longitude": 138.4442
+  },
+  {
+    "code": "NIGH14",
+    "name": "塩沢",
+    "region": "新潟県",
+    "latitude": 37.0303,
+    "longitude": 138.8521
+  },
+  {
+    "code": "NIGH15",
+    "name": "六日",
+    "region": "新潟県",
+    "latitude": 37.0533,
+    "longitude": 138.9951
+  },
+  {
+    "code": "NIGH16",
+    "name": "糸魚川",
+    "region": "新潟県",
+    "latitude": 36.9378,
+    "longitude": 137.848
+  },
+  {
+    "code": "NIGH17",
+    "name": "妙高高原",
+    "region": "新潟県",
+    "latitude": 36.8569,
+    "longitude": 138.0966
+  },
+  {
+    "code": "NIGH18",
+    "name": "妙高",
+    "region": "新潟県",
+    "latitude": 36.9425,
+    "longitude": 138.2594
+  },
+  {
+    "code": "NIGH19",
+    "name": "湯沢",
+    "region": "新潟県",
+    "latitude": 36.8114,
+    "longitude": 138.7849
+  },
+  {
+    "code": "NMRH01",
+    "name": "標津北",
+    "region": "北海道",
+    "latitude": 43.785,
+    "longitude": 145.0246
+  },
+  {
+    "code": "NMRH02",
+    "name": "標津南",
+    "region": "北海道",
+    "latitude": 43.6772,
+    "longitude": 144.9618
+  },
+  {
+    "code": "NMRH03",
+    "name": "中標津",
+    "region": "北海道",
+    "latitude": 43.5508,
+    "longitude": 144.9665
+  },
+  {
+    "code": "NMRH04",
+    "name": "別海東",
+    "region": "北海道",
+    "latitude": 43.3978,
+    "longitude": 145.1224
+  },
+  {
+    "code": "NMRH05",
+    "name": "別海西",
+    "region": "北海道",
+    "latitude": 43.39,
+    "longitude": 144.8021
+  },
+  {
+    "code": "OITH01",
+    "name": "山国",
+    "region": "大分県",
+    "latitude": 33.4122,
+    "longitude": 131.0326
+  },
+  {
+    "code": "OITH02",
+    "name": "山香",
+    "region": "大分県",
+    "latitude": 33.4581,
+    "longitude": 131.4429
+  },
+  {
+    "code": "OITH03",
+    "name": "安岐",
+    "region": "大分県",
+    "latitude": 33.4736,
+    "longitude": 131.6856
+  },
+  {
+    "code": "OITH04",
+    "name": "庄内",
+    "region": "大分県",
+    "latitude": 33.1306,
+    "longitude": 131.3473
+  },
+  {
+    "code": "OITH05",
+    "name": "野津原",
+    "region": "大分県",
+    "latitude": 33.1525,
+    "longitude": 131.542
+  },
+  {
+    "code": "OITH06",
+    "name": "竹田",
+    "region": "大分県",
+    "latitude": 32.9726,
+    "longitude": 131.3984
+  },
+  {
+    "code": "OITH07",
+    "name": "三重",
+    "region": "大分県",
+    "latitude": 32.987,
+    "longitude": 131.5881
+  },
+  {
+    "code": "OITH08",
+    "name": "宇目西",
+    "region": "大分県",
+    "latitude": 32.8392,
+    "longitude": 131.5357
+  },
+  {
+    "code": "OITH09",
+    "name": "宇目東",
+    "region": "大分県",
+    "latitude": 32.8486,
+    "longitude": 131.6786
+  },
+  {
+    "code": "OITH10",
+    "name": "佐伯",
+    "region": "大分県",
+    "latitude": 32.9278,
+    "longitude": 131.8695
+  },
+  {
+    "code": "OITH11",
+    "name": "九重",
+    "region": "大分県",
+    "latitude": 33.2844,
+    "longitude": 131.2118
+  },
+  {
+    "code": "OKYH01",
+    "name": "玉野",
+    "region": "岡山県",
+    "latitude": 34.507,
+    "longitude": 133.8905
+  },
+  {
+    "code": "OKYH02",
+    "name": "瀬戸",
+    "region": "岡山県",
+    "latitude": 34.7501,
+    "longitude": 134.0702
+  },
+  {
+    "code": "OKYH03",
+    "name": "岡山",
+    "region": "岡山県",
+    "latitude": 34.7783,
+    "longitude": 133.789
+  },
+  {
+    "code": "OKYH04",
+    "name": "真備",
+    "region": "岡山県",
+    "latitude": 34.6429,
+    "longitude": 133.6861
+  },
+  {
+    "code": "OKYH05",
+    "name": "建部",
+    "region": "岡山県",
+    "latitude": 34.8684,
+    "longitude": 133.8527
+  },
+  {
+    "code": "OKYH06",
+    "name": "美星",
+    "region": "岡山県",
+    "latitude": 34.6756,
+    "longitude": 133.5283
+  },
+  {
+    "code": "OKYH07",
+    "name": "神郷",
+    "region": "岡山県",
+    "latitude": 35.0493,
+    "longitude": 133.3169
+  },
+  {
+    "code": "OKYH08",
+    "name": "哲多",
+    "region": "岡山県",
+    "latitude": 34.9103,
+    "longitude": 133.4055
+  },
+  {
+    "code": "OKY001",
+    "name": "湯原",
+    "region": "岡山県",
+    "latitude": 35.1702,
+    "longitude": 133.7311
+  },
+  {
+    "code": "OKYH10",
+    "name": "上斎原",
+    "region": "岡山県",
+    "latitude": 35.2826,
+    "longitude": 133.9263
+  },
+  {
+    "code": "OKYH11",
+    "name": "勝央",
+    "region": "岡山県",
+    "latitude": 35.0732,
+    "longitude": 134.1162
+  },
+  {
+    "code": "OKYH12",
+    "name": "大原",
+    "region": "岡山県",
+    "latitude": 35.0999,
+    "longitude": 134.319
+  },
+  {
+    "code": "OKYH13",
+    "name": "日生",
+    "region": "岡山県",
+    "latitude": 34.7283,
+    "longitude": 134.2744
+  },
+  {
+    "code": "OKYH14",
+    "name": "北房",
+    "region": "岡山県",
+    "latitude": 34.9363,
+    "longitude": 133.6205
+  },
+  {
+    "code": "HYG022",
+    "name": "西宮",
+    "region": "兵庫県",
+    "latitude": 34.7463,
+    "longitude": 135.3501
+  },
+  {
+    "code": "NAR003",
+    "name": "大和高田",
+    "region": "奈良県",
+    "latitude": 34.5171,
+    "longitude": 135.7171
+  },
+  {
+    "code": "OSKH04",
+    "name": "交野",
+    "region": "大阪府",
+    "latitude": 34.763,
+    "longitude": 135.7052
+  },
+  {
+    "code": "OSKH05",
+    "name": "大阪",
+    "region": "大阪府",
+    "latitude": 34.7159,
+    "longitude": 135.5199
+  },
+  {
+    "code": "OSMH01",
+    "name": "知内",
+    "region": "北海道",
+    "latitude": 41.5977,
+    "longitude": 140.4207
+  },
+  {
+    "code": "OSMH02",
+    "name": "上磯",
+    "region": "北海道",
+    "latitude": 41.8374,
+    "longitude": 140.6331
+  },
+  {
+    "code": "RMIH01",
+    "name": "幌延",
+    "region": "北海道",
+    "latitude": 45.0167,
+    "longitude": 142.0795
+  },
+  {
+    "code": "RMIH02",
+    "name": "天塩",
+    "region": "北海道",
+    "latitude": 44.8948,
+    "longitude": 141.9251
+  },
+  {
+    "code": "RMIH03",
+    "name": "遠別",
+    "region": "北海道",
+    "latitude": 44.6359,
+    "longitude": 141.8187
+  },
+  {
+    "code": "RMIH04",
+    "name": "小平東",
+    "region": "北海道",
+    "latitude": 44.0974,
+    "longitude": 141.9621
+  },
+  {
+    "code": "RMIH05",
+    "name": "小平西",
+    "region": "北海道",
+    "latitude": 44.0254,
+    "longitude": 141.7876
+  },
+  {
+    "code": "SAGH01",
+    "name": "鎮西",
+    "region": "佐賀県",
+    "latitude": 33.508,
+    "longitude": 129.8877
+  },
+  {
+    "code": "SAGH02",
+    "name": "伊万里",
+    "region": "佐賀県",
+    "latitude": 33.2656,
+    "longitude": 129.8798
+  },
+  {
+    "code": "SAG003",
+    "name": "富士",
+    "region": "佐賀県",
+    "latitude": 33.3732,
+    "longitude": 130.2081
+  },
+  {
+    "code": "SAGH04",
+    "name": "東脊振",
+    "region": "佐賀県",
+    "latitude": 33.3654,
+    "longitude": 130.4046
+  },
+  {
+    "code": "SAGH05",
+    "name": "白石",
+    "region": "佐賀県",
+    "latitude": 33.1806,
+    "longitude": 130.1046
+  },
+  {
+    "code": "SBSH01",
+    "name": "古平",
+    "region": "北海道",
+    "latitude": 43.2341,
+    "longitude": 140.6228
+  },
+  {
+    "code": "SBSH02",
+    "name": "泊",
+    "region": "北海道",
+    "latitude": 43.0527,
+    "longitude": 140.5017
+  },
+  {
+    "code": "SBSH03",
+    "name": "赤井川",
+    "region": "北海道",
+    "latitude": 43.0842,
+    "longitude": 140.8199
+  },
+  {
+    "code": "SBSH04",
+    "name": "共和",
+    "region": "北海道",
+    "latitude": 42.9758,
+    "longitude": 140.6219
+  },
+  {
+    "code": "SBSH05",
+    "name": "倶知安",
+    "region": "北海道",
+    "latitude": 42.95,
+    "longitude": 140.8223
+  },
+  {
+    "code": "HKD147",
+    "name": "蘭越",
+    "region": "北海道",
+    "latitude": 42.8056,
+    "longitude": 140.5305
+  },
+  {
+    "code": "SBSH07",
+    "name": "真狩",
+    "region": "北海道",
+    "latitude": 42.763,
+    "longitude": 140.8084
+  },
+  {
+    "code": "SBSH08",
+    "name": "喜茂別",
+    "region": "北海道",
+    "latitude": 42.768,
+    "longitude": 140.9766
+  },
+  {
+    "code": "SBSH09",
+    "name": "黒松内",
+    "region": "北海道",
+    "latitude": 42.6104,
+    "longitude": 140.4841
+  },
+  {
+    "code": "HKD149",
+    "name": "寿都",
+    "region": "北海道",
+    "latitude": 42.7905,
+    "longitude": 140.2305
+  },
+  {
+    "code": "SIGH01",
+    "name": "多賀",
+    "region": "滋賀県",
+    "latitude": 35.2383,
+    "longitude": 136.3599
+  },
+  {
+    "code": "SIGH02",
+    "name": "大津",
+    "region": "滋賀県",
+    "latitude": 35.2482,
+    "longitude": 135.8671
+  },
+  {
+    "code": "SIGH03",
+    "name": "信楽",
+    "region": "滋賀県",
+    "latitude": 34.853,
+    "longitude": 136.0316
+  },
+  {
+    "code": "SIGH04",
+    "name": "日野",
+    "region": "滋賀県",
+    "latitude": 34.9638,
+    "longitude": 136.261
+  },
+  {
+    "code": "SIT013",
+    "name": "所沢",
+    "region": "埼玉県",
+    "latitude": 35.7966,
+    "longitude": 139.4659
+  },
+  {
+    "code": "SITH05",
+    "name": "神泉",
+    "region": "埼玉県",
+    "latitude": 36.1509,
+    "longitude": 139.0504
+  },
+  {
+    "code": "SIT005",
+    "name": "小川",
+    "region": "埼玉県",
+    "latitude": 36.0563,
+    "longitude": 139.2626
+  },
+  {
+    "code": "SITH07",
+    "name": "名栗",
+    "region": "埼玉県",
+    "latitude": 35.9118,
+    "longitude": 139.1485
+  },
+  {
+    "code": "SITH08",
+    "name": "小鹿野",
+    "region": "埼玉県",
+    "latitude": 36.0274,
+    "longitude": 138.9691
+  },
+  {
+    "code": "SIT004",
+    "name": "長瀞",
+    "region": "埼玉県",
+    "latitude": 36.1178,
+    "longitude": 139.1044
+  },
+  {
+    "code": "SITH11",
+    "name": "飯能",
+    "region": "埼玉県",
+    "latitude": 35.8637,
+    "longitude": 139.2726
+  },
+  {
+    "code": "SITH10",
+    "name": "都幾川",
+    "region": "埼玉県",
+    "latitude": 35.9964,
+    "longitude": 139.2191
+  },
+  {
+    "code": "SMNH01",
+    "name": "伯太",
+    "region": "島根県",
+    "latitude": 35.2963,
+    "longitude": 133.2604
+  },
+  {
+    "code": "SMN003",
+    "name": "横田",
+    "region": "島根県",
+    "latitude": 35.1798,
+    "longitude": 133.0934
+  },
+  {
+    "code": "SMNH03",
+    "name": "佐田",
+    "region": "島根県",
+    "latitude": 35.2243,
+    "longitude": 132.7223
+  },
+  {
+    "code": "SMNH04",
+    "name": "邑智",
+    "region": "島根県",
+    "latitude": 35.0918,
+    "longitude": 132.5308
+  },
+  {
+    "code": "SMNH05",
+    "name": "羽須美",
+    "region": "島根県",
+    "latitude": 34.8697,
+    "longitude": 132.6396
+  },
+  {
+    "code": "SMNH06",
+    "name": "金城",
+    "region": "島根県",
+    "latitude": 34.8839,
+    "longitude": 132.2026
+  },
+  {
+    "code": "SMNH07",
+    "name": "美都",
+    "region": "島根県",
+    "latitude": 34.694,
+    "longitude": 132.0402
+  },
+  {
+    "code": "SMNH08",
+    "name": "石見",
+    "region": "島根県",
+    "latitude": 34.8801,
+    "longitude": 132.4208
+  },
+  {
+    "code": "SMNH09",
+    "name": "匹見",
+    "region": "島根県",
+    "latitude": 34.5725,
+    "longitude": 132.0122
+  },
+  {
+    "code": "SMNH10",
+    "name": "美保関",
+    "region": "島根県",
+    "latitude": 35.5579,
+    "longitude": 133.3004
+  },
+  {
+    "code": "SMNH11",
+    "name": "平田",
+    "region": "島根県",
+    "latitude": 35.4259,
+    "longitude": 132.8008
+  },
+  {
+    "code": "SMNH12",
+    "name": "吉田",
+    "region": "島根県",
+    "latitude": 35.1634,
+    "longitude": 132.8558
+  },
+  {
+    "code": "SMNH13",
+    "name": "江津",
+    "region": "島根県",
+    "latitude": 35.0087,
+    "longitude": 132.3069
+  },
+  {
+    "code": "SMN012",
+    "name": "六日市",
+    "region": "島根県",
+    "latitude": 34.3551,
+    "longitude": 131.9354
+  },
+  {
+    "code": "SMNH15",
+    "name": "鹿島",
+    "region": "島根県",
+    "latitude": 35.5232,
+    "longitude": 133.0226
+  },
+  {
+    "code": "SMN004",
+    "name": "木次",
+    "region": "島根県",
+    "latitude": 35.2875,
+    "longitude": 132.9022
+  },
+  {
+    "code": "SOYH01",
+    "name": "猿払北",
+    "region": "北海道",
+    "latitude": 45.3346,
+    "longitude": 142.1185
+  },
+  {
+    "code": "SOYH02",
+    "name": "猿払南",
+    "region": "北海道",
+    "latitude": 45.2163,
+    "longitude": 142.2254
+  },
+  {
+    "code": "SOYH03",
+    "name": "稚内西",
+    "region": "北海道",
+    "latitude": 45.2531,
+    "longitude": 141.6334
+  },
+  {
+    "code": "SOYH04",
+    "name": "稚内東",
+    "region": "北海道",
+    "latitude": 45.2303,
+    "longitude": 141.8806
+  },
+  {
+    "code": "SOYH05",
+    "name": "稚内北",
+    "region": "北海道",
+    "latitude": 45.4883,
+    "longitude": 141.885
+  },
+  {
+    "code": "HKD003",
+    "name": "豊富",
+    "region": "北海道",
+    "latitude": 45.1033,
+    "longitude": 141.7665
+  },
+  {
+    "code": "HKD006",
+    "name": "浜頓別",
+    "region": "北海道",
+    "latitude": 45.1267,
+    "longitude": 142.3516
+  },
+  {
+    "code": "SOYH08",
+    "name": "中頓別",
+    "region": "北海道",
+    "latitude": 44.9387,
+    "longitude": 142.2247
+  },
+  {
+    "code": "SOYH09",
+    "name": "歌登北",
+    "region": "北海道",
+    "latitude": 44.857,
+    "longitude": 142.4868
+  },
+  {
+    "code": "SOYH10",
+    "name": "歌登南",
+    "region": "北海道",
+    "latitude": 44.7433,
+    "longitude": 142.6039
+  },
+  {
+    "code": "HKD114",
+    "name": "朱鞠内",
+    "region": "北海道",
+    "latitude": 44.2829,
+    "longitude": 142.1619
+  },
+  {
+    "code": "SRCH02",
+    "name": "幌加内中",
+    "region": "北海道",
+    "latitude": 44.116,
+    "longitude": 142.1414
+  },
+  {
+    "code": "SRCH03",
+    "name": "幌加内南",
+    "region": "北海道",
+    "latitude": 43.9994,
+    "longitude": 142.1258
+  },
+  {
+    "code": "HKD116",
+    "name": "沼田",
+    "region": "北海道",
+    "latitude": 43.8005,
+    "longitude": 141.9343
+  },
+  {
+    "code": "SRCH05",
+    "name": "深川北",
+    "region": "北海道",
+    "latitude": 43.8243,
+    "longitude": 142.1594
+  },
+  {
+    "code": "HKD117",
+    "name": "深川",
+    "region": "北海道",
+    "latitude": 43.7241,
+    "longitude": 142.0527
+  },
+  {
+    "code": "SRCH07",
+    "name": "三笠",
+    "region": "北海道",
+    "latitude": 43.23,
+    "longitude": 141.8978
+  },
+  {
+    "code": "SRCH08",
+    "name": "砂川",
+    "region": "北海道",
+    "latitude": 43.5138,
+    "longitude": 141.909
+  },
+  {
+    "code": "SRCH09",
+    "name": "栗山",
+    "region": "北海道",
+    "latitude": 43.0587,
+    "longitude": 141.8063
+  },
+  {
+    "code": "SRCH10",
+    "name": "夕張",
+    "region": "北海道",
+    "latitude": 42.993,
+    "longitude": 142.0085
+  },
+  {
+    "code": "SZOH24",
+    "name": "引佐",
+    "region": "静岡県",
+    "latitude": 34.8343,
+    "longitude": 137.6616
+  },
+  {
+    "code": "SZOH25",
+    "name": "新居",
+    "region": "静岡県",
+    "latitude": 34.6913,
+    "longitude": 137.5604
+  },
+  {
+    "code": "SZOH26",
+    "name": "袋井",
+    "region": "静岡県",
+    "latitude": 34.7948,
+    "longitude": 137.9034
+  },
+  {
+    "code": "SZO024",
+    "name": "浜松",
+    "region": "静岡県",
+    "latitude": 34.7104,
+    "longitude": 137.7199
+  },
+  {
+    "code": "SZOH29",
+    "name": "静岡北",
+    "region": "静岡県",
+    "latitude": 35.307,
+    "longitude": 138.1973
+  },
+  {
+    "code": "SZOH30",
+    "name": "水窪北",
+    "region": "静岡県",
+    "latitude": 35.2233,
+    "longitude": 137.9181
+  },
+  {
+    "code": "SZOH31",
+    "name": "川根",
+    "region": "静岡県",
+    "latitude": 34.9398,
+    "longitude": 138.0767
+  },
+  {
+    "code": "SZOH32",
+    "name": "龍山東",
+    "region": "静岡県",
+    "latitude": 35.0086,
+    "longitude": 137.8409
+  },
+  {
+    "code": "SZO014",
+    "name": "静岡",
+    "region": "静岡県",
+    "latitude": 34.9649,
+    "longitude": 138.3741
+  },
+  {
+    "code": "SZOH34",
+    "name": "清水北",
+    "region": "静岡県",
+    "latitude": 35.1304,
+    "longitude": 138.4243
+  },
+  {
+    "code": "SZOH35",
+    "name": "伊東中",
+    "region": "静岡県",
+    "latitude": 34.9467,
+    "longitude": 139.0855
+  },
+  {
+    "code": "SZOH36",
+    "name": "藤枝",
+    "region": "静岡県",
+    "latitude": 34.9142,
+    "longitude": 138.2008
+  },
+  {
+    "code": "SZO011",
+    "name": "富士宮",
+    "region": "静岡県",
+    "latitude": 35.2129,
+    "longitude": 138.6015
+  },
+  {
+    "code": "SZOH38",
+    "name": "函南",
+    "region": "静岡県",
+    "latitude": 35.0854,
+    "longitude": 138.9779
+  },
+  {
+    "code": "SZO027",
+    "name": "西伊豆",
+    "region": "静岡県",
+    "latitude": 34.7809,
+    "longitude": 138.7934
+  },
+  {
+    "code": "SZOH40",
+    "name": "河津",
+    "region": "静岡県",
+    "latitude": 34.7832,
+    "longitude": 138.97
+  },
+  {
+    "code": "SZOH41",
+    "name": "南伊豆",
+    "region": "静岡県",
+    "latitude": 34.6749,
+    "longitude": 138.834
+  },
+  {
+    "code": "SZO007",
+    "name": "修善寺",
+    "region": "静岡県",
+    "latitude": 34.9771,
+    "longitude": 138.9468
+  },
+  {
+    "code": "SZO013",
+    "name": "清水",
+    "region": "静岡県",
+    "latitude": 35.0409,
+    "longitude": 138.4765
+  },
+  {
+    "code": "SZOH53",
+    "name": "掛川3",
+    "region": "静岡県",
+    "latitude": 34.8768,
+    "longitude": 138.0174
+  },
+  {
+    "code": "SZOH54",
+    "name": "初島2",
+    "region": "静岡県",
+    "latitude": 35.0417,
+    "longitude": 139.1685
+  },
+  {
+    "code": "TCG013",
+    "name": "真岡",
+    "region": "栃木県",
+    "latitude": 36.4368,
+    "longitude": 140.0227
+  },
+  {
+    "code": "TCGH07",
+    "name": "栗山西",
+    "region": "栃木県",
+    "latitude": 36.8817,
+    "longitude": 139.4534
+  },
+  {
+    "code": "TCGH08",
+    "name": "栗山東",
+    "region": "栃木県",
+    "latitude": 36.8828,
+    "longitude": 139.6459
+  },
+  {
+    "code": "TCGH09",
+    "name": "矢板",
+    "region": "栃木県",
+    "latitude": 36.8625,
+    "longitude": 139.8364
+  },
+  {
+    "code": "TCGH11",
+    "name": "今市",
+    "region": "栃木県",
+    "latitude": 36.7084,
+    "longitude": 139.7694
+  },
+  {
+    "code": "TCGH12",
+    "name": "氏家",
+    "region": "栃木県",
+    "latitude": 36.6959,
+    "longitude": 139.9842
+  },
+  {
+    "code": "TCGH13",
+    "name": "馬頭",
+    "region": "栃木県",
+    "latitude": 36.7342,
+    "longitude": 140.1781
+  },
+  {
+    "code": "TCGH14",
+    "name": "粟野",
+    "region": "栃木県",
+    "latitude": 36.5509,
+    "longitude": 139.6154
+  },
+  {
+    "code": "TCG007",
+    "name": "宇都宮",
+    "region": "栃木県",
+    "latitude": 36.5677,
+    "longitude": 139.8873
+  },
+  {
+    "code": "TCGH16",
+    "name": "芳賀",
+    "region": "栃木県",
+    "latitude": 36.548,
+    "longitude": 140.0751
+  },
+  {
+    "code": "TCGH17",
+    "name": "藤原2",
+    "region": "栃木県",
+    "latitude": 36.9853,
+    "longitude": 139.6922
+  },
+  {
+    "code": "HKD088",
+    "name": "陸別",
+    "region": "北海道",
+    "latitude": 43.4704,
+    "longitude": 143.7488
+  },
+  {
+    "code": "TKCH02",
+    "name": "足寄東",
+    "region": "北海道",
+    "latitude": 43.3822,
+    "longitude": 143.8983
+  },
+  {
+    "code": "TKCH03",
+    "name": "足寄西",
+    "region": "北海道",
+    "latitude": 43.2708,
+    "longitude": 143.4317
+  },
+  {
+    "code": "TKCH04",
+    "name": "新得南",
+    "region": "北海道",
+    "latitude": 43.1739,
+    "longitude": 142.9176
+  },
+  {
+    "code": "TKCH05",
+    "name": "本別",
+    "region": "北海道",
+    "latitude": 43.1211,
+    "longitude": 143.6181
+  },
+  {
+    "code": "TKCH06",
+    "name": "芽室",
+    "region": "北海道",
+    "latitude": 42.892,
+    "longitude": 143.0603
+  },
+  {
+    "code": "TKCH07",
+    "name": "豊頃",
+    "region": "北海道",
+    "latitude": 42.8114,
+    "longitude": 143.5203
+  },
+  {
+    "code": "TKCH08",
+    "name": "大樹",
+    "region": "北海道",
+    "latitude": 42.4865,
+    "longitude": 143.152
+  },
+  {
+    "code": "TKCH10",
+    "name": "新得北",
+    "region": "北海道",
+    "latitude": 43.3337,
+    "longitude": 142.9448
+  },
+  {
+    "code": "TKCH11",
+    "name": "清水",
+    "region": "北海道",
+    "latitude": 42.8742,
+    "longitude": 142.883
+  },
+  {
+    "code": "TKSH01",
+    "name": "日和佐",
+    "region": "徳島県",
+    "latitude": 33.7751,
+    "longitude": 134.4994
+  },
+  {
+    "code": "TKS010",
+    "name": "貞光",
+    "region": "徳島県",
+    "latitude": 34.0382,
+    "longitude": 134.0614
+  },
+  {
+    "code": "TKSH03",
+    "name": "木屋平",
+    "region": "徳島県",
+    "latitude": 33.8778,
+    "longitude": 134.1294
+  },
+  {
+    "code": "TKSH04",
+    "name": "徳島",
+    "region": "徳島県",
+    "latitude": 33.9902,
+    "longitude": 134.5337
+  },
+  {
+    "code": "TKSH05",
+    "name": "海南",
+    "region": "徳島県",
+    "latitude": 33.6628,
+    "longitude": 134.3156
+  },
+  {
+    "code": "TKSH06",
+    "name": "井川",
+    "region": "徳島県",
+    "latitude": 33.9997,
+    "longitude": 133.8933
+  },
+  {
+    "code": "TKYH12",
+    "name": "八王子",
+    "region": "東京都",
+    "latitude": 35.6701,
+    "longitude": 139.265
+  },
+  {
+    "code": "TKY002",
+    "name": "桧原",
+    "region": "東京都",
+    "latitude": 35.7306,
+    "longitude": 139.1454
+  },
+  {
+    "code": "TTR003",
+    "name": "用瀬",
+    "region": "鳥取県",
+    "latitude": 35.3432,
+    "longitude": 134.2075
+  },
+  {
+    "code": "TTRH02",
+    "name": "日野",
+    "region": "鳥取県",
+    "latitude": 35.2313,
+    "longitude": 133.3909
+  },
+  {
+    "code": "TTRH03",
+    "name": "溝口",
+    "region": "鳥取県",
+    "latitude": 35.3553,
+    "longitude": 133.4918
+  },
+  {
+    "code": "TTR006",
+    "name": "赤碕",
+    "region": "鳥取県",
+    "latitude": 35.5144,
+    "longitude": 133.6297
+  },
+  {
+    "code": "TTRH05",
+    "name": "岩美",
+    "region": "鳥取県",
+    "latitude": 35.5729,
+    "longitude": 134.3426
+  },
+  {
+    "code": "TTRH06",
+    "name": "河原",
+    "region": "鳥取県",
+    "latitude": 35.3946,
+    "longitude": 134.1988
+  },
+  {
+    "code": "TTRH07",
+    "name": "関金",
+    "region": "鳥取県",
+    "latitude": 35.3649,
+    "longitude": 133.7486
+  },
+  {
+    "code": "TYMH01",
+    "name": "氷見",
+    "region": "富山県",
+    "latitude": 36.8866,
+    "longitude": 136.9276
+  },
+  {
+    "code": "TYMH02",
+    "name": "大門",
+    "region": "富山県",
+    "latitude": 36.7142,
+    "longitude": 137.0378
+  },
+  {
+    "code": "TYMH03",
+    "name": "富山",
+    "region": "富山県",
+    "latitude": 36.7294,
+    "longitude": 137.2627
+  },
+  {
+    "code": "TYMH04",
+    "name": "魚津",
+    "region": "富山県",
+    "latitude": 36.7914,
+    "longitude": 137.4689
+  },
+  {
+    "code": "TYMH05",
+    "name": "井波",
+    "region": "富山県",
+    "latitude": 36.5736,
+    "longitude": 136.9584
+  },
+  {
+    "code": "TYMH06",
+    "name": "八尾",
+    "region": "富山県",
+    "latitude": 36.5711,
+    "longitude": 137.1595
+  },
+  {
+    "code": "TYMH07",
+    "name": "利賀",
+    "region": "富山県",
+    "latitude": 36.4406,
+    "longitude": 137.0392
+  },
+  {
+    "code": "WKYH01",
+    "name": "広川",
+    "region": "和歌山県",
+    "latitude": 33.9804,
+    "longitude": 135.2122
+  },
+  {
+    "code": "WKYH02",
+    "name": "花園",
+    "region": "和歌山県",
+    "latitude": 34.1373,
+    "longitude": 135.5369
+  },
+  {
+    "code": "WKYH03",
+    "name": "野上",
+    "region": "和歌山県",
+    "latitude": 34.1314,
+    "longitude": 135.3244
+  },
+  {
+    "code": "WKYH04",
+    "name": "すさみ",
+    "region": "和歌山県",
+    "latitude": 33.5559,
+    "longitude": 135.5454
+  },
+  {
+    "code": "WKY011",
+    "name": "太地",
+    "region": "和歌山県",
+    "latitude": 33.5948,
+    "longitude": 135.9462
+  },
+  {
+    "code": "WKYH06",
+    "name": "大塔",
+    "region": "和歌山県",
+    "latitude": 33.6948,
+    "longitude": 135.5953
+  },
+  {
+    "code": "WKY008",
+    "name": "田辺",
+    "region": "和歌山県",
+    "latitude": 33.7289,
+    "longitude": 135.3771
+  },
+  {
+    "code": "WKYH09",
+    "name": "和歌山",
+    "region": "和歌山県",
+    "latitude": 34.2868,
+    "longitude": 135.0714
+  },
+  {
+    "code": "WKYH10",
+    "name": "印南",
+    "region": "和歌山県",
+    "latitude": 33.8248,
+    "longitude": 135.2172
+  },
+  {
+    "code": "YMGH01",
+    "name": "防府",
+    "region": "山口県",
+    "latitude": 34.0494,
+    "longitude": 131.5618
+  },
+  {
+    "code": "YMGH07",
+    "name": "菊川",
+    "region": "山口県",
+    "latitude": 34.1149,
+    "longitude": 131.0506
+  },
+  {
+    "code": "YMGH03",
+    "name": "岩国",
+    "region": "山口県",
+    "latitude": 34.1891,
+    "longitude": 132.126
+  },
+  {
+    "code": "YMG017",
+    "name": "柳井",
+    "region": "山口県",
+    "latitude": 33.9649,
+    "longitude": 132.1011
+  },
+  {
+    "code": "YMGH05",
+    "name": "美川",
+    "region": "山口県",
+    "latitude": 34.1974,
+    "longitude": 131.9943
+  },
+  {
+    "code": "YMGH06",
+    "name": "宇部",
+    "region": "山口県",
+    "latitude": 33.9893,
+    "longitude": 131.3012
+  },
+  {
+    "code": "YMGH07",
+    "name": "菊川",
+    "region": "山口県",
+    "latitude": 34.1149,
+    "longitude": 131.0506
+  },
+  {
+    "code": "YMGH08",
+    "name": "豊浦",
+    "region": "山口県",
+    "latitude": 34.1349,
+    "longitude": 130.9323
+  },
+  {
+    "code": "YMGH09",
+    "name": "田万川",
+    "region": "山口県",
+    "latitude": 34.6257,
+    "longitude": 131.6681
+  },
+  {
+    "code": "YMGH10",
+    "name": "むつみ",
+    "region": "山口県",
+    "latitude": 34.4837,
+    "longitude": 131.6329
+  },
+  {
+    "code": "YMGH11",
+    "name": "徳地",
+    "region": "山口県",
+    "latitude": 34.2091,
+    "longitude": 131.6859
+  },
+  {
+    "code": "YMGH12",
+    "name": "美東",
+    "region": "山口県",
+    "latitude": 34.2176,
+    "longitude": 131.3597
+  },
+  {
+    "code": "YMGH13",
+    "name": "長門",
+    "region": "山口県",
+    "latitude": 34.3408,
+    "longitude": 131.177
+  },
+  {
+    "code": "YMG002",
+    "name": "萩",
+    "region": "山口県",
+    "latitude": 34.4077,
+    "longitude": 131.3986
+  },
+  {
+    "code": "YMGH15",
+    "name": "徳山",
+    "region": "山口県",
+    "latitude": 33.9725,
+    "longitude": 131.8149
+  },
+  {
+    "code": "YMGH16",
+    "name": "上関",
+    "region": "山口県",
+    "latitude": 33.826,
+    "longitude": 132.104
+  },
+  {
+    "code": "YMG018",
+    "name": "東和",
+    "region": "山口県",
+    "latitude": 33.9091,
+    "longitude": 132.3559
+  },
+  {
+    "code": "YMNH08",
+    "name": "西野原",
+    "region": "山梨県",
+    "latitude": 35.6895,
+    "longitude": 138.734
+  },
+  {
+    "code": "YMNH09",
+    "name": "早川",
+    "region": "山梨県",
+    "latitude": 35.4327,
+    "longitude": 138.3325
+  },
+  {
+    "code": "YMNH10",
+    "name": "早川北",
+    "region": "山梨県",
+    "latitude": 35.5351,
+    "longitude": 138.3087
+  },
+  {
+    "code": "YMNH11",
+    "name": "大月",
+    "region": "山梨県",
+    "latitude": 35.6247,
+    "longitude": 138.9777
+  },
+  {
+    "code": "YMN011",
+    "name": "芦安",
+    "region": "山梨県",
+    "latitude": 35.6384,
+    "longitude": 138.3836
+  },
+  {
+    "code": "YMNH13",
+    "name": "身延",
+    "region": "山梨県",
+    "latitude": 35.3509,
+    "longitude": 138.4203
+  },
+  {
+    "code": "YMNH14",
+    "name": "都留南",
+    "region": "山梨県",
+    "latitude": 35.5115,
+    "longitude": 138.9675
+  },
+  {
+    "code": "YMN006",
+    "name": "本栖",
+    "region": "山梨県",
+    "latitude": 35.4685,
+    "longitude": 138.6069
+  },
+  {
+    "code": "YMN005",
+    "name": "甲府",
+    "region": "山梨県",
+    "latitude": 35.6551,
+    "longitude": 138.5679
+  },
+  {
+    "code": "YMT007",
+    "name": "東根",
+    "region": "山形県",
+    "latitude": 38.4302,
+    "longitude": 140.3902
+  },
+  {
+    "code": "YMT010",
+    "name": "山形",
+    "region": "山形県",
+    "latitude": 38.2608,
+    "longitude": 140.3484
+  },
+  {
+    "code": "YMTH03",
+    "name": "南陽",
+    "region": "山形県",
+    "latitude": 38.1035,
+    "longitude": 140.1553
+  },
+  {
+    "code": "YMT011",
+    "name": "上山",
+    "region": "山形県",
+    "latitude": 38.1484,
+    "longitude": 140.2671
+  },
+  {
+    "code": "YMTH05",
+    "name": "小国",
+    "region": "山形県",
+    "latitude": 37.9883,
+    "longitude": 139.8017
+  },
+  {
+    "code": "YMTH06",
+    "name": "高畠",
+    "region": "山形県",
+    "latitude": 37.9633,
+    "longitude": 140.1836
+  },
+  {
+    "code": "YMTH07",
+    "name": "米沢",
+    "region": "山形県",
+    "latitude": 37.896,
+    "longitude": 140.0278
+  },
+  {
+    "code": "YMTH08",
+    "name": "八幡",
+    "region": "山形県",
+    "latitude": 38.9701,
+    "longitude": 140.0333
+  },
+  {
+    "code": "YMTH09",
+    "name": "戸沢",
+    "region": "山形県",
+    "latitude": 38.7498,
+    "longitude": 140.178
+  },
+  {
+    "code": "YMTH10",
+    "name": "舟形",
+    "region": "山形県",
+    "latitude": 38.7107,
+    "longitude": 140.3744
+  },
+  {
+    "code": "YMTH11",
+    "name": "最上",
+    "region": "山形県",
+    "latitude": 38.7132,
+    "longitude": 140.5544
+  },
+  {
+    "code": "YMTH12",
+    "name": "立川",
+    "region": "山形県",
+    "latitude": 38.6357,
+    "longitude": 140.0055
+  },
+  {
+    "code": "YMTH13",
+    "name": "朝日",
+    "region": "山形県",
+    "latitude": 38.4704,
+    "longitude": 139.7606
+  },
+  {
+    "code": "YMTH14",
+    "name": "西川西",
+    "region": "山形県",
+    "latitude": 38.386,
+    "longitude": 139.9916
+  },
+  {
+    "code": "YMTH15",
+    "name": "西川東",
+    "region": "山形県",
+    "latitude": 38.4257,
+    "longitude": 140.1249
+  }
+]
